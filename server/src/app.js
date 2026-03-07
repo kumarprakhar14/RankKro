@@ -6,10 +6,15 @@ import cookieParser from "cookie-parser";
 import cookieSession from "cookie-session";
 import passport from "passport";
 import { router as apiRouter } from "../src/routes/index.routes.js"
+import cronJob from "./utils/cron.js";
 // import "./services/passport.js";
 
 
 const app = express();
+
+if (process.env.NODE_ENV==="production") {
+    cronJob.start();
+}
 
 // Middleware
 app.use(helmet());  // security headers
