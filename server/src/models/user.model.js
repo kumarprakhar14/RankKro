@@ -29,7 +29,7 @@ const userSchema = new mongoose.Schema(
             type: String
         },
         plan: {
-            type: string,
+            type: String,
             enum: ["FREE", "PREMIUM"],
             default: "FREE"
         },
@@ -61,9 +61,8 @@ const userSchema = new mongoose.Schema(
 
 // Hash password before save
 userSchema.pre("save", async function (next) {
-    if (!this.isModified("password")) return next();
+    if (!this.isModified("password"));
     this.password = await argon2.hash(this.password);
-    next();
 });
 
 // Compare entered password with hashed password

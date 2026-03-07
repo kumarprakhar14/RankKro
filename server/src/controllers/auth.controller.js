@@ -1,10 +1,6 @@
 import User from "../models/user.model.js";
 import { hashify, verifyHash, generateResetToken, hashResetToken } from "../utils/crypto.js";
 import { generateAcessToken, generateRefreshToken, verifyRefreshToken } from "../services/auth.service.js";
-import mongoose from "mongoose";
-import axios from "axios";
-import { inngest } from "../inngest/index.js";
-import { googleClient } from "../utils/googleClient.js"
 
 // @desc Register new user
 // @route POST /api/auth/register

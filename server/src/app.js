@@ -5,6 +5,7 @@ import morgan from "morgan"; // for request logging
 import cookieParser from "cookie-parser";
 import cookieSession from "cookie-session";
 import passport from "passport";
+import { router as apiRouter } from "../src/routes/index.routes.js"
 // import "./services/passport.js";
 
 
@@ -38,7 +39,7 @@ app.get("/health", (req, res) => {
 });
 
 // API routes
-// app.use("/api", apiRouter);
+app.use("/api", apiRouter);
 
 // Global error handler
 app.use((err, req, res, next) => {
