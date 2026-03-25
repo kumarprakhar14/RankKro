@@ -15,7 +15,9 @@ import AdminDashboard from './pages/admin/AdminDashboard'
 import AdminUsers from './pages/admin/AdminUsers'
 import AdminQuestions from './pages/admin/AdminQuestions'
 import AdminTests from './pages/admin/AdminTests'
-
+import ForgotPassword from './pages/ForgotPassword'
+import ResetPassword from './pages/ResetPassword'
+import NotFound from './pages/NotFound'
 function App() {
 
   return (
@@ -32,6 +34,16 @@ function App() {
           <Route path="/sign-up" element={
             <PublicRoute>
               <Register />
+            </PublicRoute>
+          }/>
+          <Route path="/forgot-password" element={
+            <PublicRoute>
+              <ForgotPassword />
+            </PublicRoute>
+          }/>
+          <Route path="/reset-password/:token" element={
+            <PublicRoute>
+              <ResetPassword />
             </PublicRoute>
           }/>
 
@@ -63,6 +75,9 @@ function App() {
             <Route path="questions" element={<AdminQuestions />} />
             <Route path="tests" element={<AdminTests />} />
           </Route>
+
+          {/* Catch all 404 route */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>
