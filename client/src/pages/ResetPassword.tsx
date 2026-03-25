@@ -50,6 +50,8 @@ export default function ResetPassword() {
                 const res = await authAPI.validateResetToken(token)
                 if (res.success && res.data?.valid) {
                     setEmail(res.data.email || null)
+                } else {
+                    setTokenError(res.data?.message || "Invalid or expired reset link")
                 }
             } catch (error: any) {
                 setTokenError(error.message || "Link invalid or expired")

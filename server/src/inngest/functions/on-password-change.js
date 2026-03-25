@@ -34,7 +34,7 @@ export const onUserPasswordChange = inngest.createFunction(
 
 
             // // send email
-            await step.run("send-password-chanage-email", async () => {
+            await step.run("send-password-change-email", async () => {
                 const subject = `Your password has been changed`;
                 const message = getPasswordChangeEmailTemplate(user.name, user.email, updatedAt);
                 await sendMail(user.email, subject, message);
@@ -42,8 +42,12 @@ export const onUserPasswordChange = inngest.createFunction(
 
             return { success: true }
         } catch (error) {
+            if (error instanceof NonRetriableError) {
+                console.error("❌ Non-retryable error running step", error.message);
+                throw error;
+            }
             console.error("❌ Error running step", error.message);
-            return { success: false };
+            throw error;
         }
     }
 )

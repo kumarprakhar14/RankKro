@@ -25,8 +25,12 @@ export const onUserSignup = inngest.createFunction(
 
             return { success: true };
         } catch (error) {
+            if (error instanceof NonRetriableError) {
+                console.error("❌ Non-retryable error running step", error.message);
+                throw error;
+            }
             console.error("❌ Error running step", error.message);
-            return { success: false };
+            throw error;
         }
     }
 )
