@@ -1,106 +1,308 @@
 import User from "../models/user.model.js";
-import { hashify, verifyHash, generateResetToken, hashResetToken } from "../utils/crypto.js";
+import argon2 from "argon2";
+import { hashify, generateResetToken, hashResetToken } from "../utils/crypto.js";
 import { generateAcessToken, generateRefreshToken, verifyRefreshToken } from "../services/auth.service.js";
+import { registerSchema, loginSchema, validateRequest, sanitizeUser } from "../validations/authValidations.js";
+import { setRefreshTokenCookie } from "../utils/setCookies.js"
 
-// @desc Register new user
-// @route POST /api/auth/register
-export const register = async (req, res) => {
+
+/**
+ * @desc Register new user
+ * @route POST /api/auth/register
+ * @param {object} req - Express request
+ * @param {object} res - Express response
+ * @param {function} next - Express next middleware
+ */
+export const register = async (req, res, next) => {
     try {
-        const { name, email, phone, password } = req.body;
-
-        //check if user exists -> checking for unique email as well as unique username
-        const existingUser = await User.findOne({ email });
-        if (existingUser) {
-            return res.status(400).json({ message: "User already exists" })
+        // ============================================
+        // 1. VALIDATE REQUEST BODY
+        // ============================================
+        const validation = validateRequest(registerSchema, req.body);
+        if (!validation.success) {
+            return res.status(400).json({
+                success: false,
+                error: {
+                    code: "VALIDATION_ERROR",
+                    message: "Validation failed",
+                    fields: validation.errors
+                }
+            });
         }
 
-        // create user (password gets hashed by pre-save hook)
-        const user = new User({ name, email, phone, password });
-        await user.save();
+        const { email, password, name, phone } = validation.data;
 
+        // ============================================
+        // 2. CHECK FOR DUPLICATE EMAIL
+        // ============================================
+        const existingUser = await User.findOne({ email });
+        if (existingUser) {
+            console.warn(`Registration attempt with existing email: ${email}`);
+            return res.status(409).json({
+                success: false,
+                error: {
+                    code: "REGISTRATION_FAILED",
+                    message: "Email already exists."
+                }
+            });
+        }
+
+        // ============================================
+        // 3. CREATE USER
+        // ============================================
+        const newUser = new User({
+            name,
+            email,
+            phone,
+            password, // Will be hashed by pre-save hook
+            role: "USER",
+            plan: "FREE",
+            isActive: true
+        });
+
+        await newUser.save();
+
+        // ============================================
+        // 4. LOG EVENT (NO PII)
+        // ============================================
+        console.log(`User registration successful - Email domain: ${email.split("@")[1]}`);
+
+        // ============================================
+        // 5. RETURN RESPONSE
+        // ============================================
         return res.status(201).json({
-            message: "User registerd successfully",
-            user: {
-                id: user._id,
-                name: user.name,
-                email: user.email
+            success: true,
+            data: sanitizeUser(newUser),
+            message: "User registered successfully"
+        });
+
+    } catch (error) {
+        console.error("Registration Error:", error.message);
+        console.error("Additional details:", {
+            name: error.name,
+            stack: error.stack
+        });
+
+        // Handle MongoDB duplicate key error (race condition)
+        if (error.code === 11000) {
+            return res.status(409).json({
+                success: false,
+                error: {
+                    code: "REGISTRATION_FAILED",
+                    message: "Registration failed. Please check your information and try again."
+                }
+            });
+        }
+
+        // Other database or validation errors
+        return res.status(500).json({
+            success: false,
+            error: {
+                code: "INTERNAL_ERROR",
+                message: "An error occurred during registration. Please try again later."
             }
         });
-    } catch (err) {
-        console.error("Register error", err);
-        res.status(500).json({ message: "Server error" })
     }
 };
 
-
-// @desc Login user
-// @route POST /api/auth/login
-export const login = async (req, res) => {
+/**
+ * @desc Login user - authenticate and issue tokens
+ * @route POST /api/auth/login
+ * @param {object} req - Express request
+ * @param {object} res - Express response
+ * @param {function} next - Express next middleware
+ */
+export const login = async (req, res, next) => {
     try {
-        const { name, password } = req.body;
-
-        // find user -> allow flexible login with username as well as with email
-        const user = await User.findOne({
-            $or: [{ name }, { email: name }]
-        }).select('+password');
-
-        if (!user) {
-            return res.status(400).json({ message: "Invalid credentials" });
+        // ============================================
+        // 1. VALIDATE REQUEST BODY
+        // ============================================
+        const validation = validateRequest(loginSchema, req.body);
+        if (!validation.success) {
+            return res.status(400).json({
+                success: false,
+                error: {
+                    code: "VALIDATION_ERROR",
+                    message: "Validation failed",
+                    fields: validation.errors
+                }
+            });
         }
 
-        // verify password
-        const isMatch = await verifyHash(password, user.password);
-        if (!isMatch) {
-            return res.status(400).json({ message: "Invalid credentials" });
+        const { email, password } = validation.data;
+
+        // ============================================
+        // 2. FETCH USER BY EMAIL
+        // ============================================
+        const user = await User.findOne({ email }).select("+password");
+
+        if (!user || !user.isActive) {
+            // Constant-time response (same logic as wrong password)
+            // Generic message to prevent user enumeration
+            return res.status(401).json({
+                success: false,
+                error: {
+                    code: "AUTHENTICATION_FAILED",
+                    message: "Invalid email or password"
+                }
+            });
         }
 
-        // Generate tokens
+        // ============================================
+        // 3. COMPARE PASSWORD (constant-time)
+        // ============================================
+        const isPasswordValid = await user.comparePassword(password);
+
+        if (!isPasswordValid) {
+            // Log failed attempt (no PII)
+            console.warn(`Failed login attempt for email: ${email.split("@")[0]}...`);
+            return res.status(401).json({
+                success: false,
+                error: {
+                    code: "AUTHENTICATION_FAILED",
+                    message: "Invalid email or password"
+                }
+            });
+        }
+
+        // ============================================
+        // 4. GENERATE TOKENS
+        // ============================================
         const accessToken = generateAcessToken(user._id);
-        const refeshToken = generateRefreshToken(user._id);
+        const refreshToken = generateRefreshToken(user._id);
 
-        // Hash the refresh token before saving
-        const hashedRefreshToken = await hashify(refeshToken);
-
-        // we will implement hashing logic for refresh token
+        // ============================================
+        // 5. HASH & STORE REFRESH TOKEN IN DB
+        // ============================================
+        const hashedRefreshToken = await hashify(refreshToken);
         user.refreshTokens.push(hashedRefreshToken);
         await user.save();
 
-        // Send plain refresh token as HttpOnly Cookie, not the hashed one
-        res.cookie("refreshToken", refeshToken, {
-            httpOnly: true,
-            secure: process.env.NODE_ENV === "production",
-            sameSite: "none",  // accept cross-site cookies
-            maxAge: 7 * 24 * 60 * 60 * 1000,  // 7 days in miliseconds
+        // ============================================
+        // 6. SET REFRESH TOKEN COOKIE
+        // ============================================
+        setRefreshTokenCookie(res, refreshToken);
+
+        // ============================================
+        // 7. SET AUTHORIZATION HEADER
+        // ============================================
+        res.set({ "Authorization": `Bearer ${accessToken}` });
+
+        // ============================================
+        // 8. LOG EVENT (NO PII)
+        // ============================================
+        console.log(`User login successful - User ID: ${user._id}`);
+
+        // ============================================
+        // 9. RETURN RESPONSE
+        // ============================================
+        return res.status(200).json({
+            success: true,
+            data: {
+                accessToken,
+                user: sanitizeUser(user)
+            },
+            message: "Login successful"
         });
 
-        // Set authorization header
-        await res.set({ 'authorization': `Bearer ${accessToken}` });
-        console.log(user);
-        return res.status(200).json({
-            message: "Login successful",
-            accessToken,
-            user: {
-                id: user._id,
-                name: user.name,
-                email: user.email
+    } catch (error) {
+        console.error("Login Error:", error.message);
+        return res.status(500).json({
+            success: false,
+            error: {
+                code: "INTERNAL_ERROR",
+                message: "An error occurred during login. Please try again later."
             }
         });
-    } catch (err) {
-        console.error("Login error", err);
-        res.status(500).json({ message: "Server error" });
-
     }
 }
 
-// @desc Logout User
-// @route /api/auth/logout
+/**
+ * @desc Logout user - invalidate refresh token and clear cookie
+ * @route POST /api/auth/logout
+ * @param {object} req - Express request
+ * @param {object} res - Express response
+ * @param {function} next - Express next middleware
+ */
 export const logout = async (req, res, next) => {
     try {
-        res.removeHeader('Authorization');
-        return res.status(200).json({ message: "Logout Successful" });
-    } catch (err) {
-        console.error("Logout Error", err);
-        res.status(500).json({ message: "Server Error" });
+        // ============================================
+        // 1. READ REFRESH TOKEN FROM COOKIE
+        // ============================================
+        const refreshToken = req.cookies?.refreshToken;
+
+        if (!refreshToken) {
+            // No token = already logged out, still clear cookie to be safe
+            res.clearCookie("refreshToken", { httpOnly: true, secure: process.env.NODE_ENV === "production", sameSite: "strict", path: "/" });
+            return res.status(200).json({
+                success: true,
+                message: "Logged out successfully"
+            });
+        }
+
+        // ============================================
+        // 2. VERIFY TOKEN & FIND USER
+        // ============================================
+        let payload;
+        try {
+            payload = verifyRefreshToken(refreshToken);
+        } catch (err) {
+            // Token is invalid/expired — clear cookie anyway
+            res.clearCookie("refreshToken", { httpOnly: true, secure: process.env.NODE_ENV === "production", sameSite: "strict", path: "/" });
+            return res.status(200).json({
+                success: true,
+                message: "Logged out successfully"
+            });
+        }
+
+        const user = await User.findById(payload.id);
+
+        if (user) {
+            // ============================================
+            // 3. REMOVE THIS REFRESH TOKEN FROM DB
+            // ============================================
+            // Tokens are hashed with argon2 (non-deterministic),
+            // so we need to verify each stored hash against the plain token
+            const updatedTokens = [];
+            for (const storedHash of user.refreshTokens) {
+                const isMatch = await argon2.verify(storedHash, refreshToken);
+                if (!isMatch) {
+                    updatedTokens.push(storedHash); // keep tokens that don't match
+                }
+            }
+            user.refreshTokens = updatedTokens;
+            await user.save();
+        }
+
+        // ============================================
+        // 4. CLEAR REFRESH TOKEN COOKIE
+        // ============================================
+        res.clearCookie("refreshToken", {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === "production",
+            sameSite: "strict",
+            path: "/"
+        });
+
+        // ============================================
+        // 5. LOG EVENT & RETURN RESPONSE
+        // ============================================
+        console.log(`User logout successful - User ID: ${payload.id}`);
+
+        return res.status(200).json({
+            success: true,
+            message: "Logged out successfully"
+        });
+
+    } catch (error) {
+        console.error("Logout Error:", error.message);
+        return res.status(500).json({
+            success: false,
+            error: {
+                code: "INTERNAL_ERROR",
+                message: "An error occurred during logout. Please try again later."
+            }
+        });
     }
 }
 
@@ -185,38 +387,109 @@ export const logout = async (req, res, next) => {
 // }
 
 
-// @desc get a new access token
-// @route /api/auth/refresh
+/**
+ * @desc Get a new access token using refresh token
+ * @route POST /api/auth/refresh
+ * @param {object} req - Express request
+ * @param {object} res - Express response
+ * @param {function} next - Express next middleware
+ */
 export const refreshToken = async (req, res, next) => {
     try {
-        // read refresh token from cookie
+        // ============================================
+        // 1. READ REFRESH TOKEN FROM COOKIE
+        // ============================================
         const refreshToken = req.cookies?.refreshToken;
         if (!refreshToken) {
-            return res.status(403).json({ message: "Refresh token missing" });
+            return res.status(401).json({
+                success: false,
+                error: {
+                    code: "TOKEN_MISSING",
+                    message: "Refresh token missing"
+                }
+            });
         }
 
-        // verify refresh token
-        const payload = verifyRefreshToken(refreshToken);
-        const userObj = await User.findById(payload.id)
-
-
-        // issue new access token
-        const newAccessToken = generateAcessToken({ userId: payload.id });
-
-        if (!newAccessToken) {
-            console.log("Couldn't not generate new access token");
+        // ============================================
+        // 2. VERIFY JWT SIGNATURE & EXPIRY
+        // ============================================
+        let payload;
+        try {
+            payload = verifyRefreshToken(refreshToken);
+        } catch (err) {
+            return res.status(401).json({
+                success: false,
+                error: {
+                    code: "TOKEN_INVALID",
+                    message: "Refresh token is invalid or expired"
+                }
+            });
         }
 
-        // Set authorization header
-        res.set({ 'authorization': `Bearer ${newAccessToken}` });
+        // ============================================
+        // 3. FIND USER & CHECK ACTIVE STATUS
+        // ============================================
+        const user = await User.findById(payload.id);
 
+        if (!user || !user.isActive) {
+            return res.status(401).json({
+                success: false,
+                error: {
+                    code: "AUTHENTICATION_FAILED",
+                    message: "User not found or account deactivated"
+                }
+            });
+        }
+
+        // ============================================
+        // 4. VALIDATE TOKEN EXISTS IN DB
+        // ============================================
+        // Verify that this refresh token is still stored (not revoked via logout)
+        let tokenFound = false;
+        for (const storedHash of user.refreshTokens) {
+            const isMatch = await argon2.verify(storedHash, refreshToken);
+            if (isMatch) {
+                tokenFound = true;
+                break;
+            }
+        }
+
+        if (!tokenFound) {
+            return res.status(401).json({
+                success: false,
+                error: {
+                    code: "TOKEN_REVOKED",
+                    message: "Refresh token has been revoked"
+                }
+            });
+        }
+
+        // ============================================
+        // 5. ISSUE NEW ACCESS TOKEN (consistent with login)
+        // ============================================
+        const newAccessToken = generateAcessToken(user._id);
+
+        // ============================================
+        // 6. RETURN RESPONSE (same shape as login)
+        // ============================================
         return res.status(200).json({
-            newAccessToken,
-            message: "New access token issued",
-            user: userObj
+            success: true,
+            data: {
+                accessToken: newAccessToken,
+                user: sanitizeUser(user)
+            },
+            message: "New access token issued"
         });
-    } catch (err) {
-        next(err);
+
+    } catch (error) {
+        console.error("Refresh Token Error:", error.message);
+        return res.status(500).json({
+            success: false,
+            error: {
+                code: "INTERNAL_ERROR",
+                message: "An error occurred while refreshing token. Please try again later."
+            }
+        });
     }
 }
 

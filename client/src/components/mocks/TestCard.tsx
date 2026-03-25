@@ -1,39 +1,24 @@
 import { Link } from 'react-router-dom'
 import { Clock, Users, Star, Lock, Zap } from 'lucide-react'
+import type { ServerTest } from '@/lib/api'
 
-export type Difficulty = 'Easy' | 'Medium' | 'Hard'
-export type TestStatus = 'free' | 'premium'
-
-export interface MockTest {
-  id: string
-  title: string
-  examType: string
-  questions: number
-  totalMarks: number
-  duration: number // minutes
-  attempted: number
-  difficulty: Difficulty
-  status: TestStatus
-  category: string
-  isLive?: boolean
-  isPYQ?: boolean
-}
+type Difficulty = 'EASY' | 'MEDIUM' | 'HARD'
 
 interface TestCardProps {
-  test: MockTest
+  test: ServerTest
 }
 
 const difficultyConfig: Record<
   Difficulty,
   { label: string; color: string; bg: string }
 > = {
-  Easy: { label: 'Easy', color: 'text-green-700', bg: 'bg-green-100' },
-  Medium: { label: 'Medium', color: 'text-amber-700', bg: 'bg-amber-100' },
-  Hard: { label: 'Hard', color: 'text-red-700', bg: 'bg-red-100' },
+  EASY: { label: 'Easy', color: 'text-green-700', bg: 'bg-green-100' },
+  MEDIUM: { label: 'Medium', color: 'text-amber-700', bg: 'bg-amber-100' },
+  HARD: { label: 'Hard', color: 'text-red-700', bg: 'bg-red-100' },
 }
 
 export function TestCard({ test }: TestCardProps) {
-  const diff = difficultyConfig[test.difficulty]
+  const diff = difficultyConfig[test.difficulty] || difficultyConfig.MEDIUM
 
   return (
     <div className="bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 overflow-hidden group">
@@ -46,15 +31,9 @@ export function TestCard({ test }: TestCardProps) {
           <div>
             <div className="flex items-center gap-2 mb-1.5">
               <span className="text-xs font-bold text-[#1A5DC8] bg-blue-50 px-2 py-0.5 rounded-md">
-                {test.examType}
+                {test.exam_type}
               </span>
-              {test.isLive && (
-                <span className="flex items-center gap-1 text-xs font-bold text-red-600 bg-red-50 px-2 py-0.5 rounded-md">
-                  <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
-                  LIVE
-                </span>
-              )}
-              {test.isPYQ && (
+              {test.is_pyq && (
                 <span className="text-xs font-bold text-purple-700 bg-purple-50 px-2 py-0.5 rounded-md">
                   PYQ
                 </span>
@@ -68,7 +47,7 @@ export function TestCard({ test }: TestCardProps) {
             </h3>
           </div>
           <div className="flex-shrink-0">
-            {test.status === 'premium' ? (
+            {test.status === 'PREMIUM' ? (
               <div className="flex items-center gap-1 bg-amber-100 text-amber-700 text-xs font-bold px-2 py-1 rounded-lg">
                 <Lock className="w-3 h-3" />
                 Premium
@@ -83,25 +62,20 @@ export function TestCard({ test }: TestCardProps) {
         </div>
 
         {/* Stats row */}
-        <div className="grid grid-cols-3 gap-2 mb-4">
-          <div className="flex flex-col items-center p-2 bg-gray-50 rounded-lg">
-            <Star className="w-3.5 h-3.5 text-gray-400 mb-0.5" />
-            <span className="text-xs font-bold text-[#1E293B]">
-              {test.questions}Q
-            </span>
-            <span className="text-[10px] text-gray-400">Questions</span>
-          </div>
+        <div className="grid grid-cols-2 gap-2 mb-4">
           <div className="flex flex-col items-center p-2 bg-gray-50 rounded-lg">
             <Clock className="w-3.5 h-3.5 text-gray-400 mb-0.5" />
             <span className="text-xs font-bold text-[#1E293B]">
-              {test.duration}m
+              {test.duration_minutes}m
             </span>
             <span className="text-[10px] text-gray-400">Duration</span>
           </div>
           <div className="flex flex-col items-center p-2 bg-gray-50 rounded-lg">
             <Users className="w-3.5 h-3.5 text-gray-400 mb-0.5" />
             <span className="text-xs font-bold text-[#1E293B]">
-              {(test.attempted / 1000).toFixed(1)}K
+              {test.attempted_count >= 1000
+                ? `${(test.attempted_count / 1000).toFixed(1)}K`
+                : test.attempted_count}
             </span>
             <span className="text-[10px] text-gray-400">Attempted</span>
           </div>
@@ -114,9 +88,8 @@ export function TestCard({ test }: TestCardProps) {
           >
             {diff.label}
           </span>
-          <span className="text-xs text-gray-400">{test.totalMarks} Marks</span>
           <Link
-            to={`/exam?testId=${test.id}`}
+            to={`/exam?testId=${test._id}`}
             className="px-4 py-2 bg-[#1A5DC8] hover:bg-[#0D3E8E] text-white text-xs font-bold rounded-lg transition-all duration-200 group-hover:shadow-md"
           >
             Attempt Now
