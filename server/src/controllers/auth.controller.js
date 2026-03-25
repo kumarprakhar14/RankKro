@@ -2,7 +2,7 @@ import User from "../models/user.model.js";
 import argon2 from "argon2";
 import { hashify, generateResetToken, hashResetToken } from "../utils/crypto.js";
 import { generateAcessToken, generateRefreshToken, verifyRefreshToken } from "../services/auth.service.js";
-import { registerSchema, loginSchema, validateRequest, sanitizeUser } from "../validations/authValidations.js";
+import { registerSchema, loginSchema, forgotPasswordSchema, resetPasswordSchema, validateRequest, sanitizeUser } from "../validations/authValidations.js";
 import { setRefreshTokenCookie } from "../utils/setCookies.js"
 import { inngest } from "../inngest/index.js";
 
@@ -502,7 +502,19 @@ export const refreshToken = async (req, res, next) => {
 // @route /api/auth/forgot-password
 export const forgotPassword = async (req, res, next) => {
     try {
-        const { email } = req.body;
+        const validation = validateRequest(forgotPasswordSchema, req.body);
+        if (!validation.success) {
+            return res.status(400).json({
+                success: false,
+                error: {
+                    code: "VALIDATION_ERROR",
+                    message: "Validation failed",
+                    fields: validation.errors
+                }
+            });
+        }
+
+        const { email } = validation.data;
 
         // find user by email
         const user = await User.findOne({ email });
@@ -527,7 +539,6 @@ export const forgotPassword = async (req, res, next) => {
 
         // create reset url with unhashed token
         const resetUrl = `${process.env.FRONTEND_URL}/reset-password/${resetToken}`;
-        console.log("Reset URL: ", resetUrl);
 
 
         // fire inngest event to send mail
@@ -550,18 +561,15 @@ export const forgotPassword = async (req, res, next) => {
     }
 }
 
-
 // @desc Validate reset token (or, reset URL) -> get request
 // @route GET /api/auth/validate-reset-token/:token
 export const validateResetToken = async (req, res, next) => {
     try {
         const { token } = req.params;
-        console.log("Token: ", token);
 
 
         // Hash the token from url to compare with stored hash
         const hashedToken = hashResetToken(token);
-        console.log("Hashed Token: ", hashedToken);
 
 
         // Find user with valid token and not expired
@@ -597,7 +605,20 @@ export const validateResetToken = async (req, res, next) => {
 export const resetPassword = async (req, res, next) => {
     try {
         const { token } = req.params;
-        const { newPassword } = req.body;
+
+        const validation = validateRequest(resetPasswordSchema, req.body);
+        if (!validation.success) {
+            return res.status(400).json({
+                success: false,
+                error: {
+                    code: "VALIDATION_ERROR",
+                    message: "Validation failed",
+                    fields: validation.errors
+                }
+            });
+        }
+
+        const { newPassword } = validation.data;
 
         if (!token) {
             return res.status(400).json({ message: "Reset token missing in URL" });

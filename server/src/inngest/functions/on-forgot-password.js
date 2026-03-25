@@ -29,8 +29,12 @@ export const onUserForgotPassword =  inngest.createFunction(
             return { success: true }
 
         } catch (error) {
+            if (error instanceof NonRetriableError) {
+                console.error("❌ Non-retryable error sending forgot password mail", error.message);
+                throw error;
+            }
             console.error("❌ Error sending forgot password mail", error.message);
-            return { success: false };
+            throw error; // Let Inngest handle retries
         }
     }
 )

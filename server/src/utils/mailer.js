@@ -3,6 +3,10 @@ import { MailtrapTransport } from "mailtrap";
 
 const TOKEN = process.env.SMTP_PASS;
 
+if (!TOKEN) {
+  throw new Error("SMTP_PASS environment variable is required");
+}
+
 const transporter = nodemailer.createTransport(
   MailtrapTransport({
     token: TOKEN,
@@ -12,7 +16,7 @@ const transporter = nodemailer.createTransport(
 export const sendMail = async (to, subject, message) => {
   try {
     const info = await transporter.sendMail({
-      from: 'RanKro <[EMAIL_ADDRESS]>',
+      from: 'RanKro <rankro@unique-deals.in>',
       to,
       subject,
       html: message,

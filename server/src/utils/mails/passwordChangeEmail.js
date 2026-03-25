@@ -1,4 +1,16 @@
+// userName and userEmail are directly interpolated into the HTML template. If these values contain HTML/JavaScript (e.g., a malicious name like <script>alert(1)</script>), it could be rendered in email clients that support HTML.
+
+const escapeHtml = (str) => 
+  String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+
 export const getPasswordChangeEmailTemplate = (userName, userEmail, changeTime) => {
+    const safeUserName = escapeHtml(userName);
+    const safeUserEmail = escapeHtml(userEmail);
     return `
 <!DOCTYPE html>
 <html lang="en">
