@@ -1,3 +1,4 @@
+import mongoose from "mongoose";
 import Test from "../models/test.model.js";
 import Section from "../models/section.model.js";
 import SectionQuestion from "../models/section_question.model.js";
@@ -17,16 +18,26 @@ export const listTests = async (req, res) => {
         const { exam_type, status, page = 1, limit = 20 } = req.query;
 
         const filter = {};
-        if (exam_type) filter.exam_type = { $regex: new RegExp(exam_type, "i") };
+        if (exam_type) {
+            const escapeRegex = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            filter.exam_type = { $regex: new RegExp(escapeRegex(exam_type), "i") };
+        }
         if (status) filter.status = status.toUpperCase();
 
-        const skip = (parseInt(page) - 1) * parseInt(limit);
+        const parsedPage = parseInt(page, 10) || 1;
+        const parsedLimit = parseInt(limit, 10) || 20;
+
+        const MAX_LIMIT = 100;
+        const safePage = Math.max(1, parsedPage);
+        const safeLimit = Math.min(MAX_LIMIT, Math.max(1, parsedLimit));
+
+        const skip = (safePage - 1) * safeLimit;
 
         const [tests, total] = await Promise.all([
             Test.find(filter)
                 .sort({ createdAt: -1 })
                 .skip(skip)
-                .limit(parseInt(limit))
+                .limit(safeLimit)
                 .lean(),
             Test.countDocuments(filter)
         ]);
@@ -51,10 +62,10 @@ export const listTests = async (req, res) => {
             data: {
                 tests: testsWithMeta,
                 pagination: {
-                    page: parseInt(page),
-                    limit: parseInt(limit),
+                    page: safePage,
+                    limit: safeLimit,
                     total,
-                    totalPages: Math.ceil(total / parseInt(limit))
+                    totalPages: Math.ceil(total / safeLimit)
                 }
             },
             message: "Tests retrieved successfully"
@@ -80,10 +91,15 @@ export const listTests = async (req, res) => {
  * @access  Admin
  */
 export const createTest = async (req, res) => {
+    const session = await mongoose.startSession();
+    session.startTransaction();
+
     try {
         const { id, title, exam_type, duration_minutes, difficulty, status, is_pyq, sections } = req.body;
 
         if (!id || !title || !exam_type || !duration_minutes) {
+            await session.abortTransaction();
+            session.endSession();
             return res.status(400).json({
                 success: false,
                 error: {
@@ -104,7 +120,7 @@ export const createTest = async (req, res) => {
             is_pyq: is_pyq || false
         });
 
-        await test.save();
+        await test.save({ session });
 
         // Create sections if provided
         let createdSections = [];
@@ -114,8 +130,11 @@ export const createTest = async (req, res) => {
                 name: s.name,
                 display_order: s.display_order !== undefined ? s.display_order : index + 1
             }));
-            createdSections = await Section.insertMany(sectionDocs);
+            createdSections = await Section.insertMany(sectionDocs, { session });
         }
+
+        await session.commitTransaction();
+        session.endSession();
 
         console.log(`Admin created test: ${id} with ${createdSections.length} sections`);
 
@@ -126,6 +145,9 @@ export const createTest = async (req, res) => {
         });
 
     } catch (error) {
+        await session.abortTransaction();
+        session.endSession();
+        
         if (error.code === 11000) {
             return res.status(409).json({
                 success: false,
@@ -329,27 +351,39 @@ export const assignQuestions = async (req, res) => {
             question_order: q.question_order
         }));
 
-        const created = await SectionQuestion.insertMany(sectionQuestionDocs, { ordered: false });
+        let insertedCount = 0;
+        try {
+            const created = await SectionQuestion.insertMany(sectionQuestionDocs, { ordered: false });
+            insertedCount = created.length;
+        } catch (insertError) {
+            if (insertError.code === 11000) {
+                // Partial success is possible with ordered: false
+                insertedCount = insertError.insertedDocs?.length || insertError.result?.nInserted || 0;
 
-        console.log(`Admin assigned ${created.length} questions to section ${section.name} in test ${test.id}`);
+                if (insertedCount === 0) {
+                    return res.status(409).json({
+                        success: false,
+                        error: {
+                            code: "DUPLICATE_ERROR",
+                            message: "All provided questions are already assigned to this section."
+                        }
+                    });
+                }
+                // Allow it to proceed to success block for partial insertions
+            } else {
+                throw insertError; // Throw up to the main catch block for other DB errors
+            }
+        }
+
+        console.log(`Admin assigned ${insertedCount} questions to section ${section.name} in test ${test.id}`);
 
         return res.status(201).json({
             success: true,
-            data: { assigned: created.length },
-            message: `${created.length} questions assigned to section "${section.name}"`
+            data: { assigned: insertedCount },
+            message: `${insertedCount} questions assigned to section "${section.name}"`
         });
 
     } catch (error) {
-        if (error.code === 11000) {
-            return res.status(409).json({
-                success: false,
-                error: {
-                    code: "DUPLICATE_ERROR",
-                    message: "Some questions are already assigned to this section at the specified order"
-                }
-            });
-        }
-
         console.error("Admin Assign Questions Error:", error.message);
         return res.status(500).json({
             success: false,

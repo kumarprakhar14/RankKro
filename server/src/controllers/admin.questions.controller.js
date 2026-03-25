@@ -9,17 +9,19 @@ import SectionQuestion from "../models/section_question.model.js";
  * @access  Admin
  */
 export const listQuestions = async (req, res) => {
+    const escapeRegex = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
     try {
         const { subject, search, page = 1, limit = 20 } = req.query;
 
         const filter = {};
 
         if (subject) {
-            filter.subject = { $regex: new RegExp(subject, "i") };
+            filter.subject = { $regex: new RegExp(escapeRegex(subject), "i") };
         }
 
         if (search) {
-            filter.text = { $regex: new RegExp(search, "i") };
+            filter.text = { $regex: new RegExp(escapeRegex(search), "i") };
         }
 
         const skip = (parseInt(page) - 1) * parseInt(limit);

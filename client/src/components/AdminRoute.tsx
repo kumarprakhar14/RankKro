@@ -14,7 +14,6 @@ export function AdminRoute({ children }: AdminRouteProps) {
     const { isAuthenticated, user } = useAuth()
     const location = useLocation()
 
-    console.log("User Role:", user.role);
 
     if (!isAuthenticated) {
         return <Navigate to="/sign-in" state={{ from: location.pathname }} replace />

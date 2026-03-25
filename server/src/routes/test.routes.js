@@ -11,8 +11,8 @@ router.use(protect);
 // GET /api/tests — List all tests with optional filters
 router.get("/", listTests);
 
-// GET /api/tests/:id/start — Start exam session (premium guard)
-router.get("/:id/start", checkPremium, startTest);
+// POST /api/tests/:id/start — Start exam session (premium guard)
+router.post("/:id/start", checkPremium, startTest);
 
 // POST /api/tests/:id/submit — Submit answers
 router.post("/:id/submit", submitTest);

@@ -1,3 +1,4 @@
+import mongoose from "mongoose";
 import Test from "../models/test.model.js";
 import TestAttempt from "../models/test_attempt.model.js";
 import Section from "../models/section.model.js";
@@ -23,7 +24,8 @@ export const listTests = async (req, res) => {
         const filter = {};
 
         if (category) {
-            filter.exam_type = { $regex: new RegExp(category, "i") };  // i -> case insensitive search
+            const escapeRegex = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            filter.exam_type = { $regex: new RegExp(escapeRegex(category), "i") };  // i -> case insensitive search
         }
 
         if (difficulty) {
@@ -37,13 +39,20 @@ export const listTests = async (req, res) => {
         // ============================================
         // 2. QUERY WITH PAGINATION
         // ============================================
-        const skip = (parseInt(page) - 1) * parseInt(limit);
+        const parsedPage = parseInt(page, 10) || 1;
+        const parsedLimit = parseInt(limit, 10) || 10;
+        
+        const MAX_LIMIT = 100;
+        const safePage = Math.max(1, parsedPage);
+        const safeLimit = Math.min(MAX_LIMIT, Math.max(1, parsedLimit));
+
+        const skip = (safePage - 1) * safeLimit;
 
         const [tests, total] = await Promise.all([
             Test.find(filter)
                 .sort({ createdAt: -1 })
                 .skip(skip)
-                .limit(parseInt(limit)),
+                .limit(safeLimit),
             Test.countDocuments(filter)
         ]);
 
@@ -55,10 +64,10 @@ export const listTests = async (req, res) => {
             data: {
                 tests,
                 pagination: {
-                    page: parseInt(page),
-                    limit: parseInt(limit),
+                    page: safePage,
+                    limit: safeLimit,
                     total,
-                    totalPages: Math.ceil(total / parseInt(limit))
+                    totalPages: Math.ceil(total / safeLimit)
                 }
             },
             message: "Tests retrieved successfully"
@@ -88,87 +97,57 @@ export const startTest = async (req, res) => {
         const test = req.test;
 
         // ============================================
-        // 1. CHECK FOR EXISTING IN_PROGRESS ATTEMPT
+        // 1 & 2. ATOMIC START ATTEMPT TRANSACTION
         // ============================================
-        const existingAttempt = await TestAttempt.findOne({
-            user_id: req.user._id,
-            test_id: test._id,
-            status: "IN_PROGRESS"
-        });
+        const session = await mongoose.startSession();
+        session.startTransaction();
 
-        if (existingAttempt) {
-            // If an active attempt exists and hasn't expired, resume it
-            if (new Date() < existingAttempt.expires_at) {
-                // Fetch questions for the existing attempt (same flow as below)
-                const sections = await Section.find({ test_id: test._id })
-                    .sort({ display_order: 1 });
+        let attempt;
+        try {
+            const now = new Date();
+            const expiresAt = new Date(now.getTime() + test.duration_minutes * 60 * 1000);
 
-                const sectionIds = sections.map(s => s._id);
-                const sectionQuestions = await SectionQuestion.find({ section_id: { $in: sectionIds } })
-                    .sort({ question_order: 1 })
-                    .populate({
-                        path: "question_id",
-                        select: "-correct_option -explanation"  // NEVER expose answers
-                    });
+            // 1. Clean up any expired attempts for this user+test
+            await TestAttempt.updateMany(
+                { user_id: req.user._id, test_id: test._id, status: "IN_PROGRESS", expires_at: { $lte: now } },
+                { $set: { status: "EXPIRED" } },
+                { session }
+            );
 
-                // Group questions by section
-                const sectionsWithQuestions = sections.map(section => ({
-                    _id: section._id,
-                    name: section.name,
-                    display_order: section.display_order,
-                    questions: sectionQuestions
-                        .filter(sq => sq.section_id.toString() === section._id.toString())
-                        .map(sq => ({
-                            _id: sq.question_id._id,
-                            question_order: sq.question_order,
-                            ...sq.question_id.toObject()
-                        }))
-                }));
+            // 2. Atomic find-or-create active attempt
+            attempt = await TestAttempt.findOneAndUpdate(
+                {
+                    user_id: req.user._id,
+                    test_id: test._id,
+                    status: "IN_PROGRESS",
+                    expires_at: { $gt: now }
+                },
+                {
+                    $setOnInsert: {
+                        user_id: req.user._id,
+                        test_id: test._id,
+                        started_at: now,
+                        expires_at: expiresAt,
+                        status: "IN_PROGRESS"
+                    }
+                },
+                { new: true, upsert: true, session }
+            );
 
-                return res.status(200).json({
-                    success: true,
-                    data: {
-                        attempt: {
-                            _id: existingAttempt._id,
-                            started_at: existingAttempt.started_at,
-                            expires_at: existingAttempt.expires_at,
-                            status: existingAttempt.status
-                        },
-                        test: {
-                            _id: test._id,
-                            title: test.title,
-                            duration_minutes: test.duration_minutes,
-                            exam_type: test.exam_type
-                        },
-                        sections: sectionsWithQuestions
-                    },
-                    message: "Resuming existing attempt"
-                });
-            } else {
-                // Expired attempt — mark it as EXPIRED
-                existingAttempt.status = "EXPIRED";
-                await existingAttempt.save();
+            // If started_at exactly matches our `now` object, we just created it.
+            const isNewAttempt = attempt.started_at.getTime() === now.getTime();
+
+            if (isNewAttempt) {
+                await Test.findByIdAndUpdate(test._id, { $inc: { attempted_count: 1 } }, { session });
             }
+
+            await session.commitTransaction();
+            session.endSession();
+        } catch (txnError) {
+            await session.abortTransaction();
+            session.endSession();
+            throw txnError;
         }
-
-        // ============================================
-        // 2. CREATE NEW ATTEMPT
-        // ============================================
-        const now = new Date();
-        const expiresAt = new Date(now.getTime() + test.duration_minutes * 60 * 1000);
-
-        const attempt = new TestAttempt({
-            user_id: req.user._id,
-            test_id: test._id,
-            started_at: now,
-            expires_at: expiresAt,
-            status: "IN_PROGRESS"
-        });
-
-        await attempt.save();
-
-        // Increment attempted_count on the test
-        await Test.findByIdAndUpdate(test._id, { $inc: { attempted_count: 1 } });
 
         // ============================================
         // 3. FETCH SECTIONS & QUESTIONS (WITHOUT ANSWERS)
@@ -311,9 +290,38 @@ export const submitTest = async (req, res) => {
         }
 
         // ============================================
-        // 4. FETCH QUESTIONS FOR SCORE CALCULATION
+        // 4. FETCH AND VALIDATE QUESTIONS
         // ============================================
-        const questionIds = answers.map(a => a.question_id);
+        const sections = await Section.find({ test_id: attempt.test_id });
+        const sectionIds = sections.map(s => s._id);
+        const validSectionQs = await SectionQuestion.find({ section_id: { $in: sectionIds } });
+        const validQuestionIds = new Set(validSectionQs.map(sq => sq.question_id.toString()));
+
+        for (const ans of answers) {
+            if (!validQuestionIds.has(ans.question_id)) {
+                return res.status(400).json({
+                    success: false,
+                    error: {
+                        code: "INVALID_QUESTIONS",
+                        message: `Submitted question ID ${ans.question_id} does not belong to this test.`
+                    }
+                });
+            }
+        }
+
+        // Check for duplicate submitted answers for the same question
+        const submittedSet = new Set(answers.map(a => a.question_id));
+        if (submittedSet.size !== answers.length) {
+            return res.status(400).json({
+                success: false,
+                error: {
+                    code: "INVALID_QUESTIONS",
+                    message: "Duplicate answers detected for a single question."
+                }
+            });
+        }
+
+        const questionIds = Array.from(submittedSet);
         const questions = await Question.find({ _id: { $in: questionIds } });
 
         // Build a map for O(1) lookups
@@ -328,24 +336,53 @@ export const submitTest = async (req, res) => {
         const { score, correct, incorrect, skipped, answerDetails } = calculateScore(answers, questionMap);
 
         // ============================================
-        // 6. BULK-CREATE ANSWER DOCUMENTS
+        // 6. ATOMIC TRANSACTION FOR SUBMISSION
         // ============================================
-        const answerDocs = answerDetails.map(detail => ({
-            attempt_id: attempt._id,
-            question_id: detail.question_id,
-            selected_option: detail.selected_option,
-            is_correct: detail.is_correct
-        }));
+        const submitSession = await mongoose.startSession();
+        submitSession.startTransaction();
 
-        await Answer.insertMany(answerDocs);
+        try {
+            // Compare & Set logic: Check status again during update
+            const updatedAttempt = await TestAttempt.findOneAndUpdate(
+                { _id: attempt._id, status: "IN_PROGRESS" },
+                {
+                    $set: {
+                        status: "SUBMITTED",
+                        submitted_at: new Date(),
+                        final_score: score
+                    }
+                },
+                { session: submitSession, new: true }
+            );
 
-        // ============================================
-        // 7. UPDATE ATTEMPT STATUS & SCORE
-        // ============================================
-        attempt.status = "SUBMITTED";
-        attempt.submitted_at = new Date();
-        attempt.final_score = score;
-        await attempt.save();
+            if (!updatedAttempt) {
+                await submitSession.abortTransaction();
+                submitSession.endSession();
+                return res.status(400).json({
+                    success: false,
+                    error: {
+                        code: "ATTEMPT_CLOSED",
+                        message: "This attempt has already been submitted or expired."
+                    }
+                });
+            }
+
+            const answerDocs = answerDetails.map(detail => ({
+                attempt_id: attempt._id,
+                question_id: detail.question_id,
+                selected_option: detail.selected_option,
+                is_correct: detail.is_correct
+            }));
+
+            await Answer.insertMany(answerDocs, { session: submitSession });
+
+            await submitSession.commitTransaction();
+            submitSession.endSession();
+        } catch (txnError) {
+            await submitSession.abortTransaction();
+            submitSession.endSession();
+            throw txnError;
+        }
 
         // ============================================
         // 8. RETURN RESPONSE

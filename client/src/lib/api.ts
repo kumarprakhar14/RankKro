@@ -1,4 +1,4 @@
-export const API_BASE_URL = "http://localhost:4000"
+export const API_BASE_URL =  import.meta.env.VITE_API_BASE_URL?.replace(/\/$/, "") ?? ""
 
 // Server response shape
 interface ApiResponse<T = unknown> {
@@ -251,7 +251,9 @@ export const testAPI = {
 
     /** Start an exam session */
     startTest: (testId: string) =>
-        apiRequest<StartTestData>(`/api/tests/${testId}/start`),
+        apiRequest<StartTestData>(`/api/tests/${testId}/start`, {
+            method: 'POST',
+        }),
 
     /** Submit all answers */
     submitTest: (testId: string, body: { attemptId: string; answers: Array<{ question_id: string; selected_option: number | null }> }) =>

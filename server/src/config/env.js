@@ -22,6 +22,12 @@ export const config = {
     accessTokenSecret: requireEnv("ACCESS_TOKEN_SECRET"),
     refreshTokenSecret: requireEnv("REFRESH_TOKEN_SECRET"),
     
-    corsOrigin: requireEnv("CORS_ORIGIN", "http://localhost:5173"),
-    redirectUrl: requireEnv("REDIRECT_URL", "http://localhost:5173"),
+    corsOrigin:
+        process.env.NODE_ENV === "development"
+            ? requireEnv("CORS_ORIGIN", "http://localhost:5173")
+            : requireEnv("CORS_ORIGIN"),
+    redirectUrl:
+        process.env.NODE_ENV === "development"
+            ? requireEnv("REDIRECT_URL", "http://localhost:5173")
+            : requireEnv("REDIRECT_URL"),
 };

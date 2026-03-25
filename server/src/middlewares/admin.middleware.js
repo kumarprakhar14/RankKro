@@ -14,7 +14,6 @@ export const requireAdmin = (req, res, next) => {
             }
         });
     }
-    console.log("ADMIN:\n", req.user);
     
     next();
 };

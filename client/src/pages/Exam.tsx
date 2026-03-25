@@ -23,8 +23,9 @@ export default function Exam() {
     const [error, setError] = useState<string | null>(null)
     const [submitting, setSubmitting] = useState(false)
 
-    // Ref for expires_at to avoid stale closures in timer
+    // Refs to avoid stale closures in timer
     const expiresAtRef = useRef<Date | null>(null)
+    const submitRef = useRef<() => void>(() => {})
 
     // ============================================
     // 1. START TEST SESSION
@@ -78,8 +79,8 @@ export default function Exam() {
             setTimeRemaining((prev) => {
                 if (prev <= 1) {
                     clearInterval(timer)
-                    // Auto-submit when time runs out
-                    handleSubmit()
+                    // Auto-submit when time runs out using the latest closure
+                    submitRef.current()
                     return 0
                 }
                 return prev - 1
@@ -209,6 +210,11 @@ export default function Exam() {
             setSubmitting(false)
         }
     }
+
+    // Keep submitRef updated with the latest handleSubmit closure
+    useEffect(() => {
+        submitRef.current = handleSubmit
+    })
 
     // ============================================
     // RENDER

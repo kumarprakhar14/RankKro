@@ -9,15 +9,17 @@ import TestAttempt from "../models/test_attempt.model.js";
  * @access  Admin
  */
 export const listUsers = async (req, res) => {
+    const escapeRegex = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
     try {
         const { search, plan, page = 1, limit = 20 } = req.query;
 
         const filter = {};
 
         if (search) {
+            const escapedSearch = escapeRegex(search);
             filter.$or = [
-                { name: { $regex: new RegExp(search, "i") } },
-                { email: { $regex: new RegExp(search, "i") } }
+                { name: { $regex: new RegExp(escapedSearch, "i") } },
+                { email: { $regex: new RegExp(escapedSearch, "i") } }
             ];
         }
 

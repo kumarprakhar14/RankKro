@@ -63,8 +63,6 @@ export const protect = async (req, res, next) => {
 
         // Attach user to request object for downstream handlers
         req.user = user;
-        console.log("User authenticated:\n", req.user);
-        
         next();
 
     } catch (error) {

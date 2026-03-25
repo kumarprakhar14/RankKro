@@ -14,6 +14,7 @@ import { setRefreshTokenCookie } from "../utils/setCookies.js"
  * @param {function} next - Express next middleware
  */
 export const register = async (req, res, next) => {
+    const reqId = req.headers['x-request-id'] || Math.random().toString(36).substring(2, 10);
     try {
         // ============================================
         // 1. VALIDATE REQUEST BODY
@@ -37,7 +38,7 @@ export const register = async (req, res, next) => {
         // ============================================
         const existingUser = await User.findOne({ email });
         if (existingUser) {
-            console.warn(`Registration attempt with existing email: ${email}`);
+            console.warn(`[ReqID: ${reqId}] Registration attempt failed: Email already exists`);
             return res.status(409).json({
                 success: false,
                 error: {
@@ -63,9 +64,9 @@ export const register = async (req, res, next) => {
         await newUser.save();
 
         // ============================================
-        // 4. LOG EVENT (NO PII)
+        // 4. LOG EVENT
         // ============================================
-        console.log(`User registration successful - Email domain: ${email.split("@")[1]}`);
+        console.log(`[ReqID: ${reqId}] User registration successful`);
 
         // ============================================
         // 5. RETURN RESPONSE
@@ -113,6 +114,7 @@ export const register = async (req, res, next) => {
  * @param {function} next - Express next middleware
  */
 export const login = async (req, res, next) => {
+    const reqId = req.headers['x-request-id'] || Math.random().toString(36).substring(2, 10);
     try {
         // ============================================
         // 1. VALIDATE REQUEST BODY
@@ -155,7 +157,7 @@ export const login = async (req, res, next) => {
 
         if (!isPasswordValid) {
             // Log failed attempt (no PII)
-            console.warn(`Failed login attempt for email: ${email.split("@")[0]}...`);
+            console.warn(`[ReqID: ${reqId}] Failed login attempt: Invalid credentials`);
             return res.status(401).json({
                 success: false,
                 error: {
@@ -189,9 +191,9 @@ export const login = async (req, res, next) => {
         res.set({ "Authorization": `Bearer ${accessToken}` });
 
         // ============================================
-        // 8. LOG EVENT (NO PII)
+        // 8. LOG EVENT
         // ============================================
-        console.log(`User login successful - User ID: ${user._id}`);
+        console.log(`[ReqID: ${reqId}] User login successful`);
 
         // ============================================
         // 9. RETURN RESPONSE
@@ -225,6 +227,7 @@ export const login = async (req, res, next) => {
  * @param {function} next - Express next middleware
  */
 export const logout = async (req, res, next) => {
+    const reqId = req.headers['x-request-id'] || Math.random().toString(36).substring(2, 10);
     try {
         // ============================================
         // 1. READ REFRESH TOKEN FROM COOKIE
@@ -287,7 +290,7 @@ export const logout = async (req, res, next) => {
         // ============================================
         // 5. LOG EVENT & RETURN RESPONSE
         // ============================================
-        console.log(`User logout successful - User ID: ${payload.id}`);
+        console.log(`[ReqID: ${reqId}] User logout successful`);
 
         return res.status(200).json({
             success: true,
