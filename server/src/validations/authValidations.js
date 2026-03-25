@@ -57,6 +57,34 @@ export const loginSchema = z.object({
         .min(1, "Password is required")
 });
 
+/**
+ * Forgot Password request validation schema
+ * Validates: email
+ */
+export const forgotPasswordSchema = z.object({
+    email: z
+        .string({ error: "Email is required" })
+        .trim()
+        .toLowerCase()
+        .email("Please provide a valid email address"),
+});
+
+/**
+ * Reset Password request validation schema
+ * Validates: newPassword
+ */
+export const resetPasswordSchema = z.object({
+    newPassword: z
+        .string({ error: "New password is required" })
+        .min(8, "Password must be at least 8 characters")
+        .regex(/[A-Z]/, "Password must contain at least one uppercase letter")
+        .regex(/\d/, "Password must contain at least one digit")
+        .regex(
+            /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/,
+            "Password must contain at least one special character"
+        ),
+});
+
 // ============================================
 // VALIDATION HELPER FUNCTION
 // ============================================

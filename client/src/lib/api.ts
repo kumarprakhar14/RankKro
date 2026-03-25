@@ -234,6 +234,23 @@ export const authAPI = {
         apiRequest<AuthData>('/api/auth/refresh', {
             method: 'POST',
         }),
+
+    forgotPassword: (body: { email: string }) =>
+        apiRequest<{ message: string }>('/api/auth/forgot-password', {
+            method: 'POST',
+            body: JSON.stringify(body),
+        }),
+
+    validateResetToken: (token: string) =>
+        apiRequest<{ valid: boolean; message: string; email?: string }>(`/api/auth/reset-password/${token}`, {
+            method: 'GET',
+        }),
+
+    resetPassword: (token: string, body: { newPassword: string }) =>
+        apiRequest<{ message: string }>(`/api/auth/reset-password/${token}`, {
+            method: 'POST',
+            body: JSON.stringify(body),
+        }),
 }
 
 export const testAPI = {
