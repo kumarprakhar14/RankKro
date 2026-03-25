@@ -8,6 +8,11 @@ import passport from "passport";
 import { router as apiRouter } from "../src/routes/index.routes.js"
 import cronJob from "./utils/cron.js";
 // import "./services/passport.js";
+import { serve } from "inngest/express";
+import { inngest } from "./inngest/index.js";
+import { onUserSignup } from "./inngest/functions/on-signup.js";
+import { onUserForgotPassword } from "./inngest/functions/on-forgot-password.js";
+import { onUserPasswordChange } from "./inngest/functions/on-password-change.js";
 
 
 const app = express();
@@ -37,11 +42,20 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session())
 
+// Set up the "/api/inngest" routes with the serve handler
+app.use("/api/inngest", serve({
+  client: inngest,
+  functions: [onUserSignup, onUserForgotPassword, onUserPasswordChange]
+})
+);
+
 // Healt check route
 // Basically, checks if the API(app) is up and running.
 app.get("/health", (req, res) => {
   res.json({ status: "ok", message: "API is healthy" });
 });
+
+// Inngest test route
 
 // API routes
 app.use("/api", apiRouter);

@@ -4,6 +4,7 @@ import { hashify, generateResetToken, hashResetToken } from "../utils/crypto.js"
 import { generateAcessToken, generateRefreshToken, verifyRefreshToken } from "../services/auth.service.js";
 import { registerSchema, loginSchema, validateRequest, sanitizeUser } from "../validations/authValidations.js";
 import { setRefreshTokenCookie } from "../utils/setCookies.js"
+import { inngest } from "../inngest/index.js";
 
 
 /**
@@ -499,148 +500,143 @@ export const refreshToken = async (req, res, next) => {
 
 // @desc Forgot Password -> send reset link to email
 // @route /api/auth/forgot-password
-// export const forgotPassword = async (req, res, next) => {
-//     try {
-//         const { email } = req.body;
+export const forgotPassword = async (req, res, next) => {
+    try {
+        const { email } = req.body;
 
-//         // find user by email
-//         const user = await User.findOne({ email });
+        // find user by email
+        const user = await User.findOne({ email });
 
-//         if (!user) {
-//             // Don't rever if user exists or not
-//             return res.status(200).json({
-//                 message: "If an account exists, a reset link has been sent to your email."
-//             });
-//         }
+        if (!user) {
+            // Don't rever if user exists or not
+            return res.status(200).json({
+                message: "If an account exists, a reset link has been sent to your email."
+            });
+        }
 
-//         // Generate reset token
-//         const resetToken = generateResetToken();
+        // Generate reset token
+        const resetToken = generateResetToken();
 
-//         // Hash the reset token before saving to db
-//         const hashedToken = hashResetToken(resetToken);
+        // Hash the reset token before saving to db
+        const hashedToken = hashResetToken(resetToken);
 
-//         // save the hashed token and expiry to db
-//         user.resetPasswordToken = hashedToken;
-//         user.resetPasswordExpiresAt = Date.now() + 60 * 60 * 1000;  // 1 hour (in milliseconds)
-//         await user.save();
+        // save the hashed token and expiry to db
+        user.resetPasswordToken = hashedToken;
+        user.resetPasswordExpiresAt = Date.now() + 60 * 60 * 1000;  // 1 hour (in milliseconds)
+        await user.save();
 
-//         // create reset url with unhashed token
-//         const resetUrl = `${process.env.FRONTEND_URL}/reset-password/${resetToken}`;
-//         console.log("Reset URL: ", resetUrl);
+        // create reset url with unhashed token
+        const resetUrl = `${process.env.FRONTEND_URL}/reset-password/${resetToken}`;
+        console.log("Reset URL: ", resetUrl);
 
 
-//         // fire inngest event to send mail
-//         await inngest.send({
-//             name: "user/forgot-password",
-//             data: {
-//                 email,
-//                 url: resetUrl
-//             },
-//         });
+        // fire inngest event to send mail
+        await inngest.send({
+            name: "user/forgot-password",
+            data: {
+                email,
+                url: resetUrl
+            },
+        });
 
-//         res.status(200).json({
-//             message: "If an account exists, a reset link has been sent to your email."
-//         });
+        res.status(200).json({
+            message: "If an account exists, a reset link has been sent to your email."
+        });
 
-//     } catch (error) {
-//         console.error("Forgot password error: ", error);
-//         res.status(500).json({ message: "Server error" })
+    } catch (error) {
+        console.error("Forgot password error: ", error);
+        res.status(500).json({ message: "Server error" })
 
-//     }
-// }
+    }
+}
 
 
 // @desc Validate reset token (or, reset URL) -> get request
 // @route GET /api/auth/validate-reset-token/:token
-// export const validateResetToken = async (req, res, next) => {
-//     try {
-//         const { token } = req.params;
-//         console.log("Token: ", token);
+export const validateResetToken = async (req, res, next) => {
+    try {
+        const { token } = req.params;
+        console.log("Token: ", token);
 
 
-//         // Hash the token from url to compare with stored hash
-//         const hashedToken = hashResetToken(token);
-//         console.log("Hashed Token: ", hashedToken);
+        // Hash the token from url to compare with stored hash
+        const hashedToken = hashResetToken(token);
+        console.log("Hashed Token: ", hashedToken);
 
 
-//         // Find user with valid token and not expired
-//         const user = await User.findOne({
-//             resetPasswordToken: hashedToken,
-//             resetPasswordExpiresAt: { $gt: Date.now() }
-//         });
-//         console.log("User: ", user);
+        // Find user with valid token and not expired
+        const user = await User.findOne({
+            resetPasswordToken: hashedToken,
+            resetPasswordExpiresAt: { $gt: Date.now() }
+        });
+        console.log("User: ", user);
 
-//         if (!user) {
-//             return res.status(400).json({
-//                 valid: false,
-//                 message: "Invalid or expired reset url"
-//             });
-//         }
+        if (!user) {
+            return res.status(400).json({
+                valid: false,
+                message: "Invalid or expired reset url"
+            });
+        }
 
-//         // Token is valid
-//         res.status(200).json({
-//             valid: true,
-//             message: "Token is valid",
-//             email: user.email  // Send email to client pre-filled
-//         })
-//     } catch (error) {
-//         console.error("Validate reset token error: ", error);
-//         res.status(500).json({ message: "Server error" });
+        // Token is valid
+        res.status(200).json({
+            valid: true,
+            message: "Token is valid",
+            email: user.email  // Send email to client pre-filled
+        })
+    } catch (error) {
+        console.error("Validate reset token error: ", error);
+        res.status(500).json({ message: "Server error" });
 
-//     }
-// }
+    }
+}
 
 
 // @desc Reset Password -> update password in db
 // @route /api/auth/reset-password/:token
-// export const resetPassword = async (req, res, next) => {
-//     try {
-//         // const { token } = req.params;
-//         const { email, newPassword } = req.body;
+export const resetPassword = async (req, res, next) => {
+    try {
+        const { token } = req.params;
+        const { newPassword } = req.body;
 
-//         // Hash the token from url to compare with stored hash
-//         // const hashedToken = await hashify(token);
+        if (!token) {
+            return res.status(400).json({ message: "Reset token missing in URL" });
+        }
 
-//         // find user with valid token and not expired
-//         // const user = await User.findOne({
-//         //     resetPasswordToken: hashedToken,
-//         //     resetPasswordExpiresAt: { $gt: Date.now() }  // Check if token hasn't expired
-//         // });
+        // Hash the token from url to compare with stored hash
+        const hashedToken = hashResetToken(token);
 
-//         // if(!user) {
-//         //     return res.status(400).json({ message: "Invalid or expired reset url"});
-//         // }
+        // find user with valid token and not expired
+        const user = await User.findOne({
+            resetPasswordToken: hashedToken,
+            resetPasswordExpiresAt: { $gt: Date.now() }  // Check if token hasn't expired
+        });
 
-//         // Find the user based on email passed by client
-//         const user = await User.findOne({ email });
+        if (!user) {
+            return res.status(400).json({ message: "Invalid or expired reset token" });
+        }
 
-//         if (!user) {
-//             return res.status(400).json({ message: "User not found" });
-//         }
+        // Update the password and clear reset fields
+        user.password = newPassword;  // simply assign plain text password -> model's pre-save hook hashes it
+        user.resetPasswordToken = undefined;
+        user.resetPasswordExpiresAt = undefined;
+        await user.save();
 
-//         // Update the password and clear reset fields
-//         user.password = newPassword;  // simply assign plain text password -> model's pre-save hook hashes it
-//         user.resetPasswordToken = undefined;
-//         user.resetPasswordExpiresAt = undefined;
-//         await user.save();
+        // Send confirmation mail
+        // Fire inngest event
+        await inngest.send({
+            name: "user/password-change",
+            data: {
+                email: user.email,
+            },
+        });
 
-//         // Send confirmation mail
-//         // Fire inngest event
-//         await inngest.send({
-//             name: "user/password-change",
-//             data: {
-//                 email,
-//             },
-//         });
+        res.status(200).json({
+            message: "Password reset successful. You can now login with your new password."
+        });
 
-//         res.status(200).json({
-//             message: "Password reset successful. You can now login with your new password."
-//         });
-
-//     } catch (error) {
-//         console.error("Reset password error: ", error);
-//         res.status(500).json({ message: "Server error" });
-
-
-//     }
-// }
+    } catch (error) {
+        console.error("Reset password error: ", error);
+        res.status(500).json({ message: "Server error" });
+    }
+}
