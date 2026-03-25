@@ -13,6 +13,7 @@ import { inngest } from "./inngest/index.js";
 import { onUserSignup } from "./inngest/functions/on-signup.js";
 import { onUserForgotPassword } from "./inngest/functions/on-forgot-password.js";
 import { onUserPasswordChange } from "./inngest/functions/on-password-change.js";
+import { onUserSubscription } from "./inngest/functions/on-subscription.js";
 
 
 const app = express();
@@ -45,7 +46,7 @@ app.use(passport.session())
 // Set up the "/api/inngest" routes with the serve handler
 app.use("/api/inngest", serve({
   client: inngest,
-  functions: [onUserSignup, onUserForgotPassword, onUserPasswordChange]
+  functions: [onUserSignup, onUserForgotPassword, onUserPasswordChange, onUserSubscription]
 })
 );
 
