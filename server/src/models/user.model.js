@@ -23,7 +23,8 @@ const userSchema = new mongoose.Schema(
         password: {
             type: String,
             // required: [true, 'Password is required'], // Made optional for OAuth users or make it conditionally required
-            minlength: [6, 'Password should be at least 6 characters long']
+            minlength: [6, 'Password should be at least 6 characters long'],
+            select: false
         },
         image: {
             type: String
@@ -33,10 +34,12 @@ const userSchema = new mongoose.Schema(
             enum: ["FREE", "PREMIUM"],
             default: "FREE"
         },
-        attempts: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "TestAttempt"
+        role: {
+            type: String,
+            enum: ["USER", "ADMIN"],
+            default: "USER"
         },
+
         isActive: {
             type: Boolean,
             default: true
@@ -61,7 +64,7 @@ const userSchema = new mongoose.Schema(
 
 // Hash password before save
 userSchema.pre("save", async function (next) {
-    if (!this.isModified("password"));
+    if (!this.isModified("password")) return;
     this.password = await argon2.hash(this.password);
 });
 
