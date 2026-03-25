@@ -3,6 +3,7 @@ import { router as authRoutes } from "./auth.routes.js"
 import { router as testRoutes } from "./test.routes.js";
 import { router as userRoutes } from "./user.routes.js";
 import { router as adminRoutes } from "./admin.routes.js";
+import { router as paymentRoutes } from "./payment.routes.js";
 import { protect } from "../middlewares/auth.middleware.js";
 import { sanitizeUser } from "../validations/authValidations.js";
 
@@ -35,6 +36,9 @@ router.use("/user", userRoutes);
 
 // Mount admin routes → /api/admin/*
 router.use("/admin", adminRoutes);
+
+// Mount payment routes → /api/payments/*
+router.use("/payments", paymentRoutes);
 
 
 export { router };

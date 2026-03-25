@@ -18,6 +18,7 @@ import AdminTests from './pages/admin/AdminTests'
 import ForgotPassword from './pages/ForgotPassword'
 import ResetPassword from './pages/ResetPassword'
 import NotFound from './pages/NotFound'
+import Pricing from './pages/Pricing'
 function App() {
 
   return (
@@ -61,6 +62,11 @@ function App() {
           <Route path="/result" element={
             <ProtectedRoute>
               <Result />
+            </ProtectedRoute>
+          }/>
+          <Route path="/pricing" element={
+            <ProtectedRoute>
+              <Pricing />
             </ProtectedRoute>
           }/>
 
