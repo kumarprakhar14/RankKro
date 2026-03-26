@@ -8,7 +8,7 @@ const escapeHtml = (str) => {
     };
 
 export const getSubscriptionEmailTemplate = (name, amount) => {
-    const name = escapeHtml(name);
+    const safeName = escapeHtml(name);
     return `
     <!DOCTYPE html>
     <html lang="en">

@@ -77,8 +77,8 @@ export const verifyPayment = async (req, res) => {
 
     const signaturesMatch = generated_signature.length === razorpay_signature.length &&
       crypto.timingSafeEqual(
-        Buffer.from(generated_signature, 'hex'),
-        Buffer.from(razorpay_signature, 'hex')
+        Buffer.from(generated_signature, 'utf8'),
+        Buffer.from(razorpay_signature, 'utf8')
       );
 
     if (!signaturesMatch) {
@@ -117,7 +117,9 @@ export const verifyPayment = async (req, res) => {
             email: req.user.email,
             amount: payment.amount
         }
-    });
+    }).catch(err => {
+            console.error("Failed to send subscription email:", err);
+        });
 
     return res.status(200).json({ 
         success: true, 
