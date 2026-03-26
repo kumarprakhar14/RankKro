@@ -25,6 +25,10 @@ export default function Pricing() {
     setError(null);
 
     try {
+      if (!import.meta.env.VITE_RAZORPAY_KEY_ID) {
+        throw new Error("Payment configuration error. Please contact support.");
+      }
+
       // 1. Create order on the server
       const response = await paymentAPI.createOrder(1); // ₹1
       
@@ -35,7 +39,7 @@ export default function Pricing() {
 
       // 2. Initialize Razorpay options
       const options = {
-        key: (import.meta as any).env.VITE_RAZORPAY_KEY_ID || "YOUR_TEST_KEY", // Make sure this env var exists in frontend
+        key: (import.meta as any).env.VITE_RAZORPAY_KEY_ID,
         amount: order.amount,
         currency: "INR",
         name: "RanKro Premium",
@@ -73,18 +77,24 @@ export default function Pricing() {
         },
       };
 
+      // Check if Razorpay is loaded
+      if (!(window as any).Razorpay) {
+        throw new Error("Payment gateway failed to load. Please refresh and try again.");
+      }
+
       const razorpayInstance = new (window as any).Razorpay(options);
       
       razorpayInstance.on('payment.failed', function (response: any){
         alert(`Payment failed: ${response.error.description}`);
       });
 
+      setIsLoading(false)
+
       razorpayInstance.open();
 
     } catch (err: any) {
       console.error("Payment setup error", err);
       setError(err.message || "Something went wrong.");
-    } finally {
       setIsLoading(false);
     }
   };

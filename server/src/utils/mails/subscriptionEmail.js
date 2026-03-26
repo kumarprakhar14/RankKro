@@ -1,4 +1,14 @@
+const escapeHtml = (str) => {
+        return str
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    };
+
 export const getSubscriptionEmailTemplate = (name, amount) => {
+    const name = escapeHtml(name);
     return `
     <!DOCTYPE html>
     <html lang="en">
