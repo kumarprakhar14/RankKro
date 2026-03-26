@@ -1,5 +1,6 @@
 import crypto from "crypto";
 import razorpay from "../config/razorpay.js";
+import mongoose from "mongoose";
 import Payment from "../models/payment.model.js";
 import User from "../models/user.model.js";
 import { inngest } from "../inngest/index.js";
@@ -58,31 +59,56 @@ export const verifyPayment = async (req, res) => {
        return res.status(400).json({ success: false, message: "Payment details missing" });
     }
 
+    if (!process.env.RAZORPAY_KEY_SECRET) {
+      console.error("RAZORPAY_KEY_SECRET is not configured");
+      return res.status(500).json({ success: false, message: "Payment verification unavailable" });
+    }
+
     // 1. Verify the signature
     const generated_signature = crypto
       .createHmac("sha256", process.env.RAZORPAY_KEY_SECRET)
       .update(`${razorpay_order_id}|${razorpay_payment_id}`)
       .digest("hex");
+    
+    // Use timing-safe comparison for signature verification.
+    // Using !== for cryptographic signature comparison is vulnerable to timing attacks. 
+    // An attacker could measure response times to gradually determine the correct signature.
+    // crypto.timingSafeEqual compares two Buffers in constant time, preventing timing attacks.
 
-    if (generated_signature !== razorpay_signature) {
+    const signaturesMatch = generated_signature.length === razorpay_signature.length &&
+      crypto.timingSafeEqual(
+        Buffer.from(generated_signature, 'hex'),
+        Buffer.from(razorpay_signature, 'hex')
+      );
+
+    if (!signaturesMatch) {
       // Mark as failed in DB if needed, or just reject
       await Payment.findOneAndUpdate({ orderId: razorpay_order_id }, { status: "FAILED" });
       return res.status(400).json({ success: false, message: "Invalid payment signature. Verification failed." });
     }
 
-    // 2. Mark as Success in DB
-    const payment = await Payment.findOneAndUpdate(
-      { orderId: razorpay_order_id },
-      { paymentId: razorpay_payment_id, signature: razorpay_signature, status: "SUCCESS" },
-      { new: true }
-    );
-
-    if (!payment) {
-        return res.status(404).json({ success: false, message: "Payment metadata not found in database." });
+    // 2. Mark as Success in DB and upgrade user atomically
+    const session = await mongoose.startSession();
+    let payment;
+    try {
+      await session.withTransaction(async () => {
+        payment = await Payment.findOneAndUpdate(
+          { orderId: razorpay_order_id },
+          { paymentId: razorpay_payment_id, signature: razorpay_signature, status: "SUCCESS" },
+          { new: true, session }
+        );
+        if (!payment) {
+          throw new Error("Payment metadata not found");
+        }
+        await User.findByIdAndUpdate(req.user._id, { plan: "PREMIUM" }, { session });
+      });
+    } finally {
+      await session.endSession();
     }
 
-    // 3. Upgrade user to PREMIUM plan
-    await User.findByIdAndUpdate(req.user._id, { plan: "PREMIUM" });
+    if (!payment) {
+      return res.status(404).json({ success: false, message: "Payment metadata not found in database." });
+    }
 
     // 4. Fire Inngest background event to send subscription email
     await inngest.send({

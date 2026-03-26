@@ -70,12 +70,14 @@ export const register = async (req, res, next) => {
         console.log(`[ReqID: ${reqId}] User registration successful`);
 
         // Send welcome email
-        await inngest.send({
+        inngest.send({
             name: "user/signup",
             data: {
                 email: newUser.email,
                 name: newUser.name
             },
+        }).catch(err => {
+            console.error("Failed to send welcome email:", err);
         });
 
         // ============================================

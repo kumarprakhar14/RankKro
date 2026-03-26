@@ -3,6 +3,10 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
+if (!process.env.RAZORPAY_KEY_ID || !process.env.RAZORPAY_KEY_SECRET) {
+  throw new Error("Missing required Razorpay credentials: RAZORPAY_KEY_ID and RAZORPAY_KEY_SECRET must be set");
+}
+
 // Create a new Razorpay instance
 const razorpay = new Razorpay({
   key_id: process.env.RAZORPAY_KEY_ID,

@@ -237,15 +237,16 @@ async function apiRequest<T>(endpoint: string, options: RequestInit = {}): Promi
                         retryErr.code = retryData.error?.code;
                         retryErr.status = retryRes.status;
                         throw retryErr;
+                    } else {
+                        throw new Error("Token refresh succeeded but no access token was returned");
                     }
                 } else {
                     // Refresh failed (refresh token expired) -> Force Logout
-                    localStorage.removeItem('rankro_access_token');
-                    localStorage.removeItem('rankro_user');
-                    window.location.href = '/login'; // Hard redirect to clear context state securely
+                    window.dispatchEvent(new Event('auth:unauthorized'));
                 }
             } catch (err) {
                 console.error("Token refresh failed", err);
+                throw err;
             }
         }
 

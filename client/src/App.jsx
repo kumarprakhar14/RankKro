@@ -19,6 +19,7 @@ import ForgotPassword from './pages/ForgotPassword'
 import ResetPassword from './pages/ResetPassword'
 import NotFound from './pages/NotFound'
 import Pricing from './pages/Pricing'
+
 function App() {
 
   return (
