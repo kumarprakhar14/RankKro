@@ -65,9 +65,20 @@ export const register = async (req, res, next) => {
         await newUser.save();
 
         // ============================================
-        // 4. LOG EVENT
+        // 4. LOG EVENT & FIRE WEBHOOK
         // ============================================
         console.log(`[ReqID: ${reqId}] User registration successful`);
+
+        // Send welcome email
+        inngest.send({
+            name: "user/signup",
+            data: {
+                email: newUser.email,
+                name: newUser.name
+            },
+        }).catch(err => {
+            console.error("Failed to send welcome email:", err);
+        });
 
         // ============================================
         // 5. RETURN RESPONSE
