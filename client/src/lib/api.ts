@@ -197,6 +197,59 @@ async function apiRequest<T>(endpoint: string, options: RequestInit = {}): Promi
     const data: ApiResponse<T> = await response.json()
 
     if (!response.ok) {
+        // Automatic Token Refresh Logic
+        if (response.status === 401 && endpoint !== '/api/auth/refresh' && !endpoint.includes('/api/auth/login')) {
+            try {
+                // Call the refresh endpoint manually to avoid circular apiRequest loops
+                const refreshRes = await fetch(`${API_BASE_URL}/api/auth/refresh`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    credentials: 'include'
+                });
+
+                if (refreshRes.ok) {
+                    const refreshData = await refreshRes.json();
+                    const newAccessToken = refreshData.data?.accessToken;
+                    
+                    if (newAccessToken) {
+                        // Update storage
+                        localStorage.setItem('rankro_access_token', newAccessToken);
+
+                        // Retry original request
+                        const retryHeaders = {
+                            ...headers,
+                            Authorization: `Bearer ${newAccessToken}`
+                        };
+                        
+                        const retryRes = await fetch(`${API_BASE_URL}${endpoint}`, {
+                            ...options,
+                            headers: retryHeaders,
+                            credentials: 'include'
+                        });
+
+                        const retryData = await retryRes.json();
+                        if (retryRes.ok) {
+                            return retryData;
+                        }
+                        
+                        // If it fails again, throw the new error
+                        const retryErr = new Error(retryData.error?.message || retryData.message || 'Request failed') as any;
+                        retryErr.code = retryData.error?.code;
+                        retryErr.status = retryRes.status;
+                        throw retryErr;
+                    } else {
+                        throw new Error("Token refresh succeeded but no access token was returned");
+                    }
+                } else {
+                    // Refresh failed (refresh token expired) -> Force Logout
+                    window.dispatchEvent(new Event('auth:unauthorized'));
+                }
+            } catch (err) {
+                console.error("Token refresh failed", err);
+                throw err;
+            }
+        }
+
         // Throw with the server's error info attached
         const error = new Error(data.error?.message || data.message || 'Request failed') as Error & {
             code?: string
@@ -358,4 +411,21 @@ export const adminAPI = {
             method: 'POST',
             body: JSON.stringify({ questions })
         })
+}
+
+// ============================
+// Payment API
+// ============================
+export const paymentAPI = {
+    createOrder: (amount: number) =>
+        apiRequest<{ order: any }>('/api/payments/create-order', {
+            method: 'POST',
+            body: JSON.stringify({ amount }),
+        }),
+
+    verifyPayment: (data: { razorpay_order_id: string; razorpay_payment_id: string; razorpay_signature: string }) =>
+        apiRequest<{ message: string }>('/api/payments/verify-payment', {
+            method: 'POST',
+            body: JSON.stringify(data),
+        }),
 }

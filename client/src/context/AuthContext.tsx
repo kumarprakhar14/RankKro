@@ -74,6 +74,19 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         }
     }, [])
 
+    useEffect(() => {
+        const handleUnauthorized = () => {
+            setAccessToken(null)
+            setUserState(null)
+            localStorage.removeItem(STORAGE_KEYS.TOKEN)
+            localStorage.removeItem(STORAGE_KEYS.USER)
+            window.location.href = '/login'
+        }
+
+        window.addEventListener('auth:unauthorized', handleUnauthorized)
+        return () => window.removeEventListener('auth:unauthorized', handleUnauthorized)
+    }, [])
+
     return (
         <AuthContext.Provider value={{ user, accessToken, isAuthenticated, login, logout, setUser }}>
             {children}
