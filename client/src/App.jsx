@@ -21,6 +21,7 @@ import NotFound from './pages/NotFound'
 import Pricing from './pages/Pricing'
 
 function App() {
+  
 
   return (
     <AuthProvider>

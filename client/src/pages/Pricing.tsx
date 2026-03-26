@@ -11,6 +11,7 @@ export default function Pricing() {
   const [error, setError] = useState<string | null>(null);
 
   const handlePayment = async () => {
+    const RAZORPAY_KEY_ID = import.meta.env.VITE_RAZORPAY_KEY_ID;
     if (!user) {
       navigate("/login");
       return;
@@ -25,7 +26,7 @@ export default function Pricing() {
     setError(null);
 
     try {
-      if (!import.meta.env.VITE_RAZORPAY_KEY_ID) {
+      if (!RAZORPAY_KEY_ID) {
         throw new Error("Payment configuration error. Please contact support.");
       }
 
@@ -39,7 +40,7 @@ export default function Pricing() {
 
       // 2. Initialize Razorpay options
       const options = {
-        key: (import.meta as any).env.VITE_RAZORPAY_KEY_ID,
+        key: RAZORPAY_KEY_ID,
         amount: order.amount,
         currency: "INR",
         name: "RanKro Premium",

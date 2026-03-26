@@ -3,9 +3,9 @@ import { MailtrapTransport } from "mailtrap";
 
 const TOKEN = process.env.SMTP_PASS;
 
-if (!TOKEN) {
-  throw new Error("SMTP_PASS environment variable is required");
-}
+// if (!TOKEN) {
+//   throw new Error("SMTP_PASS environment variable is required");
+// }
 
 const transporter = nodemailer.createTransport(
   MailtrapTransport({
