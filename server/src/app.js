@@ -24,10 +24,30 @@ if (process.env.NODE_ENV==="production") {
 
 // Middleware
 app.use(helmet());  // security headers
+
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://rankkro.pages.dev"
+];
 app.use(cors({
-  origin: ['http://localhost:5173'],
-  credentials: true
+  origin: function (origin, callback) {
+     if (!origin) return callback(null, true);
+
+     if (allowedOrigins.includes(origin)) {
+        return callback(null, true);
+     } else {
+        return callback(new Error("Not allowed by CORS"));
+     }
+},
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"]
 }));
+
+app.options(/.*/, (req, res) => {
+        res.sendStatus(204);
+});
+
 app.use(cookieParser());
 app.use(express.json());  // parse JSON body
 app.use(express.urlencoded({ extended: true }));  // parse from data

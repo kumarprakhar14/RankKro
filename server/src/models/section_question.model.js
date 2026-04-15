@@ -1,24 +1,24 @@
 import mongoose from "mongoose";
 
 const sectionQuestionSchema = new mongoose.Schema({
-    section_id: { 
-        type: mongoose.Schema.Types.ObjectId, 
+    sectionId: { 
+        type: String, 
         ref: "Section", 
         required: true 
     },
-    question_id: { 
-        type: mongoose.Schema.Types.ObjectId, 
+    questionId: {
+        type: String, 
         ref: "Question", 
         required: true 
     },
-    question_order: { 
+    questionOrder: { 
         type: Number, 
         required: true 
     }
 }, { timestamps: true });
 
 // Ensure unique ordering within a section
-sectionQuestionSchema.index({ section_id: 1, question_order: 1 }, { unique: true });
+sectionQuestionSchema.index({ sectionId: 1, questionOrder: 1 }, { unique: true });
 
 const SectionQuestion = mongoose.model("SectionQuestion", sectionQuestionSchema);
 export default SectionQuestion;

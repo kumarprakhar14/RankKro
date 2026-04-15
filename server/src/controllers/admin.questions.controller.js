@@ -64,49 +64,50 @@ export const listQuestions = async (req, res) => {
 /**
  * @desc    Add a single question
  * @route   POST /api/admin/questions
- * @body    { id, text, option_a, option_b, option_c, option_d, correct_option, explanation, marks, negative_marks, subject }
+ * @body    { id, text, option_a, option_b, option_c, option_d, correctOption, explanation, marks, negativeMarks, subject }
  * @access  Admin
  */
 export const createQuestion = async (req, res) => {
     try {
         const {
             id, text, option_a, option_b, option_c, option_d,
-            correct_option, explanation, marks, negative_marks, subject
+            correctOption, explanation, marks, negativeMarks, subject, difficulty
         } = req.body;
 
         // Basic validation
-        if (!id || !text || !option_a || !option_b || !option_c || !option_d || correct_option === undefined || !subject) {
+        if (!id || !text || !option_a || !option_b || !option_c || !option_d || correctOption === undefined || !subject || !difficulty) {
             return res.status(400).json({
                 success: false,
                 error: {
                     code: "VALIDATION_ERROR",
-                    message: "Missing required fields: id, text, option_a-d, correct_option, subject"
+                    message: "Missing required fields: id, text, option_a-d, correctOption, subject, difficulty"
                 }
             });
         }
 
-        if (correct_option < 0 || correct_option > 3) {
+        if (correctOption < 0 || correctOption > 3) {
             return res.status(400).json({
                 success: false,
                 error: {
                     code: "VALIDATION_ERROR",
-                    message: "correct_option must be 0-3 (A=0, B=1, C=2, D=3)"
+                    message: "correctOption must be 0-3 (A=0, B=1, C=2, D=3)"
                 }
             });
         }
 
         const question = new Question({
-            id,
+            _id: id,
             text,
             option_a,
             option_b,
             option_c,
             option_d,
-            correct_option,
+            correctOption,
             explanation: explanation || "",
             marks: marks || 1,
-            negative_marks: negative_marks || 0,
-            subject
+            negativeMarks: negativeMarks || 0,
+            subject,
+            difficulty: difficulty || "Easy"
         });
 
         await question.save();
@@ -153,14 +154,14 @@ export const updateQuestion = async (req, res) => {
         const { questionId } = req.params;
         const updates = req.body;
 
-        // Validate correct_option if provided
-        if (updates.correct_option !== undefined) {
-            if (updates.correct_option < 0 || updates.correct_option > 3) {
+        // Validate correctOption if provided
+        if (updates.correctOption !== undefined) {
+            if (updates.correctOption < 0 || updates.correctOption > 3) {
                 return res.status(400).json({
                     success: false,
                     error: {
                         code: "VALIDATION_ERROR",
-                        message: "correct_option must be 0-3 (A=0, B=1, C=2, D=3)"
+                        message: "correctOption must be 0-3 (A=0, B=1, C=2, D=3)"
                     }
                 });
             }

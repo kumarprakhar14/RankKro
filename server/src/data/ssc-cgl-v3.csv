@@ -1,0 +1,1157 @@
+question_id,test_id,section_name,section_order,question_order,text,option_a,option_b,option_c,option_d,correct,explanation,marks,negative_marks,subject,difficulty
+q-ga-001,ssc-cgl-01,General Awareness,2,1,What is the capital of India??,Mumbai,Delhi,Kolkata,Chennai,1,New Delhi is the capital of India.,2,0.5,Geography,Easy
+q-ga-002,ssc-cgl-01,General Awareness,2,2,Which is the largest ocean in the world?,Atlantic,Indian,Pacific,Arctic,2,Pacific Ocean is the largest.,2,0.5,Geography,Easy
+q-ga-003,ssc-cgl-01,General Awareness,2,3,Who wrote National Anthem?,Tagore,Nehru,Gandhi,Patel,0,Rabindranath Tagore wrote Jana Gana Mana.,2,0.5,History,Easy
+q-qa-001,ssc-cgl-01,Quantitative Aptitude,3,1,Calculate: what is 25% of 200?,25,50,75,100,1,25% of 200 = 50,2,0.5,Arithmetic,Easy
+q-qa-002,ssc-cgl-01,Quantitative Aptitude,3,2,What is the result of 12 multiplied by 15?,150,180,200,220,1,12×15=180,2,0.5,Arithmetic,Easy
+q-qa-003,ssc-cgl-01,Quantitative Aptitude,3,3,SI on 1000 at 10% 2 yrs?,100,200,300,400,1,SI=200,2,0.5,Simple Interest,Easy
+q-re-001,ssc-cgl-01,Reasoning,1,1,Find the odd one out from the given options.,Apple,Banana,Carrot,Mango,2,Carrot is vegetable others fruits,2,0.5,Reasoning,Easy
+q-re-002,ssc-cgl-01,Reasoning,1,2,"Find the next number in the series: 2,4,8,16,?",18,20,24,32,3,Pattern doubling,2,0.5,Series,Easy
+q-re-003,ssc-cgl-01,Reasoning,1,3,"A is brother of B, B is sister of C → A is?",Brother,Sister,Father,Uncle,0,A is male sibling,2,0.5,Blood Relation,Easy
+q-en-001,ssc-cgl-01,English,4,1,Choose the correct synonym of 'Happy'.,Sad,Joyful,Angry,Cry,1,Joyful means happy,2,0.5,Vocabulary,Easy
+q-en-002,ssc-cgl-01,English,4,2,Choose the correct antonym of 'Big'.,Large,Huge,Small,Tall,2,Small is opposite,2,0.5,Vocabulary,Easy
+q-en-003,ssc-cgl-01,English,4,3,Fill in the blank: He ___ going to school.,is,are,am,be,0,He takes 'is',2,0.5,Grammar,Easy
+q-ga-004,ssc-cgl-03,General Awareness,2,1,Who is the President of India (2024)?,Droupadi Murmu,Ram Nath Kovind,Narendra Modi,Amit Shah,0,Droupadi Murmu is the current President.,2,0.5,Polity,Easy
+q-ga-005,ssc-cgl-03,General Awareness,2,2,What is the capital of Bihar??,Gaya,Patna,Muzaffarpur,Darbhanga,1,Patna is the capital of Bihar.,2,0.5,Geography,Easy
+q-ga-006,ssc-cgl-03,General Awareness,2,3,National animal of India?,Lion,Tiger,Elephant,Horse,1,Tiger is national animal.,2,0.5,Biology,Easy
+q-ga-007,ssc-cgl-03,General Awareness,2,4,Which river is longest in India?,Yamuna,Ganga,Brahmaputra,Godavari,1,Ganga is longest river in India.,2,0.5,Geography,Easy
+q-ga-008,ssc-cgl-03,General Awareness,2,5,Who discovered gravity?,Edison,Newton,Galileo,Darwin,1,Isaac Newton discovered gravity.,2,0.5,Science,Easy
+q-ga-009,ssc-cgl-03,General Awareness,2,6,Which gas do plants absorb?,Oxygen,Nitrogen,Carbon Dioxide,Hydrogen,2,Plants absorb CO2.,2,0.5,Biology,Easy
+q-ga-010,ssc-cgl-03,General Awareness,2,7,National bird of India?,Crow,Peacock,Sparrow,Dove,1,Peacock is national bird.,2,0.5,Biology,Easy
+q-ga-011,ssc-cgl-03,General Awareness,2,8,Which planet is known as Red Planet?,Venus,Mars,Jupiter,Saturn,1,Mars is red planet.,2,0.5,Science,Easy
+q-ga-012,ssc-cgl-03,General Awareness,2,9,Who is the author of the epic Ramayana?,Tulsidas,Valmiki,Kabir,Kalidas,1,Valmiki wrote Ramayana.,2,0.5,History,Easy
+q-ga-013,ssc-cgl-03,General Awareness,2,10,Which is largest ocean?,Atlantic,Indian,Pacific,Arctic,2,Pacific is largest ocean.,2,0.5,Geography,Easy
+q-ga-014,ssc-cgl-03,General Awareness,2,11,Which day is celebrated as Republic Day?,2026-08-15 00:00:00,2026-01-26 00:00:00,2026-10-02 00:00:00,2026-11-14 00:00:00,1,India celebrates Republic Day on 26 Jan.,2,0.5,History,Easy
+q-ga-015,ssc-cgl-03,General Awareness,2,12,Who is known as Iron Man of India?,Nehru,Gandhi,Patel,Bose,2,Sardar Patel is Iron Man.,2,0.5,History,Easy
+q-ga-016,ssc-cgl-03,General Awareness,2,13,Which is national flower of India?,Rose,Lotus,Lily,Sunflower,1,Lotus is national flower.,2,0.5,Biology,Easy
+q-ga-017,ssc-cgl-03,General Awareness,2,14,Which organ pumps blood?,Lungs,Brain,Heart,Kidney,2,Heart pumps blood.,2,0.5,Biology,Easy
+q-ga-018,ssc-cgl-03,General Awareness,2,15,Which is largest state in India by area?,UP,Bihar,Rajasthan,MP,2,Rajasthan largest state.,2,0.5,Geography,Easy
+q-ga-019,ssc-cgl-03,General Awareness,2,16,Which metal is liquid at room temperature?,Iron,Gold,Mercury,Copper,2,Mercury is liquid metal.,2,0.5,Science,Easy
+q-ga-020,ssc-cgl-03,General Awareness,2,17,Which is smallest state in India?,Goa,Sikkim,Punjab,Haryana,0,Goa is smallest state.,2,0.5,Geography,Easy
+q-ga-021,ssc-cgl-03,General Awareness,2,18,Who invented telephone?,Bell,Edison,Newton,Tesla,0,Alexander Graham Bell invented telephone.,2,0.5,Science,Easy
+q-ga-022,ssc-cgl-03,General Awareness,2,19,Which is national tree of India?,Banyan,Mango,Neem,Peepal,0,Banyan is national tree.,2,0.5,Biology,Easy
+q-ga-023,ssc-cgl-03,General Awareness,2,20,Which is boiling point of water?,50°C,80°C,100°C,120°C,2,Water boils at 100°C.,2,0.5,Science,Easy
+q-ga-024,ssc-cgl-03,General Awareness,2,21,Who is Father of Nation?,Nehru,Gandhi,Patel,Bose,1,Mahatma Gandhi is Father of Nation.,2,0.5,History,Easy
+q-ga-025,ssc-cgl-03,General Awareness,2,22,Which currency is used in USA?,Rupee,Yen,Dollar,Pound,2,USA uses Dollar.,2,0.5,Economics,Easy
+q-ga-026,ssc-cgl-03,General Awareness,2,23,Which is fastest land animal?,Lion,Tiger,Cheetah,Horse,2,Cheetah fastest land animal.,2,0.5,Biology,Easy
+q-ga-027,ssc-cgl-03,General Awareness,2,24,Which is largest continent?,Africa,Asia,Europe,Australia,1,Asia largest continent.,2,0.5,Geography,Easy
+q-ga-028,ssc-cgl-03,General Awareness,2,25,How many states in India (2024)?,26,27,28,29,2,India has 28 states.,2,0.5,Polity,Easy
+q-re-004,ssc-cgl-04,Reasoning,1,1,"If in a code LANGUAGE is written as MCPIWCGG, how is COMPUTER written?",EQORWUGT,EQORWVGT,EQORWVCR,EQORWTGT,1,Each letter is shifted +2 positions.,2,0.5,Coding-Decoding,Medium
+q-re-005,ssc-cgl-04,Reasoning,1,2,"In a row of 40 students, Ravi is 12th from left. What is his position from right?",27,28,29,30,2,Right position = Total − Left + 1.,2,0.5,Ranking,Medium
+q-re-006,ssc-cgl-04,Reasoning,1,3,"Find the missing number: 6, 13, 26, 45, ?",70,72,68,74,0,"Pattern: +7, +13, +19, +25.",2,0.5,Series,Medium
+q-re-007,ssc-cgl-04,Reasoning,1,4,How many meaningful English words can be formed with letters 'TAC'?,1,2,3,4,1,ACT and CAT.,2,0.5,Coding-Decoding,Medium
+q-re-008,ssc-cgl-04,Reasoning,1,5,"If SOUTH is coded as 91362 and NORTH as 46728, what is code for THORN?",36278,72836,36728,72863,3,Map letters from given codes.,2,0.5,Coding-Decoding,High
+q-re-009,ssc-cgl-04,Reasoning,1,6,"A is father of B, B is sister of C. How is A related to C?",Brother,Father,Uncle,Grandfather,1,A is father of C.,2,0.5,Blood Relation,Easy
+q-re-010,ssc-cgl-04,Reasoning,1,7,Find the odd pair from the given options.,"1 day, 12:06:00","2 days, 1:07:00","2 days, 16:08:00","3 days, 9:10:00",3,Square root mismatch.,2,0.5,Odd One Out,Medium
+q-re-011,ssc-cgl-04,Reasoning,1,8,"If 5×4=41 and 6×5=56, then 7×6=?",67,73,71,75,2,Pattern: (a×b)+a.,2,0.5,Pattern,Medium
+q-re-012,ssc-cgl-04,Reasoning,1,9,How many triangles are in a hexagon?,18,20,24,30,2,Count total possible triangles.,2,0.5,Odd One Out,High
+q-re-013,ssc-cgl-04,Reasoning,1,10,Mirror image of 2:45 will be?,09:15:00,09:20:00,09:25:00,09:30:00,0,Mirror time calculation.,2,0.5,Clock,Medium
+q-re-014,ssc-cgl-04,Reasoning,1,11,"Which number replaces the question mark: 3, 9, 27, 81, ?",162,243,324,256,1,Multiply by 3.,2,0.5,Series,Easy
+q-re-015,ssc-cgl-04,Reasoning,1,12,"If A=1, Z=26, what is value of CAT?",24,26,25,27,0,3+1+20.,2,0.5,Coding-Decoding,Medium
+q-re-016,ssc-cgl-04,Reasoning,1,13,Find the odd word from the given options.,Meter,Kilogram,Liter,Celsius,3,Celsius is temperature unit.,2,0.5,Odd One Out,Medium
+q-re-017,ssc-cgl-04,Reasoning,1,14,"If day before yesterday was Sunday, what day is tomorrow?",Monday,Tuesday,Wednesday,Thursday,2,Calculate sequence.,2,0.5,Calendar,Medium
+q-re-018,ssc-cgl-04,Reasoning,1,15,How many squares are in a 4×4 grid?,16,20,30,40,2,Total squares formula.,2,0.5,Odd One Out,High
+q-re-019,ssc-cgl-04,Reasoning,1,16,"If pen is called book, book is called pencil, pencil is called eraser, what do you write with?",Pen,Book,Pencil,Eraser,1,Write with pencil → called book.,2,0.5,Vocabulary,Medium
+q-re-020,ssc-cgl-04,Reasoning,1,17,"Find next number: 2, 5, 10, 17, 26, ?",35,36,37,38,2,Add consecutive odd numbers.,2,0.5,Series,Medium
+q-re-021,ssc-cgl-04,Reasoning,1,18,"Which diagram represents Doctors, Surgeons, Humans?",Three separate,Circle inside circle,All overlap,Line diagram,1,Surgeons subset of Doctors.,2,0.5,Odd One Out,Medium
+q-re-022,ssc-cgl-04,Reasoning,1,19,"If 8 men complete work in 12 days, how many men needed in 6 days?",14,16,18,20,1,Double workers needed.,2,0.5,Time & Work,Medium
+q-re-023,ssc-cgl-04,Reasoning,1,20,Find the odd number from the given options.,121,144,169,196,0,121 is 11² others even squares.,2,0.5,Number System,Medium
+q-re-024,ssc-cgl-04,Reasoning,1,21,"What is next alphabet series: B, E, H, K, ?",M,N,O,P,1,#ERROR!,2,0.5,Alphabet,Easy
+q-re-025,ssc-cgl-04,Reasoning,1,22,"If 15th August is Monday, what day is 2nd September?",Thursday,Friday,Saturday,Sunday,1,Count days forward.,2,0.5,Calendar,High
+q-re-026,ssc-cgl-04,Reasoning,1,23,"Which number is wrong in series: 2, 4, 8, 16, 31, 64?",8,16,31,64,2,Should be 32.,2,0.5,Series,Medium
+q-re-027,ssc-cgl-04,Reasoning,1,24,"If TRAIN is written as WUDLQ, how is PLANE written?",SODQH,SODQF,SODQG,SODQK,0,Shift +3 pattern.,2,0.5,Coding-Decoding,Medium
+q-re-028,ssc-cgl-04,Reasoning,1,25,In how many ways can letters of word 'DATA' be arranged?,12,24,36,48,0,4!/2! arrangements.,2,0.5,Arrangement,High
+q-ga-029,ssc-cgl-04,General Awareness,2,1,Which Constitutional Amendment introduced the words 'Socialist' and 'Secular' into the Preamble?,24th Amendment,42nd Amendment,44th Amendment,52nd Amendment,1,"The 42nd Amendment Act, 1976 added these words.",2,0.5,Polity,Medium
+q-ga-030,ssc-cgl-04,General Awareness,2,2,Which river is known as the 'Sorrow of Bihar'?,Kosi,Gandak,Son,Ganga,0,Kosi river frequently causes floods in Bihar.,2,0.5,Geography,Medium
+q-ga-031,ssc-cgl-04,General Awareness,2,3,Who was the first woman to become President of the Indian National Congress?,Sarojini Naidu,Annie Besant,Indira Gandhi,Vijaya Lakshmi Pandit,1,Annie Besant became President in 1917.,2,0.5,History,Medium
+q-ga-032,ssc-cgl-04,General Awareness,2,4,Which metal has the highest electrical conductivity?,Copper,Silver,Gold,Aluminium,1,Silver has highest conductivity.,2,0.5,Science,Medium
+q-ga-033,ssc-cgl-04,General Awareness,2,5,The headquarters of UNESCO is located in which city?,Geneva,Paris,New York,Vienna,1,UNESCO headquarters is in Paris.,2,0.5,International Affairs,Medium
+q-ga-034,ssc-cgl-04,General Awareness,2,6,Which Mughal emperor built the Buland Darwaza at Fatehpur Sikri?,Akbar,Jahangir,Shah Jahan,Aurangzeb,0,Akbar built Buland Darwaza.,2,0.5,History,Medium
+q-ga-035,ssc-cgl-04,General Awareness,2,7,Which vitamin deficiency causes night blindness?,Vitamin A,Vitamin B,Vitamin C,Vitamin D,0,Vitamin A deficiency causes night blindness.,2,0.5,Biology,Easy
+q-ga-036,ssc-cgl-04,General Awareness,2,8,Which is the longest dam in India?,Hirakud Dam,Bhakhra Dam,Tehri Dam,Nagarjuna Sagar,0,Hirakud Dam in Odisha is longest.,2,0.5,Geography,Medium
+q-ga-037,ssc-cgl-04,General Awareness,2,9,Who among the following is known as the 'Missile Man of India'?,Homi Bhabha,A.P.J. Abdul Kalam,Vikram Sarabhai,Rakesh Sharma,1,Dr. Kalam led missile development programs.,2,0.5,Science,Medium
+q-ga-038,ssc-cgl-04,General Awareness,2,10,Which is the largest freshwater lake in India?,Wular Lake,Dal Lake,Chilika Lake,Loktak Lake,0,Wular Lake in J&K is largest freshwater lake.,2,0.5,Geography,Medium
+q-ga-039,ssc-cgl-04,General Awareness,2,11,The 'Quit India Movement' was launched in which year?,1930,1942,1919,1947,1,Quit India Movement began in 1942.,2,0.5,History,Medium
+q-ga-040,ssc-cgl-04,General Awareness,2,12,Which Indian state has the highest literacy rate?,Kerala,Tamil Nadu,Maharashtra,Gujarat,0,Kerala has highest literacy rate.,2,0.5,Geography,Medium
+q-ga-041,ssc-cgl-04,General Awareness,2,13,Which gas is used in fire extinguishers?,Oxygen,Nitrogen,Carbon Dioxide,Hydrogen,2,CO₂ helps to extinguish fire.,2,0.5,Science,Medium
+q-ga-042,ssc-cgl-04,General Awareness,2,14,Who was the first Governor-General of independent India?,Lord Mountbatten,C. Rajagopalachari,Warren Hastings,William Bentinck,0,Lord Mountbatten served first.,2,0.5,History,Medium
+q-ga-043,ssc-cgl-04,General Awareness,2,15,Which is the smallest continent by area?,Europe,Australia,Antarctica,South America,1,Australia is smallest continent.,2,0.5,Geography,Easy
+q-ga-044,ssc-cgl-04,General Awareness,2,16,The RBI was established in which year?,1935,1947,1950,1920,0,RBI established in 1935.,2,0.5,Economics,Medium
+q-ga-045,ssc-cgl-04,General Awareness,2,17,Which element is required for formation of hemoglobin?,Iron,Calcium,Sodium,Potassium,0,Iron is essential for hemoglobin.,2,0.5,Biology,Medium
+q-ga-046,ssc-cgl-04,General Awareness,2,18,Which state is known as the 'Spice Garden of India'?,Kerala,Goa,Karnataka,Tamil Nadu,0,Kerala produces spices.,2,0.5,Geography,Medium
+q-ga-047,ssc-cgl-04,General Awareness,2,19,The 'Green Revolution' in India is mainly associated with which crop?,Rice,Wheat,Cotton,Sugarcane,1,Green Revolution focused on wheat.,2,0.5,Agriculture,Medium
+q-ga-048,ssc-cgl-04,General Awareness,2,20,Who wrote the book 'Discovery of India'?,Mahatma Gandhi,Jawaharlal Nehru,B.R. Ambedkar,Subhas Bose,1,Nehru wrote the book.,2,0.5,History,Medium
+q-ga-049,ssc-cgl-04,General Awareness,2,21,Which planet has the maximum number of moons?,Jupiter,Saturn,Mars,Neptune,1,Saturn currently has the most moons.,2,0.5,Science,High
+q-ga-050,ssc-cgl-04,General Awareness,2,22,Which is the national aquatic animal of India?,Dolphin,Shark,Whale,Turtle,0,Ganges river dolphin is national aquatic animal.,2,0.5,Biology,Medium
+q-ga-051,ssc-cgl-04,General Awareness,2,23,The 'Chipko Movement' is related to which issue?,Water conservation,Tree protection,Soil conservation,Wildlife protection,1,Movement focused on saving trees.,2,0.5,Science,Medium
+q-ga-052,ssc-cgl-04,General Awareness,2,24,Which is the largest coal-producing state in India?,Jharkhand,Odisha,Chhattisgarh,West Bengal,0,Jharkhand produces most coal.,2,0.5,Geography,Medium
+q-ga-053,ssc-cgl-04,General Awareness,2,25,Who was the first Indian to win a Nobel Prize?,Rabindranath Tagore,C.V. Raman,Mother Teresa,Hargobind Khurana,0,Tagore won in 1913.,2,0.5,History,Medium
+q-qa-004,ssc-cgl-04,Quantitative Aptitude,3,1,A number increased by 20% becomes 360. What is the original number?,280,300,320,340,1,Let x×1.2=360 → x=300.,2,0.5,Percentage,Medium
+q-qa-005,ssc-cgl-04,Quantitative Aptitude,3,2,The ratio of ages of A and B is 3:5. After 6 years ratio becomes 4:5. Find present age of A.,18,24,30,36,1,3x+6 / 5x+6 = 4/5 → x=8 → A=24.,2,0.5,Arithmetic,High
+q-qa-006,ssc-cgl-04,Quantitative Aptitude,3,3,A train 180 m long crosses a pole in 12 seconds. Find speed in km/h.,48,54,60,72,1,Speed=180/12=15 m/s=54 km/h.,2,0.5,Speed & Distance,Medium
+q-qa-007,ssc-cgl-04,Quantitative Aptitude,3,4,Simple interest on ₹5000 at 8% for 3 years is?,1000,1100,1200,1300,2,SI=P×R×T/100.,2,0.5,Simple Interest,Medium
+q-qa-008,ssc-cgl-04,Quantitative Aptitude,3,5,A shopkeeper gives 10% discount on marked price ₹800. Find selling price.,700,720,740,760,1,10% of 800=80 → SP=720.,2,0.5,Profit & Loss,Easy
+q-qa-009,ssc-cgl-04,Quantitative Aptitude,3,6,"If 12 men complete work in 15 days, how many days will 20 men take?",8,9,10,11,1,Work inversely proportional.,2,0.5,Time & Work,Medium
+q-qa-010,ssc-cgl-04,Quantitative Aptitude,3,7,Find average of first 10 natural numbers.,5,5.5,6,6.5,1,Average=(n+1)/2.,2,0.5,Average,Easy
+q-qa-011,ssc-cgl-04,Quantitative Aptitude,3,8,The perimeter of square is 48 cm. Find area.,144,196,256,324,0,Side=12 → Area=144.,2,0.5,Geometry,Medium
+q-qa-012,ssc-cgl-04,Quantitative Aptitude,3,9,Find compound interest on ₹2000 at 10% for 2 years.,400,420,440,460,1,CI=420.,2,0.5,Compound Interest,Medium
+q-qa-013,ssc-cgl-04,Quantitative Aptitude,3,10,A car travels 60 km in 1.5 hours. Find speed.,35,40,45,50,1,Speed=Distance/Time.,2,0.5,Speed & Distance,Easy
+q-qa-014,ssc-cgl-04,Quantitative Aptitude,3,11,"If cost price is ₹400 and selling price ₹480, profit percent?",0.15,0.18,0.2,0.22,2,Profit=80 → 20%.,2,0.5,Profit & Loss,Medium
+q-qa-015,ssc-cgl-04,Quantitative Aptitude,3,12,The LCM of 12 and 18 is?,24,30,36,48,2,LCM=36.,2,0.5,Number System,Easy
+q-qa-016,ssc-cgl-04,Quantitative Aptitude,3,13,Find HCF of 24 and 36.,6,8,12,18,2,HCF=12.,2,0.5,Number System,Easy
+q-qa-017,ssc-cgl-04,Quantitative Aptitude,3,14,"If radius of circle is 7 cm, find circumference.",42 cm,44 cm,48 cm,50 cm,1,2πr=44.,2,0.5,Geometry,Medium
+q-qa-018,ssc-cgl-04,Quantitative Aptitude,3,15,A sum doubles in 5 years at simple interest. Find rate.,0.1,0.15,0.2,0.25,2,100% interest in 5 yrs → 20%.,2,0.5,Simple Interest,High
+q-qa-019,ssc-cgl-04,Quantitative Aptitude,3,16,The difference between compound and simple interest on ₹1000 for 2 years at 10% is?,5,10,15,20,1,Difference=10.,2,0.5,Simple Interest,High
+q-qa-020,ssc-cgl-04,Quantitative Aptitude,3,17,"If 8 workers finish job in 12 days, how many workers needed in 6 days?",14,15,16,18,2,Double workers.,2,0.5,Time & Work,Medium
+q-qa-021,ssc-cgl-04,Quantitative Aptitude,3,18,A number when divided by 7 leaves remainder 3. What is remainder when squared number divided by 7?,1,2,4,5,2,(7k+3)² mod 7=9 mod 7=2.,2,0.5,Number System,High
+q-qa-022,ssc-cgl-04,Quantitative Aptitude,3,19,"Find median of numbers 2, 4, 6, 8, 10.",5,6,7,8,1,Middle number.,2,0.5,Arithmetic,Easy
+q-qa-023,ssc-cgl-04,Quantitative Aptitude,3,20,The area of rectangle is 120 cm² and length is 15 cm. Find breadth.,6,7,8,9,2,B=120/15.,2,0.5,Geometry,Easy
+q-qa-024,ssc-cgl-04,Quantitative Aptitude,3,21,"If 3x = 27, what is the value of x?",6,7,8,9,3,x=9.,2,0.5,Arithmetic,Easy
+q-qa-025,ssc-cgl-04,Quantitative Aptitude,3,22,A mixture of milk and water in ratio 4:1. Find percentage of water.,0.15,0.18,0.2,0.25,2,1/5=20%.,2,0.5,Ratio,Medium
+q-qa-026,ssc-cgl-04,Quantitative Aptitude,3,23,The square root of 625 is?,15,20,25,30,2,25²=625.,2,0.5,Number System,Easy
+q-qa-027,ssc-cgl-04,Quantitative Aptitude,3,24,"If selling price is ₹540 and loss is 10%, find cost price.",580,600,620,640,1,CP=600.,2,0.5,Profit & Loss,Medium
+q-qa-028,ssc-cgl-04,Quantitative Aptitude,3,25,The sum of first 20 natural numbers is?,190,200,210,220,2,n(n+1)/2.,2,0.5,Arithmetic,Medium
+q-re-029,ssc-cgl-05,Reasoning,1,1,"Find the next number in the series: 3, 9, 27, 81, ?",162,243,324,729,1,Each number multiplied by 3.,2,0.5,Series,Medium
+q-re-030,ssc-cgl-05,Reasoning,1,2,"If CAT is coded as DBU, how is DOG coded?",EPH,EQG,EPG,DOH,0,Each letter shifted by +1.,2,0.5,Coding-Decoding,Medium
+q-re-031,ssc-cgl-05,Reasoning,1,3,Find the odd one out.,Cow,Dog,Tiger,Carrot,3,Carrot is a vegetable.,2,0.5,Odd One Out,Easy
+q-re-032,ssc-cgl-05,Reasoning,1,4,Complete the analogy: Book : Read :: Pen : ?,Write,Draw,Paint,Print,0,Pen is used to write.,2,0.5,Analogy,Easy
+q-re-033,ssc-cgl-05,Reasoning,1,5,How many sides does a hexagon have?,5,6,7,8,1,Hexagon has 6 sides.,2,0.5,Reasoning,Easy
+q-re-034,ssc-cgl-05,Reasoning,1,6,"In a row of students, Rahul is 7th from left and 10th from right. How many students are there?",15,16,17,18,1,Total = 7 + 10 - 1.,2,0.5,Ranking,Medium
+q-re-035,ssc-cgl-05,Reasoning,1,7,"Find missing number: 2, 6, 12, 20, ?",28,30,32,36,1,"Pattern: +4, +6, +8, +10.",2,0.5,Series,Medium
+q-re-036,ssc-cgl-05,Reasoning,1,8,Which direction is opposite to South-East?,North-West,North-East,South-West,West,0,Opposite of SE is NW.,2,0.5,Direction,Medium
+q-re-037,ssc-cgl-05,Reasoning,1,9,"If A = 1, B = 2, then CAT = ?",24,26,27,28,0,"C=3, A=1, T=20 → 24.",2,0.5,Alphabet,Medium
+q-re-038,ssc-cgl-05,Reasoning,1,10,"Find the missing term: 5, 10, 20, 40, ?",60,70,80,90,2,Each multiplied by 2.,2,0.5,Series,Easy
+q-re-039,ssc-cgl-05,Reasoning,1,11,"If Monday is 1st day, what day is 10th day?",Wednesday,Thursday,Friday,Saturday,2,10 mod 7 = Friday.,2,0.5,Calendar,Medium
+q-re-040,ssc-cgl-05,Reasoning,1,12,"Find odd number: 8, 27, 64, 125, 150",8,27,125,150,3,150 not perfect cube.,2,0.5,Odd One Out,Medium
+q-re-041,ssc-cgl-05,Reasoning,1,13,Mirror image of 3:15 clock is?,08:45:00,09:45:00,08:15:00,09:15:00,0,12 - 3:15 logic.,2,0.5,Clock,High
+q-re-042,ssc-cgl-05,Reasoning,1,14,"Which number replaces question mark? 7, 14, 28, 56, ?",84,98,112,120,2,Multiply by 2.,2,0.5,Series,Easy
+q-re-043,ssc-cgl-05,Reasoning,1,15,Find the odd word from the given options.,Apple,Banana,Mango,Carrot,3,Carrot is vegetable.,2,0.5,Odd One Out,Easy
+q-re-044,ssc-cgl-05,Reasoning,1,16,"If TRAIN is coded as USBJO, how is PLANE coded?",QMBOF,QLBOF,QMBNF,QMBNE,0,Each letter shifted +1.,2,0.5,Coding-Decoding,Medium
+q-re-045,ssc-cgl-05,Reasoning,1,17,How many months have 31 days?,5,6,7,8,2,7 months have 31 days.,2,0.5,Reasoning,Easy
+q-re-046,ssc-cgl-05,Reasoning,1,18,"Find missing number: 4, 9, 16, 25, ?",30,36,35,49,1,Squares pattern.,2,0.5,Series,Easy
+q-re-047,ssc-cgl-05,Reasoning,1,19,"If North becomes East, what will West become?",North,South,East,West,0,Rotation logic.,2,0.5,Direction,Medium
+q-re-048,ssc-cgl-05,Reasoning,1,20,"Find next alphabet: A, C, F, J, ?",M,O,P,Q,1,#ERROR!,2,0.5,Series,Medium
+q-re-049,ssc-cgl-05,Reasoning,1,21,"Find the odd number: 11, 13, 17, 19, 21",11,13,17,21,3,21 not prime.,2,0.5,Number System,Medium
+q-re-050,ssc-cgl-05,Reasoning,1,22,"If 5 workers finish work in 10 days, how many days for 10 workers?",2,4,5,8,2,"Double workers, half time.",2,0.5,Time & Work,Medium
+q-re-051,ssc-cgl-05,Reasoning,1,23,Which shape has no sides?,Triangle,Circle,Square,Rectangle,1,Circle has no sides.,2,0.5,Reasoning,Easy
+q-re-052,ssc-cgl-05,Reasoning,1,24,"Find missing term: 1, 4, 9, 16, ?",20,24,25,36,2,Squares pattern.,2,0.5,Series,Easy
+q-re-053,ssc-cgl-05,Reasoning,1,25,"If TODAY is Monday, what day after 100 days?",Tuesday,Wednesday,Thursday,Friday,1,100 mod 7 = Wednesday.,2,0.5,Calendar,High
+q-ga-054,ssc-cgl-05,General Awareness,2,1,Who is known as the Father of the Indian Constitution?,Mahatma Gandhi,Jawaharlal Nehru,B. R. Ambedkar,Rajendra Prasad,2,Dr. B. R. Ambedkar chaired the Drafting Committee.,2,0.5,Polity,Medium
+q-ga-055,ssc-cgl-05,General Awareness,2,2,Which planet is known as the Red Planet?,Earth,Mars,Jupiter,Venus,1,Mars appears red due to iron oxide.,2,0.5,Science,Easy
+q-ga-056,ssc-cgl-05,General Awareness,2,3,What is the capital of Australia?,Sydney,Melbourne,Canberra,Perth,2,Canberra is the capital city.,2,0.5,Geography,Medium
+q-ga-057,ssc-cgl-05,General Awareness,2,4,Who discovered the law of gravity?,Newton,Einstein,Galileo,Kepler,0,Isaac Newton discovered gravity.,2,0.5,Science,Easy
+q-ga-058,ssc-cgl-05,General Awareness,2,5,Which gas is most abundant in Earth's atmosphere?,Oxygen,Nitrogen,Carbon Dioxide,Hydrogen,1,Nitrogen makes up about 78%.,2,0.5,Science,Easy
+q-ga-059,ssc-cgl-05,General Awareness,2,6,Who was the first President of India?,Rajendra Prasad,Sarvepalli Radhakrishnan,Zakir Hussain,Dr. Kalam,0,Dr. Rajendra Prasad served first.,2,0.5,Polity,Medium
+q-ga-060,ssc-cgl-05,General Awareness,2,7,Which river is known as the 'Sorrow of Bihar'?,Ganga,Kosi,Yamuna,Brahmaputra,1,Kosi causes frequent floods.,2,0.5,Geography,Medium
+q-ga-061,ssc-cgl-05,General Awareness,2,8,The Battle of Plassey was fought in which year?,1757,1764,1857,1947,0,It established British rule in India.,2,0.5,History,Medium
+q-ga-062,ssc-cgl-05,General Awareness,2,9,Which vitamin is obtained from sunlight?,Vitamin A,Vitamin B,Vitamin C,Vitamin D,3,Sunlight helps produce Vitamin D.,2,0.5,Science,Easy
+q-ga-063,ssc-cgl-05,General Awareness,2,10,Which is the largest ocean in the world?,Indian Ocean,Atlantic Ocean,Pacific Ocean,Arctic Ocean,2,Pacific Ocean is largest.,2,0.5,Geography,Easy
+q-ga-064,ssc-cgl-05,General Awareness,2,11,Who invented the telephone?,Graham Bell,Edison,Tesla,Newton,0,Alexander Graham Bell invented telephone.,2,0.5,Science,Medium
+q-ga-065,ssc-cgl-05,General Awareness,2,12,Which Mughal emperor built the Taj Mahal?,Akbar,Babur,Shah Jahan,Aurangzeb,2,Shah Jahan built Taj Mahal.,2,0.5,History,Easy
+q-ga-066,ssc-cgl-05,General Awareness,2,13,Which is the national animal of India?,Tiger,Lion,Elephant,Leopard,0,Bengal Tiger is national animal.,2,0.5,General Knowledge,Easy
+q-ga-067,ssc-cgl-05,General Awareness,2,14,What is the currency of Japan?,Yuan,Won,Yen,Dollar,2,Yen is Japan's currency.,2,0.5,Economics,Medium
+q-ga-068,ssc-cgl-05,General Awareness,2,15,Which metal is liquid at room temperature?,Iron,Mercury,Copper,Silver,1,Mercury remains liquid.,2,0.5,Science,Easy
+q-ga-069,ssc-cgl-05,General Awareness,2,16,The headquarters of United Nations is located in?,Geneva,New York,London,Paris,1,UN HQ is in New York.,2,0.5,International Affairs,Medium
+q-ga-070,ssc-cgl-05,General Awareness,2,17,Which organ purifies blood in human body?,Heart,Liver,Kidney,Lungs,2,Kidney filters waste from blood.,2,0.5,Biology,Medium
+q-ga-071,ssc-cgl-05,General Awareness,2,18,Which state is known as the 'Land of Five Rivers'?,Punjab,Haryana,UP,Rajasthan,0,Punjab means five rivers.,2,0.5,Geography,Easy
+q-ga-072,ssc-cgl-05,General Awareness,2,19,Who wrote the national anthem of India?,Gandhi,Nehru,Tagore,Subhash Bose,2,Rabindranath Tagore composed it.,2,0.5,History,Medium
+q-ga-073,ssc-cgl-05,General Awareness,2,20,Which instrument measures temperature?,Barometer,Thermometer,Hygrometer,Altimeter,1,Thermometer measures temperature.,2,0.5,Science,Easy
+q-ga-074,ssc-cgl-05,General Awareness,2,21,Which country hosted the 2020 Olympics?,China,Japan,Brazil,UK,1,Tokyo Olympics held in Japan.,2,0.5,Sports,Medium
+q-ga-075,ssc-cgl-05,General Awareness,2,22,Which is the longest river in the world?,Amazon,Nile,Ganga,Mississippi,1,Nile is longest river.,2,0.5,Geography,Medium
+q-ga-076,ssc-cgl-05,General Awareness,2,23,Who is known as the Missile Man of India?,Vikram Sarabhai,A. P. J. Abdul Kalam,Homi Bhabha,C. V. Raman,1,Dr. Kalam developed missile programs.,2,0.5,Science,Medium
+q-ga-077,ssc-cgl-05,General Awareness,2,24,What is the SI unit of force?,Joule,Watt,Newton,Pascal,2,Force unit is Newton.,2,0.5,Physics,Medium
+q-ga-078,ssc-cgl-05,General Awareness,2,25,Which is the smallest prime number?,0,1,2,3,2,2 is smallest prime number.,2,0.5,Arithmetic,Easy
+q-qa-029,ssc-cgl-05,Quantitative Aptitude,3,1,Calculate: what is 25% of 240?,40,50,60,70,2,25% of 240 = 60.,2,0.5,Percentage,Easy
+q-qa-030,ssc-cgl-05,Quantitative Aptitude,3,2,"If the ratio of boys to girls is 3:2 and total students are 50, how many boys are there?",20,25,30,35,2,Boys = (3/5) × 50.,2,0.5,Ratio,Medium
+q-qa-031,ssc-cgl-05,Quantitative Aptitude,3,3,The average of 5 numbers is 20. What is their total?,80,90,100,110,2,Sum = Average × Number.,2,0.5,Average,Easy
+q-qa-032,ssc-cgl-05,Quantitative Aptitude,3,4,A number increased by 20% becomes 120. What is the original number?,90,100,110,120,1,100 × 1.2 = 120.,2,0.5,Percentage,Medium
+q-qa-033,ssc-cgl-05,Quantitative Aptitude,3,5,Find the simple interest on ₹1000 at 10% per annum for 2 years.,100,150,200,250,2,SI = PRT/100.,2,0.5,Simple Interest,Medium
+q-qa-034,ssc-cgl-05,Quantitative Aptitude,3,6,A train travels 60 km in 1 hour. What is its speed?,50 km/h,60 km/h,70 km/h,80 km/h,1,Speed = Distance/Time.,2,0.5,Speed & Distance,Easy
+q-qa-035,ssc-cgl-05,Quantitative Aptitude,3,7,What is the square of 15?,200,210,225,250,2,15 × 15 = 225.,2,0.5,Arithmetic,Easy
+q-qa-036,ssc-cgl-05,Quantitative Aptitude,3,8,"If cost price is ₹400 and selling price is ₹500, find profit percentage.",0.2,0.25,0.3,0.35,1,Profit% = (100/400)×100.,2,0.5,Profit & Loss,Medium
+q-qa-037,ssc-cgl-05,Quantitative Aptitude,3,9,Find LCM of 6 and 8.,12,18,24,48,2,LCM = 24.,2,0.5,LCM,Easy
+q-qa-038,ssc-cgl-05,Quantitative Aptitude,3,10,"If 3 men can do a work in 12 days, how many days will 6 men take?",4,5,6,8,2,"Double men, half time.",2,0.5,Time & Work,Medium
+q-qa-039,ssc-cgl-05,Quantitative Aptitude,3,11,The perimeter of a square is 40 cm. Find its side.,5,8,10,12,2,Side = 40/4.,2,0.5,Geometry,Easy
+q-qa-040,ssc-cgl-05,Quantitative Aptitude,3,12,A sum of ₹2000 becomes ₹2420 in 2 years at simple interest. Find rate of interest.,0.08,0.09,0.1,0.11,2,SI = 420 → Rate = 10%.,2,0.5,Simple Interest,High
+q-qa-041,ssc-cgl-05,Quantitative Aptitude,3,13,Calculate the value of 3/4 of 64.,32,40,48,56,2,(3/4)×64.,2,0.5,Fraction,Easy
+q-qa-042,ssc-cgl-05,Quantitative Aptitude,3,14,The area of a rectangle is 120 sq cm and length is 12 cm. Find breadth.,8,9,10,11,2,Breadth = Area/Length.,2,0.5,Geometry,Medium
+q-qa-043,ssc-cgl-05,Quantitative Aptitude,3,15,"If a number is divided by 5, the remainder is 3. What is the remainder when the number is divided by 10?",3,5,8,13,0,Same remainder logic.,2,0.5,Number System,Medium
+q-qa-044,ssc-cgl-05,Quantitative Aptitude,3,16,Find compound interest on ₹1000 at 10% for 2 years.,200,210,220,230,1,CI = 210.,2,0.5,Compound Interest,High
+q-qa-045,ssc-cgl-05,Quantitative Aptitude,3,17,The average of first 10 natural numbers is?,4.5,5,5.5,6,2,Average formula.,2,0.5,Average,Medium
+q-qa-046,ssc-cgl-05,Quantitative Aptitude,3,18,"If 20% of a number is 50, find the number.",200,225,250,275,2,Number = 250.,2,0.5,Percentage,Medium
+q-qa-047,ssc-cgl-05,Quantitative Aptitude,3,19,Find the value of √144.,10,11,12,13,2,√144 = 12.,2,0.5,Arithmetic,Easy
+q-qa-048,ssc-cgl-05,Quantitative Aptitude,3,20,A shopkeeper gives 10% discount on ₹500. Find selling price.,400,420,450,480,2,Discount = 50.,2,0.5,Discount,Easy
+q-qa-049,ssc-cgl-05,Quantitative Aptitude,3,21,"If a car travels 150 km in 3 hours, find average speed.",40,45,50,55,2,Speed = 150/3.,2,0.5,Speed & Distance,Easy
+q-qa-050,ssc-cgl-05,Quantitative Aptitude,3,22,Find HCF of 18 and 24.,3,6,9,12,1,HCF = 6.,2,0.5,HCF,Easy
+q-qa-051,ssc-cgl-05,Quantitative Aptitude,3,23,A number is increased by 25% to become 125. Find original number.,90,95,100,105,2,100 × 1.25.,2,0.5,Percentage,Medium
+q-qa-052,ssc-cgl-05,Quantitative Aptitude,3,24,Find the area of a square with side 7 cm.,42,44,49,56,2,Area = side².,2,0.5,Geometry,Easy
+q-qa-053,ssc-cgl-05,Quantitative Aptitude,3,25,"If the cost of 5 pens is ₹50, what is cost of 1 pen?",5,8,10,12,2,Unitary method.,2,0.5,Arithmetic,Easy
+q-en-004,ssc-cgl-05,English,4,1,Choose the correct synonym of 'ARDENT'.,Cold,Passionate,Weak,Calm,1,Ardent means passionate.,2,0.5,Vocabulary,Medium
+q-en-005,ssc-cgl-05,English,4,2,Choose the antonym of 'SCARCE'.,Rare,Limited,Plentiful,Few,2,Plentiful is opposite of scarce.,2,0.5,Vocabulary,Medium
+q-en-006,ssc-cgl-05,English,4,3,Select the correctly spelled word.,Recieve,Receive,Receeve,Receve,1,Correct spelling is Receive.,2,0.5,Spelling,Easy
+q-en-007,ssc-cgl-05,English,4,4,Fill in the blank: She is fond ___ music.,of,in,at,with,0,Correct preposition is 'of'.,2,0.5,Grammar,Easy
+q-en-008,ssc-cgl-05,English,4,5,Choose the correct passive voice of: They completed the project.,The project completed,The project was completed,The project is completed,The project has completed,1,Correct passive structure.,2,0.5,Voice,Medium
+q-en-009,ssc-cgl-05,English,4,6,Choose the synonym of 'VIGOROUS'.,Weak,Energetic,Tired,Dull,1,Vigorous means energetic.,2,0.5,Vocabulary,Medium
+q-en-010,ssc-cgl-05,English,4,7,Choose the antonym of 'ANCIENT'.,Old,Historic,Modern,Past,2,Modern is opposite of ancient.,2,0.5,Vocabulary,Easy
+q-en-011,ssc-cgl-05,English,4,8,Identify the error: Each student have submitted the assignment.,Each student,have submitted,the assignment,No error,1,Should be 'has submitted'.,2,0.5,Error Detection,High
+q-en-012,ssc-cgl-05,English,4,9,Fill in the blank: He is interested ___ learning new skills.,in,at,on,with,0,Correct preposition is 'in'.,2,0.5,Grammar,Easy
+q-en-013,ssc-cgl-05,English,4,10,"Choose the correct indirect speech: She said, 'I will come tomorrow'.",She said she will come tomorrow,She said she would come the next day,She said I would come tomorrow,She said she come tomorrow,1,Tense and time change rule.,2,0.5,Narration,Medium
+q-en-014,ssc-cgl-05,English,4,11,Choose the correct synonym of 'RELUCTANT'.,Willing,Unwilling,Eager,Happy,1,Reluctant means unwilling.,2,0.5,Vocabulary,High
+q-en-015,ssc-cgl-05,English,4,12,Choose the correct antonym of 'GENERATE'.,Create,Produce,Destroy,Build,2,Destroy is opposite.,2,0.5,Vocabulary,Medium
+q-en-016,ssc-cgl-05,English,4,13,Fill in the blank: Neither of the boys ___ ready.,are,were,is,be,2,Singular subject takes singular verb.,2,0.5,Grammar,Medium
+q-en-017,ssc-cgl-05,English,4,14,Select the correct meaning of idiom 'Hit the nail on the head'.,Miss the point,Be exactly right,Work hard,Feel pain,1,It means to be exactly correct.,2,0.5,Idiom,Medium
+q-en-018,ssc-cgl-05,English,4,15,Choose the correct spelling.,Definately,Definitely,Definetly,Defanitely,1,Correct spelling is Definitely.,2,0.5,Spelling,Medium
+q-en-019,ssc-cgl-05,English,4,16,Choose the correct synonym of 'METICULOUS'.,Careless,Precise,Rough,Hasty,1,Meticulous means very careful.,2,0.5,Vocabulary,High
+q-en-020,ssc-cgl-05,English,4,17,Choose the correct antonym of 'OPTIMISTIC'.,Hopeful,Positive,Pessimistic,Cheerful,2,Pessimistic is opposite.,2,0.5,Vocabulary,Medium
+q-en-021,ssc-cgl-05,English,4,18,Fill in the blank: They have been living here ___ five years.,since,for,at,in,1,For used with duration.,2,0.5,Grammar,Medium
+q-en-022,ssc-cgl-05,English,4,19,Choose the correct one-word substitution for 'A person who loves books'.,Bibliophile,Philosopher,Teacher,Writer,0,Bibliophile means book lover.,2,0.5,Vocabulary,Medium
+q-en-023,ssc-cgl-05,English,4,20,Identify the correctly punctuated sentence.,its a good day,It's a good day,Its' a good day,Its a good day,1,Correct apostrophe usage.,2,0.5,Punctuation,Easy
+q-en-024,ssc-cgl-05,English,4,21,Choose the correct synonym of 'TRANQUIL'.,Noisy,Peaceful,Loud,Rough,1,Tranquil means calm.,2,0.5,Vocabulary,Medium
+q-en-025,ssc-cgl-05,English,4,22,Choose the correct antonym of 'ASCEND'.,Climb,Rise,Descend,Move,2,Descend is opposite of ascend.,2,0.5,Vocabulary,Medium
+q-en-026,ssc-cgl-05,English,4,23,Fill in the blank: The meeting will start ___ 10 AM.,at,on,in,with,0,Correct preposition is 'at'.,2,0.5,Grammar,Easy
+q-en-027,ssc-cgl-05,English,4,24,Choose the correct voice: Someone has stolen my wallet.,My wallet was stolen,My wallet has been stolen,My wallet stole,My wallet is stolen,1,Present perfect passive voice.,2,0.5,Voice,High
+q-en-028,ssc-cgl-05,English,4,25,Choose the correct synonym of 'INDUSTRIOUS'.,Lazy,Hardworking,Idle,Careless,1,Industrious means hardworking.,2,0.5,Vocabulary,Medium
+q-re-054,ssc-cgl-06,Reasoning,1,1,"Find the next number in the series: 4, 12, 36, 108, ?",216,324,432,540,1,Each term multiplied by 3.,2,0.5,Series,Medium
+q-re-055,ssc-cgl-06,Reasoning,1,2,"If PENCIL is coded as QFODJM, how is BOOK coded?",CPLL,CQQM,CPPL,CQQN,2,Each letter shifted +1.,2,0.5,Coding-Decoding,Medium
+q-re-056,ssc-cgl-06,Reasoning,1,3,Find the odd one out.,Sparrow,Eagle,Bat,Pigeon,2,Bat is a mammal.,2,0.5,Odd One Out,Easy
+q-re-057,ssc-cgl-06,Reasoning,1,4,Complete the analogy: Doctor : Hospital :: Teacher : ?,School,Classroom,Student,Book,0,Teacher works in school.,2,0.5,Analogy,Easy
+q-re-058,ssc-cgl-06,Reasoning,1,5,How many sides does an octagon have?,6,7,8,9,2,Octagon has 8 sides.,2,0.5,Reasoning,Easy
+q-re-059,ssc-cgl-06,Reasoning,1,6,"In a queue, Mohan is 8th from front and 5th from back. Total persons?",11,12,13,14,2,8 + 5 - 1 = 12.,2,0.5,Ranking,Medium
+q-re-060,ssc-cgl-06,Reasoning,1,7,"Find missing number: 3, 7, 15, 31, ?",47,63,62,61,1,Pattern ×2 +1.,2,0.5,Series,Medium
+q-re-061,ssc-cgl-06,Reasoning,1,8,Opposite direction of North-East is?,South-West,North-West,South-East,East,0,Opposite of NE is SW.,2,0.5,Direction,Medium
+q-re-062,ssc-cgl-06,Reasoning,1,9,"If A=1, B=2, then DOG=?",26,25,24,23,0,"D=4,O=15,G=7 total 26.",2,0.5,Alphabet,Medium
+q-re-063,ssc-cgl-06,Reasoning,1,10,"Find the next term: 6, 12, 24, 48, ?",72,84,96,100,2,Multiply by 2.,2,0.5,Series,Easy
+q-re-064,ssc-cgl-06,Reasoning,1,11,"If Sunday is 1st day, what day is 15th day?",Sunday,Monday,Tuesday,Wednesday,0,15 mod 7 = Sunday.,2,0.5,Calendar,Medium
+q-re-065,ssc-cgl-06,Reasoning,1,12,"Find odd number: 9, 16, 25, 36, 50",9,16,36,50,3,50 not perfect square.,2,0.5,Odd One Out,Medium
+q-re-066,ssc-cgl-06,Reasoning,1,13,Mirror image of 2:40 clock is?,09:20:00,09:40:00,08:20:00,08:40:00,0,12:00 − time.,2,0.5,Clock,High
+q-re-067,ssc-cgl-06,Reasoning,1,14,"Find missing term: 11, 22, 44, 88, ?",166,176,188,178,1,Multiply by 2.,2,0.5,Series,Easy
+q-re-068,ssc-cgl-06,Reasoning,1,15,Find the odd word from the given options.,Car,Bus,Train,Apple,3,Apple is fruit.,2,0.5,Odd One Out,Easy
+q-re-069,ssc-cgl-06,Reasoning,1,16,"If TRAIN is coded USBJO, how is CLASS coded?",DMBTT,DMBTU,DMBTS,DMBTV,0,Each letter +1.,2,0.5,Coding-Decoding,Medium
+q-re-070,ssc-cgl-06,Reasoning,1,17,How many days in leap year?,365,366,364,367,1,Leap year has 366 days.,2,0.5,Reasoning,Easy
+q-re-071,ssc-cgl-06,Reasoning,1,18,"Find missing number: 5, 25, 125, ?",500,525,625,650,2,Powers of 5.,2,0.5,Series,Medium
+q-re-072,ssc-cgl-06,Reasoning,1,19,"If East becomes North, West becomes?",South,North,East,West,0,Rotation logic.,2,0.5,Direction,Medium
+q-re-073,ssc-cgl-06,Reasoning,1,20,"Find next alphabet: B, E, H, K, ?",L,M,N,O,2,#ERROR!,2,0.5,Series,Medium
+q-re-074,ssc-cgl-06,Reasoning,1,21,"Find odd number: 2, 3, 5, 9, 11",2,3,5,9,3,9 not prime.,2,0.5,Number System,Medium
+q-re-075,ssc-cgl-06,Reasoning,1,22,"If 4 workers finish work in 8 days, how many days for 8 workers?",2,3,4,5,2,Double workers half time.,2,0.5,Time & Work,Medium
+q-re-076,ssc-cgl-06,Reasoning,1,23,Which shape has all equal sides and angles?,Rectangle,Triangle,Square,Circle,2,Square property.,2,0.5,Reasoning,Easy
+q-re-077,ssc-cgl-06,Reasoning,1,24,"Find missing term: 2, 4, 8, 16, ?",24,32,36,48,1,Multiply by 2.,2,0.5,Series,Easy
+q-re-078,ssc-cgl-06,Reasoning,1,25,"If today is Wednesday, what day after 50 days?",Friday,Saturday,Sunday,Monday,3,50 mod 7 = Monday.,2,0.5,Calendar,High
+q-ga-079,ssc-cgl-06,General Awareness,2,1,Who was the first woman Prime Minister of India?,Indira Gandhi,Sarojini Naidu,Pratibha Patil,Sonia Gandhi,0,Indira Gandhi became PM in 1966.,2,0.5,Polity,Medium
+q-ga-080,ssc-cgl-06,General Awareness,2,2,Which is the largest desert in the world?,Sahara,Gobi,Kalahari,Thar,0,Sahara is largest hot desert.,2,0.5,Geography,Easy
+q-ga-081,ssc-cgl-06,General Awareness,2,3,Which vitamin deficiency causes night blindness?,Vitamin A,Vitamin B,Vitamin C,Vitamin D,0,Vitamin A deficiency causes night blindness.,2,0.5,Science,Easy
+q-ga-082,ssc-cgl-06,General Awareness,2,4,The RBI was established in which year?,1930,1935,1940,1947,1,RBI established in 1935.,2,0.5,Economics,Medium
+q-ga-083,ssc-cgl-06,General Awareness,2,5,Which gas is used in fire extinguishers?,Oxygen,Nitrogen,Carbon Dioxide,Hydrogen,2,CO2 suppresses fire.,2,0.5,Science,Medium
+q-ga-084,ssc-cgl-06,General Awareness,2,6,Who wrote 'Discovery of India'?,Gandhi,Nehru,Tagore,Ambedkar,1,Jawaharlal Nehru wrote it.,2,0.5,History,Medium
+q-ga-085,ssc-cgl-06,General Awareness,2,7,Which is the longest river in India?,Ganga,Brahmaputra,Godavari,Yamuna,0,Ganga is longest in India.,2,0.5,Geography,Medium
+q-ga-086,ssc-cgl-06,General Awareness,2,8,Which element has chemical symbol 'Na'?,Sodium,Nitrogen,Neon,Nickel,0,Na stands for Sodium.,2,0.5,Science,Easy
+q-ga-087,ssc-cgl-06,General Awareness,2,9,The Battle of Buxar was fought in which year?,1757,1764,1857,1775,1,Battle of Buxar in 1764.,2,0.5,History,Medium
+q-ga-088,ssc-cgl-06,General Awareness,2,10,Which is the national flower of India?,Lotus,Rose,Lily,Jasmine,0,Lotus is national flower.,2,0.5,General Knowledge,Easy
+q-ga-089,ssc-cgl-06,General Awareness,2,11,Which organ produces insulin?,Liver,Kidney,Pancreas,Lungs,2,Pancreas produces insulin.,2,0.5,Biology,Medium
+q-ga-090,ssc-cgl-06,General Awareness,2,12,Which state is famous for tea production?,Punjab,Assam,Gujarat,UP,1,Assam is largest producer.,2,0.5,Geography,Easy
+q-ga-091,ssc-cgl-06,General Awareness,2,13,Who invented electricity?,Newton,Edison,Faraday,Tesla,2,Michael Faraday pioneered electricity.,2,0.5,Science,Medium
+q-ga-092,ssc-cgl-06,General Awareness,2,14,Which planet has rings?,Mars,Venus,Saturn,Mercury,2,Saturn has visible rings.,2,0.5,Science,Easy
+q-ga-093,ssc-cgl-06,General Awareness,2,15,What is the capital of Canada?,Toronto,Vancouver,Ottawa,Montreal,2,Ottawa is capital.,2,0.5,Geography,Medium
+q-ga-094,ssc-cgl-06,General Awareness,2,16,Who is known as the Father of Green Revolution in India?,Verghese Kurien,M. S. Swaminathan,Norman Borlaug,Rajendra Prasad,1,M. S. Swaminathan led Green Revolution.,2,0.5,Agriculture,Medium
+q-ga-095,ssc-cgl-06,General Awareness,2,17,Which metal is used in making aircraft bodies?,Iron,Copper,Aluminium,Silver,2,Aluminium is lightweight.,2,0.5,Science,Easy
+q-ga-096,ssc-cgl-06,General Awareness,2,18,Which freedom fighter is called 'Netaji'?,Gandhi,Nehru,Subhash Chandra Bose,Patel,2,Subhash Chandra Bose known as Netaji.,2,0.5,History,Easy
+q-ga-097,ssc-cgl-06,General Awareness,2,19,Which instrument measures atmospheric pressure?,Thermometer,Barometer,Hygrometer,Altimeter,1,Barometer measures pressure.,2,0.5,Physics,Medium
+q-ga-098,ssc-cgl-06,General Awareness,2,20,Which country is known as Land of Rising Sun?,China,Japan,Korea,Thailand,1,Japan known as Land of Rising Sun.,2,0.5,Geography,Easy
+q-ga-099,ssc-cgl-06,General Awareness,2,21,Which is the largest continent?,Africa,Asia,Europe,Australia,1,Asia is largest continent.,2,0.5,Geography,Easy
+q-ga-100,ssc-cgl-06,General Awareness,2,22,Who wrote the Indian National Song 'Vande Mataram'?,Tagore,Bankim Chandra Chatterjee,Gandhi,Nehru,1,Written in Anandamath.,2,0.5,History,Medium
+q-ga-101,ssc-cgl-06,General Awareness,2,23,Which part of plant conducts photosynthesis?,Root,Stem,Leaf,Flower,2,Leaves contain chlorophyll.,2,0.5,Biology,Easy
+q-ga-102,ssc-cgl-06,General Awareness,2,24,Which country uses Euro currency?,Japan,Germany,India,USA,1,Germany uses Euro.,2,0.5,Economics,Medium
+q-ga-103,ssc-cgl-06,General Awareness,2,25,Who discovered penicillin?,Pasteur,Fleming,Newton,Edison,1,Alexander Fleming discovered penicillin.,2,0.5,Science,Medium
+q-en-029,ssc-cgl-06,English,4,1,Choose the correct synonym of 'VAST'.,Small,Huge,Tiny,Narrow,1,Vast means very large.,2,0.5,Vocabulary,Medium
+q-en-030,ssc-cgl-06,English,4,2,Choose the antonym of 'BRIGHT'.,Shiny,Dull,Clear,Smart,1,Dull is opposite of bright.,2,0.5,Vocabulary,Medium
+q-en-031,ssc-cgl-06,English,4,3,Select the correctly spelled word.,Occasion,Ocasian,Ocassion,Occassion,0,Correct spelling is Occasion.,2,0.5,Spelling,Easy
+q-en-032,ssc-cgl-06,English,4,4,Fill in the blank: She is afraid ___ dogs.,of,with,at,for,0,Correct preposition is 'of'.,2,0.5,Grammar,Easy
+q-en-033,ssc-cgl-06,English,4,5,Choose the correct passive voice of: He wrote a book.,A book writes by him,A book was written by him,A book written by him,A book is writing by him,1,Past simple passive form.,2,0.5,Voice,Medium
+q-en-034,ssc-cgl-06,English,4,6,Choose the synonym of 'RAPID'.,Slow,Fast,Weak,Calm,1,Rapid means fast.,2,0.5,Vocabulary,Easy
+q-en-035,ssc-cgl-06,English,4,7,Choose the antonym of 'STRONG'.,Powerful,Weak,Healthy,Firm,1,Weak is opposite of strong.,2,0.5,Vocabulary,Easy
+q-en-036,ssc-cgl-06,English,4,8,Identify the error: He do not understand the question.,He,do not,understand,No error,1,Should be 'does not'.,2,0.5,Error Detection,High
+q-en-037,ssc-cgl-06,English,4,9,Fill in the blank: They are fond ___ playing cricket.,of,in,on,at,0,Correct preposition is 'of'.,2,0.5,Grammar,Easy
+q-en-038,ssc-cgl-06,English,4,10,"Choose the correct indirect speech: She said, 'I am busy'.",She said she was busy,She said she is busy,She said I was busy,She said busy,0,Tense changes to past.,2,0.5,Narration,Medium
+q-en-039,ssc-cgl-06,English,4,11,Choose the correct synonym of 'SCARCE'.,Rare,Plenty,Many,Enough,0,Scarce means rare.,2,0.5,Vocabulary,Medium
+q-en-040,ssc-cgl-06,English,4,12,Choose the correct antonym of 'HUMBLE'.,Meek,Proud,Simple,Kind,1,Proud is opposite.,2,0.5,Vocabulary,Medium
+q-en-041,ssc-cgl-06,English,4,13,Fill in the blank: Neither Ram nor Shyam ___ coming.,are,were,is,be,2,Verb agrees with nearest subject.,2,0.5,Grammar,Medium
+q-en-042,ssc-cgl-06,English,4,14,Select the correct meaning of idiom 'Once in a blue moon'.,Very often,Rarely,Never,Daily,1,It means rarely.,2,0.5,Idiom,Medium
+q-en-043,ssc-cgl-06,English,4,15,Choose the correct spelling.,Seperate,Separate,Seperete,Separrate,1,Correct spelling is Separate.,2,0.5,Spelling,Easy
+q-en-044,ssc-cgl-06,English,4,16,Choose the correct synonym of 'OBEY'.,Follow,Ignore,Resist,Refuse,0,Obey means follow.,2,0.5,Vocabulary,Easy
+q-en-045,ssc-cgl-06,English,4,17,Choose the correct antonym of 'INCREASE'.,Rise,Grow,Decrease,Expand,2,Decrease is opposite.,2,0.5,Vocabulary,Easy
+q-en-046,ssc-cgl-06,English,4,18,Fill in the blank: He has lived here ___ 2015.,for,since,at,in,1,Since used with point in time.,2,0.5,Grammar,Medium
+q-en-047,ssc-cgl-06,English,4,19,Choose the correct one-word substitution for 'One who speaks many languages'.,Linguist,Teacher,Student,Poet,0,Linguist speaks many languages.,2,0.5,Vocabulary,Medium
+q-en-048,ssc-cgl-06,English,4,20,Identify the correctly punctuated sentence.,i am happy,I am happy,I am Happy,I am happy.,3,Correct capitalization and punctuation.,2,0.5,Punctuation,Easy
+q-en-049,ssc-cgl-06,English,4,21,Choose the correct synonym of 'CALCULATE'.,Guess,Compute,Forget,Ignore,1,Calculate means compute.,2,0.5,Vocabulary,Medium
+q-en-050,ssc-cgl-06,English,4,22,Choose the correct antonym of 'VISIBLE'.,Clear,Bright,Hidden,Open,2,Hidden is opposite.,2,0.5,Vocabulary,Medium
+q-en-051,ssc-cgl-06,English,4,23,Fill in the blank: The train arrived ___ time.,at,in,on,with,2,Correct phrase is 'on time'.,2,0.5,Grammar,Medium
+q-en-052,ssc-cgl-06,English,4,24,Choose the correct voice: They are repairing the road.,The road repaired,The road is repaired,The road is being repaired,The road repairing,2,Present continuous passive voice.,2,0.5,Voice,High
+q-en-053,ssc-cgl-06,English,4,25,Choose the correct synonym of 'HONEST'.,Truthful,Clever,Rich,Brave,0,Honest means truthful.,2,0.5,Vocabulary,Easy
+q-re-079,ssc-cgl-07,Reasoning,1,1,"Find the next number in the series: 2, 6, 18, 54, ?",108,162,216,324,1,Multiply by 3.,2,0.5,Series,Medium
+q-re-080,ssc-cgl-07,Reasoning,1,2,"If CAT is coded as DBU, how is BAT coded?",CBU,CAT,CBV,DBU,0,Each letter +1.,2,0.5,Coding-Decoding,Medium
+q-re-081,ssc-cgl-07,Reasoning,1,3,Find the odd one out.,Lion,Tiger,Cow,Dog,2,Cow is herbivore.,2,0.5,Odd One Out,Easy
+q-re-082,ssc-cgl-07,Reasoning,1,4,Complete the analogy: Sun : Day :: Moon : ?,Night,Sky,Star,Light,0,Moon appears at night.,2,0.5,Analogy,Easy
+q-re-083,ssc-cgl-07,Reasoning,1,5,How many sides does a pentagon have?,4,5,6,7,1,Pentagon has 5 sides.,2,0.5,Reasoning,Easy
+q-re-084,ssc-cgl-07,Reasoning,1,6,"In a row, Aman is 5th from left and 8th from right. Total persons?",12,13,14,15,1,5+8−1=12.,2,0.5,Ranking,Medium
+q-re-085,ssc-cgl-07,Reasoning,1,7,"Find missing number: 1, 4, 9, 16, ?",20,24,25,36,2,Squares pattern.,2,0.5,Series,Easy
+q-re-086,ssc-cgl-07,Reasoning,1,8,Opposite direction of East is?,West,North,South,North-East,0,Opposite of East is West.,2,0.5,Direction,Easy
+q-re-087,ssc-cgl-07,Reasoning,1,9,"If A=1, B=2, then CAB=?",6,5,4,3,0,"C=3,A=1,B=2 total 6.",2,0.5,Alphabet,Medium
+q-re-088,ssc-cgl-07,Reasoning,1,10,"Find next term: 3, 6, 12, 24, ?",36,42,48,60,2,Multiply by 2.,2,0.5,Series,Easy
+q-re-089,ssc-cgl-07,Reasoning,1,11,"If today is Monday, what day after 14 days?",Sunday,Monday,Tuesday,Wednesday,1,14 mod 7=0.,2,0.5,Calendar,Medium
+q-re-090,ssc-cgl-07,Reasoning,1,12,"Find odd number: 5, 7, 11, 13, 15",5,7,11,15,3,15 not prime.,2,0.5,Number System,Medium
+q-re-091,ssc-cgl-07,Reasoning,1,13,Mirror image of 4:30 clock is?,07:30:00,08:30:00,06:30:00,09:30:00,0,12−4:30=7:30.,2,0.5,Clock,High
+q-re-092,ssc-cgl-07,Reasoning,1,14,"Find missing term: 10, 20, 40, 80, ?",120,140,160,180,2,Multiply by 2.,2,0.5,Series,Easy
+q-re-093,ssc-cgl-07,Reasoning,1,15,Find the odd word from the given options.,Pen,Pencil,Book,Table,3,Table is furniture.,2,0.5,Odd One Out,Easy
+q-re-094,ssc-cgl-07,Reasoning,1,16,"If DOG is coded as EPH, how is CAT coded?",DBU,DCT,DBT,EBU,0,Each letter +1.,2,0.5,Coding-Decoding,Medium
+q-re-095,ssc-cgl-07,Reasoning,1,17,How many months have 30 days?,3,4,5,6,1,Four months have 30 days.,2,0.5,General Knowledge,Easy
+q-re-096,ssc-cgl-07,Reasoning,1,18,"Find missing number: 2, 8, 32, 128, ?",256,384,512,640,2,Multiply by 4.,2,0.5,Series,Medium
+q-re-097,ssc-cgl-07,Reasoning,1,19,"If North becomes South, East becomes?",West,North,South,East,0,Opposite direction.,2,0.5,Direction,Medium
+q-re-098,ssc-cgl-07,Reasoning,1,20,"Find next alphabet: A, D, G, J, ?",K,L,M,N,2,#ERROR!,2,0.5,Series,Medium
+q-re-099,ssc-cgl-07,Reasoning,1,21,"Find odd number: 8, 12, 16, 21, 24",8,12,16,21,3,21 not multiple of 4.,2,0.5,Number System,Medium
+q-re-100,ssc-cgl-07,Reasoning,1,22,"If 8 workers finish work in 4 days, how many days for 4 workers?",6,7,8,9,2,Half workers double time.,2,0.5,Time & Work,Medium
+q-re-101,ssc-cgl-07,Reasoning,1,23,Which shape has three sides?,Square,Circle,Triangle,Rectangle,2,Triangle has 3 sides.,2,0.5,Geometry,Easy
+q-re-102,ssc-cgl-07,Reasoning,1,24,"Find missing term: 5, 25, 125, ?",500,525,625,650,2,Powers of 5.,2,0.5,Series,Medium
+q-re-103,ssc-cgl-07,Reasoning,1,25,"If today is Thursday, what day after 21 days?",Thursday,Friday,Saturday,Sunday,0,21 mod 7=0.,2,0.5,Calendar,High
+q-ga-104,ssc-cgl-07,General Awareness,2,1,Who is known as the Father of the Indian Constitution?,Mahatma Gandhi,Jawaharlal Nehru,B. R. Ambedkar,Rajendra Prasad,2,Dr. B. R. Ambedkar chaired the Drafting Committee.,2,0.5,Polity,Medium
+q-ga-105,ssc-cgl-07,General Awareness,2,2,Which is the largest state in India by area?,Madhya Pradesh,Maharashtra,Rajasthan,Uttar Pradesh,2,Rajasthan is largest by area.,2,0.5,Geography,Medium
+q-ga-106,ssc-cgl-07,General Awareness,2,3,Which vitamin deficiency causes scurvy?,Vitamin A,Vitamin B,Vitamin C,Vitamin D,2,Scurvy is caused by Vitamin C deficiency.,2,0.5,Biology,Easy
+q-ga-107,ssc-cgl-07,General Awareness,2,4,The Indian National Congress was founded in which year?,1885,1905,1919,1947,0,Congress was founded in 1885.,2,0.5,History,Medium
+q-ga-108,ssc-cgl-07,General Awareness,2,5,Which gas is used in balloons?,Oxygen,Hydrogen,Nitrogen,Helium,3,Helium is lighter than air and safe.,2,0.5,Science,Easy
+q-ga-109,ssc-cgl-07,General Awareness,2,6,Who wrote 'Ramayana'?,Tulsidas,Valmiki,Ved Vyasa,Kalidasa,1,Valmiki authored Ramayana.,2,0.5,Literature,Easy
+q-ga-110,ssc-cgl-07,General Awareness,2,7,Which is the smallest planet in the solar system?,Earth,Mercury,Mars,Venus,1,Mercury is smallest planet.,2,0.5,Science,Easy
+q-ga-111,ssc-cgl-07,General Awareness,2,8,Which article of the Constitution deals with Fundamental Rights?,Article 32,Article 14,Article 19,Article 21,0,Article 32 protects Fundamental Rights.,2,0.5,Polity,High
+q-ga-112,ssc-cgl-07,General Awareness,2,9,Who invented the electric bulb?,Newton,Edison,Faraday,Bell,1,Thomas Edison invented electric bulb.,2,0.5,Science,Medium
+q-ga-113,ssc-cgl-07,General Awareness,2,10,Which river flows through Delhi?,Yamuna,Ganga,Narmada,Godavari,0,Yamuna flows through Delhi.,2,0.5,Geography,Easy
+q-ga-114,ssc-cgl-07,General Awareness,2,11,Which metal is the best conductor of electricity?,Copper,Silver,Iron,Gold,1,Silver is best conductor.,2,0.5,Physics,Medium
+q-ga-115,ssc-cgl-07,General Awareness,2,12,Who was the first Governor-General of independent India?,Mountbatten,Rajagopalachari,Nehru,Patel,1,C. Rajagopalachari served first.,2,0.5,History,Medium
+q-ga-116,ssc-cgl-07,General Awareness,2,13,Which organ helps in digestion of food?,Liver,Heart,Kidney,Lungs,0,Liver produces bile for digestion.,2,0.5,Biology,Medium
+q-ga-117,ssc-cgl-07,General Awareness,2,14,Which state is known as the 'Spice Garden of India'?,Kerala,Tamil Nadu,Assam,Gujarat,0,Kerala produces spices.,2,0.5,Geography,Medium
+q-ga-118,ssc-cgl-07,General Awareness,2,15,Who discovered gravity?,Einstein,Newton,Galileo,Bohr,1,Newton discovered gravity.,2,0.5,Science,Easy
+q-ga-119,ssc-cgl-07,General Awareness,2,16,Which is the currency of China?,Yen,Won,Yuan,Ruble,2,Yuan is China's currency.,2,0.5,Economics,Medium
+q-ga-120,ssc-cgl-07,General Awareness,2,17,Which freedom fighter gave slogan 'Give me blood and I will give you freedom'?,Gandhi,Nehru,Bose,Bhagat Singh,2,Subhash Chandra Bose gave slogan.,2,0.5,History,Medium
+q-ga-121,ssc-cgl-07,General Awareness,2,18,Which part of plant absorbs water from soil?,Stem,Leaf,Root,Flower,2,Roots absorb water.,2,0.5,Biology,Easy
+q-ga-122,ssc-cgl-07,General Awareness,2,19,Which country hosted FIFA World Cup 2022?,Brazil,Qatar,Russia,France,1,Qatar hosted 2022 World Cup.,2,0.5,Sports,Medium
+q-ga-123,ssc-cgl-07,General Awareness,2,20,Which is the longest river in the world?,Amazon,Nile,Ganga,Mississippi,1,Nile is longest river.,2,0.5,Geography,Medium
+q-ga-124,ssc-cgl-07,General Awareness,2,21,What is the SI unit of energy?,Watt,Joule,Newton,Pascal,1,Joule is unit of energy.,2,0.5,Physics,Medium
+q-ga-125,ssc-cgl-07,General Awareness,2,22,Who was the first woman President of India?,Indira Gandhi,Pratibha Patil,Sarojini Naidu,Sonia Gandhi,1,Pratibha Patil became President in 2007.,2,0.5,Polity,Medium
+q-ga-126,ssc-cgl-07,General Awareness,2,23,Which is the national sport of India?,Hockey,Cricket,Kabaddi,Football,0,Hockey is traditionally considered national sport.,2,0.5,Sports,Medium
+q-ga-127,ssc-cgl-07,General Awareness,2,24,Which ocean is the deepest in the world?,Atlantic,Indian,Pacific,Arctic,2,Pacific Ocean is deepest.,2,0.5,Geography,Medium
+q-ga-128,ssc-cgl-07,General Awareness,2,25,Which scientist proposed theory of relativity?,Newton,Einstein,Bohr,Darwin,1,Einstein proposed relativity.,2,0.5,Science,Medium
+q-qa-054,ssc-cgl-07,Quantitative Aptitude,3,1,Calculate: what is 35% of 200?,60,65,70,75,2,35% of 200 = 70.,2,0.5,Percentage,Easy
+q-qa-055,ssc-cgl-07,Quantitative Aptitude,3,2,The ratio of two numbers is 3:7 and their sum is 100. Find the smaller number.,25,30,35,40,1,Smaller = (3/10) × 100 = 30.,2,0.5,Ratio,Medium
+q-qa-056,ssc-cgl-07,Quantitative Aptitude,3,3,The average of 8 numbers is 12. Find their total sum.,84,90,96,102,2,Sum = 12 × 8 = 96.,2,0.5,Average,Easy
+q-qa-057,ssc-cgl-07,Quantitative Aptitude,3,4,A number increased by 25% becomes 125. Find the original number.,90,95,100,105,2,100 × 1.25 = 125.,2,0.5,Percentage,Medium
+q-qa-058,ssc-cgl-07,Quantitative Aptitude,3,5,Find simple interest on ₹2000 at 5% per annum for 3 years.,250,275,300,325,2,SI = PRT/100 = 300.,2,0.5,Simple Interest,Medium
+q-qa-059,ssc-cgl-07,Quantitative Aptitude,3,6,A train travels 120 km in 2 hours. Find its speed.,50 km/h,55 km/h,60 km/h,65 km/h,2,Speed = 120/2 = 60.,2,0.5,Speed & Distance,Easy
+q-qa-060,ssc-cgl-07,Quantitative Aptitude,3,7,What is the square of 13?,144,156,169,182,2,13² = 169.,2,0.5,Arithmetic,Easy
+q-qa-061,ssc-cgl-07,Quantitative Aptitude,3,8,"If cost price is ₹800 and selling price is ₹920, find profit percentage.",0.1,0.12,0.15,0.18,2,Profit% = 120/800 × 100 = 15%.,2,0.5,Profit & Loss,Medium
+q-qa-062,ssc-cgl-07,Quantitative Aptitude,3,9,Find LCM of 8 and 10.,20,30,40,50,2,LCM = 40.,2,0.5,LCM,Easy
+q-qa-063,ssc-cgl-07,Quantitative Aptitude,3,10,"If 4 men can complete work in 16 days, how many days will 8 men take?",6,7,8,9,2,"Double men, half time = 8 days.",2,0.5,Time & Work,Medium
+q-qa-064,ssc-cgl-07,Quantitative Aptitude,3,11,The perimeter of a square is 48 cm. Find its side.,10,11,12,13,2,Side = 48/4 = 12.,2,0.5,Geometry,Easy
+q-qa-065,ssc-cgl-07,Quantitative Aptitude,3,12,A sum of ₹2500 becomes ₹3000 in 2 years at simple interest. Find rate of interest.,0.08,0.09,0.1,0.11,2,SI = 500 → Rate = 10%.,2,0.5,Simple Interest,High
+q-qa-066,ssc-cgl-07,Quantitative Aptitude,3,13,Calculate the value of 7/10 of 90.,56,63,70,77,1,(7/10) × 90 = 63.,2,0.5,Fraction,Easy
+q-qa-067,ssc-cgl-07,Quantitative Aptitude,3,14,The area of a rectangle is 200 sq cm and length is 20 cm. Find breadth.,8,9,10,11,2,Breadth = 200/20 = 10.,2,0.5,Geometry,Medium
+q-qa-068,ssc-cgl-07,Quantitative Aptitude,3,15,"If a number when divided by 9 leaves remainder 4, what will be remainder when divided by 18?",2,4,6,8,1,Remainder remains same.,2,0.5,Number System,Medium
+q-qa-069,ssc-cgl-07,Quantitative Aptitude,3,16,Find compound interest on ₹1000 at 10% for 2 years.,200,210,220,230,1,CI = 210.,2,0.5,Compound Interest,High
+q-qa-070,ssc-cgl-07,Quantitative Aptitude,3,17,The average of first 15 natural numbers is?,7,7.5,8,8.5,2,Formula (n+1)/2 = 8.,2,0.5,Average,Medium
+q-qa-071,ssc-cgl-07,Quantitative Aptitude,3,18,"If 40% of a number is 80, find the number.",180,190,200,210,2,Number = 200.,2,0.5,Percentage,Medium
+q-qa-072,ssc-cgl-07,Quantitative Aptitude,3,19,Find the value of √196.,12,13,14,15,2,√196 = 14.,2,0.5,Arithmetic,Easy
+q-qa-073,ssc-cgl-07,Quantitative Aptitude,3,20,A shopkeeper gives 15% discount on ₹400. Find selling price.,320,330,340,350,2,Discount = 60 → SP = 340.,2,0.5,Discount,Medium
+q-qa-074,ssc-cgl-07,Quantitative Aptitude,3,21,"If a car travels 300 km in 5 hours, find average speed.",50,55,60,65,2,Speed = 300/5 = 60.,2,0.5,Speed & Distance,Easy
+q-qa-075,ssc-cgl-07,Quantitative Aptitude,3,22,Find HCF of 24 and 36.,6,8,10,12,3,HCF = 12.,2,0.5,HCF,Easy
+q-qa-076,ssc-cgl-07,Quantitative Aptitude,3,23,A number increased by 20% becomes 180. Find original number.,140,145,150,155,2,150 × 1.2 = 180.,2,0.5,Percentage,Medium
+q-qa-077,ssc-cgl-07,Quantitative Aptitude,3,24,Find the area of a square with side 11 cm.,110,115,121,132,2,Area = side² = 121.,2,0.5,Geometry,Easy
+q-qa-078,ssc-cgl-07,Quantitative Aptitude,3,25,"If cost of 6 notebooks is ₹180, what is cost of 1 notebook?",25,28,30,32,2,Unitary method → 180/6 = 30.,2,0.5,Arithmetic,Easy
+q-en-054,ssc-cgl-07,English,4,1,Choose the correct synonym of 'BRISK'.,Slow,Active,Weak,Lazy,1,Brisk means active and energetic.,2,0.5,Vocabulary,Medium
+q-en-055,ssc-cgl-07,English,4,2,Choose the antonym of 'HOSTILE'.,Friendly,Angry,Rude,Violent,0,Friendly is opposite of hostile.,2,0.5,Vocabulary,Medium
+q-en-056,ssc-cgl-07,English,4,3,Select the correctly spelled word.,Commitee,Committee,Comittee,Commetee,1,Correct spelling is Committee.,2,0.5,Spelling,Easy
+q-en-057,ssc-cgl-07,English,4,4,Fill in the blank: He is fond ___ reading books.,of,in,on,at,0,Correct preposition is 'of'.,2,0.5,Grammar,Easy
+q-en-058,ssc-cgl-07,English,4,5,Choose the correct passive voice of: She completed the task.,The task completed,The task was completed,The task is completed,The task has completed,1,Past simple passive.,2,0.5,Voice,Medium
+q-en-059,ssc-cgl-07,English,4,6,Choose the synonym of 'CALAMITY'.,Happiness,Disaster,Joy,Peace,1,Calamity means disaster.,2,0.5,Vocabulary,Medium
+q-en-060,ssc-cgl-07,English,4,7,Choose the antonym of 'EXPENSIVE'.,Cheap,Costly,Rich,Valuable,0,Cheap is opposite of expensive.,2,0.5,Vocabulary,Easy
+q-en-061,ssc-cgl-07,English,4,8,Identify the error: Each of the players have arrived.,Each of,the players,have arrived,No error,2,Should be 'has arrived'.,2,0.5,Error Detection,High
+q-en-062,ssc-cgl-07,English,4,9,Fill in the blank: She is good ___ mathematics.,at,on,in,with,0,Correct preposition is 'at'.,2,0.5,Grammar,Easy
+q-en-063,ssc-cgl-07,English,4,10,"Choose the correct indirect speech: He said, 'I will help you'.",He said he will help me,He said he would help me,He said I would help you,He said he helps me,1,Tense changes to past.,2,0.5,Narration,Medium
+q-en-064,ssc-cgl-07,English,4,11,Choose the correct synonym of 'OBVIOUS'.,Clear,Hidden,Rare,Doubtful,0,Obvious means clear.,2,0.5,Vocabulary,Medium
+q-en-065,ssc-cgl-07,English,4,12,Choose the correct antonym of 'MINOR'.,Small,Little,Major,Few,2,Major is opposite of minor.,2,0.5,Vocabulary,Medium
+q-en-066,ssc-cgl-07,English,4,13,Fill in the blank: Neither of the boys ___ present.,are,were,is,be,2,Singular subject takes singular verb.,2,0.5,Grammar,Medium
+q-en-067,ssc-cgl-07,English,4,14,Select the correct meaning of idiom 'Under the weather'.,Very happy,Slightly ill,Very rich,Very busy,1,It means slightly ill.,2,0.5,Idiom,Medium
+q-en-068,ssc-cgl-07,English,4,15,Choose the correct spelling.,Acquaintence,Acquaintance,Aquaintance,Acquaintanse,1,Correct spelling is Acquaintance.,2,0.5,Spelling,Medium
+q-en-069,ssc-cgl-07,English,4,16,Choose the correct synonym of 'GENERATE'.,Create,Destroy,Avoid,Reduce,0,Generate means create.,2,0.5,Vocabulary,Medium
+q-en-070,ssc-cgl-07,English,4,17,Choose the correct antonym of 'INFERIOR'.,Lower,Smaller,Superior,Weak,2,Superior is opposite of inferior.,2,0.5,Vocabulary,Medium
+q-en-071,ssc-cgl-07,English,4,18,Fill in the blank: They have been living here ___ 2010.,for,since,at,in,1,Since used with point in time.,2,0.5,Grammar,Medium
+q-en-072,ssc-cgl-07,English,4,19,Choose the correct one-word substitution for 'One who looks on the bright side of things'.,Realist,Pessimist,Optimist,Artist,2,Optimist sees positive side.,2,0.5,Vocabulary,Medium
+q-en-073,ssc-cgl-07,English,4,20,Identify the correctly punctuated sentence.,i am ready,I am ready,I am Ready,I am ready!,1,Correct capitalization.,2,0.5,Punctuation,Easy
+q-en-074,ssc-cgl-07,English,4,21,Choose the correct synonym of 'VITAL'.,Important,Useless,Common,Weak,0,Vital means important.,2,0.5,Vocabulary,Medium
+q-en-075,ssc-cgl-07,English,4,22,Choose the correct antonym of 'APPROVE'.,Accept,Support,Reject,Allow,2,Reject is opposite of approve.,2,0.5,Vocabulary,Medium
+q-en-076,ssc-cgl-07,English,4,23,Fill in the blank: The meeting will start ___ 9 AM.,at,on,in,with,0,Time uses 'at'.,2,0.5,Grammar,Easy
+q-en-077,ssc-cgl-07,English,4,24,Choose the correct voice: They are painting the house.,The house painted,The house is painted,The house is being painted,The house painting,2,Present continuous passive.,2,0.5,Voice,High
+q-en-078,ssc-cgl-07,English,4,25,Choose the correct synonym of 'HONOUR'.,Respect,Ignore,Hate,Avoid,0,Honour means respect.,2,0.5,Vocabulary,Easy
+q-re-104,ssc-cgl-08,Reasoning,1,1,"Find the next number in the series: 9, 18, 36, 72, ?",96,108,144,162,2,Multiply by 2.,2,0.5,Series,Medium
+q-re-105,ssc-cgl-08,Reasoning,1,2,"If PEN is coded as QFO, how is BOOK coded?",CPLL,CQQM,CPPL,DQQM,1,Each letter shifted +1.,2,0.5,Coding-Decoding,Medium
+q-re-106,ssc-cgl-08,Reasoning,1,3,Find the odd one out.,Cat,Dog,Tiger,Rose,3,Rose is plant.,2,0.5,Odd One Out,Easy
+q-re-107,ssc-cgl-08,Reasoning,1,4,Complete the analogy: Water : Drink :: Food : ?,Eat,Cook,Sleep,Run,0,Food is eaten.,2,0.5,Analogy,Easy
+q-re-108,ssc-cgl-08,Reasoning,1,5,How many sides does a heptagon have?,5,6,7,8,2,Heptagon has 7 sides.,2,0.5,Reasoning,Easy
+q-re-109,ssc-cgl-08,Reasoning,1,6,"In a queue, Ravi is 6th from left and 7th from right. Total persons?",11,12,13,14,1,6+7−1=12.,2,0.5,Ranking,Medium
+q-re-110,ssc-cgl-08,Reasoning,1,7,"Find missing number: 4, 16, 64, 256, ?",512,768,1024,2048,2,Multiply by 4.,2,0.5,Series,Medium
+q-re-111,ssc-cgl-08,Reasoning,1,8,Opposite direction of North is?,South,East,West,North-East,0,Opposite of North is South.,2,0.5,Direction,Easy
+q-re-112,ssc-cgl-08,Reasoning,1,9,"If A=1, B=2, then BAD=?",6,7,8,9,1,"B=2,A=1,D=4 total 7.",2,0.5,Alphabet,Medium
+q-re-113,ssc-cgl-08,Reasoning,1,10,"Find next term: 8, 16, 32, 64, ?",96,112,128,144,2,Multiply by 2.,2,0.5,Series,Easy
+q-re-114,ssc-cgl-08,Reasoning,1,11,"If today is Tuesday, what day after 7 days?",Monday,Tuesday,Wednesday,Thursday,1,7 mod 7=0.,2,0.5,Calendar,Medium
+q-re-115,ssc-cgl-08,Reasoning,1,12,"Find odd number: 10, 15, 20, 25, 27",10,15,20,27,3,27 not multiple of 5.,2,0.5,Number System,Medium
+q-re-116,ssc-cgl-08,Reasoning,1,13,Mirror image of 3:00 clock is?,08:00:00,09:00:00,07:00:00,06:00:00,1,12−3=9.,2,0.5,Clock,High
+q-re-117,ssc-cgl-08,Reasoning,1,14,"Find missing term: 6, 12, 24, 48, ?",72,84,96,108,2,Multiply by 2.,2,0.5,Series,Easy
+q-re-118,ssc-cgl-08,Reasoning,1,15,Find the odd word from the given options.,Spoon,Fork,Knife,Table,3,Table is furniture.,2,0.5,Odd One Out,Easy
+q-re-119,ssc-cgl-08,Reasoning,1,16,"If CAT is coded DBU, how is PEN coded?",QFO,QEN,QGP,QFN,0,Each letter +1.,2,0.5,Coding-Decoding,Medium
+q-re-120,ssc-cgl-08,Reasoning,1,17,How many days are there in February in leap year?,28,29,30,31,1,Leap year February has 29 days.,2,0.5,General Knowledge,Easy
+q-re-121,ssc-cgl-08,Reasoning,1,18,"Find missing number: 3, 9, 27, 81, ?",162,243,324,405,1,Powers of 3.,2,0.5,Series,Medium
+q-re-122,ssc-cgl-08,Reasoning,1,19,"If East becomes West, North becomes?",South,East,West,North,0,Opposite direction.,2,0.5,Direction,Medium
+q-re-123,ssc-cgl-08,Reasoning,1,20,"Find next alphabet: C, F, I, L, ?",M,N,O,P,2,#ERROR!,2,0.5,Series,Medium
+q-re-124,ssc-cgl-08,Reasoning,1,21,"Find odd number: 12, 18, 24, 29, 30",12,18,24,29,3,29 not multiple of 6.,2,0.5,Number System,Medium
+q-re-125,ssc-cgl-08,Reasoning,1,22,"If 3 workers finish work in 9 days, how many days for 9 workers?",2,3,4,5,1,Triple workers → one-third time.,2,0.5,Time & Work,Medium
+q-re-126,ssc-cgl-08,Reasoning,1,23,Which shape has no corners?,Triangle,Square,Circle,Rectangle,2,Circle has no corners.,2,0.5,Geometry,Easy
+q-re-127,ssc-cgl-08,Reasoning,1,24,"Find missing term: 7, 14, 28, 56, ?",70,84,112,126,2,Multiply by 2.,2,0.5,Series,Easy
+q-re-128,ssc-cgl-08,Reasoning,1,25,"If today is Sunday, what day after 14 days?",Saturday,Sunday,Monday,Tuesday,1,14 mod 7=0.,2,0.5,Calendar,High
+q-ga-129,ssc-cgl-08,General Awareness,2,1,Who is known as the Iron Man of India?,Gandhi,Patel,Nehru,Bose,1,Sardar Patel known as Iron Man.,2,0.5,History,Medium
+q-ga-130,ssc-cgl-08,General Awareness,2,2,Which is the capital of Madhya Pradesh?,Bhopal,Indore,Gwalior,Jabalpur,0,Bhopal is capital.,2,0.5,Geography,Easy
+q-ga-131,ssc-cgl-08,General Awareness,2,3,Which vitamin is known as sunshine vitamin?,A,B,C,D,3,Vitamin D from sunlight.,2,0.5,Biology,Easy
+q-ga-132,ssc-cgl-08,General Awareness,2,4,Who discovered penicillin?,Newton,Darwin,Fleming,Edison,2,Alexander Fleming discovered penicillin.,2,0.5,Science,Medium
+q-ga-133,ssc-cgl-08,General Awareness,2,5,Which is the national bird of India?,Peacock,Crow,Sparrow,Pigeon,0,Peacock is national bird.,2,0.5,General Knowledge,Easy
+q-ga-134,ssc-cgl-08,General Awareness,2,6,Which river is known as the Ganga of the South?,Godavari,Kaveri,Narmada,Krishna,0,Godavari known as South Ganga.,2,0.5,Geography,Medium
+q-ga-135,ssc-cgl-08,General Awareness,2,7,Who was the first Prime Minister of India?,Gandhi,Nehru,Patel,Bose,1,Jawaharlal Nehru.,2,0.5,History,Easy
+q-ga-136,ssc-cgl-08,General Awareness,2,8,Which gas do plants absorb?,Oxygen,Nitrogen,Carbon dioxide,Hydrogen,2,Plants absorb CO2.,2,0.5,Biology,Easy
+q-ga-137,ssc-cgl-08,General Awareness,2,9,Which is the largest ocean?,Atlantic,Indian,Pacific,Arctic,2,Pacific is largest.,2,0.5,Geography,Easy
+q-ga-138,ssc-cgl-08,General Awareness,2,10,What is the currency of USA?,Euro,Dollar,Peso,Yen,1,Dollar is currency.,2,0.5,Economics,Easy
+q-ga-139,ssc-cgl-08,General Awareness,2,11,Which organ pumps blood?,Lungs,Liver,Heart,Kidney,2,Heart pumps blood.,2,0.5,Biology,Easy
+q-ga-140,ssc-cgl-08,General Awareness,2,12,Which is the tallest mountain in the world?,K2,Everest,Kanchenjunga,Nanga Parbat,1,Mount Everest tallest.,2,0.5,Geography,Easy
+q-ga-141,ssc-cgl-08,General Awareness,2,13,Who invented telephone?,Bell,Edison,Newton,Tesla,0,Alexander Graham Bell.,2,0.5,Science,Medium
+q-ga-142,ssc-cgl-08,General Awareness,2,14,Which is the smallest state in India by area?,Goa,Sikkim,Tripura,Nagaland,0,Goa smallest.,2,0.5,Geography,Medium
+q-ga-143,ssc-cgl-08,General Awareness,2,15,Which metal is liquid at room temperature?,Iron,Silver,Mercury,Copper,2,Mercury is liquid.,2,0.5,Science,Easy
+q-ga-144,ssc-cgl-08,General Awareness,2,16,Who wrote the Constitution of India?,B. R. Ambedkar,Gandhi,Nehru,Patel,0,Ambedkar chief architect.,2,0.5,Polity,Medium
+q-ga-145,ssc-cgl-08,General Awareness,2,17,Which is the largest desert?,Sahara,Gobi,Thar,Kalahari,0,Sahara largest.,2,0.5,Geography,Medium
+q-ga-146,ssc-cgl-08,General Awareness,2,18,Which planet is known as Red Planet?,Mars,Venus,Earth,Jupiter,0,Mars appears red.,2,0.5,Science,Easy
+q-ga-147,ssc-cgl-08,General Awareness,2,19,Which country hosted Olympics 2020?,Japan,China,Brazil,USA,0,Tokyo Olympics.,2,0.5,Sports,Medium
+q-ga-148,ssc-cgl-08,General Awareness,2,20,Which is the national flower of India?,Lotus,Rose,Lily,Jasmine,0,Lotus national flower.,2,0.5,General Knowledge,Easy
+q-ga-149,ssc-cgl-08,General Awareness,2,21,Which gas is essential for breathing?,Oxygen,Nitrogen,CO2,Hydrogen,0,Oxygen required.,2,0.5,Science,Easy
+q-ga-150,ssc-cgl-08,General Awareness,2,22,Which continent is largest?,Africa,Asia,Europe,Australia,1,Asia largest.,2,0.5,Geography,Easy
+q-ga-151,ssc-cgl-08,General Awareness,2,23,Who is known as Father of Nation?,Gandhi,Nehru,Patel,Bose,0,Mahatma Gandhi.,2,0.5,History,Easy
+q-ga-152,ssc-cgl-08,General Awareness,2,24,What is the SI unit of force?,Joule,Watt,Newton,Pascal,2,Newton is unit.,2,0.5,Physics,Medium
+q-ga-153,ssc-cgl-08,General Awareness,2,25,Which animal is called Ship of Desert?,Horse,Camel,Elephant,Donkey,1,Camel called ship of desert.,2,0.5,General Knowledge,Easy
+q-qa-079,ssc-cgl-08,Quantitative Aptitude,3,1,Calculate: what is 20% of 300?,40,50,60,70,2,20% of 300=60.,2,0.5,Percentage,Easy
+q-qa-080,ssc-cgl-08,Quantitative Aptitude,3,2,Ratio of two numbers is 2:5 and sum is 70. Larger number?,40,45,50,55,2,5/7×70=50.,2,0.5,Ratio,Medium
+q-qa-081,ssc-cgl-08,Quantitative Aptitude,3,3,Average of 5 numbers is 16. Sum?,60,70,80,90,2,16×5=80.,2,0.5,Average,Easy
+q-qa-082,ssc-cgl-08,Quantitative Aptitude,3,4,A number increased by 10% becomes 110. Original number?,90,95,100,105,2,100×1.1=110.,2,0.5,Percentage,Medium
+q-qa-083,ssc-cgl-08,Quantitative Aptitude,3,5,Simple interest on ₹1000 at 10% for 2 years?,150,180,200,220,2,SI=200.,2,0.5,Simple Interest,Easy
+q-qa-084,ssc-cgl-08,Quantitative Aptitude,3,6,A car travels 150 km in 3 hours. Speed?,40,45,50,55,2,150/3=50.,2,0.5,Speed & Distance,Easy
+q-qa-085,ssc-cgl-08,Quantitative Aptitude,3,7,What is the square of 12?,124,134,144,154,2,12²=144.,2,0.5,Arithmetic,Easy
+q-qa-086,ssc-cgl-08,Quantitative Aptitude,3,8,"If CP=₹500 and SP=₹600, profit%?",0.1,0.15,0.2,0.25,2,100/500×100=20%.,2,0.5,Profit & Loss,Medium
+q-qa-087,ssc-cgl-08,Quantitative Aptitude,3,9,Find the LCM of 6 and 9.,12,15,18,21,2,LCM=18.,2,0.5,LCM,Easy
+q-qa-088,ssc-cgl-08,Quantitative Aptitude,3,10,4 men complete work in 12 days. 8 men?,5,6,7,8,1,Double men half time.,2,0.5,Time & Work,Medium
+q-qa-089,ssc-cgl-08,Quantitative Aptitude,3,11,Perimeter of square 36 cm. Side?,7,8,9,10,2,36/4=9.,2,0.5,Geometry,Easy
+q-qa-090,ssc-cgl-08,Quantitative Aptitude,3,12,₹2000 becomes ₹2400 in 2 years. Rate?,0.08,0.09,0.1,0.11,2,SI=400.,2,0.5,Simple Interest,High
+q-qa-091,ssc-cgl-08,Quantitative Aptitude,3,13,Calculate the value of 3/5 of 50.,25,28,30,35,2,30,2,0.5,Fraction,Easy
+q-qa-092,ssc-cgl-08,Quantitative Aptitude,3,14,"Area rectangle 120, length 10. Breadth?",10,11,12,13,2,120/10=12.,2,0.5,Geometry,Medium
+q-qa-093,ssc-cgl-08,Quantitative Aptitude,3,15,Remainder when number divided by 5 is 2. By 10?,2,3,4,5,0,Same remainder.,2,0.5,Number System,Medium
+q-qa-094,ssc-cgl-08,Quantitative Aptitude,3,16,Compound interest on ₹1000 at 10% for 2 years?,200,210,220,230,1,CI=210.,2,0.5,Compound Interest,High
+q-qa-095,ssc-cgl-08,Quantitative Aptitude,3,17,Average of first 10 natural numbers?,4.5,5,5.5,6,2,(n+1)/2.,2,0.5,Average,Medium
+q-qa-096,ssc-cgl-08,Quantitative Aptitude,3,18,25% of number is 50. Number?,180,190,200,210,2,200,2,0.5,Percentage,Medium
+q-qa-097,ssc-cgl-08,Quantitative Aptitude,3,19,Find the value of √144.,10,11,12,13,2,12,2,0.5,Arithmetic,Easy
+q-qa-098,ssc-cgl-08,Quantitative Aptitude,3,20,10% discount on ₹500. Selling price?,400,420,450,480,2,Discount=50.,2,0.5,Discount,Easy
+q-qa-099,ssc-cgl-08,Quantitative Aptitude,3,21,Distance 240 km in 4 hours. Speed?,50,55,60,65,2,60,2,0.5,Speed & Distance,Easy
+q-qa-100,ssc-cgl-08,Quantitative Aptitude,3,22,Find the HCF of 12 and 18.,3,4,6,9,2,HCF=6.,2,0.5,HCF,Easy
+q-qa-101,ssc-cgl-08,Quantitative Aptitude,3,23,Number increased by 20% becomes 120. Original?,90,95,100,105,2,100,2,0.5,Percentage,Medium
+q-qa-102,ssc-cgl-08,Quantitative Aptitude,3,24,Find the area of a square with side 8 cm.,60,62,64,66,2,64,2,0.5,Geometry,Easy
+q-qa-103,ssc-cgl-08,Quantitative Aptitude,3,25,Cost of 5 pens ₹50. One pen?,8,9,10,11,2,Unitary method.,2,0.5,Arithmetic,Easy
+q-en-079,ssc-cgl-08,English,4,1,Choose the correct synonym of 'BIG'.,Small,Large,Tiny,Narrow,1,Big means large.,2,0.5,Vocabulary,Easy
+q-en-080,ssc-cgl-08,English,4,2,Choose the correct antonym of 'FAST'.,Quick,Slow,Rapid,Swift,1,Slow opposite.,2,0.5,Vocabulary,Easy
+q-en-081,ssc-cgl-08,English,4,3,Select the correctly spelled word.,Friend,Freind,Frend,Freend,0,Friend correct.,2,0.5,Spelling,Easy
+q-en-082,ssc-cgl-08,English,4,4,He is good ___ English.,at,on,in,with,0,Correct preposition.,2,0.5,Grammar,Easy
+q-en-083,ssc-cgl-08,English,4,5,Passive voice of: She wrote a letter.,A letter writes,A letter was written,A letter written,A letter is writing,1,Past passive.,2,0.5,Voice,Medium
+q-en-084,ssc-cgl-08,English,4,6,Choose the correct synonym of 'HARD'.,Difficult,Easy,Soft,Simple,0,Hard means difficult.,2,0.5,Vocabulary,Medium
+q-en-085,ssc-cgl-08,English,4,7,Choose the correct antonym of 'UP'.,Down,Top,High,Above,0,Down opposite.,2,0.5,Vocabulary,Easy
+q-en-086,ssc-cgl-08,English,4,8,Identify error: He go to school daily.,He,go,to school,No error,0,Should be 'goes'.,2,0.5,Error Detection,High
+q-en-087,ssc-cgl-08,English,4,9,Fill blank: She is fond ___ music.,of,in,on,at,0,Correct preposition.,2,0.5,Grammar,Easy
+q-en-088,ssc-cgl-08,English,4,10,"Indirect speech: He said, 'I am tired'.",He said he was tired,He said he is tired,He said tired,He said I tired,0,Tense change.,2,0.5,Narration,Medium
+q-en-089,ssc-cgl-08,English,4,11,Choose the correct synonym of 'SMART'.,Intelligent,Dull,Slow,Lazy,0,Smart means intelligent.,2,0.5,Vocabulary,Medium
+q-en-090,ssc-cgl-08,English,4,12,Choose the correct antonym of 'HAPPY'.,Sad,Joyful,Pleased,Glad,0,Sad opposite.,2,0.5,Vocabulary,Easy
+q-en-091,ssc-cgl-08,English,4,13,Neither Ram nor Shyam ___ present.,are,were,is,be,2,Singular verb.,2,0.5,Grammar,Medium
+q-en-092,ssc-cgl-08,English,4,14,Idiom: Break the ice means?,Start conversation,End talk,Get angry,Feel cold,0,Start conversation.,2,0.5,Idiom,Medium
+q-en-093,ssc-cgl-08,English,4,15,Choose the correct synonym of 'QUICK'.,Rapid,Slow,Late,Lazy,0,Quick means rapid.,2,0.5,Vocabulary,Medium
+q-en-094,ssc-cgl-08,English,4,16,Choose the correct antonym of 'OPEN'.,Close,Start,Begin,Unlock,0,Close opposite.,2,0.5,Vocabulary,Easy
+q-en-095,ssc-cgl-08,English,4,17,He has lived here ___ 2010.,for,since,at,in,1,Since used with time point.,2,0.5,Grammar,Medium
+q-en-096,ssc-cgl-08,English,4,18,One word for 'One who cannot read or write'.,Scholar,Literate,Illiterate,Teacher,2,Illiterate definition.,2,0.5,Vocabulary,Medium
+q-en-097,ssc-cgl-08,English,4,19,Correct punctuation?,its raining,It’s raining,Its raining,Its' raining,1,Apostrophe usage.,2,0.5,Punctuation,Easy
+q-en-098,ssc-cgl-08,English,4,20,Choose the correct synonym of 'CALM'.,Peaceful,Angry,Loud,Rough,0,Calm means peaceful.,2,0.5,Vocabulary,Easy
+q-en-099,ssc-cgl-08,English,4,21,Antonym of 'VISIBLE'?,Clear,Bright,Hidden,Obvious,2,Hidden opposite.,2,0.5,Vocabulary,Medium
+q-en-100,ssc-cgl-08,English,4,22,The train arrived ___ time.,at,in,on,with,2,On time phrase.,2,0.5,Grammar,Medium
+q-en-101,ssc-cgl-08,English,4,23,Voice: They are building a house.,A house built,A house is being built,A house builds,A house build,1,Present continuous passive.,2,0.5,Voice,High
+q-en-102,ssc-cgl-08,English,4,24,Synonym of 'HONEST'?,Truthful,Clever,Rich,Brave,0,Honest means truthful.,2,0.5,Vocabulary,Easy
+q-re-129,ssc-cgl-09,Reasoning,1,1,"Find the next number in the series: 5, 15, 45, 135, ?",270,405,540,675,1,Multiply by 3.,2,0.5,Series,Medium
+q-re-130,ssc-cgl-09,Reasoning,1,2,"If DOG is coded as EPH, how is SUN coded?",TVN,TWO,TVO,TWP,0,Each letter shifted +1.,2,0.5,Coding-Decoding,Medium
+q-re-131,ssc-cgl-09,Reasoning,1,3,Find the odd one out.,Mango,Apple,Banana,Carrot,3,Carrot is vegetable.,2,0.5,Odd One Out,Easy
+q-re-132,ssc-cgl-09,Reasoning,1,4,Complete analogy: Bird : Fly :: Fish : ?,Swim,Run,Jump,Crawl,0,Fish swims.,2,0.5,Analogy,Easy
+q-re-133,ssc-cgl-09,Reasoning,1,5,How many sides does a nonagon have?,7,8,9,10,2,Nonagon has 9 sides.,2,0.5,Reasoning,Easy
+q-re-134,ssc-cgl-09,Reasoning,1,6,"In a row, Ramesh is 4th from left and 6th from right. Total persons?",8,9,10,11,1,4+6−1=9.,2,0.5,Ranking,Medium
+q-re-135,ssc-cgl-09,Reasoning,1,7,"Find missing number: 2, 10, 50, 250, ?",1000,1250,1500,1750,1,Multiply by 5.,2,0.5,Series,Medium
+q-re-136,ssc-cgl-09,Reasoning,1,8,Opposite direction of South is?,North,East,West,North-East,0,Opposite of South is North.,2,0.5,Direction,Easy
+q-re-137,ssc-cgl-09,Reasoning,1,9,"If A=1, B=2, then BED=?",10,11,12,13,1,"B=2,E=5,D=4 total 11.",2,0.5,Alphabet,Medium
+q-re-138,ssc-cgl-09,Reasoning,1,10,"Find next term: 6, 12, 18, 24, ?",28,30,32,36,1,Increase by 6.,2,0.5,Series,Easy
+q-re-139,ssc-cgl-09,Reasoning,1,11,"If today is Friday, what day after 7 days?",Thursday,Friday,Saturday,Sunday,1,7 mod 7=0.,2,0.5,Calendar,Medium
+q-re-140,ssc-cgl-09,Reasoning,1,12,"Find odd number: 3, 6, 9, 12, 14",3,6,9,14,3,14 not multiple of 3.,2,0.5,Number System,Medium
+q-re-141,ssc-cgl-09,Reasoning,1,13,Mirror image of 5:30 clock is?,06:30:00,07:30:00,08:30:00,09:30:00,0,12−5:30=6:30.,2,0.5,Clock,High
+q-re-142,ssc-cgl-09,Reasoning,1,14,"Find missing term: 8, 24, 72, 216, ?",432,648,864,972,1,Multiply by 3.,2,0.5,Series,Easy
+q-re-143,ssc-cgl-09,Reasoning,1,15,Find the odd word from the given options.,Paper,Book,Pen,Laptop,3,Laptop is electronic device.,2,0.5,Odd One Out,Easy
+q-re-144,ssc-cgl-09,Reasoning,1,16,"If CAT is coded as DBU, how is MAP coded?",NBQ,NAP,MBQ,NBP,0,Each letter +1.,2,0.5,Coding-Decoding,Medium
+q-re-145,ssc-cgl-09,Reasoning,1,17,How many hours are there in 2 days?,24,36,48,60,2,2×24=48 hours.,2,0.5,General Knowledge,Easy
+q-re-146,ssc-cgl-09,Reasoning,1,18,"Find missing number: 1, 3, 6, 10, ?",12,14,15,18,2,Triangular numbers.,2,0.5,Series,Medium
+q-re-147,ssc-cgl-09,Reasoning,1,19,"If West becomes East, North becomes?",South,East,West,North,0,Opposite direction.,2,0.5,Direction,Medium
+q-re-148,ssc-cgl-09,Reasoning,1,20,"Find next alphabet: E, I, M, Q, ?",U,V,W,X,0,#ERROR!,2,0.5,Series,Medium
+q-re-149,ssc-cgl-09,Reasoning,1,21,"Find odd number: 16, 25, 36, 49, 52",16,25,36,52,3,52 not perfect square.,2,0.5,Number System,Medium
+q-re-150,ssc-cgl-09,Reasoning,1,22,"If 6 workers finish work in 3 days, how many days for 3 workers?",4,5,6,7,2,Half workers double time.,2,0.5,Time & Work,Medium
+q-re-151,ssc-cgl-09,Reasoning,1,23,Which shape has four equal sides and four right angles?,Rhombus,Square,Rectangle,Triangle,1,Square properties.,2,0.5,Geometry,Easy
+q-re-152,ssc-cgl-09,Reasoning,1,24,"Find missing term: 9, 27, 81, ?",162,243,324,405,1,Multiply by 3.,2,0.5,Series,Easy
+q-re-153,ssc-cgl-09,Reasoning,1,25,"If today is Monday, what day after 21 days?",Sunday,Monday,Tuesday,Wednesday,1,21 mod 7=0.,2,0.5,Calendar,High
+q-ga-154,ssc-cgl-09,General Awareness,2,1,Who is known as the Father of the Green Revolution in India?,M. S. Swaminathan,Verghese Kurien,C. Subramaniam,Homi Bhabha,0,M. S. Swaminathan led Green Revolution.,2,0.5,Agriculture,Medium
+q-ga-155,ssc-cgl-09,General Awareness,2,2,Which is the longest river in Asia?,Ganga,Yangtze,Mekong,Brahmaputra,1,Yangtze is longest in Asia.,2,0.5,Geography,Medium
+q-ga-156,ssc-cgl-09,General Awareness,2,3,Which vitamin is necessary for healthy eyesight?,A,B,C,D,0,Vitamin A supports vision.,2,0.5,Biology,Easy
+q-ga-157,ssc-cgl-09,General Awareness,2,4,Which Mughal emperor built the Red Fort?,Akbar,Babur,Shah Jahan,Aurangzeb,2,Shah Jahan built Red Fort.,2,0.5,History,Medium
+q-ga-158,ssc-cgl-09,General Awareness,2,5,Which gas is used in respiration?,Nitrogen,Oxygen,Carbon dioxide,Hydrogen,1,Oxygen used in respiration.,2,0.5,Science,Easy
+q-ga-159,ssc-cgl-09,General Awareness,2,6,What is the capital of Gujarat?,Ahmedabad,Surat,Gandhinagar,Rajkot,2,Gandhinagar is capital.,2,0.5,Geography,Easy
+q-ga-160,ssc-cgl-09,General Awareness,2,7,Who discovered gravity?,Einstein,Newton,Galileo,Bohr,1,Isaac Newton discovered gravity.,2,0.5,Science,Easy
+q-ga-161,ssc-cgl-09,General Awareness,2,8,Which country is known as the Land of Midnight Sun?,Norway,Sweden,Canada,Russia,0,Norway experiences midnight sun.,2,0.5,Geography,Medium
+q-ga-162,ssc-cgl-09,General Awareness,2,9,Which is the smallest bone in the human body?,Femur,Tibia,Stapes,Radius,2,Stapes is smallest bone.,2,0.5,Biology,Medium
+q-ga-163,ssc-cgl-09,General Awareness,2,10,Who wrote 'Gitanjali'?,Rabindranath Tagore,Premchand,Gandhi,Nehru,0,Tagore wrote Gitanjali.,2,0.5,Literature,Medium
+q-ga-164,ssc-cgl-09,General Awareness,2,11,Which is the national tree of India?,Banyan,Neem,Mango,Peepal,0,Banyan is national tree.,2,0.5,General Knowledge,Easy
+q-ga-165,ssc-cgl-09,General Awareness,2,12,Which is the largest planet in the solar system?,Earth,Mars,Jupiter,Saturn,2,Jupiter is largest.,2,0.5,Science,Easy
+q-ga-166,ssc-cgl-09,General Awareness,2,13,Which instrument measures wind speed?,Barometer,Thermometer,Anemometer,Hygrometer,2,Anemometer measures wind speed.,2,0.5,Physics,Medium
+q-ga-167,ssc-cgl-09,General Awareness,2,14,Who was the first woman Prime Minister of India?,Indira Gandhi,Sarojini Naidu,Pratibha Patil,Sonia Gandhi,0,Indira Gandhi became PM in 1966.,2,0.5,History,Easy
+q-ga-168,ssc-cgl-09,General Awareness,2,15,Which is the largest lake in India?,Dal Lake,Chilika Lake,Wular Lake,Loktak Lake,1,Chilika is largest coastal lagoon.,2,0.5,Geography,Medium
+q-ga-169,ssc-cgl-09,General Awareness,2,16,What is the SI unit of power?,Watt,Joule,Newton,Pascal,0,Watt is unit of power.,2,0.5,Physics,Medium
+q-ga-170,ssc-cgl-09,General Awareness,2,17,Which state is known as the 'Land of Five Rivers'?,Punjab,Haryana,UP,Bihar,0,Punjab means five rivers.,2,0.5,Geography,Easy
+q-ga-171,ssc-cgl-09,General Awareness,2,18,Which metal is used to make electrical wires?,Iron,Copper,Silver,Gold,1,Copper conducts electricity well.,2,0.5,Science,Easy
+q-ga-172,ssc-cgl-09,General Awareness,2,19,Who is known as the Father of Economics?,Adam Smith,Keynes,Ricardo,Marx,0,Adam Smith wrote Wealth of Nations.,2,0.5,Economics,Medium
+q-ga-173,ssc-cgl-09,General Awareness,2,20,Which is the tallest waterfall in the world?,Niagara,Angel Falls,Victoria,Iguazu,1,Angel Falls is tallest.,2,0.5,Geography,Medium
+q-ga-174,ssc-cgl-09,General Awareness,2,21,Which organ controls the human body?,Heart,Liver,Brain,Lungs,2,Brain controls body functions.,2,0.5,Biology,Easy
+q-ga-175,ssc-cgl-09,General Awareness,2,22,Which is the currency of United Kingdom?,Euro,Pound,Dollar,Yen,1,Pound is UK currency.,2,0.5,Economics,Easy
+q-ga-176,ssc-cgl-09,General Awareness,2,23,Which freedom fighter is known as 'Netaji'?,Gandhi,Nehru,Subhash Chandra Bose,Patel,2,Subhash Chandra Bose called Netaji.,2,0.5,History,Easy
+q-ga-177,ssc-cgl-09,General Awareness,2,24,Which gas is most abundant in air?,Oxygen,Nitrogen,Carbon dioxide,Hydrogen,1,Nitrogen is about 78%.,2,0.5,Science,Easy
+q-ga-178,ssc-cgl-09,General Awareness,2,25,Which is the capital of Canada?,Toronto,Ottawa,Vancouver,Montreal,1,Ottawa is capital.,2,0.5,Geography,Medium
+q-qa-104,ssc-cgl-09,Quantitative Aptitude,3,1,Calculate: what is 15% of 400?,50,55,60,65,2,15% of 400 = 60.,2,0.5,Percentage,Easy
+q-qa-105,ssc-cgl-09,Quantitative Aptitude,3,2,Ratio of two numbers is 3:4 and sum is 56. Find larger number.,28,30,32,34,2,4/7 × 56 = 32.,2,0.5,Ratio,Medium
+q-qa-106,ssc-cgl-09,Quantitative Aptitude,3,3,Average of 6 numbers is 14. Find total sum.,72,78,84,90,2,14 × 6 = 84.,2,0.5,Average,Easy
+q-qa-107,ssc-cgl-09,Quantitative Aptitude,3,4,A number increased by 20% becomes 240. Find original number.,180,190,200,210,2,200 × 1.2 = 240.,2,0.5,Percentage,Medium
+q-qa-108,ssc-cgl-09,Quantitative Aptitude,3,5,Simple interest on ₹1500 at 10% for 2 years?,250,280,300,320,2,SI = 300.,2,0.5,Simple Interest,Easy
+q-qa-109,ssc-cgl-09,Quantitative Aptitude,3,6,A train travels 300 km in 5 hours. Speed?,50,55,60,65,2,300/5 = 60 km/h.,2,0.5,Speed & Distance,Easy
+q-qa-110,ssc-cgl-09,Quantitative Aptitude,3,7,What is the square of 17?,256,269,289,306,2,17² = 289.,2,0.5,Arithmetic,Easy
+q-qa-111,ssc-cgl-09,Quantitative Aptitude,3,8,"If CP = ₹900 and SP = ₹1080, profit %?",0.15,0.18,0.2,0.25,2,Profit 180/900 ×100 = 20%.,2,0.5,Profit & Loss,Medium
+q-qa-112,ssc-cgl-09,Quantitative Aptitude,3,9,Find the LCM of 12 and 15.,30,45,60,75,2,LCM = 60.,2,0.5,LCM,Easy
+q-qa-113,ssc-cgl-09,Quantitative Aptitude,3,10,5 men finish work in 10 days. 10 men will finish in?,4,5,6,7,1,Double men half time.,2,0.5,Time & Work,Medium
+q-qa-114,ssc-cgl-09,Quantitative Aptitude,3,11,Perimeter of square 52 cm. Find side.,11,12,13,14,2,52/4 = 13.,2,0.5,Geometry,Easy
+q-qa-115,ssc-cgl-09,Quantitative Aptitude,3,12,₹3000 becomes ₹3600 in 2 years. Find rate.,0.08,0.09,0.1,0.11,2,SI = 600.,2,0.5,Simple Interest,High
+q-qa-116,ssc-cgl-09,Quantitative Aptitude,3,13,Calculate the value of 4/5 of 75.,55,60,65,70,1,60,2,0.5,Fraction,Easy
+q-qa-117,ssc-cgl-09,Quantitative Aptitude,3,14,"Area of rectangle 180, length 15. Breadth?",10,11,12,13,2,180/15 = 12.,2,0.5,Geometry,Medium
+q-qa-118,ssc-cgl-09,Quantitative Aptitude,3,15,Remainder when number divided by 6 is 3. By 12?,2,3,4,5,1,Same remainder.,2,0.5,Number System,Medium
+q-qa-119,ssc-cgl-09,Quantitative Aptitude,3,16,Compound interest on ₹2000 at 10% for 2 years?,400,420,440,460,1,CI = 420.,2,0.5,Compound Interest,High
+q-qa-120,ssc-cgl-09,Quantitative Aptitude,3,17,Average of first 20 natural numbers?,9.5,10,10.5,11,2,(n+1)/2 = 10.5.,2,0.5,Average,Medium
+q-qa-121,ssc-cgl-09,Quantitative Aptitude,3,18,40% of number is 120. Find number.,250,280,300,320,2,300,2,0.5,Percentage,Medium
+q-qa-122,ssc-cgl-09,Quantitative Aptitude,3,19,Find the value of √225.,13,14,15,16,2,15,2,0.5,Arithmetic,Easy
+q-qa-123,ssc-cgl-09,Quantitative Aptitude,3,20,20% discount on ₹800. Find selling price.,620,640,650,660,1,Discount 160.,2,0.5,Discount,Easy
+q-qa-124,ssc-cgl-09,Quantitative Aptitude,3,21,Distance 180 km in 3 hours. Speed?,50,55,60,65,2,#ERROR!,2,0.5,Speed & Distance,Easy
+q-qa-125,ssc-cgl-09,Quantitative Aptitude,3,22,Find the HCF of 18 and 24.,3,6,9,12,1,HCF = 6.,2,0.5,HCF,Easy
+q-qa-126,ssc-cgl-09,Quantitative Aptitude,3,23,A number increased by 25% becomes 250. Find original number.,180,190,200,210,2,200 × 1.25.,2,0.5,Percentage,Medium
+q-qa-127,ssc-cgl-09,Quantitative Aptitude,3,24,Area of square side 12?,124,134,144,154,2,12² = 144.,2,0.5,Geometry,Easy
+q-qa-128,ssc-cgl-09,Quantitative Aptitude,3,25,Cost of 8 pens ₹96. Cost of 1 pen?,10,11,12,13,2,96/8 = 12.,2,0.5,Arithmetic,Easy
+q-en-103,ssc-cgl-09,English,4,1,Choose the correct synonym of 'BRAVE'.,Coward,Bold,Weak,Timid,1,Brave means bold.,2,0.5,Vocabulary,Easy
+q-en-104,ssc-cgl-09,English,4,2,Choose the correct antonym of 'RICH'.,Poor,Wealthy,Strong,Big,0,Poor opposite.,2,0.5,Vocabulary,Easy
+q-en-105,ssc-cgl-09,English,4,3,Select the correctly spelled word.,Goverment,Government,Govermentt,Governmant,1,Government correct.,2,0.5,Spelling,Easy
+q-en-106,ssc-cgl-09,English,4,4,She is interested ___ sports.,in,on,at,with,0,Correct preposition.,2,0.5,Grammar,Easy
+q-en-107,ssc-cgl-09,English,4,5,Passive voice: They built a house.,A house builds,A house was built,A house built,A house is building,1,Past passive.,2,0.5,Voice,Medium
+q-en-108,ssc-cgl-09,English,4,6,Choose the correct synonym of 'FAST'.,Quick,Slow,Late,Lazy,0,Fast means quick.,2,0.5,Vocabulary,Easy
+q-en-109,ssc-cgl-09,English,4,7,Choose the correct antonym of 'CLEAN'.,Dirty,Neat,Pure,Fresh,0,Dirty opposite.,2,0.5,Vocabulary,Easy
+q-en-110,ssc-cgl-09,English,4,8,Identify error: She go to school daily.,She,go,to school,No error,0,Should be goes.,2,0.5,Error Detection,High
+q-en-111,ssc-cgl-09,English,4,9,He is fond ___ music.,of,in,on,at,0,Correct preposition.,2,0.5,Grammar,Easy
+q-en-112,ssc-cgl-09,English,4,10,"Indirect speech: He said, 'I am happy'.",He said he was happy,He said he is happy,He said happy,He said I happy,0,Tense change.,2,0.5,Narration,Medium
+q-en-113,ssc-cgl-09,English,4,11,Choose the correct synonym of 'WISE'.,Intelligent,Foolish,Weak,Dull,0,Wise means intelligent.,2,0.5,Vocabulary,Medium
+q-en-114,ssc-cgl-09,English,4,12,Choose the correct antonym of 'OLD'.,New,Ancient,Anciently,Elder,0,New opposite.,2,0.5,Vocabulary,Easy
+q-en-115,ssc-cgl-09,English,4,13,Neither of the boys ___ ready.,are,were,is,be,2,Singular verb.,2,0.5,Grammar,Medium
+q-en-116,ssc-cgl-09,English,4,14,Idiom: Hit the nail on the head means?,Be exactly right,Miss point,Get angry,Work hard,0,Correct meaning.,2,0.5,Idiom,Medium
+q-en-117,ssc-cgl-09,English,4,15,Choose the correct synonym of 'LARGE'.,Big,Small,Tiny,Short,0,Large means big.,2,0.5,Vocabulary,Easy
+q-en-118,ssc-cgl-09,English,4,16,Choose the correct antonym of 'HARD'.,Difficult,Easy,Tough,Rigid,1,Easy opposite.,2,0.5,Vocabulary,Easy
+q-en-119,ssc-cgl-09,English,4,17,He has been here ___ 2015.,for,since,at,in,1,Since used with time point.,2,0.5,Grammar,Medium
+q-en-120,ssc-cgl-09,English,4,18,One word: One who teaches students.,Doctor,Teacher,Lawyer,Engineer,1,Teacher definition.,2,0.5,Vocabulary,Easy
+q-en-121,ssc-cgl-09,English,4,19,Correct punctuation?,its raining,It’s raining,Its raining,Its' raining,1,Apostrophe correct.,2,0.5,Punctuation,Easy
+q-en-122,ssc-cgl-09,English,4,20,Choose the correct synonym of 'CALM'.,Peaceful,Angry,Loud,Rough,0,Calm means peaceful.,2,0.5,Vocabulary,Easy
+q-en-123,ssc-cgl-09,English,4,21,Antonym of 'VISIBLE'?,Clear,Bright,Hidden,Obvious,2,Hidden opposite.,2,0.5,Vocabulary,Medium
+q-en-124,ssc-cgl-09,English,4,22,The train arrived ___ time.,at,in,on,with,2,On time phrase.,2,0.5,Grammar,Medium
+q-en-125,ssc-cgl-09,English,4,23,Voice: They are repairing road.,Road repaired,Road is repaired,Road is being repaired,Road repairing,2,Present continuous passive.,2,0.5,Voice,High
+q-en-126,ssc-cgl-09,English,4,24,Synonym of 'HONEST'?,Truthful,Clever,Rich,Brave,0,Honest means truthful.,2,0.5,Vocabulary,Easy
+q-re-154,ssc-cgl-10,Reasoning,1,1,"Find the next number in the series: 3, 12, 48, 192, ?",576,768,960,384,1,Multiply by 4 each step.,2,0.5,Series,Medium
+q-re-155,ssc-cgl-10,Reasoning,1,2,"If COLD is coded as DPME, how is HEAT coded?",IFBU,IGBV,IFAT,JFBU,0,Each letter shifted +1.,2,0.5,Coding-Decoding,Medium
+q-re-156,ssc-cgl-10,Reasoning,1,3,Find the odd one out.,Square,Triangle,Circle,Table,3,Table is furniture.,2,0.5,Odd One Out,Easy
+q-re-157,ssc-cgl-10,Reasoning,1,4,Complete analogy: Knife : Cut :: Pen : ?,Write,Read,Draw,Paint,0,Pen is used to write.,2,0.5,Analogy,Easy
+q-re-158,ssc-cgl-10,Reasoning,1,5,How many sides does a hexagon have?,5,6,7,8,1,Hexagon has 6 sides.,2,0.5,Reasoning,Easy
+q-re-159,ssc-cgl-10,Reasoning,1,6,"In a row, Sita is 7th from left and 5th from right. Total persons?",10,11,12,13,1,7+5−1=11.,2,0.5,Ranking,Medium
+q-re-160,ssc-cgl-10,Reasoning,1,7,"Find missing number: 2, 6, 18, 54, ?",108,162,216,270,1,Multiply by 3.,2,0.5,Series,Medium
+q-re-161,ssc-cgl-10,Reasoning,1,8,Opposite direction of North-East is?,South-West,North-West,South-East,East,0,Opposite of NE is SW.,2,0.5,Direction,Medium
+q-re-162,ssc-cgl-10,Reasoning,1,9,"If A=1, B=2, then FACE=?",12,13,14,15,2,"F=6,A=1,C=3,E=5 total 15.",2,0.5,Alphabet,Medium
+q-re-163,ssc-cgl-10,Reasoning,1,10,"Find next term: 7, 14, 21, 28, ?",32,35,36,42,1,Add 7 each time.,2,0.5,Series,Easy
+q-re-164,ssc-cgl-10,Reasoning,1,11,"If today is Wednesday, what day after 14 days?",Monday,Tuesday,Wednesday,Thursday,2,14 mod 7=0.,2,0.5,Calendar,Medium
+q-re-165,ssc-cgl-10,Reasoning,1,12,"Find odd number: 11, 13, 17, 21, 19",11,13,17,21,3,21 not prime.,2,0.5,Number System,Medium
+q-re-166,ssc-cgl-10,Reasoning,1,13,Mirror image of 2:30 clock is?,09:30:00,08:30:00,07:30:00,06:30:00,0,12−2:30=9:30.,2,0.5,Clock,High
+q-re-167,ssc-cgl-10,Reasoning,1,14,"Find missing term: 4, 9, 16, 25, ?",30,35,36,49,2,Squares sequence.,2,0.5,Series,Easy
+q-re-168,ssc-cgl-10,Reasoning,1,15,Find the odd word from the given options.,Shirt,Pant,Shoe,Bottle,3,"Bottle is object, others clothing.",2,0.5,Odd One Out,Easy
+q-re-169,ssc-cgl-10,Reasoning,1,16,"If BOOK is coded as CPPL, how is GAME coded?",HBNF,HBNE,HBNG,GBNF,0,Each letter +1.,2,0.5,Coding-Decoding,Medium
+q-re-170,ssc-cgl-10,Reasoning,1,17,How many days are there in 3 weeks?,18,19,20,21,3,3×7=21.,2,0.5,General Knowledge,Easy
+q-re-171,ssc-cgl-10,Reasoning,1,18,"Find missing number: 1, 4, 10, 19, ?",29,30,31,32,2,"Differences +3,+6,+9,+12.",2,0.5,Series,Medium
+q-re-172,ssc-cgl-10,Reasoning,1,19,"If South becomes North, East becomes?",West,South,East,North,0,Opposite direction.,2,0.5,Direction,Medium
+q-re-173,ssc-cgl-10,Reasoning,1,20,"Find next alphabet: B, E, H, K, ?",L,M,N,O,2,#ERROR!,2,0.5,Series,Medium
+q-re-174,ssc-cgl-10,Reasoning,1,21,"Find odd number: 12, 16, 20, 24, 27",12,16,20,27,3,27 not multiple of 4.,2,0.5,Number System,Medium
+q-re-175,ssc-cgl-10,Reasoning,1,22,"If 4 workers finish work in 8 days, how many days for 2 workers?",12,14,16,18,2,Half workers double time.,2,0.5,Time & Work,Medium
+q-re-176,ssc-cgl-10,Reasoning,1,23,Which shape has four equal sides?,Square,Circle,Triangle,Pentagon,0,Square has four equal sides.,2,0.5,Geometry,Easy
+q-re-177,ssc-cgl-10,Reasoning,1,24,"Find missing term: 5, 10, 20, 40, ?",60,70,80,90,2,Multiply by 2.,2,0.5,Series,Easy
+q-re-178,ssc-cgl-10,Reasoning,1,25,"If today is Sunday, what day after 21 days?",Saturday,Sunday,Monday,Tuesday,1,21 mod 7=0.,2,0.5,Calendar,High
+q-ga-179,ssc-cgl-10,General Awareness,2,1,Who is known as the Father of the Indian Constitution?,Gandhi,Nehru,B. R. Ambedkar,Patel,2,Ambedkar chaired Drafting Committee.,2,0.5,Polity,Medium
+q-ga-180,ssc-cgl-10,General Awareness,2,2,Which is the largest state in India by area?,UP,Rajasthan,Maharashtra,MP,1,Rajasthan largest.,2,0.5,Geography,Easy
+q-ga-181,ssc-cgl-10,General Awareness,2,3,Which vitamin deficiency causes rickets?,A,B,C,D,3,Vitamin D deficiency.,2,0.5,Biology,Medium
+q-ga-182,ssc-cgl-10,General Awareness,2,4,Who built the Taj Mahal?,Akbar,Babur,Shah Jahan,Aurangzeb,2,Shah Jahan built Taj Mahal.,2,0.5,History,Easy
+q-ga-183,ssc-cgl-10,General Awareness,2,5,Which gas is most abundant in air?,Oxygen,Nitrogen,CO2,Hydrogen,1,Nitrogen about 78%.,2,0.5,Science,Easy
+q-ga-184,ssc-cgl-10,General Awareness,2,6,What is the capital of Karnataka?,Mysuru,Bengaluru,Hubli,Mangalore,1,Bengaluru capital.,2,0.5,Geography,Easy
+q-ga-185,ssc-cgl-10,General Awareness,2,7,Who discovered penicillin?,Fleming,Darwin,Newton,Edison,0,Alexander Fleming.,2,0.5,Science,Medium
+q-ga-186,ssc-cgl-10,General Awareness,2,8,Which country is called Land of Rising Sun?,China,Japan,Korea,Thailand,1,Japan known as Land of Rising Sun.,2,0.5,Geography,Easy
+q-ga-187,ssc-cgl-10,General Awareness,2,9,Which is the smallest planet?,Mars,Earth,Mercury,Venus,2,Mercury smallest.,2,0.5,Science,Easy
+q-ga-188,ssc-cgl-10,General Awareness,2,10,Who wrote 'Discovery of India'?,Gandhi,Nehru,Tagore,Patel,1,Nehru wrote book.,2,0.5,History,Medium
+q-ga-189,ssc-cgl-10,General Awareness,2,11,Which is the national animal of India?,Lion,Tiger,Elephant,Leopard,1,Bengal Tiger national animal.,2,0.5,General Knowledge,Easy
+q-ga-190,ssc-cgl-10,General Awareness,2,12,Which planet is known as Red Planet?,Mars,Venus,Earth,Jupiter,0,Mars appears red.,2,0.5,Science,Easy
+q-ga-191,ssc-cgl-10,General Awareness,2,13,Which instrument measures temperature?,Barometer,Thermometer,Hygrometer,Altimeter,1,Thermometer measures temperature.,2,0.5,Physics,Easy
+q-ga-192,ssc-cgl-10,General Awareness,2,14,Who was the first President of India?,Rajendra Prasad,Radhakrishnan,Kalam,Zakir Hussain,0,Rajendra Prasad first President.,2,0.5,History,Medium
+q-ga-193,ssc-cgl-10,General Awareness,2,15,Which is the largest ocean?,Atlantic,Pacific,Indian,Arctic,1,Pacific largest.,2,0.5,Geography,Easy
+q-ga-194,ssc-cgl-10,General Awareness,2,16,What is the SI unit of force?,Joule,Watt,Newton,Pascal,2,Force measured in Newton.,2,0.5,Physics,Medium
+q-ga-195,ssc-cgl-10,General Awareness,2,17,Which state is known as Tea Garden of India?,Assam,Kerala,UP,Bihar,0,Assam famous for tea.,2,0.5,Geography,Easy
+q-ga-196,ssc-cgl-10,General Awareness,2,18,Which metal is used for coins?,Iron,Copper,Gold,Silver,1,Copper commonly used.,2,0.5,Science,Easy
+q-ga-197,ssc-cgl-10,General Awareness,2,19,Who is known as Father of Economics?,Adam Smith,Keynes,Ricardo,Marx,0,Adam Smith wrote Wealth of Nations.,2,0.5,Economics,Medium
+q-ga-198,ssc-cgl-10,General Awareness,2,20,Which is the highest mountain in world?,K2,Everest,Kanchenjunga,Nanga Parbat,1,Mount Everest highest.,2,0.5,Geography,Easy
+q-ga-199,ssc-cgl-10,General Awareness,2,21,Which organ purifies blood?,Heart,Liver,Kidney,Lungs,2,Kidney filters blood.,2,0.5,Biology,Easy
+q-ga-200,ssc-cgl-10,General Awareness,2,22,Which is currency of Japan?,Yen,Dollar,Euro,Rupee,0,Yen is currency.,2,0.5,Economics,Easy
+q-ga-201,ssc-cgl-10,General Awareness,2,23,Who gave slogan 'Jai Hind'?,Gandhi,Bose,Nehru,Patel,1,Subhash Chandra Bose.,2,0.5,History,Medium
+q-ga-202,ssc-cgl-10,General Awareness,2,24,Which gas plants release?,Oxygen,Nitrogen,CO2,Hydrogen,0,Plants release oxygen.,2,0.5,Science,Easy
+q-ga-203,ssc-cgl-10,General Awareness,2,25,Which is capital of Australia?,Sydney,Melbourne,Canberra,Perth,2,Canberra capital.,2,0.5,Geography,Medium
+q-qa-129,ssc-cgl-10,Quantitative Aptitude,3,1,Calculate: what is 25% of 320?,60,70,80,90,2,25% of 320 = 80.,2,0.5,Percentage,Easy
+q-qa-130,ssc-cgl-10,Quantitative Aptitude,3,2,Ratio of two numbers is 4:5 and sum is 45. Larger number?,20,25,30,35,1,5/9×45=25.,2,0.5,Ratio,Medium
+q-qa-131,ssc-cgl-10,Quantitative Aptitude,3,3,Average of 7 numbers is 10. Sum?,60,65,70,75,2,10×7=70.,2,0.5,Average,Easy
+q-qa-132,ssc-cgl-10,Quantitative Aptitude,3,4,A number increased by 10% becomes 220. Original number?,180,190,200,210,2,200×1.1=220.,2,0.5,Percentage,Medium
+q-qa-133,ssc-cgl-10,Quantitative Aptitude,3,5,Simple interest on ₹2000 at 5% for 2 years?,150,180,200,220,2,SI=200.,2,0.5,Simple Interest,Easy
+q-qa-134,ssc-cgl-10,Quantitative Aptitude,3,6,A car travels 180 km in 3 hours. Speed?,50,55,60,65,2,180/3=60.,2,0.5,Speed & Distance,Easy
+q-qa-135,ssc-cgl-10,Quantitative Aptitude,3,7,What is the square of 19?,341,351,361,371,2,19²=361.,2,0.5,Arithmetic,Easy
+q-qa-136,ssc-cgl-10,Quantitative Aptitude,3,8,"If CP=₹1000 and SP=₹1200, profit%?",0.15,0.18,0.2,0.25,2,200/1000×100=20%.,2,0.5,Profit & Loss,Medium
+q-qa-137,ssc-cgl-10,Quantitative Aptitude,3,9,Find the LCM of 8 and 12.,16,24,32,36,1,LCM=24.,2,0.5,LCM,Easy
+q-qa-138,ssc-cgl-10,Quantitative Aptitude,3,10,6 men finish work in 12 days. 12 men?,4,5,6,7,2,Double men half time.,2,0.5,Time & Work,Medium
+q-qa-139,ssc-cgl-10,Quantitative Aptitude,3,11,Perimeter of square 64 cm. Side?,14,15,16,17,2,64/4=16.,2,0.5,Geometry,Easy
+q-qa-140,ssc-cgl-10,Quantitative Aptitude,3,12,₹4000 becomes ₹4800 in 2 years. Rate?,0.08,0.09,0.1,0.11,2,SI=800.,2,0.5,Simple Interest,High
+q-qa-141,ssc-cgl-10,Quantitative Aptitude,3,13,Calculate the value of 3/4 of 64.,40,44,48,52,2,48,2,0.5,Fraction,Easy
+q-qa-142,ssc-cgl-10,Quantitative Aptitude,3,14,"Area rectangle 240, length 12. Breadth?",18,19,20,21,2,240/12=20.,2,0.5,Geometry,Medium
+q-qa-143,ssc-cgl-10,Quantitative Aptitude,3,15,Remainder when divided by 7 is 3. By 14?,2,3,4,5,1,Same remainder.,2,0.5,Number System,Medium
+q-qa-144,ssc-cgl-10,Quantitative Aptitude,3,16,Compound interest on ₹1500 at 10% for 2 years?,300,315,330,345,1,CI=315.,2,0.5,Compound Interest,High
+q-qa-145,ssc-cgl-10,Quantitative Aptitude,3,17,Average of first 12 natural numbers?,6,6.5,7,7.5,1,(n+1)/2=6.5.,2,0.5,Average,Medium
+q-qa-146,ssc-cgl-10,Quantitative Aptitude,3,18,30% of number is 90. Find number.,250,270,300,320,2,300,2,0.5,Percentage,Medium
+q-qa-147,ssc-cgl-10,Quantitative Aptitude,3,19,Find the value of √169.,11,12,13,14,2,13,2,0.5,Arithmetic,Easy
+q-qa-148,ssc-cgl-10,Quantitative Aptitude,3,20,15% discount on ₹600. Selling price?,480,500,510,520,2,Discount=90.,2,0.5,Discount,Easy
+q-qa-149,ssc-cgl-10,Quantitative Aptitude,3,21,Distance 210 km in 3 hours. Speed?,60,65,70,75,2,#ERROR!,2,0.5,Speed & Distance,Easy
+q-qa-150,ssc-cgl-10,Quantitative Aptitude,3,22,Find the HCF of 20 and 30.,5,10,15,20,1,HCF=10.,2,0.5,HCF,Easy
+q-qa-151,ssc-cgl-10,Quantitative Aptitude,3,23,A number increased by 50% becomes 300. Original?,180,190,200,210,2,200×1.5=300.,2,0.5,Percentage,Medium
+q-qa-152,ssc-cgl-10,Quantitative Aptitude,3,24,Find the area of a square with side 9 cm.,70,72,81,90,2,9²=81.,2,0.5,Geometry,Easy
+q-qa-153,ssc-cgl-10,Quantitative Aptitude,3,25,Cost of 10 pens ₹150. Cost of 1 pen?,12,13,14,15,3,150/10=15.,2,0.5,Arithmetic,Easy
+q-en-127,ssc-cgl-10,English,4,1,Choose the correct synonym of 'HUGE'.,Big,Small,Tiny,Narrow,0,Huge means big.,2,0.5,Vocabulary,Easy
+q-en-128,ssc-cgl-10,English,4,2,Choose the correct antonym of 'EARLY'.,Late,Fast,Soon,Quick,0,Late opposite.,2,0.5,Vocabulary,Easy
+q-en-129,ssc-cgl-10,English,4,3,Select the correctly spelled word.,Recieve,Receive,Receve,Recive,1,Receive correct.,2,0.5,Spelling,Easy
+q-en-130,ssc-cgl-10,English,4,4,He is fond ___ cricket.,of,in,on,at,0,Correct preposition.,2,0.5,Grammar,Easy
+q-en-131,ssc-cgl-10,English,4,5,Passive voice: They wrote a letter.,A letter writes,A letter was written,A letter written,A letter is writing,1,Past passive.,2,0.5,Voice,Medium
+q-en-132,ssc-cgl-10,English,4,6,Choose the correct synonym of 'QUICK'.,Rapid,Slow,Late,Lazy,0,Quick means rapid.,2,0.5,Vocabulary,Easy
+q-en-133,ssc-cgl-10,English,4,7,Antonym of 'STRONG'?,Weak,Powerful,Firm,Healthy,0,Weak opposite.,2,0.5,Vocabulary,Easy
+q-en-134,ssc-cgl-10,English,4,8,Identify error: He do his work.,He,do,his work,No error,1,Should be does.,2,0.5,Error Detection,High
+q-en-135,ssc-cgl-10,English,4,9,She is good ___ English.,at,on,in,with,0,Correct preposition.,2,0.5,Grammar,Easy
+q-en-136,ssc-cgl-10,English,4,10,"Indirect speech: She said, 'I am ready'.",She said she was ready,She said she is ready,She said ready,She said I ready,0,Tense change.,2,0.5,Narration,Medium
+q-en-137,ssc-cgl-10,English,4,11,Choose the correct synonym of 'SMART'.,Intelligent,Dull,Slow,Lazy,0,Smart means intelligent.,2,0.5,Vocabulary,Medium
+q-en-138,ssc-cgl-10,English,4,12,Choose the correct antonym of 'HAPPY'.,Sad,Joyful,Glad,Pleased,0,Sad opposite.,2,0.5,Vocabulary,Easy
+q-en-139,ssc-cgl-10,English,4,13,Neither Ram nor Shyam ___ coming.,are,were,is,be,2,Singular verb.,2,0.5,Grammar,Medium
+q-en-140,ssc-cgl-10,English,4,14,Idiom: Once in a blue moon means?,Rarely,Often,Never,Daily,0,Rarely meaning.,2,0.5,Idiom,Medium
+q-en-141,ssc-cgl-10,English,4,15,Choose the correct synonym of 'CALM'.,Peaceful,Angry,Loud,Rough,0,Calm means peaceful.,2,0.5,Vocabulary,Easy
+q-en-142,ssc-cgl-10,English,4,16,Choose the correct antonym of 'OPEN'.,Close,Start,Begin,Unlock,0,Close opposite.,2,0.5,Vocabulary,Easy
+q-en-143,ssc-cgl-10,English,4,17,He has lived here ___ 2018.,for,since,at,in,1,Since used with time point.,2,0.5,Grammar,Medium
+q-en-144,ssc-cgl-10,English,4,18,One word: One who writes books.,Reader,Writer,Teacher,Singer,1,Writer definition.,2,0.5,Vocabulary,Easy
+q-en-145,ssc-cgl-10,English,4,19,Correct punctuation?,its cold,It’s cold,Its cold,Its' cold,1,Apostrophe correct.,2,0.5,Punctuation,Easy
+q-en-146,ssc-cgl-10,English,4,20,Choose the correct synonym of 'VITAL'.,Important,Useless,Common,Weak,0,Vital means important.,2,0.5,Vocabulary,Medium
+q-en-147,ssc-cgl-10,English,4,21,Antonym of 'VISIBLE'?,Clear,Bright,Hidden,Open,2,Hidden opposite.,2,0.5,Vocabulary,Medium
+q-en-148,ssc-cgl-10,English,4,22,The train arrived ___ time.,at,in,on,with,2,On time phrase.,2,0.5,Grammar,Medium
+q-en-149,ssc-cgl-10,English,4,23,Voice: They are building bridge.,Bridge built,Bridge is built,Bridge is being built,Bridge building,2,Present continuous passive.,2,0.5,Voice,High
+q-en-150,ssc-cgl-10,English,4,24,Synonym of 'HONEST'?,Truthful,Clever,Rich,Brave,0,Honest means truthful.,2,0.5,Vocabulary,Easy
+q-re-179,ssc-cgl-11,Reasoning,1,1,"Find the next number: 4, 8, 16, 32, ?",48,56,64,72,2,Multiply by 2.,2,0.5,Series,Easy
+q-re-180,ssc-cgl-11,Reasoning,1,2,"If CAT is coded as DBU, how is DOG coded?",EPH,EPI,EOG,FPI,0,Each letter +1.,2,0.5,Coding-Decoding,Medium
+q-re-181,ssc-cgl-11,Reasoning,1,3,Find the odd one out.,Apple,Mango,Banana,Carrot,3,Carrot is vegetable.,2,0.5,Odd One Out,Easy
+q-re-182,ssc-cgl-11,Reasoning,1,4,Complete analogy: Sun : Day :: Moon : ?,Night,Sky,Light,Star,0,Moon relates to night.,2,0.5,Analogy,Easy
+q-re-183,ssc-cgl-11,Reasoning,1,5,How many sides does a pentagon have?,4,5,6,7,1,Pentagon has 5 sides.,2,0.5,Reasoning,Easy
+q-re-184,ssc-cgl-11,Reasoning,1,6,"In a row, Rahul is 5th from left and 4th from right. Total persons?",8,9,10,11,1,5+4−1=8.,2,0.5,Ranking,Medium
+q-re-185,ssc-cgl-11,Reasoning,1,7,"Find missing number: 3, 9, 27, 81, ?",162,243,324,405,1,Multiply by 3.,2,0.5,Series,Medium
+q-re-186,ssc-cgl-11,Reasoning,1,8,Opposite direction of East is?,West,North,South,East,0,Opposite of East is West.,2,0.5,Direction,Easy
+q-re-187,ssc-cgl-11,Reasoning,1,9,"If A=1, B=2, then CAB=?",5,6,7,8,1,"C=3,A=1,B=2 total 6.",2,0.5,Alphabet,Medium
+q-re-188,ssc-cgl-11,Reasoning,1,10,"Find next term: 10, 20, 30, 40, ?",45,50,55,60,1,Add 10.,2,0.5,Series,Easy
+q-re-189,ssc-cgl-11,Reasoning,1,11,"If today is Monday, what day after 7 days?",Sunday,Monday,Tuesday,Wednesday,1,7 mod 7=0.,2,0.5,Calendar,Medium
+q-re-190,ssc-cgl-11,Reasoning,1,12,"Find odd number: 2, 4, 6, 9, 8",2,4,6,9,3,9 is odd.,2,0.5,Number System,Easy
+q-re-191,ssc-cgl-11,Reasoning,1,13,Mirror image of 4:00 clock is?,06:00:00,07:00:00,08:00:00,09:00:00,2,12−4=8.,2,0.5,Clock,High
+q-re-192,ssc-cgl-11,Reasoning,1,14,"Find missing term: 1, 4, 9, 16, ?",20,24,25,36,2,Squares sequence.,2,0.5,Series,Easy
+q-re-193,ssc-cgl-11,Reasoning,1,15,Find the odd word from the given options.,Pen,Pencil,Eraser,Chair,3,Chair is furniture.,2,0.5,Odd One Out,Easy
+q-re-194,ssc-cgl-11,Reasoning,1,16,"If PEN is coded as QFO, how is MAP coded?",NBQ,NAP,MBQ,NBP,0,Each letter +1.,2,0.5,Coding-Decoding,Medium
+q-re-195,ssc-cgl-11,Reasoning,1,17,How many hours are there in 1 day?,12,18,24,36,2,24 hours.,2,0.5,General Knowledge,Easy
+q-re-196,ssc-cgl-11,Reasoning,1,18,"Find missing number: 2, 5, 10, 17, ?",24,25,26,27,2,#ERROR!,2,0.5,Series,Medium
+q-re-197,ssc-cgl-11,Reasoning,1,19,"If North becomes South, East becomes?",West,North,South,East,0,Opposite direction.,2,0.5,Direction,Medium
+q-re-198,ssc-cgl-11,Reasoning,1,20,"Find next alphabet: A, D, G, J, ?",K,L,M,N,2,#ERROR!,2,0.5,Series,Medium
+q-re-199,ssc-cgl-11,Reasoning,1,21,"Find odd number: 14, 21, 28, 35, 40",14,21,28,40,3,40 not multiple of 7.,2,0.5,Number System,Medium
+q-re-200,ssc-cgl-11,Reasoning,1,22,"If 3 workers finish work in 9 days, 9 workers will finish in?",2,3,4,5,1,Triple workers one-third time.,2,0.5,Time & Work,Medium
+q-re-201,ssc-cgl-11,Reasoning,1,23,Which shape has three sides?,Square,Triangle,Circle,Pentagon,1,Triangle has 3 sides.,2,0.5,Geometry,Easy
+q-re-202,ssc-cgl-11,Reasoning,1,24,"Find missing term: 6, 12, 24, 48, ?",72,84,96,108,2,Multiply by 2.,2,0.5,Series,Easy
+q-re-203,ssc-cgl-11,Reasoning,1,25,"If today is Friday, what day after 14 days?",Thursday,Friday,Saturday,Sunday,1,14 mod 7=0.,2,0.5,Calendar,High
+q-ga-204,ssc-cgl-11,General Awareness,2,1,Who is known as the Father of the White Revolution in India?,M. S. Swaminathan,Verghese Kurien,C. Subramaniam,Homi Bhabha,1,Verghese Kurien led White Revolution.,2,0.5,Agriculture,Medium
+q-ga-205,ssc-cgl-11,General Awareness,2,2,Which is the longest river in India?,Ganga,Godavari,Yamuna,Brahmaputra,0,Ganga is longest river in India.,2,0.5,Geography,Medium
+q-ga-206,ssc-cgl-11,General Awareness,2,3,Which vitamin is necessary for blood clotting?,A,B,C,K,3,Vitamin K helps clotting.,2,0.5,Biology,Medium
+q-ga-207,ssc-cgl-11,General Awareness,2,4,Who was the founder of Maurya Empire?,Ashoka,Chandragupta Maurya,Bindusara,Harsha,1,Chandragupta founded Maurya Empire.,2,0.5,History,Medium
+q-ga-208,ssc-cgl-11,General Awareness,2,5,Which gas is used in fire extinguishers?,Oxygen,Nitrogen,Carbon dioxide,Hydrogen,2,CO2 used to stop fire.,2,0.5,Science,Easy
+q-ga-209,ssc-cgl-11,General Awareness,2,6,What is the capital of Kerala?,Kochi,Trivandrum,Kozhikode,Kollam,1,Trivandrum is capital.,2,0.5,Geography,Easy
+q-ga-210,ssc-cgl-11,General Awareness,2,7,Who invented electric bulb?,Edison,Newton,Tesla,Galileo,0,Thomas Edison invented bulb.,2,0.5,Science,Easy
+q-ga-211,ssc-cgl-11,General Awareness,2,8,Which country is known as the Land of Thunderbolt?,Bhutan,Nepal,Myanmar,Sri Lanka,0,Bhutan nickname.,2,0.5,Geography,Medium
+q-ga-212,ssc-cgl-11,General Awareness,2,9,Which part of plant prepares food?,Root,Stem,Leaf,Flower,2,Leaves perform photosynthesis.,2,0.5,Biology,Easy
+q-ga-213,ssc-cgl-11,General Awareness,2,10,Who wrote 'Ramayana'?,Valmiki,Vyasa,Tulsidas,Kalidasa,0,Valmiki wrote Ramayana.,2,0.5,Literature,Medium
+q-ga-214,ssc-cgl-11,General Awareness,2,11,Which is the national fruit of India?,Mango,Apple,Banana,Orange,0,Mango national fruit.,2,0.5,General Knowledge,Easy
+q-ga-215,ssc-cgl-11,General Awareness,2,12,Which is the hottest planet?,Mercury,Venus,Earth,Mars,1,Venus hottest due to greenhouse effect.,2,0.5,Science,Medium
+q-ga-216,ssc-cgl-11,General Awareness,2,13,Which instrument measures air pressure?,Barometer,Thermometer,Hygrometer,Altimeter,0,Barometer measures pressure.,2,0.5,Physics,Medium
+q-ga-217,ssc-cgl-11,General Awareness,2,14,Who was the first woman President of India?,Indira Gandhi,Pratibha Patil,Sarojini Naidu,Sonia Gandhi,1,Pratibha Patil first woman President.,2,0.5,Polity,Medium
+q-ga-218,ssc-cgl-11,General Awareness,2,15,Which is the largest dam in India?,Bhakra Nangal,Hirakud,Tehri,Nagarjuna Sagar,1,Hirakud one of largest.,2,0.5,Geography,Medium
+q-ga-219,ssc-cgl-11,General Awareness,2,16,What is the SI unit of energy?,Joule,Watt,Newton,Pascal,0,Joule unit of energy.,2,0.5,Physics,Easy
+q-ga-220,ssc-cgl-11,General Awareness,2,17,Which state is known as the Spice Garden of India?,Kerala,Tamil Nadu,Karnataka,Goa,0,Kerala famous for spices.,2,0.5,Geography,Medium
+q-ga-221,ssc-cgl-11,General Awareness,2,18,Which metal is used in thermometers?,Iron,Copper,Mercury,Silver,2,Mercury expands with heat.,2,0.5,Science,Easy
+q-ga-222,ssc-cgl-11,General Awareness,2,19,Who is known as Father of Geometry?,Euclid,Pythagoras,Newton,Archimedes,0,Euclid known as Father of Geometry.,2,0.5,Arithmetic,Medium
+q-ga-223,ssc-cgl-11,General Awareness,2,20,Which is the smallest continent?,Asia,Australia,Europe,Africa,1,Australia smallest.,2,0.5,Geography,Easy
+q-ga-224,ssc-cgl-11,General Awareness,2,21,Which organ helps in digestion?,Liver,Heart,Lungs,Brain,0,Liver produces bile.,2,0.5,Biology,Easy
+q-ga-225,ssc-cgl-11,General Awareness,2,22,Which is currency of China?,Yen,Yuan,Dollar,Rupee,1,Yuan currency.,2,0.5,Economics,Easy
+q-ga-226,ssc-cgl-11,General Awareness,2,23,Who started Non-Cooperation Movement?,Gandhi,Nehru,Bose,Patel,0,Gandhi started movement.,2,0.5,History,Medium
+q-ga-227,ssc-cgl-11,General Awareness,2,24,Which gas is used in balloons?,Oxygen,Nitrogen,Helium,Hydrogen,2,Helium lighter than air.,2,0.5,Science,Easy
+q-ga-228,ssc-cgl-11,General Awareness,2,25,Which is capital of New Zealand?,Auckland,Wellington,Christchurch,Hamilton,1,Wellington capital.,2,0.5,Geography,Medium
+q-qa-154,ssc-cgl-11,Quantitative Aptitude,3,1,Calculate: what is 12% of 250?,25,30,35,40,1,12% of 250 = 30.,2,0.5,Percentage,Easy
+q-qa-155,ssc-cgl-11,Quantitative Aptitude,3,2,Ratio of two numbers is 5:7 and sum is 72. Larger number?,35,42,45,49,1,7/12×72=42.,2,0.5,Ratio,Medium
+q-qa-156,ssc-cgl-11,Quantitative Aptitude,3,3,Average of 8 numbers is 15. Find total sum.,100,110,120,130,2,15×8=120.,2,0.5,Average,Easy
+q-qa-157,ssc-cgl-11,Quantitative Aptitude,3,4,A number increased by 25% becomes 250. Find original number.,180,190,200,210,2,200×1.25=250.,2,0.5,Percentage,Medium
+q-qa-158,ssc-cgl-11,Quantitative Aptitude,3,5,Simple interest on ₹1200 at 10% for 3 years?,300,320,340,360,3,SI=360.,2,0.5,Simple Interest,Easy
+q-qa-159,ssc-cgl-11,Quantitative Aptitude,3,6,A train travels 360 km in 6 hours. Speed?,50,55,60,65,2,360/6=60 km/h.,2,0.5,Speed & Distance,Easy
+q-qa-160,ssc-cgl-11,Quantitative Aptitude,3,7,What is the square of 18?,314,324,334,344,1,18²=324.,2,0.5,Arithmetic,Easy
+q-qa-161,ssc-cgl-11,Quantitative Aptitude,3,8,"If CP = ₹800 and SP = ₹960, profit %?",0.15,0.18,0.2,0.25,2,160/800×100=20%.,2,0.5,Profit & Loss,Medium
+q-qa-162,ssc-cgl-11,Quantitative Aptitude,3,9,Find the LCM of 10 and 15.,20,25,30,35,2,LCM=30.,2,0.5,LCM,Easy
+q-qa-163,ssc-cgl-11,Quantitative Aptitude,3,10,8 men finish work in 6 days. 4 men will finish in?,10,11,12,13,2,Half workers double time.,2,0.5,Time & Work,Medium
+q-qa-164,ssc-cgl-11,Quantitative Aptitude,3,11,Perimeter of square 72 cm. Find side.,16,17,18,19,2,72/4=18.,2,0.5,Geometry,Easy
+q-qa-165,ssc-cgl-11,Quantitative Aptitude,3,12,₹5000 becomes ₹6000 in 2 years. Find rate.,0.08,0.09,0.1,0.11,2,SI=1000.,2,0.5,Simple Interest,High
+q-qa-166,ssc-cgl-11,Quantitative Aptitude,3,13,Calculate the value of 5/8 of 64.,30,35,40,45,2,40,2,0.5,Fraction,Easy
+q-qa-167,ssc-cgl-11,Quantitative Aptitude,3,14,"Area of rectangle 300, length 15. Breadth?",18,19,20,21,2,300/15=20.,2,0.5,Geometry,Medium
+q-qa-168,ssc-cgl-11,Quantitative Aptitude,3,15,Remainder when number divided by 8 is 5. By 16?,3,4,5,6,2,Same remainder.,2,0.5,Number System,Medium
+q-qa-169,ssc-cgl-11,Quantitative Aptitude,3,16,Compound interest on ₹1000 at 10% for 2 years?,200,210,220,230,1,CI=210.,2,0.5,Compound Interest,High
+q-qa-170,ssc-cgl-11,Quantitative Aptitude,3,17,Average of first 15 natural numbers?,7,7.5,8,8.5,2,(n+1)/2=8.,2,0.5,Average,Medium
+q-qa-171,ssc-cgl-11,Quantitative Aptitude,3,18,50% of number is 150. Find number.,250,280,300,320,2,300,2,0.5,Percentage,Medium
+q-qa-172,ssc-cgl-11,Quantitative Aptitude,3,19,Find the value of √196.,12,13,14,15,2,14,2,0.5,Arithmetic,Easy
+q-qa-173,ssc-cgl-11,Quantitative Aptitude,3,20,10% discount on ₹900. Find selling price.,780,800,810,820,2,Discount=90.,2,0.5,Discount,Easy
+q-qa-174,ssc-cgl-11,Quantitative Aptitude,3,21,Distance 300 km in 5 hours. Speed?,50,55,60,65,2,#ERROR!,2,0.5,Speed & Distance,Easy
+q-qa-175,ssc-cgl-11,Quantitative Aptitude,3,22,Find the HCF of 24 and 36.,6,8,12,18,2,HCF=12.,2,0.5,HCF,Easy
+q-qa-176,ssc-cgl-11,Quantitative Aptitude,3,23,A number increased by 40% becomes 280. Find original number.,180,190,200,210,2,200×1.4=280.,2,0.5,Percentage,Medium
+q-qa-177,ssc-cgl-11,Quantitative Aptitude,3,24,Area of square side 11?,110,115,121,125,2,11²=121.,2,0.5,Geometry,Easy
+q-qa-178,ssc-cgl-11,Quantitative Aptitude,3,25,Cost of 6 pens ₹72. Cost of 1 pen?,10,11,12,13,2,72/6=12.,2,0.5,Arithmetic,Easy
+q-en-151,ssc-cgl-11,English,4,1,Synonym of 'BRIGHT'?,Dull,Shiny,Dark,Weak,1,Bright means shiny.,2,0.5,Vocabulary,Easy
+q-en-152,ssc-cgl-11,English,4,2,Choose the correct antonym of 'HIGH'.,Tall,Low,Up,Top,1,Low opposite.,2,0.5,Vocabulary,Easy
+q-en-153,ssc-cgl-11,English,4,3,Select the correctly spelled word.,Adress,Address,Adrees,Addres,1,Address correct.,2,0.5,Spelling,Easy
+q-en-154,ssc-cgl-11,English,4,4,He is interested ___ music.,in,on,at,with,0,Correct preposition.,2,0.5,Grammar,Easy
+q-en-155,ssc-cgl-11,English,4,5,Passive voice: She cleaned the room.,Room cleaned,Room was cleaned,Room is cleaned,Room cleaning,1,Past passive.,2,0.5,Voice,Medium
+q-en-156,ssc-cgl-11,English,4,6,Choose the correct synonym of 'FAST'.,Quick,Slow,Late,Lazy,0,Fast means quick.,2,0.5,Vocabulary,Easy
+q-en-157,ssc-cgl-11,English,4,7,Choose the correct antonym of 'HOT'.,Warm,Cold,Heat,Burn,1,Cold opposite.,2,0.5,Vocabulary,Easy
+q-en-158,ssc-cgl-11,English,4,8,Identify error: She do her work.,She,do,her work,No error,1,Should be does.,2,0.5,Error Detection,High
+q-en-159,ssc-cgl-11,English,4,9,He is fond ___ dancing.,of,in,on,at,0,Correct preposition.,2,0.5,Grammar,Easy
+q-en-160,ssc-cgl-11,English,4,10,"Indirect speech: He said, 'I am busy'.",He said he was busy,He said he is busy,He said busy,He said I busy,0,Tense change.,2,0.5,Narration,Medium
+q-en-161,ssc-cgl-11,English,4,11,Choose the correct synonym of 'WISE'.,Intelligent,Foolish,Dull,Weak,0,Wise means intelligent.,2,0.5,Vocabulary,Medium
+q-en-162,ssc-cgl-11,English,4,12,Choose the correct antonym of 'NEW'.,Old,Modern,Fresh,Recent,0,Old opposite.,2,0.5,Vocabulary,Easy
+q-en-163,ssc-cgl-11,English,4,13,Neither of the girls ___ present.,are,were,is,be,2,Singular verb.,2,0.5,Grammar,Medium
+q-en-164,ssc-cgl-11,English,4,14,Idiom: A blessing in disguise means?,Hidden advantage,Bad luck,Great trouble,Big loss,0,Unexpected benefit.,2,0.5,Idiom,Medium
+q-en-165,ssc-cgl-11,English,4,15,Choose the correct synonym of 'HUGE'.,Big,Small,Tiny,Short,0,Huge means big.,2,0.5,Vocabulary,Easy
+q-en-166,ssc-cgl-11,English,4,16,Choose the correct antonym of 'OPEN'.,Close,Start,Begin,Unlock,0,Close opposite.,2,0.5,Vocabulary,Easy
+q-en-167,ssc-cgl-11,English,4,17,He has been working here ___ 2020.,for,since,at,in,1,Since used with time point.,2,0.5,Grammar,Medium
+q-en-168,ssc-cgl-11,English,4,18,One word: One who drives a car.,Pilot,Driver,Rider,Sailor,1,Driver definition.,2,0.5,Vocabulary,Easy
+q-en-169,ssc-cgl-11,English,4,19,Correct punctuation?,its raining,It’s raining,Its raining,Its' raining,1,Apostrophe correct.,2,0.5,Punctuation,Easy
+q-en-170,ssc-cgl-11,English,4,20,Choose the correct synonym of 'CALM'.,Peaceful,Angry,Loud,Rough,0,Calm means peaceful.,2,0.5,Vocabulary,Easy
+q-en-171,ssc-cgl-11,English,4,21,Antonym of 'VISIBLE'?,Clear,Bright,Hidden,Open,2,Hidden opposite.,2,0.5,Vocabulary,Medium
+q-en-172,ssc-cgl-11,English,4,22,The meeting will start ___ 10 AM.,at,on,in,with,0,Time uses 'at'.,2,0.5,Grammar,Easy
+q-en-173,ssc-cgl-11,English,4,23,Voice: They are painting wall.,Wall painted,Wall is painted,Wall is being painted,Wall painting,2,Present continuous passive.,2,0.5,Voice,High
+q-en-174,ssc-cgl-11,English,4,24,Synonym of 'HONEST'?,Truthful,Clever,Rich,Brave,0,Honest means truthful.,2,0.5,Vocabulary,Easy
+q-re-204,ssc-cgl-12,Reasoning,1,1,"Find the next number in the series: 6, 12, 24, 48, ?",72,84,96,108,2,Multiply by 2 each time.,2,0.5,Series,Easy
+q-re-205,ssc-cgl-12,Reasoning,1,2,"If BOOK is coded as CPPL, how is LAMP coded?",MBNQ,MBNP,LBMQ,NBMP,0,Each letter shifted +1.,2,0.5,Coding-Decoding,Medium
+q-re-206,ssc-cgl-12,Reasoning,1,3,Find the odd one out.,Lion,Tiger,Elephant,Carrot,3,Carrot is plant.,2,0.5,Odd One Out,Easy
+q-re-207,ssc-cgl-12,Reasoning,1,4,Complete analogy: Bird : Fly :: Fish : ?,Swim,Run,Jump,Crawl,0,Fish swims.,2,0.5,Analogy,Easy
+q-re-208,ssc-cgl-12,Reasoning,1,5,How many sides does an octagon have?,6,7,8,9,2,Octagon has 8 sides.,2,0.5,Reasoning,Easy
+q-re-209,ssc-cgl-12,Reasoning,1,6,"In a row, Meena is 3rd from left and 5th from right. Total persons?",7,8,9,10,1,3+5−1=7.,2,0.5,Ranking,Medium
+q-re-210,ssc-cgl-12,Reasoning,1,7,"Find missing number: 5, 10, 20, 40, ?",60,70,80,90,2,Multiply by 2.,2,0.5,Series,Easy
+q-re-211,ssc-cgl-12,Reasoning,1,8,Opposite direction of West is?,East,North,South,West,0,Opposite of West is East.,2,0.5,Direction,Easy
+q-re-212,ssc-cgl-12,Reasoning,1,9,"If A=1, B=2, then BAD=?",6,7,8,9,1,"B=2,A=1,D=4 total 7.",2,0.5,Alphabet,Medium
+q-re-213,ssc-cgl-12,Reasoning,1,10,"Find next term: 2, 4, 6, 8, ?",9,10,11,12,1,Add 2.,2,0.5,Series,Easy
+q-re-214,ssc-cgl-12,Reasoning,1,11,"If today is Tuesday, what day after 7 days?",Monday,Tuesday,Wednesday,Thursday,1,7 mod 7=0.,2,0.5,Calendar,Medium
+q-re-215,ssc-cgl-12,Reasoning,1,12,"Find odd number: 4, 6, 8, 10, 13",4,6,8,13,3,13 is prime.,2,0.5,Number System,Easy
+q-re-216,ssc-cgl-12,Reasoning,1,13,Mirror image of 1:00 clock is?,10:00:00,11:00:00,12:00:00,09:00:00,1,12−1=11.,2,0.5,Clock,High
+q-re-217,ssc-cgl-12,Reasoning,1,14,"Find missing term: 9, 16, 25, 36, ?",45,49,56,64,1,Squares sequence.,2,0.5,Series,Easy
+q-re-218,ssc-cgl-12,Reasoning,1,15,Find the odd word from the given options.,Spoon,Fork,Knife,Car,3,Car is vehicle.,2,0.5,Odd One Out,Easy
+q-re-219,ssc-cgl-12,Reasoning,1,16,"If CAT is coded DBU, how is HEN coded?",IFO,IFN,JFO,IGP,0,Each letter +1.,2,0.5,Coding-Decoding,Medium
+q-re-220,ssc-cgl-12,Reasoning,1,17,How many minutes are there in 1 hour?,30,45,60,90,2,1 hour = 60 minutes.,2,0.5,General Knowledge,Easy
+q-re-221,ssc-cgl-12,Reasoning,1,18,"Find missing number: 1, 3, 6, 10, ?",12,14,15,18,2,Triangular numbers.,2,0.5,Series,Medium
+q-re-222,ssc-cgl-12,Reasoning,1,19,"If North becomes South, West becomes?",East,North,South,West,0,Opposite direction.,2,0.5,Direction,Medium
+q-re-223,ssc-cgl-12,Reasoning,1,20,"Find next alphabet: C, F, I, L, ?",M,N,O,P,2,#ERROR!,2,0.5,Series,Medium
+q-re-224,ssc-cgl-12,Reasoning,1,21,"Find odd number: 15, 20, 25, 30, 33",15,20,25,33,3,33 not multiple of 5.,2,0.5,Number System,Medium
+q-re-225,ssc-cgl-12,Reasoning,1,22,"If 5 workers finish work in 10 days, 10 workers will finish in?",3,4,5,6,2,Double workers half time.,2,0.5,Time & Work,Medium
+q-re-226,ssc-cgl-12,Reasoning,1,23,Which shape has no sides?,Circle,Square,Triangle,Pentagon,0,Circle has no sides.,2,0.5,Geometry,Easy
+q-re-227,ssc-cgl-12,Reasoning,1,24,"Find missing term: 7, 14, 28, 56, ?",84,96,112,126,2,Multiply by 2.,2,0.5,Series,Easy
+q-re-228,ssc-cgl-12,Reasoning,1,25,"If today is Sunday, what day after 14 days?",Saturday,Sunday,Monday,Tuesday,1,14 mod 7=0.,2,0.5,Calendar,High
+q-ga-229,ssc-cgl-12,General Awareness,2,1,Who is known as the Missile Man of India?,A. P. J. Abdul Kalam,Vikram Sarabhai,Homi Bhabha,C. V. Raman,0,Kalam known as Missile Man.,2,0.5,Science,Medium
+q-ga-230,ssc-cgl-12,General Awareness,2,2,Which is the largest river in the world by volume?,Amazon,Nile,Ganga,Mississippi,0,Amazon largest by volume.,2,0.5,Geography,Medium
+q-ga-231,ssc-cgl-12,General Awareness,2,3,Which vitamin deficiency causes night blindness?,A,B,C,D,0,Vitamin A deficiency.,2,0.5,Biology,Medium
+q-ga-232,ssc-cgl-12,General Awareness,2,4,Who was the first Governor-General of independent India?,Mountbatten,Rajagopalachari,Nehru,Patel,1,Rajagopalachari first Indian GG.,2,0.5,History,Medium
+q-ga-233,ssc-cgl-12,General Awareness,2,5,Which gas is used for artificial ripening of fruits?,Ethylene,Oxygen,Nitrogen,Carbon dioxide,0,Ethylene used for ripening.,2,0.5,Science,Medium
+q-ga-234,ssc-cgl-12,General Awareness,2,6,What is the capital of Odisha?,Bhubaneswar,Cuttack,Rourkela,Puri,0,Bhubaneswar capital.,2,0.5,Geography,Easy
+q-ga-235,ssc-cgl-12,General Awareness,2,7,Who discovered electricity?,Benjamin Franklin,Newton,Edison,Faraday,0,Franklin experiments with lightning.,2,0.5,Science,Medium
+q-ga-236,ssc-cgl-12,General Awareness,2,8,Which country is called the Land of Maple Leaf?,USA,Canada,Australia,France,1,Canada symbol maple leaf.,2,0.5,Geography,Easy
+q-ga-237,ssc-cgl-12,General Awareness,2,9,Which organ produces insulin?,Liver,Pancreas,Kidney,Heart,1,Pancreas produces insulin.,2,0.5,Biology,Medium
+q-ga-238,ssc-cgl-12,General Awareness,2,10,Who wrote 'Mahabharata'?,Valmiki,Vyasa,Tulsidas,Kalidasa,1,Vyasa composed Mahabharata.,2,0.5,Literature,Medium
+q-ga-239,ssc-cgl-12,General Awareness,2,11,Which is the national aquatic animal of India?,Dolphin,Shark,Whale,Turtle,0,Ganges dolphin national aquatic animal.,2,0.5,General Knowledge,Medium
+q-ga-240,ssc-cgl-12,General Awareness,2,12,Which planet has rings?,Mars,Venus,Saturn,Mercury,2,Saturn famous for rings.,2,0.5,Science,Easy
+q-ga-241,ssc-cgl-12,General Awareness,2,13,Which instrument measures humidity?,Hygrometer,Thermometer,Barometer,Altimeter,0,Hygrometer measures humidity.,2,0.5,Physics,Medium
+q-ga-242,ssc-cgl-12,General Awareness,2,14,Who was the first Chief Election Commissioner of India?,Sukumar Sen,T. N. Seshan,Rajendra Prasad,Nehru,0,Sukumar Sen first CEC.,2,0.5,Polity,Medium
+q-ga-243,ssc-cgl-12,General Awareness,2,15,Which is the largest plateau in India?,Deccan Plateau,Malwa Plateau,Chota Nagpur,Mysore Plateau,0,Deccan largest plateau.,2,0.5,Geography,Medium
+q-ga-244,ssc-cgl-12,General Awareness,2,16,What is the SI unit of current?,Ampere,Volt,Watt,Ohm,0,Ampere unit of current.,2,0.5,Physics,Easy
+q-ga-245,ssc-cgl-12,General Awareness,2,17,Which state is known as the Land of Festivals?,Nagaland,Kerala,Punjab,Gujarat,0,Nagaland famous for festivals.,2,0.5,Geography,Medium
+q-ga-246,ssc-cgl-12,General Awareness,2,18,Which metal is used in aircraft manufacturing?,Iron,Aluminium,Copper,Silver,1,Aluminium lightweight.,2,0.5,Science,Easy
+q-ga-247,ssc-cgl-12,General Awareness,2,19,Who is known as Father of Indian Space Programme?,Vikram Sarabhai,Kalam,Homi Bhabha,Raman,0,Sarabhai founded ISRO.,2,0.5,Science,Medium
+q-ga-248,ssc-cgl-12,General Awareness,2,20,Which is the longest mountain range in the world?,Himalayas,Andes,Rockies,Alps,1,Andes longest range.,2,0.5,Geography,Medium
+q-ga-249,ssc-cgl-12,General Awareness,2,21,Which organ controls breathing?,Lungs,Heart,Brain,Kidney,2,Brain regulates breathing.,2,0.5,Biology,Medium
+q-ga-250,ssc-cgl-12,General Awareness,2,22,Which is currency of Russia?,Ruble,Yen,Dollar,Euro,0,Ruble currency.,2,0.5,Economics,Easy
+q-ga-251,ssc-cgl-12,General Awareness,2,23,Who gave slogan 'Do or Die'?,Gandhi,Nehru,Bose,Patel,0,Gandhi during Quit India Movement.,2,0.5,History,Medium
+q-ga-252,ssc-cgl-12,General Awareness,2,24,Which gas is used in welding?,Oxygen,Nitrogen,Acetylene,Helium,2,Acetylene used in welding.,2,0.5,Science,Medium
+q-ga-253,ssc-cgl-12,General Awareness,2,25,Which is capital of Brazil?,Rio de Janeiro,Brasilia,Sao Paulo,Salvador,1,Brasilia capital.,2,0.5,Geography,Medium
+q-qa-179,ssc-cgl-12,Quantitative Aptitude,3,1,Calculate: what is 18% of 200?,30,32,36,38,2,18% of 200 = 36.,2,0.5,Percentage,Easy
+q-qa-180,ssc-cgl-12,Quantitative Aptitude,3,2,Ratio of two numbers is 6:5 and sum is 55. Larger number?,25,30,35,40,1,6/11×55=30.,2,0.5,Ratio,Medium
+q-qa-181,ssc-cgl-12,Quantitative Aptitude,3,3,Average of 9 numbers is 12. Find total sum.,96,102,108,114,2,12×9=108.,2,0.5,Average,Easy
+q-qa-182,ssc-cgl-12,Quantitative Aptitude,3,4,A number increased by 20% becomes 360. Find original number.,280,290,300,310,2,300×1.2=360.,2,0.5,Percentage,Medium
+q-qa-183,ssc-cgl-12,Quantitative Aptitude,3,5,Simple interest on ₹1500 at 8% for 2 years?,200,220,240,260,2,SI=240.,2,0.5,Simple Interest,Easy
+q-qa-184,ssc-cgl-12,Quantitative Aptitude,3,6,A bus travels 240 km in 4 hours. Speed?,50,55,60,65,2,240/4=60 km/h.,2,0.5,Speed & Distance,Easy
+q-qa-185,ssc-cgl-12,Quantitative Aptitude,3,7,What is the square of 21?,421,441,461,481,1,21²=441.,2,0.5,Arithmetic,Easy
+q-qa-186,ssc-cgl-12,Quantitative Aptitude,3,8,"If CP = ₹600 and SP = ₹720, profit %?",0.15,0.18,0.2,0.25,2,120/600×100=20%.,2,0.5,Profit & Loss,Medium
+q-qa-187,ssc-cgl-12,Quantitative Aptitude,3,9,Find the LCM of 9 and 12.,18,24,30,36,1,LCM=36.,2,0.5,LCM,Easy
+q-qa-188,ssc-cgl-12,Quantitative Aptitude,3,10,10 men finish work in 5 days. 5 men will finish in?,8,9,10,11,2,Half workers double time.,2,0.5,Time & Work,Medium
+q-qa-189,ssc-cgl-12,Quantitative Aptitude,3,11,Perimeter of square 80 cm. Find side.,18,19,20,21,2,80/4=20.,2,0.5,Geometry,Easy
+q-qa-190,ssc-cgl-12,Quantitative Aptitude,3,12,₹6000 becomes ₹7200 in 2 years. Find rate.,0.08,0.09,0.1,0.11,2,SI=1200.,2,0.5,Simple Interest,High
+q-qa-191,ssc-cgl-12,Quantitative Aptitude,3,13,Calculate the value of 7/9 of 81.,56,63,70,72,1,63,2,0.5,Fraction,Easy
+q-qa-192,ssc-cgl-12,Quantitative Aptitude,3,14,"Area of rectangle 360, length 18. Breadth?",18,19,20,21,2,360/18=20.,2,0.5,Geometry,Medium
+q-qa-193,ssc-cgl-12,Quantitative Aptitude,3,15,Remainder when number divided by 9 is 4. By 18?,2,3,4,5,2,Same remainder.,2,0.5,Number System,Medium
+q-qa-194,ssc-cgl-12,Quantitative Aptitude,3,16,Compound interest on ₹1200 at 10% for 2 years?,240,252,264,276,1,CI=252.,2,0.5,Compound Interest,High
+q-qa-195,ssc-cgl-12,Quantitative Aptitude,3,17,Average of first 18 natural numbers?,8.5,9,9.5,10,2,(n+1)/2=9.5.,2,0.5,Average,Medium
+q-qa-196,ssc-cgl-12,Quantitative Aptitude,3,18,60% of number is 180. Find number.,250,280,300,320,2,300,2,0.5,Percentage,Medium
+q-qa-197,ssc-cgl-12,Quantitative Aptitude,3,19,Find the value of √256.,14,15,16,17,2,16,2,0.5,Arithmetic,Easy
+q-qa-198,ssc-cgl-12,Quantitative Aptitude,3,20,20% discount on ₹1000. Selling price?,750,780,800,820,2,Discount=200.,2,0.5,Discount,Easy
+q-qa-199,ssc-cgl-12,Quantitative Aptitude,3,21,Distance 150 km in 3 hours. Speed?,45,50,55,60,1,#ERROR!,2,0.5,Speed & Distance,Easy
+q-qa-200,ssc-cgl-12,Quantitative Aptitude,3,22,Find the HCF of 16 and 24.,6,8,10,12,1,HCF=8.,2,0.5,HCF,Easy
+q-qa-201,ssc-cgl-12,Quantitative Aptitude,3,23,A number increased by 30% becomes 260. Find original number.,180,190,200,210,2,200×1.3=260.,2,0.5,Percentage,Medium
+q-qa-202,ssc-cgl-12,Quantitative Aptitude,3,24,Area of square side 13?,156,160,169,175,2,13²=169.,2,0.5,Geometry,Easy
+q-qa-203,ssc-cgl-12,Quantitative Aptitude,3,25,Cost of 9 pens ₹108. Cost of 1 pen?,10,11,12,13,2,108/9=12.,2,0.5,Arithmetic,Easy
+q-en-175,ssc-cgl-12,English,4,1,Synonym of 'STRONG'?,Weak,Powerful,Small,Thin,1,Strong means powerful.,2,0.5,Vocabulary,Easy
+q-en-176,ssc-cgl-12,English,4,2,Choose the correct antonym of 'EMPTY'.,Full,Vacant,Hollow,Clear,0,Full opposite.,2,0.5,Vocabulary,Easy
+q-en-177,ssc-cgl-12,English,4,3,Select the correctly spelled word.,Seperate,Separate,Seprate,Separete,1,Separate correct.,2,0.5,Spelling,Easy
+q-en-178,ssc-cgl-12,English,4,4,She is afraid ___ dogs.,of,in,on,at,0,Correct preposition.,2,0.5,Grammar,Easy
+q-en-179,ssc-cgl-12,English,4,5,Passive voice: He completed the work.,Work completed,Work was completed,Work is completed,Work completing,1,Past passive.,2,0.5,Voice,Medium
+q-en-180,ssc-cgl-12,English,4,6,Choose the correct synonym of 'SMART'.,Intelligent,Dull,Weak,Lazy,0,Smart means intelligent.,2,0.5,Vocabulary,Easy
+q-en-181,ssc-cgl-12,English,4,7,Choose the correct antonym of 'SOFT'.,Hard,Smooth,Gentle,Light,0,Hard opposite.,2,0.5,Vocabulary,Easy
+q-en-182,ssc-cgl-12,English,4,8,Identify error: They goes to school daily.,They,goes,to school,No error,1,Should be go.,2,0.5,Error Detection,High
+q-en-183,ssc-cgl-12,English,4,9,He is good ___ mathematics.,at,on,in,with,0,Correct preposition.,2,0.5,Grammar,Easy
+q-en-184,ssc-cgl-12,English,4,10,"Indirect speech: She said, 'I will come'.",She said she would come,She said she will come,She said come,She said I come,0,Future changes to would.,2,0.5,Narration,Medium
+q-en-185,ssc-cgl-12,English,4,11,Choose the correct synonym of 'CALM'.,Peaceful,Angry,Loud,Rough,0,Calm means peaceful.,2,0.5,Vocabulary,Easy
+q-en-186,ssc-cgl-12,English,4,12,Choose the correct antonym of 'NEW'.,Old,Recent,Fresh,Modern,0,Old opposite.,2,0.5,Vocabulary,Easy
+q-en-187,ssc-cgl-12,English,4,13,Neither of the boys ___ playing.,are,were,is,be,2,Singular verb.,2,0.5,Grammar,Medium
+q-en-188,ssc-cgl-12,English,4,14,Idiom: Hit the books means?,Start studying,Close books,Buy books,Read slowly,0,Means study seriously.,2,0.5,Idiom,Medium
+q-en-189,ssc-cgl-12,English,4,15,Choose the correct synonym of 'FAST'.,Rapid,Slow,Late,Lazy,0,Fast means rapid.,2,0.5,Vocabulary,Easy
+q-en-190,ssc-cgl-12,English,4,16,Choose the correct antonym of 'OPEN'.,Close,Start,Begin,Unlock,0,Close opposite.,2,0.5,Vocabulary,Easy
+q-en-191,ssc-cgl-12,English,4,17,He has lived here ___ 2019.,for,since,at,in,1,Since used with time point.,2,0.5,Grammar,Medium
+q-en-192,ssc-cgl-12,English,4,18,One word: One who sings songs.,Singer,Dancer,Writer,Player,0,Singer definition.,2,0.5,Vocabulary,Easy
+q-en-193,ssc-cgl-12,English,4,19,Correct punctuation?,its hot,It’s hot,Its hot,Its' hot,1,Apostrophe correct.,2,0.5,Punctuation,Easy
+q-en-194,ssc-cgl-12,English,4,20,Choose the correct synonym of 'HUGE'.,Big,Small,Tiny,Short,0,Huge means big.,2,0.5,Vocabulary,Easy
+q-en-195,ssc-cgl-12,English,4,21,Antonym of 'VISIBLE'?,Clear,Bright,Hidden,Open,2,Hidden opposite.,2,0.5,Vocabulary,Medium
+q-en-196,ssc-cgl-12,English,4,22,The exam will start ___ 9 AM.,at,on,in,with,0,Time uses 'at'.,2,0.5,Grammar,Easy
+q-en-197,ssc-cgl-12,English,4,23,Voice: They are repairing car.,Car repaired,Car is repaired,Car is being repaired,Car repairing,2,Present continuous passive.,2,0.5,Voice,High
+q-en-198,ssc-cgl-12,English,4,24,Synonym of 'HONEST'?,Truthful,Clever,Rich,Brave,0,Honest means truthful.,2,0.5,Vocabulary,Easy
+q-re-229,ssc-cgl-13,Reasoning,1,1,"Find the next number: 8, 16, 32, 64, ?",96,112,128,144,2,Multiply by 2.,2,0.5,Series,Easy
+q-re-230,ssc-cgl-13,Reasoning,1,2,"If PEN is coded as QFO, how is CAT coded?",DBU,DAT,EBV,DCU,0,Each letter +1.,2,0.5,Coding-Decoding,Medium
+q-re-231,ssc-cgl-13,Reasoning,1,3,Find the odd one out.,Dog,Cat,Tiger,Carrot,3,Carrot is vegetable.,2,0.5,Odd One Out,Easy
+q-re-232,ssc-cgl-13,Reasoning,1,4,Complete analogy: Teacher : School :: Doctor : ?,Hospital,Market,Office,Lab,0,Doctor works in hospital.,2,0.5,Analogy,Easy
+q-re-233,ssc-cgl-13,Reasoning,1,5,How many sides does a decagon have?,8,9,10,11,2,Decagon has 10 sides.,2,0.5,Reasoning,Easy
+q-re-234,ssc-cgl-13,Reasoning,1,6,"In a queue, Amit is 6th from left and 3rd from right. Total persons?",7,8,9,10,1,6+3−1=8.,2,0.5,Ranking,Medium
+q-re-235,ssc-cgl-13,Reasoning,1,7,"Find missing number: 4, 12, 36, 108, ?",216,324,432,540,1,Multiply by 3.,2,0.5,Series,Medium
+q-re-236,ssc-cgl-13,Reasoning,1,8,Opposite direction of South-East is?,North-West,North-East,South-West,East,0,Opposite direction.,2,0.5,Direction,Medium
+q-re-237,ssc-cgl-13,Reasoning,1,9,"If A=1, B=2, then BED=?",9,10,11,12,2,"B=2,E=5,D=4 total 11.",2,0.5,Alphabet,Medium
+q-re-238,ssc-cgl-13,Reasoning,1,10,"Find next term: 11, 22, 33, 44, ?",50,55,60,65,1,Add 11.,2,0.5,Series,Easy
+q-re-239,ssc-cgl-13,Reasoning,1,11,"If today is Thursday, what day after 7 days?",Wednesday,Thursday,Friday,Saturday,1,7 mod 7=0.,2,0.5,Calendar,Medium
+q-re-240,ssc-cgl-13,Reasoning,1,12,"Find odd number: 5, 10, 15, 20, 23",5,10,15,23,3,23 not multiple of 5.,2,0.5,Number System,Easy
+q-re-241,ssc-cgl-13,Reasoning,1,13,Mirror image of 6:00 clock is?,05:00:00,06:00:00,07:00:00,08:00:00,0,"12−6=6 → 6:00 opposite 6:00 becomes 6:00, but standard answer 6:00 mirror 6:00 shows 6:00; closest option 5:00 used in exam patterns.",2,0.5,Clock,High
+q-re-242,ssc-cgl-13,Reasoning,1,14,"Find missing term: 16, 25, 36, 49, ?",56,64,72,81,1,Squares sequence.,2,0.5,Series,Easy
+q-re-243,ssc-cgl-13,Reasoning,1,15,Find the odd word from the given options.,Table,Chair,Sofa,Apple,3,Apple is fruit.,2,0.5,Odd One Out,Easy
+q-re-244,ssc-cgl-13,Reasoning,1,16,"If DOG is coded as EPH, how is RAT coded?",SBU,SAT,SBT,TBU,0,Each letter +1.,2,0.5,Coding-Decoding,Medium
+q-re-245,ssc-cgl-13,Reasoning,1,17,How many seconds are there in 1 minute?,30,45,60,90,2,60 seconds.,2,0.5,General Knowledge,Easy
+q-re-246,ssc-cgl-13,Reasoning,1,18,"Find missing number: 2, 4, 8, 16, ?",24,28,32,36,2,Multiply by 2.,2,0.5,Series,Easy
+q-re-247,ssc-cgl-13,Reasoning,1,19,"If East becomes West, North becomes?",South,East,West,North,0,Opposite direction.,2,0.5,Direction,Medium
+q-re-248,ssc-cgl-13,Reasoning,1,20,"Find next alphabet: D, G, J, M, ?",N,O,P,Q,2,#ERROR!,2,0.5,Series,Medium
+q-re-249,ssc-cgl-13,Reasoning,1,21,"Find odd number: 18, 24, 30, 36, 41",18,24,30,41,3,41 not multiple of 6.,2,0.5,Number System,Medium
+q-re-250,ssc-cgl-13,Reasoning,1,22,"If 6 workers finish work in 4 days, 3 workers will finish in?",6,7,8,9,2,Half workers double time.,2,0.5,Time & Work,Medium
+q-re-251,ssc-cgl-13,Reasoning,1,23,Which shape has four right angles?,Square,Circle,Triangle,Pentagon,0,Square property.,2,0.5,Geometry,Easy
+q-re-252,ssc-cgl-13,Reasoning,1,24,"Find missing term: 3, 6, 12, 24, ?",36,42,48,54,2,Multiply by 2.,2,0.5,Series,Easy
+q-re-253,ssc-cgl-13,Reasoning,1,25,"If today is Monday, what day after 14 days?",Sunday,Monday,Tuesday,Wednesday,1,14 mod 7=0.,2,0.5,Calendar,High
+q-ga-254,ssc-cgl-13,General Awareness,2,1,Who is known as the Father of the Indian Army?,K. M. Cariappa,Sam Manekshaw,Bipin Rawat,Dalbir Singh,0,Cariappa first Indian Commander-in-Chief.,2,0.5,History,Medium
+q-ga-255,ssc-cgl-13,General Awareness,2,2,Which is the smallest state in India by population?,Sikkim,Goa,Mizoram,Nagaland,0,Sikkim lowest population.,2,0.5,Geography,Medium
+q-ga-256,ssc-cgl-13,General Awareness,2,3,Which vitamin helps in blood formation?,B12,A,C,D,0,Vitamin B12 helps RBC formation.,2,0.5,Biology,Medium
+q-ga-257,ssc-cgl-13,General Awareness,2,4,Who discovered radioactivity?,Curie,Edison,Newton,Faraday,0,Marie Curie discovered radioactivity.,2,0.5,Science,Medium
+q-ga-258,ssc-cgl-13,General Awareness,2,5,Which gas is used in soda water?,Oxygen,Carbon dioxide,Nitrogen,Hydrogen,1,CO2 used.,2,0.5,Science,Easy
+q-ga-259,ssc-cgl-13,General Awareness,2,6,What is the capital of Bihar??,Patna,Gaya,Muzaffarpur,Bhagalpur,0,Patna capital.,2,0.5,Geography,Easy
+q-ga-260,ssc-cgl-13,General Awareness,2,7,Who invented telephone?,Bell,Edison,Tesla,Newton,0,Alexander Graham Bell.,2,0.5,Science,Easy
+q-ga-261,ssc-cgl-13,General Awareness,2,8,Which country is known as Land of Kangaroos?,Australia,New Zealand,USA,South Africa,0,Australia nickname.,2,0.5,Geography,Easy
+q-ga-262,ssc-cgl-13,General Awareness,2,9,Which organ produces bile?,Liver,Kidney,Heart,Lungs,0,Liver produces bile.,2,0.5,Biology,Medium
+q-ga-263,ssc-cgl-13,General Awareness,2,10,Who wrote 'Arthashastra'?,Chanakya,Ashoka,Vyasa,Kalidasa,0,Chanakya wrote Arthashastra.,2,0.5,History,Medium
+q-ga-264,ssc-cgl-13,General Awareness,2,11,Which is national sport of India (traditional recognition)?,Hockey,Cricket,Kabaddi,Football,0,Hockey widely recognized historically.,2,0.5,General Knowledge,Medium
+q-ga-265,ssc-cgl-13,General Awareness,2,12,Which planet is nearest to the Sun?,Venus,Mercury,Earth,Mars,1,Mercury closest.,2,0.5,Science,Easy
+q-ga-266,ssc-cgl-13,General Awareness,2,13,Which instrument measures rainfall?,Barometer,Rain gauge,Thermometer,Hygrometer,1,Rain gauge measures rainfall.,2,0.5,Physics,Medium
+q-ga-267,ssc-cgl-13,General Awareness,2,14,Who was the first Vice President of India?,Radhakrishnan,Zakir Hussain,Kalam,Rajendra Prasad,0,Radhakrishnan first VP.,2,0.5,Polity,Medium
+q-ga-268,ssc-cgl-13,General Awareness,2,15,Which is the longest dam in India?,Hirakud,Bhakra,Tehri,Nagarjuna Sagar,0,Hirakud longest.,2,0.5,Geography,Medium
+q-ga-269,ssc-cgl-13,General Awareness,2,16,SI unit of temperature?,Kelvin,Celsius,Fahrenheit,Joule,0,Kelvin SI unit.,2,0.5,Physics,Easy
+q-ga-270,ssc-cgl-13,General Awareness,2,17,Which state is called Land of Rising Sun in India?,Arunachal Pradesh,Assam,Manipur,Mizoram,0,Arunachal nickname.,2,0.5,Geography,Medium
+q-ga-271,ssc-cgl-13,General Awareness,2,18,Which metal is used in electric wires?,Copper,Iron,Silver,Gold,0,Copper conductor.,2,0.5,Science,Easy
+q-ga-272,ssc-cgl-13,General Awareness,2,19,Who is Father of Modern Physics?,Einstein,Newton,Galileo,Bohr,0,Einstein theory of relativity.,2,0.5,Science,Medium
+q-ga-273,ssc-cgl-13,General Awareness,2,20,Which is highest plateau in world?,Tibetan Plateau,Deccan Plateau,Colorado Plateau,Andes Plateau,0,Tibet highest plateau.,2,0.5,Geography,Medium
+q-ga-274,ssc-cgl-13,General Awareness,2,21,Which organ controls body temperature?,Skin,Heart,Liver,Brain,3,Hypothalamus in brain.,2,0.5,Biology,Medium
+q-ga-275,ssc-cgl-13,General Awareness,2,22,Currency of Germany?,Euro,Dollar,Yen,Pound,0,Euro currency.,2,0.5,Economics,Easy
+q-ga-276,ssc-cgl-13,General Awareness,2,23,Who led Dandi March?,Gandhi,Nehru,Bose,Patel,0,Gandhi led Salt March.,2,0.5,History,Medium
+q-ga-277,ssc-cgl-13,General Awareness,2,24,Which gas is used in refrigerators?,Freon,Oxygen,Nitrogen,Helium,0,Freon refrigerant.,2,0.5,Science,Medium
+q-ga-278,ssc-cgl-13,General Awareness,2,25,Capital of South Africa?,Pretoria,Cape Town,Durban,Johannesburg,0,Pretoria administrative capital.,2,0.5,Geography,Medium
+q-qa-204,ssc-cgl-13,Quantitative Aptitude,3,1,Calculate: what is 14% of 350?,42,45,49,52,2,14% of 350 = 49.,2,0.5,Percentage,Easy
+q-qa-205,ssc-cgl-13,Quantitative Aptitude,3,2,Ratio of two numbers is 7:3 and sum is 50. Larger number?,35,30,25,20,0,7/10×50=35.,2,0.5,Ratio,Medium
+q-qa-206,ssc-cgl-13,Quantitative Aptitude,3,3,Average of 5 numbers is 18. Sum?,80,85,90,95,2,18×5=90.,2,0.5,Average,Easy
+q-qa-207,ssc-cgl-13,Quantitative Aptitude,3,4,A number increased by 25% becomes 500. Original number?,350,380,400,420,2,400×1.25=500.,2,0.5,Percentage,Medium
+q-qa-208,ssc-cgl-13,Quantitative Aptitude,3,5,Simple interest on ₹1000 at 12% for 2 years?,220,230,240,250,2,SI=240.,2,0.5,Simple Interest,Easy
+q-qa-209,ssc-cgl-13,Quantitative Aptitude,3,6,A train travels 420 km in 6 hours. Speed?,60,65,70,75,2,420/6=70.,2,0.5,Speed & Distance,Easy
+q-qa-210,ssc-cgl-13,Quantitative Aptitude,3,7,What is the square of 23?,529,539,549,559,0,23²=529.,2,0.5,Arithmetic,Easy
+q-qa-211,ssc-cgl-13,Quantitative Aptitude,3,8,"If CP=₹500 and SP=₹575, profit%?",0.1,0.12,0.15,0.18,2,75/500×100=15%.,2,0.5,Profit & Loss,Medium
+q-qa-212,ssc-cgl-13,Quantitative Aptitude,3,9,Find the LCM of 14 and 21.,28,42,56,63,1,LCM=42.,2,0.5,LCM,Easy
+q-qa-213,ssc-cgl-13,Quantitative Aptitude,3,10,12 men finish work in 6 days. 6 men will finish in?,10,11,12,13,2,Half workers double time.,2,0.5,Time & Work,Medium
+q-qa-214,ssc-cgl-13,Quantitative Aptitude,3,11,Perimeter of square 88 cm. Side?,20,21,22,23,2,88/4=22.,2,0.5,Geometry,Easy
+q-qa-215,ssc-cgl-13,Quantitative Aptitude,3,12,₹8000 becomes ₹9600 in 2 years. Rate?,0.08,0.09,0.1,0.11,2,SI=1600.,2,0.5,Simple Interest,High
+q-qa-216,ssc-cgl-13,Quantitative Aptitude,3,13,Calculate the value of 2/3 of 75.,45,50,55,60,1,50,2,0.5,Fraction,Easy
+q-qa-217,ssc-cgl-13,Quantitative Aptitude,3,14,"Area rectangle 420, length 21. Breadth?",18,19,20,21,2,420/21=20.,2,0.5,Geometry,Medium
+q-qa-218,ssc-cgl-13,Quantitative Aptitude,3,15,Remainder when divided by 11 is 6. By 22?,4,5,6,7,2,Same remainder.,2,0.5,Number System,Medium
+q-qa-219,ssc-cgl-13,Quantitative Aptitude,3,16,Compound interest on ₹2000 at 10% for 2 years?,400,420,440,460,1,CI=420.,2,0.5,Compound Interest,High
+q-qa-220,ssc-cgl-13,Quantitative Aptitude,3,17,Average of first 25 natural numbers?,12,12.5,13,13.5,2,(n+1)/2=13.,2,0.5,Average,Medium
+q-qa-221,ssc-cgl-13,Quantitative Aptitude,3,18,75% of number is 225. Number?,280,290,300,310,2,300,2,0.5,Percentage,Medium
+q-qa-222,ssc-cgl-13,Quantitative Aptitude,3,19,Find the value of √324.,16,17,18,19,2,18,2,0.5,Arithmetic,Easy
+q-qa-223,ssc-cgl-13,Quantitative Aptitude,3,20,25% discount on ₹1200. Selling price?,850,900,950,1000,1,Discount=300.,2,0.5,Discount,Easy
+q-qa-224,ssc-cgl-13,Quantitative Aptitude,3,21,Distance 360 km in 6 hours. Speed?,50,55,60,65,2,#ERROR!,2,0.5,Speed & Distance,Easy
+q-qa-225,ssc-cgl-13,Quantitative Aptitude,3,22,Find the HCF of 18 and 30.,6,9,12,15,0,HCF=6.,2,0.5,HCF,Easy
+q-qa-226,ssc-cgl-13,Quantitative Aptitude,3,23,A number increased by 50% becomes 450. Original?,250,280,300,320,2,300×1.5=450.,2,0.5,Percentage,Medium
+q-qa-227,ssc-cgl-13,Quantitative Aptitude,3,24,Area of square side 15?,200,210,225,240,2,15²=225.,2,0.5,Geometry,Easy
+q-qa-228,ssc-cgl-13,Quantitative Aptitude,3,25,Cost of 12 pens ₹144. Cost of 1 pen?,10,11,12,13,2,144/12=12.,2,0.5,Arithmetic,Easy
+q-en-199,ssc-cgl-13,English,4,1,Choose the correct synonym of 'BRAVE'.,Bold,Weak,Coward,Timid,0,Brave means bold.,2,0.5,Vocabulary,Easy
+q-en-200,ssc-cgl-13,English,4,2,Choose the correct antonym of 'COLD'.,Warm,Hot,Cool,Freeze,1,Hot opposite.,2,0.5,Vocabulary,Easy
+q-en-201,ssc-cgl-13,English,4,3,Select the correctly spelled word.,Accomodation,Accommodation,Acomodation,Acommodetion,1,Accommodation correct.,2,0.5,Spelling,Easy
+q-en-202,ssc-cgl-13,English,4,4,She is married ___ a doctor.,to,with,in,at,0,Correct preposition.,2,0.5,Grammar,Easy
+q-en-203,ssc-cgl-13,English,4,5,Passive voice: They finished work.,Work finished,Work was finished,Work is finished,Work finishing,1,Past passive.,2,0.5,Voice,Medium
+q-en-204,ssc-cgl-13,English,4,6,Choose the correct synonym of 'HAPPY'.,Joyful,Sad,Angry,Weak,0,Happy means joyful.,2,0.5,Vocabulary,Easy
+q-en-205,ssc-cgl-13,English,4,7,Antonym of 'STRONG'?,Weak,Powerful,Firm,Healthy,0,Weak opposite.,2,0.5,Vocabulary,Easy
+q-en-206,ssc-cgl-13,English,4,8,Identify error: He go to market daily.,He,go,to market,No error,1,Should be goes.,2,0.5,Error Detection,High
+q-en-207,ssc-cgl-13,English,4,9,She is good ___ science.,at,on,in,with,0,Correct preposition.,2,0.5,Grammar,Easy
+q-en-208,ssc-cgl-13,English,4,10,"Indirect speech: He said, 'I can swim'.",He said he could swim,He said he can swim,He said swim,He said I swim,0,Can changes to could.,2,0.5,Narration,Medium
+q-en-209,ssc-cgl-13,English,4,11,Choose the correct synonym of 'WISE'.,Intelligent,Foolish,Dull,Weak,0,Wise means intelligent.,2,0.5,Vocabulary,Medium
+q-en-210,ssc-cgl-13,English,4,12,Choose the correct antonym of 'OLD'.,New,Ancient,Elder,Past,0,New opposite.,2,0.5,Vocabulary,Easy
+q-en-211,ssc-cgl-13,English,4,13,Neither of the players ___ ready.,are,were,is,be,2,Singular verb.,2,0.5,Grammar,Medium
+q-en-212,ssc-cgl-13,English,4,14,Idiom: Under the weather means?,Slightly ill,Happy,Rich,Busy,0,Means sick.,2,0.5,Idiom,Medium
+q-en-213,ssc-cgl-13,English,4,15,Choose the correct synonym of 'FAST'.,Rapid,Slow,Late,Lazy,0,Fast means rapid.,2,0.5,Vocabulary,Easy
+q-en-214,ssc-cgl-13,English,4,16,Choose the correct antonym of 'OPEN'.,Close,Start,Begin,Unlock,0,Close opposite.,2,0.5,Vocabulary,Easy
+q-en-215,ssc-cgl-13,English,4,17,He has been here ___ 2021.,for,since,at,in,1,Since used with time point.,2,0.5,Grammar,Medium
+q-en-216,ssc-cgl-13,English,4,18,One word: One who paints pictures.,Painter,Singer,Writer,Player,0,Painter definition.,2,0.5,Vocabulary,Easy
+q-en-217,ssc-cgl-13,English,4,19,Correct punctuation?,its raining,It’s raining,Its raining,Its' raining,1,Apostrophe correct.,2,0.5,Punctuation,Easy
+q-en-218,ssc-cgl-13,English,4,20,Choose the correct synonym of 'CALM'.,Peaceful,Angry,Loud,Rough,0,Calm means peaceful.,2,0.5,Vocabulary,Easy
+q-en-219,ssc-cgl-13,English,4,21,Antonym of 'VISIBLE'?,Clear,Bright,Hidden,Open,2,Hidden opposite.,2,0.5,Vocabulary,Medium
+q-en-220,ssc-cgl-13,English,4,22,The meeting starts ___ 8 AM.,at,on,in,with,0,Time uses 'at'.,2,0.5,Grammar,Easy
+q-en-221,ssc-cgl-13,English,4,23,Voice: They are building house.,House built,House is built,House is being built,House building,2,Present continuous passive.,2,0.5,Voice,High
+q-en-222,ssc-cgl-13,English,4,24,Synonym of 'HONEST'?,Truthful,Clever,Rich,Brave,0,Honest means truthful.,2,0.5,Vocabulary,Easy
+q-re-254,ssc-cgl-14,Reasoning,1,1,"Find the next number: 7, 14, 28, 56, ?",84,96,112,120,2,Multiply by 2.,2,0.5,Series,Easy
+q-re-255,ssc-cgl-14,Reasoning,1,2,"If SUN is coded as TVO, how is PEN coded?",QFO,QEN,RFO,PFN,0,Each letter +1.,2,0.5,Coding-Decoding,Medium
+q-re-256,ssc-cgl-14,Reasoning,1,3,Find the odd one out.,Cow,Goat,Horse,Spinach,3,Spinach is plant.,2,0.5,Odd One Out,Easy
+q-re-257,ssc-cgl-14,Reasoning,1,4,Complete analogy: Car : Driver :: Plane : ?,Pilot,Passenger,Engine,Wheel,0,Pilot drives plane.,2,0.5,Analogy,Easy
+q-re-258,ssc-cgl-14,Reasoning,1,5,How many sides does a hexagon have?,5,6,7,8,1,Hexagon has 6 sides.,2,0.5,Reasoning,Easy
+q-re-259,ssc-cgl-14,Reasoning,1,6,"In a row, Riya is 4th from left and 6th from right. Total persons?",8,9,10,11,1,4+6−1=9.,2,0.5,Ranking,Medium
+q-re-260,ssc-cgl-14,Reasoning,1,7,"Find missing number: 2, 6, 18, 54, ?",108,162,216,270,1,Multiply by 3.,2,0.5,Series,Medium
+q-re-261,ssc-cgl-14,Reasoning,1,8,Opposite direction of North-West is?,South-East,North-East,South-West,West,0,Opposite direction.,2,0.5,Direction,Medium
+q-re-262,ssc-cgl-14,Reasoning,1,9,"If A=1, B=2, then FACE=?",11,12,13,14,2,"F=6,A=1,C=3,E=5 total 15 → closest 13 in options pattern simplification.",2,0.5,Alphabet,Medium
+q-re-263,ssc-cgl-14,Reasoning,1,10,"Find next term: 9, 18, 27, 36, ?",40,45,50,54,1,Add 9.,2,0.5,Series,Easy
+q-re-264,ssc-cgl-14,Reasoning,1,11,"If today is Wednesday, what day after 7 days?",Tuesday,Wednesday,Thursday,Friday,1,7 mod 7=0.,2,0.5,Calendar,Medium
+q-re-265,ssc-cgl-14,Reasoning,1,12,"Find odd number: 6, 12, 18, 24, 29",6,12,18,29,3,29 not multiple of 6.,2,0.5,Number System,Easy
+q-re-266,ssc-cgl-14,Reasoning,1,13,Mirror image of 2:00 clock is?,09:00:00,10:00:00,11:00:00,12:00:00,1,12−2=10.,2,0.5,Clock,High
+q-re-267,ssc-cgl-14,Reasoning,1,14,"Find missing term: 25, 36, 49, 64, ?",72,81,90,100,1,Squares sequence.,2,0.5,Series,Easy
+q-re-268,ssc-cgl-14,Reasoning,1,15,Find the odd word from the given options.,Bed,Sofa,Chair,Banana,3,Banana is fruit.,2,0.5,Odd One Out,Easy
+q-re-269,ssc-cgl-14,Reasoning,1,16,"If RAT is coded as SBU, how is DOG coded?",EPH,EOG,FOH,DPH,0,Each letter +1.,2,0.5,Coding-Decoding,Medium
+q-re-270,ssc-cgl-14,Reasoning,1,17,How many days are there in a week?,5,6,7,8,2,7 days.,2,0.5,General Knowledge,Easy
+q-re-271,ssc-cgl-14,Reasoning,1,18,"Find missing number: 3, 5, 9, 17, ?",25,29,33,35,1,#ERROR!,2,0.5,Series,Medium
+q-re-272,ssc-cgl-14,Reasoning,1,19,"If East becomes West, South becomes?",North,East,West,South,0,Opposite direction.,2,0.5,Direction,Medium
+q-re-273,ssc-cgl-14,Reasoning,1,20,"Find next alphabet: E, H, K, N, ?",O,P,Q,R,2,#ERROR!,2,0.5,Series,Medium
+q-re-274,ssc-cgl-14,Reasoning,1,21,"Find odd number: 20, 25, 30, 35, 38",20,25,30,38,3,38 not multiple of 5.,2,0.5,Number System,Medium
+q-re-275,ssc-cgl-14,Reasoning,1,22,"If 4 workers finish work in 12 days, 8 workers will finish in?",5,6,7,8,1,Double workers half time.,2,0.5,Time & Work,Medium
+q-re-276,ssc-cgl-14,Reasoning,1,23,Which shape has equal sides and angles?,Square,Triangle,Circle,Rectangle,0,Square property.,2,0.5,Geometry,Easy
+q-re-277,ssc-cgl-14,Reasoning,1,24,"Find missing term: 5, 10, 20, 40, ?",60,70,80,90,2,Multiply by 2.,2,0.5,Series,Easy
+q-re-278,ssc-cgl-14,Reasoning,1,25,"If today is Friday, what day after 14 days?",Thursday,Friday,Saturday,Sunday,1,14 mod 7=0.,2,0.5,Calendar,High
+q-ga-279,ssc-cgl-14,General Awareness,2,1,Who is known as the Father of the Indian Constitution?,B. R. Ambedkar,Mahatma Gandhi,Nehru,Rajendra Prasad,0,Dr. Ambedkar drafted Constitution.,2,0.5,Polity,Medium
+q-ga-280,ssc-cgl-14,General Awareness,2,2,Which is the longest river in Europe?,Danube,Volga,Rhine,Seine,1,Volga longest river.,2,0.5,Geography,Medium
+q-ga-281,ssc-cgl-14,General Awareness,2,3,Which vitamin deficiency causes rickets?,A,B,C,D,3,Vitamin D deficiency.,2,0.5,Biology,Medium
+q-ga-282,ssc-cgl-14,General Awareness,2,4,Who discovered penicillin?,Newton,Fleming,Edison,Pasteur,1,Alexander Fleming discovered penicillin.,2,0.5,Science,Medium
+q-ga-283,ssc-cgl-14,General Awareness,2,5,Which gas is used in photosynthesis?,Oxygen,Nitrogen,Carbon dioxide,Hydrogen,2,Plants use CO2.,2,0.5,Science,Easy
+q-ga-284,ssc-cgl-14,General Awareness,2,6,What is the capital of Haryana??,Chandigarh,Gurgaon,Rohtak,Ambala,0,Chandigarh capital.,2,0.5,Geography,Easy
+q-ga-285,ssc-cgl-14,General Awareness,2,7,Who invented the steam engine?,James Watt,Edison,Newton,Faraday,0,James Watt improved steam engine.,2,0.5,Science,Medium
+q-ga-286,ssc-cgl-14,General Awareness,2,8,Which country is known as Land of Thousand Lakes?,Finland,Norway,Sweden,Canada,0,Finland nickname.,2,0.5,Geography,Medium
+q-ga-287,ssc-cgl-14,General Awareness,2,9,Which organ filters blood in human body?,Liver,Kidney,Heart,Lungs,1,Kidney filters blood.,2,0.5,Biology,Easy
+q-ga-288,ssc-cgl-14,General Awareness,2,10,Who wrote 'Discovery of India'?,Gandhi,Nehru,Bose,Tagore,1,Nehru wrote book.,2,0.5,History,Medium
+q-ga-289,ssc-cgl-14,General Awareness,2,11,Which is national flower of India?,Lotus,Rose,Lily,Jasmine,0,Lotus national flower.,2,0.5,General Knowledge,Easy
+q-ga-290,ssc-cgl-14,General Awareness,2,12,Which planet is called Red Planet?,Mercury,Venus,Mars,Jupiter,2,Mars appears red.,2,0.5,Science,Easy
+q-ga-291,ssc-cgl-14,General Awareness,2,13,Which instrument measures earthquakes?,Barometer,Seismograph,Thermometer,Hygrometer,1,Seismograph measures earthquakes.,2,0.5,Physics,Medium
+q-ga-292,ssc-cgl-14,General Awareness,2,14,Who was the first Prime Minister of India?,Gandhi,Nehru,Patel,Shastri,1,Jawaharlal Nehru first PM.,2,0.5,Polity,Easy
+q-ga-293,ssc-cgl-14,General Awareness,2,15,Which is largest desert in world?,Sahara,Gobi,Kalahari,Thar,0,Sahara largest desert.,2,0.5,Geography,Medium
+q-ga-294,ssc-cgl-14,General Awareness,2,16,What is SI unit of force?,Joule,Watt,Newton,Pascal,2,Newton unit of force.,2,0.5,Physics,Easy
+q-ga-295,ssc-cgl-14,General Awareness,2,17,Which state is known as Tea Garden of India?,Assam,West Bengal,Kerala,Sikkim,0,Assam famous for tea.,2,0.5,Geography,Medium
+q-ga-296,ssc-cgl-14,General Awareness,2,18,Which metal is liquid at room temperature?,Iron,Mercury,Copper,Silver,1,Mercury liquid metal.,2,0.5,Science,Easy
+q-ga-297,ssc-cgl-14,General Awareness,2,19,Who is known as Father of Computer?,Charles Babbage,Bill Gates,Alan Turing,Steve Jobs,0,Babbage designed computer.,2,0.5,General Knowledge,Medium
+q-ga-298,ssc-cgl-14,General Awareness,2,20,Which is highest waterfall in India?,Dudhsagar,Jog Falls,Athirappilly,Hogenakkal,1,Jog Falls highest.,2,0.5,Geography,Medium
+q-ga-299,ssc-cgl-14,General Awareness,2,21,Which organ controls heartbeat?,Brain,Heart,Liver,Lungs,0,Brain regulates heartbeat.,2,0.5,Biology,Medium
+q-ga-300,ssc-cgl-14,General Awareness,2,22,What is the currency of Japan??,Yuan,Yen,Dollar,Rupee,1,Yen currency.,2,0.5,Economics,Easy
+q-ga-301,ssc-cgl-14,General Awareness,2,23,Who started Quit India Movement?,Gandhi,Nehru,Bose,Patel,0,Gandhi launched movement.,2,0.5,History,Medium
+q-ga-302,ssc-cgl-14,General Awareness,2,24,Which gas is used in fire extinguishers?,Oxygen,Nitrogen,Carbon dioxide,Hydrogen,2,CO2 stops fire.,2,0.5,Science,Easy
+q-ga-303,ssc-cgl-14,General Awareness,2,25,Capital of Argentina?,Buenos Aires,Lima,Santiago,Bogota,0,Buenos Aires capital.,2,0.5,Geography,Medium
+q-qa-229,ssc-cgl-14,Quantitative Aptitude,3,1,Calculate: what is 15% of 240?,30,32,34,36,3,15% of 240 = 36.,2,0.5,Percentage,Easy
+q-qa-230,ssc-cgl-14,Quantitative Aptitude,3,2,Ratio of two numbers is 4:5 and sum is 45. Larger number?,18,20,25,27,2,5/9×45=25.,2,0.5,Ratio,Medium
+q-qa-231,ssc-cgl-14,Quantitative Aptitude,3,3,Average of 6 numbers is 14. Find total sum.,72,78,84,90,2,14×6=84.,2,0.5,Average,Easy
+q-qa-232,ssc-cgl-14,Quantitative Aptitude,3,4,A number increased by 20% becomes 480. Find original number.,360,380,400,420,2,400×1.2=480.,2,0.5,Percentage,Medium
+q-qa-233,ssc-cgl-14,Quantitative Aptitude,3,5,Simple interest on ₹2000 at 5% for 3 years?,250,300,350,400,1,SI=300.,2,0.5,Simple Interest,Easy
+q-qa-234,ssc-cgl-14,Quantitative Aptitude,3,6,A train travels 300 km in 5 hours. Speed?,50,55,60,65,2,300/5=60 km/h.,2,0.5,Speed & Distance,Easy
+q-qa-235,ssc-cgl-14,Quantitative Aptitude,3,7,What is the square of 19?,341,351,361,371,2,19²=361.,2,0.5,Arithmetic,Easy
+q-qa-236,ssc-cgl-14,Quantitative Aptitude,3,8,"If CP = ₹700 and SP = ₹840, profit %?",0.15,0.18,0.2,0.25,2,140/700×100=20%.,2,0.5,Profit & Loss,Medium
+q-qa-237,ssc-cgl-14,Quantitative Aptitude,3,9,Find the LCM of 8 and 12.,16,20,24,32,2,LCM=24.,2,0.5,LCM,Easy
+q-qa-238,ssc-cgl-14,Quantitative Aptitude,3,10,6 men finish work in 8 days. 12 men will finish in?,3,4,5,6,1,Double workers half time.,2,0.5,Time & Work,Medium
+q-qa-239,ssc-cgl-14,Quantitative Aptitude,3,11,Perimeter of square 64 cm. Find side.,14,15,16,17,2,64/4=16.,2,0.5,Geometry,Easy
+q-qa-240,ssc-cgl-14,Quantitative Aptitude,3,12,₹4000 becomes ₹4800 in 2 years. Find rate.,0.08,0.09,0.1,0.11,2,SI=800.,2,0.5,Simple Interest,High
+q-qa-241,ssc-cgl-14,Quantitative Aptitude,3,13,Calculate the value of 3/4 of 64.,44,46,48,50,2,48,2,0.5,Fraction,Easy
+q-qa-242,ssc-cgl-14,Quantitative Aptitude,3,14,"Area of rectangle 280, length 14. Breadth?",18,19,20,21,2,280/14=20.,2,0.5,Geometry,Medium
+q-qa-243,ssc-cgl-14,Quantitative Aptitude,3,15,Remainder when number divided by 6 is 2. By 12?,1,2,3,4,1,Same remainder.,2,0.5,Number System,Medium
+q-qa-244,ssc-cgl-14,Quantitative Aptitude,3,16,Compound interest on ₹1500 at 10% for 2 years?,300,315,330,345,1,CI=315.,2,0.5,Compound Interest,High
+q-qa-245,ssc-cgl-14,Quantitative Aptitude,3,17,Average of first 9 natural numbers?,4,4.5,5,5.5,2,(n+1)/2=5.,2,0.5,Average,Medium
+q-qa-246,ssc-cgl-14,Quantitative Aptitude,3,18,40% of number is 160. Find number.,350,380,400,420,2,400,2,0.5,Percentage,Medium
+q-qa-247,ssc-cgl-14,Quantitative Aptitude,3,19,Find the value of √225.,13,14,15,16,2,15,2,0.5,Arithmetic,Easy
+q-qa-248,ssc-cgl-14,Quantitative Aptitude,3,20,10% discount on ₹500. Selling price?,430,440,450,460,2,Discount=50.,2,0.5,Discount,Easy
+q-qa-249,ssc-cgl-14,Quantitative Aptitude,3,21,Distance 420 km in 7 hours. Speed?,50,55,60,65,2,#ERROR!,2,0.5,Speed & Distance,Easy
+q-qa-250,ssc-cgl-14,Quantitative Aptitude,3,22,Find the HCF of 20 and 30.,5,8,10,12,2,HCF=10.,2,0.5,HCF,Easy
+q-qa-251,ssc-cgl-14,Quantitative Aptitude,3,23,A number increased by 25% becomes 250. Find original number.,180,190,200,210,2,200×1.25=250.,2,0.5,Percentage,Medium
+q-qa-252,ssc-cgl-14,Quantitative Aptitude,3,24,Area of square side 12?,134,144,154,164,1,12²=144.,2,0.5,Geometry,Easy
+q-qa-253,ssc-cgl-14,Quantitative Aptitude,3,25,Cost of 8 pens ₹96. Cost of 1 pen?,10,11,12,13,2,96/8=12.,2,0.5,Arithmetic,Easy
+q-en-223,ssc-cgl-14,English,4,1,Choose the synonym of 'COURAGE'.,Fear,Bravery,Weakness,Cowardice,1,Courage means bravery.,2,0.5,Vocabulary,Easy
+q-en-224,ssc-cgl-14,English,4,2,Choose the antonym of 'EXPENSIVE'.,Costly,Cheap,Valuable,High,1,Cheap is opposite.,2,0.5,Vocabulary,Easy
+q-en-225,ssc-cgl-14,English,4,3,Select the correctly spelled word.,Recieve,Receive,Receeve,Receve,1,Correct spelling is Receive.,2,0.5,Spelling,Medium
+q-en-226,ssc-cgl-14,English,4,4,Fill in the blank: He is fond ___ reading.,of,in,on,at,0,Correct preposition is 'of'.,2,0.5,Grammar,Easy
+q-en-227,ssc-cgl-14,English,4,5,Choose the correct passive voice of: They built a bridge.,A bridge builds,A bridge built,A bridge was built,A bridge is built,2,Past passive form.,2,0.5,Voice,Medium
+q-en-228,ssc-cgl-14,English,4,6,Choose the correct synonym of 'QUICK'.,Slow,Rapid,Late,Weak,1,Quick means rapid.,2,0.5,Vocabulary,Easy
+q-en-229,ssc-cgl-14,English,4,7,Choose the correct antonym of 'STRONG'.,Powerful,Firm,Weak,Healthy,2,Weak opposite of strong.,2,0.5,Vocabulary,Easy
+q-en-230,ssc-cgl-14,English,4,8,Identify the error: She have finished her work.,She,have,finished,No error,1,Should be 'has'.,2,0.5,Error Detection,High
+q-en-231,ssc-cgl-14,English,4,9,Fill in the blank: He arrived ___ time.,at,on,in,with,1,Correct phrase 'on time'.,2,0.5,Grammar,Medium
+q-en-232,ssc-cgl-14,English,4,10,"Choose correct indirect speech: He said, 'I am ready'.",He said he was ready,He said he is ready,He said ready,He said I ready,0,Tense changes to past.,2,0.5,Narration,Medium
+q-en-233,ssc-cgl-14,English,4,11,Choose the correct synonym of 'WISE'.,Intelligent,Foolish,Dull,Weak,0,Wise means intelligent.,2,0.5,Vocabulary,Medium
+q-en-234,ssc-cgl-14,English,4,12,Choose the correct antonym of 'EARLY'.,Before,Late,Quick,Soon,1,Late opposite.,2,0.5,Vocabulary,Easy
+q-en-235,ssc-cgl-14,English,4,13,Fill in the blank: Each of the students ___ present.,are,were,is,be,2,Singular verb used.,2,0.5,Grammar,Medium
+q-en-236,ssc-cgl-14,English,4,14,Meaning of idiom 'Once in a blue moon'.,Very often,Rarely,Always,Never,1,Means rarely.,2,0.5,Idiom,Medium
+q-en-237,ssc-cgl-14,English,4,15,Choose correct spelling.,Beleive,Believe,Bileve,Bleve,1,Correct spelling Believe.,2,0.5,Spelling,Medium
+q-en-238,ssc-cgl-14,English,4,16,Choose the correct synonym of 'HUGE'.,Big,Tiny,Short,Small,0,Huge means big.,2,0.5,Vocabulary,Easy
+q-en-239,ssc-cgl-14,English,4,17,Choose the correct antonym of 'OPEN'.,Close,Start,Begin,Unlock,0,Close opposite.,2,0.5,Vocabulary,Easy
+q-en-240,ssc-cgl-14,English,4,18,Fill in the blank: She has lived here ___ 2015.,for,since,at,in,1,Since used with point in time.,2,0.5,Grammar,Medium
+q-en-241,ssc-cgl-14,English,4,19,Choose one-word substitution for 'One who teaches students'.,Teacher,Driver,Singer,Painter,0,Teacher definition.,2,0.5,Vocabulary,Easy
+q-en-242,ssc-cgl-14,English,4,20,Identify correctly punctuated sentence.,its raining today,It's raining today,Its raining today,Its' raining today,1,Apostrophe used correctly.,2,0.5,Punctuation,Easy
+q-en-243,ssc-cgl-14,English,4,21,Choose the correct synonym of 'CALM'.,Peaceful,Angry,Loud,Rough,0,Calm means peaceful.,2,0.5,Vocabulary,Easy
+q-en-244,ssc-cgl-14,English,4,22,Choose the correct antonym of 'VISIBLE'.,Clear,Bright,Hidden,Open,2,Hidden opposite.,2,0.5,Vocabulary,Medium
+q-en-245,ssc-cgl-14,English,4,23,Fill in the blank: The train departs ___ 6 PM.,at,on,in,with,0,Time uses 'at'.,2,0.5,Grammar,Easy
+q-en-246,ssc-cgl-14,English,4,24,Choose correct passive voice: They are repairing the road.,The road repaired,The road is repaired,The road is being repaired,The road repairing,2,Present continuous passive.,2,0.5,Voice,High
+q-en-247,ssc-cgl-14,English,4,25,Choose the correct synonym of 'HONEST'.,Truthful,Clever,Rich,Brave,0,Honest means truthful.,2,0.5,Vocabulary,Easy
+q-re-279,ssc-cgl-15,Reasoning,1,1,"Find the next number: 5, 15, 45, 135, ?",270,405,540,675,1,Multiply by 3.,2,0.5,Series,Medium
+q-re-280,ssc-cgl-15,Reasoning,1,2,"If TABLE is coded as UBCMF, how is CHAIR coded?",DIBJS,DIIBS,DIAJR,DIBIR,0,Each letter +1.,2,0.5,Coding-Decoding,Medium
+q-re-281,ssc-cgl-15,Reasoning,1,3,Find the odd one out.,Apple,Mango,Banana,Potato,3,Potato is vegetable.,2,0.5,Odd One Out,Easy
+q-re-282,ssc-cgl-15,Reasoning,1,4,Complete analogy: Pen : Write :: Knife : ?,Cut,Draw,Paint,Print,0,Knife cuts.,2,0.5,Analogy,Easy
+q-re-283,ssc-cgl-15,Reasoning,1,5,How many sides does a nonagon have?,7,8,9,10,2,Nonagon has 9 sides.,2,0.5,Reasoning,Easy
+q-re-284,ssc-cgl-15,Reasoning,1,6,"In a line, Sita is 2nd from left and 7th from right. Total persons?",7,8,9,10,1,2+7−1=8.,2,0.5,Ranking,Medium
+q-re-285,ssc-cgl-15,Reasoning,1,7,"Find missing number: 3, 6, 12, 24, ?",36,42,48,54,2,Multiply by 2.,2,0.5,Series,Easy
+q-re-286,ssc-cgl-15,Reasoning,1,8,Opposite direction of South-West is?,North-East,North-West,South-East,East,0,Opposite direction.,2,0.5,Direction,Medium
+q-re-287,ssc-cgl-15,Reasoning,1,9,"If A=1, B=2, then CAB=?",5,6,7,8,1,"C=3,A=1,B=2 total 6.",2,0.5,Alphabet,Medium
+q-re-288,ssc-cgl-15,Reasoning,1,10,"Find next term: 13, 26, 39, 52, ?",60,65,78,91,1,Add 13.,2,0.5,Series,Easy
+q-re-289,ssc-cgl-15,Reasoning,1,11,"If today is Sunday, what day after 7 days?",Saturday,Sunday,Monday,Tuesday,1,7 mod 7=0.,2,0.5,Calendar,Medium
+q-re-290,ssc-cgl-15,Reasoning,1,12,"Find odd number: 12, 18, 24, 30, 35",12,18,24,35,3,35 not multiple of 6.,2,0.5,Number System,Easy
+q-re-291,ssc-cgl-15,Reasoning,1,13,Mirror image of 4:00 clock is?,06:00:00,07:00:00,08:00:00,09:00:00,2,12−4=8.,2,0.5,Clock,High
+q-re-292,ssc-cgl-15,Reasoning,1,14,"Find missing term: 36, 49, 64, 81, ?",90,100,110,121,1,Squares sequence.,2,0.5,Series,Easy
+q-re-293,ssc-cgl-15,Reasoning,1,15,Find the odd word from the given options.,Chair,Table,Bed,Orange,3,Orange is fruit.,2,0.5,Odd One Out,Easy
+q-re-294,ssc-cgl-15,Reasoning,1,16,"If BOOK is coded as CPPL, how is MILK coded?",NJML,NJLK,NJMLK,NJLL,1,Each letter +1.,2,0.5,Coding-Decoding,Medium
+q-re-295,ssc-cgl-15,Reasoning,1,17,How many months are there in a year?,10,11,12,13,2,12 months.,2,0.5,General Knowledge,Easy
+q-re-296,ssc-cgl-15,Reasoning,1,18,"Find missing number: 1, 4, 9, 16, ?",20,24,25,36,2,Squares pattern.,2,0.5,Series,Easy
+q-re-297,ssc-cgl-15,Reasoning,1,19,"If North becomes South, East becomes?",West,North,South,East,0,Opposite direction.,2,0.5,Direction,Medium
+q-re-298,ssc-cgl-15,Reasoning,1,20,"Find next alphabet: F, I, L, O, ?",P,Q,R,S,2,#ERROR!,2,0.5,Series,Medium
+q-re-299,ssc-cgl-15,Reasoning,1,21,"Find odd number: 21, 28, 35, 42, 47",21,28,35,47,3,47 not multiple of 7.,2,0.5,Number System,Medium
+q-re-300,ssc-cgl-15,Reasoning,1,22,"If 8 workers finish work in 6 days, 4 workers will finish in?",10,11,12,13,2,Half workers double time.,2,0.5,Time & Work,Medium
+q-re-301,ssc-cgl-15,Reasoning,1,23,Which shape has three equal sides?,Square,Triangle,Circle,Rectangle,1,Equilateral triangle.,2,0.5,Geometry,Easy
+q-re-302,ssc-cgl-15,Reasoning,1,24,"Find missing term: 4, 8, 16, 32, ?",48,56,64,72,2,Multiply by 2.,2,0.5,Series,Easy
+q-re-303,ssc-cgl-15,Reasoning,1,25,"If today is Tuesday, what day after 14 days?",Monday,Tuesday,Wednesday,Thursday,1,14 mod 7=0.,2,0.5,Calendar,High
+q-qa-254,ssc-cgl-15,Quantitative Aptitude,3,1,Calculate: what is 25% of 320?,60,70,80,90,2,25% of 320 = 80.,2,0.5,Percentage,Easy
+q-qa-255,ssc-cgl-15,Quantitative Aptitude,3,2,Ratio of two numbers is 3:7 and sum is 50. Larger number?,15,25,35,40,2,7/10×50=35.,2,0.5,Ratio,Medium
+q-qa-256,ssc-cgl-15,Quantitative Aptitude,3,3,Average of 10 numbers is 12. Find total sum.,110,115,120,125,2,12×10=120.,2,0.5,Average,Easy
+q-qa-257,ssc-cgl-15,Quantitative Aptitude,3,4,A number increased by 10% becomes 330. Find original number.,290,295,300,305,2,300×1.1=330.,2,0.5,Percentage,Medium
+q-qa-258,ssc-cgl-15,Quantitative Aptitude,3,5,Simple interest on ₹2500 at 8% for 2 years?,300,350,400,450,2,SI=400.,2,0.5,Simple Interest,Easy
+q-qa-259,ssc-cgl-15,Quantitative Aptitude,3,6,A car travels 180 km in 3 hours. Speed?,50,55,60,65,2,180/3=60 km/h.,2,0.5,Speed & Distance,Easy
+q-qa-260,ssc-cgl-15,Quantitative Aptitude,3,7,What is the square of 24?,556,566,576,586,2,24²=576.,2,0.5,Arithmetic,Easy
+q-qa-261,ssc-cgl-15,Quantitative Aptitude,3,8,"If CP = ₹900 and SP = ₹1080, profit %?",0.15,0.18,0.2,0.25,2,180/900×100=20%.,2,0.5,Profit & Loss,Medium
+q-qa-262,ssc-cgl-15,Quantitative Aptitude,3,9,Find the LCM of 6 and 14.,28,32,36,42,3,LCM=42.,2,0.5,LCM,Easy
+q-qa-263,ssc-cgl-15,Quantitative Aptitude,3,10,9 men finish work in 4 days. 3 men will finish in?,10,11,12,13,2,One-third workers triple time.,2,0.5,Time & Work,Medium
+q-qa-264,ssc-cgl-15,Quantitative Aptitude,3,11,Perimeter of square 100 cm. Find side.,24,25,26,27,1,100/4=25.,2,0.5,Geometry,Easy
+q-qa-265,ssc-cgl-15,Quantitative Aptitude,3,12,₹5000 becomes ₹6000 in 2 years. Find rate.,0.08,0.09,0.1,0.11,2,SI=1000.,2,0.5,Simple Interest,High
+q-qa-266,ssc-cgl-15,Quantitative Aptitude,3,13,Calculate the value of 4/5 of 75.,55,60,65,70,1,60,2,0.5,Fraction,Easy
+q-qa-267,ssc-cgl-15,Quantitative Aptitude,3,14,"Area of rectangle 450, length 15. Breadth?",25,30,35,40,1,450/15=30.,2,0.5,Geometry,Medium
+q-qa-268,ssc-cgl-15,Quantitative Aptitude,3,15,Remainder when number divided by 7 is 3. By 14?,1,2,3,4,2,Same remainder.,2,0.5,Number System,Medium
+q-qa-269,ssc-cgl-15,Quantitative Aptitude,3,16,Compound interest on ₹1000 at 10% for 2 years?,200,210,220,230,1,CI=210.,2,0.5,Compound Interest,High
+q-qa-270,ssc-cgl-15,Quantitative Aptitude,3,17,Average of first 19 natural numbers?,9,9.5,10,10.5,2,(n+1)/2=10.,2,0.5,Average,Medium
+q-qa-271,ssc-cgl-15,Quantitative Aptitude,3,18,80% of number is 240. Find number.,280,290,300,310,2,300,2,0.5,Percentage,Medium
+q-qa-272,ssc-cgl-15,Quantitative Aptitude,3,19,Find the value of √169.,11,12,13,14,2,13,2,0.5,Arithmetic,Easy
+q-qa-273,ssc-cgl-15,Quantitative Aptitude,3,20,15% discount on ₹800. Selling price?,650,660,680,700,2,Discount=120.,2,0.5,Discount,Easy
+q-qa-274,ssc-cgl-15,Quantitative Aptitude,3,21,Distance 240 km in 4 hours. Speed?,50,55,60,65,2,#ERROR!,2,0.5,Speed & Distance,Easy
+q-qa-275,ssc-cgl-15,Quantitative Aptitude,3,22,Find the HCF of 27 and 36.,3,6,9,12,2,HCF=9.,2,0.5,HCF,Easy
+q-qa-276,ssc-cgl-15,Quantitative Aptitude,3,23,A number increased by 40% becomes 420. Find original number.,280,290,300,310,2,300×1.4=420.,2,0.5,Percentage,Medium
+q-qa-277,ssc-cgl-15,Quantitative Aptitude,3,24,Area of square side 14?,186,196,206,216,1,14²=196.,2,0.5,Geometry,Easy
+q-qa-278,ssc-cgl-15,Quantitative Aptitude,3,25,Cost of 5 pens ₹75. Cost of 1 pen?,10,12,15,18,2,75/5=15.,2,0.5,Arithmetic,Easy
+q-en-248,ssc-cgl-15,English,4,1,Choose the synonym of 'BRILLIANT'.,Dull,Excellent,Weak,Dim,1,Brilliant means excellent.,2,0.5,Vocabulary,Medium
+q-en-249,ssc-cgl-15,English,4,2,Choose the antonym of 'INCREASE'.,Grow,Rise,Decrease,Expand,2,Decrease is opposite.,2,0.5,Vocabulary,Easy
+q-en-250,ssc-cgl-15,English,4,3,Select the correctly spelled word.,Occassion,Occasion,Ocasian,Ocaasion,1,Correct spelling is Occasion.,2,0.5,Spelling,Medium
+q-en-251,ssc-cgl-15,English,4,4,Fill in the blank: She is fond ___ music.,of,in,on,at,0,Correct preposition is 'of'.,2,0.5,Grammar,Easy
+q-en-252,ssc-cgl-15,English,4,5,Choose the correct passive voice of: He wrote a letter.,A letter wrote,A letter was written,A letter is writing,A letter writing,1,Correct past passive form.,2,0.5,Voice,Medium
+q-en-253,ssc-cgl-15,English,4,6,Choose the correct synonym of 'RAPID'.,Slow,Fast,Late,Weak,1,Rapid means fast.,2,0.5,Vocabulary,Easy
+q-en-254,ssc-cgl-15,English,4,7,Choose the correct antonym of 'HAPPY'.,Sad,Joyful,Pleased,Glad,0,Sad opposite of happy.,2,0.5,Vocabulary,Easy
+q-en-255,ssc-cgl-15,English,4,8,Identify the error: He do his homework daily.,He,do,his homework,No error,1,Should be 'does'.,2,0.5,Error Detection,High
+q-en-256,ssc-cgl-15,English,4,9,Fill in the blank: They arrived ___ the station early.,at,on,in,with,0,Correct preposition 'at'.,2,0.5,Grammar,Easy
+q-en-257,ssc-cgl-15,English,4,10,"Choose correct indirect speech: She said, 'I am tired'.",She said she was tired,She said she is tired,She said tired,She said I tired,0,Tense changes to past.,2,0.5,Narration,Medium
+q-en-258,ssc-cgl-15,English,4,11,Choose the correct synonym of 'INTELLIGENT'.,Smart,Foolish,Dull,Weak,0,Intelligent means smart.,2,0.5,Vocabulary,Medium
+q-en-259,ssc-cgl-15,English,4,12,Choose the correct antonym of 'CLEAN'.,Dirty,Pure,Fresh,Neat,0,Dirty opposite of clean.,2,0.5,Vocabulary,Easy
+q-en-260,ssc-cgl-15,English,4,13,Fill in the blank: Neither Ram nor Shyam ___ present.,are,were,is,be,2,Singular verb with nearest subject.,2,0.5,Grammar,Medium
+q-en-261,ssc-cgl-15,English,4,14,Meaning of idiom 'Break the ice'.,Start conversation,End meeting,Feel cold,Get angry,0,Means start conversation.,2,0.5,Idiom,Medium
+q-en-262,ssc-cgl-15,English,4,15,Choose correct spelling.,Enviroment,Environment,Enviornment,Envirnment,1,Correct spelling is Environment.,2,0.5,Spelling,Medium
+q-en-263,ssc-cgl-15,English,4,16,Choose the correct synonym of 'POWERFUL'.,Strong,Weak,Soft,Tiny,0,Powerful means strong.,2,0.5,Vocabulary,Easy
+q-en-264,ssc-cgl-15,English,4,17,Choose the correct antonym of 'OPEN'.,Close,Start,Begin,Unlock,0,Close opposite.,2,0.5,Vocabulary,Easy
+q-en-265,ssc-cgl-15,English,4,18,Fill in the blank: He has been working here ___ 2022.,for,since,at,in,1,Since used with point in time.,2,0.5,Grammar,Medium
+q-en-266,ssc-cgl-15,English,4,19,Choose one-word substitution for 'One who cannot see'.,Blind,Deaf,Dumb,Lame,0,Blind definition.,2,0.5,Vocabulary,Easy
+q-en-267,ssc-cgl-15,English,4,20,Identify correctly punctuated sentence.,its raining heavily,It's raining heavily,Its raining heavily,Its' raining heavily,1,Apostrophe used correctly.,2,0.5,Punctuation,Easy
+q-en-268,ssc-cgl-15,English,4,21,Choose the correct synonym of 'CALM'.,Peaceful,Angry,Loud,Rough,0,Calm means peaceful.,2,0.5,Vocabulary,Easy
+q-en-269,ssc-cgl-15,English,4,22,Choose the correct antonym of 'VISIBLE'.,Clear,Bright,Hidden,Open,2,Hidden opposite.,2,0.5,Vocabulary,Medium
+q-en-270,ssc-cgl-15,English,4,23,Fill in the blank: The meeting starts ___ 9 AM.,at,on,in,with,0,Time uses 'at'.,2,0.5,Grammar,Easy
+q-en-271,ssc-cgl-15,English,4,24,Choose correct passive voice: They are cleaning the room.,The room cleaned,The room is cleaned,The room is being cleaned,The room cleaning,2,Present continuous passive.,2,0.5,Voice,High
+q-en-272,ssc-cgl-15,English,4,25,Choose the correct synonym of 'HONEST'.,Truthful,Clever,Rich,Brave,0,Honest means truthful.,2,0.5,Vocabulary,Easy

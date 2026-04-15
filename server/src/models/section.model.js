@@ -1,8 +1,8 @@
 import mongoose from "mongoose";
 
 const sectionSchema = new mongoose.Schema({
-    test_id: { 
-        type: mongoose.Schema.Types.ObjectId, 
+    testId: { 
+        type: String, 
         ref: "Test", 
         required: true 
     },
@@ -10,11 +10,13 @@ const sectionSchema = new mongoose.Schema({
         type: String, 
         required: true 
     }, // e.g., "General Awareness"
-    display_order: { 
+    sectionOrder: { 
         type: Number, 
         required: true 
     }
 }, { timestamps: true });
+
+sectionSchema.index({ testId: 1, name: 1 }, { unique: true });
 
 const Section = mongoose.model("Section", sectionSchema);
 export default Section;

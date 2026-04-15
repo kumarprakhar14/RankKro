@@ -10,17 +10,17 @@ import User from "../models/user.model.js";
 /**
  * @desc    List all tests (admin view with section counts)
  * @route   GET /api/admin/tests
- * @query   exam_type, status, page, limit
+ * @query   examType, status, page, limit
  * @access  Admin
  */
 export const listTests = async (req, res) => {
     try {
-        const { exam_type, status, page = 1, limit = 20 } = req.query;
+        const { examType, status, page = 1, limit = 20 } = req.query;
 
         const filter = {};
-        if (exam_type) {
+        if (examType) {
             const escapeRegex = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-            filter.exam_type = { $regex: new RegExp(escapeRegex(exam_type), "i") };
+            filter.examType = { $regex: new RegExp(escapeRegex(examType), "i") };
         }
         if (status) filter.status = status.toUpperCase();
 
@@ -45,8 +45,8 @@ export const listTests = async (req, res) => {
         // Attach section count to each test
         const testIds = tests.map(t => t._id);
         const sectionCounts = await Section.aggregate([
-            { $match: { test_id: { $in: testIds } } },
-            { $group: { _id: "$test_id", count: { $sum: 1 } } }
+            { $match: { testId: { $in: testIds } } },
+            { $group: { _id: "$testId", count: { $sum: 1 } } }
         ]);
 
         const countMap = {};
@@ -87,7 +87,7 @@ export const listTests = async (req, res) => {
 /**
  * @desc    Create a new test with optional sections
  * @route   POST /api/admin/tests
- * @body    { id, title, exam_type, duration_minutes, difficulty, status, is_pyq, sections: [{ name, display_order }] }
+ * @body    { id, title, examType, durationMinutes, difficulty, status, isPyq, sections: [{ name, display_order }] }
  * @access  Admin
  */
 export const createTest = async (req, res) => {
@@ -95,16 +95,16 @@ export const createTest = async (req, res) => {
     session.startTransaction();
 
     try {
-        const { id, title, exam_type, duration_minutes, difficulty, status, is_pyq, sections } = req.body;
+        const { id, title, examType, durationMinutes, difficulty, status, isPyq, sections } = req.body;
 
-        if (!id || !title || !exam_type || !duration_minutes) {
+        if (!id || !title || !examType || !durationMinutes) {
             await session.abortTransaction();
             session.endSession();
             return res.status(400).json({
                 success: false,
                 error: {
                     code: "VALIDATION_ERROR",
-                    message: "Missing required fields: id, title, exam_type, duration_minutes"
+                    message: "Missing required fields: id, title, examType, durationMinutes"
                 }
             });
         }
@@ -113,11 +113,11 @@ export const createTest = async (req, res) => {
         const test = new Test({
             id,
             title,
-            exam_type,
-            duration_minutes,
+            examType,
+            durationMinutes,
             difficulty: difficulty || "MEDIUM",
             status: status || "FREE",
-            is_pyq: is_pyq || false
+            isPyq: isPyq || false
         });
 
         await test.save({ session });
@@ -126,9 +126,9 @@ export const createTest = async (req, res) => {
         let createdSections = [];
         if (sections && Array.isArray(sections) && sections.length > 0) {
             const sectionDocs = sections.map((s, index) => ({
-                test_id: test._id,
+                testId: test._id,
                 name: s.name,
-                display_order: s.display_order !== undefined ? s.display_order : index + 1
+                sectionOrder: s.display_order !== undefined ? s.display_order : index + 1
             }));
             createdSections = await Section.insertMany(sectionDocs, { session });
         }
@@ -172,20 +172,21 @@ export const createTest = async (req, res) => {
 
 /**
  * @desc    Update test metadata (title, status, PYQ tag, etc.)
- * @route   PUT /api/admin/tests/:testId
+ * @route   PATCH /api/admin/tests/:testId
  * @body    Any test fields to update
  * @access  Admin
  */
 export const updateTest = async (req, res) => {
     try {
-        const { testId } = req.params;
+        let { testId } = req.params;
+        testId = testId.toString();
         const updates = req.body;
 
-        // Don't allow changing attempted_count via this endpoint
-        delete updates.attempted_count;
+        // Don't allow changing attemptedCount via this endpoint
+        delete updates.attemptedCount;
 
-        const test = await Test.findByIdAndUpdate(
-            testId,
+        const test = await Test.findOneAndUpdate(
+            {id: testId},
             { $set: updates },
             { new: true, runValidators: true }
         );
@@ -228,9 +229,10 @@ export const updateTest = async (req, res) => {
  */
 export const getTestDetail = async (req, res) => {
     try {
-        const { testId } = req.params;
+        let { testId } = req.params;
+        testId = testId.toString();
 
-        const test = await Test.findById(testId);
+        const test = await Test.findOne({ id: testId });
         if (!test) {
             return res.status(404).json({
                 success: false,
@@ -242,27 +244,27 @@ export const getTestDetail = async (req, res) => {
         }
 
         // Fetch sections with their assigned questions
-        const sections = await Section.find({ test_id: test._id })
+        const sections = await Section.find({ testId: test._id })
             .sort({ display_order: 1 })
             .lean();
 
-        const sectionIds = sections.map(s => s._id);
-        const sectionQuestions = await SectionQuestion.find({ section_id: { $in: sectionIds } })
-            .sort({ question_order: 1 })
+        const sectionIds = sections.map(s => s._id.toString());
+        const sectionQuestions = await SectionQuestion.find({ sectionId: { $in: sectionIds } })
+            .sort({ questionOrder: 1 })
             .populate({
-                path: "question_id",
-                select: "id text subject marks correct_option"
+                path: "questionId",
+                select: "id text subject marks correctOption"
             });
 
         // Group questions by section
         const sectionsWithQuestions = sections.map(section => ({
             ...section,
             questions: sectionQuestions
-                .filter(sq => sq.section_id.toString() === section._id.toString())
+                .filter(sq => sq.sectionId.toString() === section._id.toString())
                 .map(sq => ({
                     _id: sq._id,
-                    question_order: sq.question_order,
-                    question: sq.question_id
+                    questionOrder: sq.questionOrder,
+                    question: sq.questionId
                 }))
         }));
 
@@ -288,7 +290,7 @@ export const getTestDetail = async (req, res) => {
 /**
  * @desc    Assign questions to a section within a test
  * @route   POST /api/admin/tests/:testId/sections/:sectionId/questions
- * @body    { questions: [{ question_id, question_order }] }
+ * @body    { questions: [{ questionId, questionOrder }, {...}, {...}, ...] }
  * @access  Admin
  */
 export const assignQuestions = async (req, res) => {
@@ -297,7 +299,7 @@ export const assignQuestions = async (req, res) => {
         const { questions } = req.body;
 
         // Validate test exists
-        const test = await Test.findById(testId);
+        const test = await Test.findOne({ _id: testId });
         if (!test) {
             return res.status(404).json({
                 success: false,
@@ -309,7 +311,7 @@ export const assignQuestions = async (req, res) => {
         }
 
         // Validate section exists and belongs to this test
-        const section = await Section.findOne({ _id: sectionId, test_id: testId });
+        const section = await Section.findOne({ _id: sectionId, testId: test._id });
         if (!section) {
             return res.status(404).json({
                 success: false,
@@ -331,7 +333,7 @@ export const assignQuestions = async (req, res) => {
         }
 
         // Validate that all question IDs exist
-        const questionIds = questions.map(q => q.question_id);
+        const questionIds = questions.map(q => q.questionId);
         const existingQuestions = await Question.find({ _id: { $in: questionIds } });
 
         if (existingQuestions.length !== questionIds.length) {
@@ -346,9 +348,9 @@ export const assignQuestions = async (req, res) => {
 
         // Build section-question mappings
         const sectionQuestionDocs = questions.map(q => ({
-            section_id: sectionId,
-            question_id: q.question_id,
-            question_order: q.question_order
+            sectionId: sectionId,
+            questionId: q.questionId,
+            questionOrder: q.questionOrder
         }));
 
         let insertedCount = 0;
@@ -356,6 +358,11 @@ export const assignQuestions = async (req, res) => {
             const created = await SectionQuestion.insertMany(sectionQuestionDocs, { ordered: false });
             insertedCount = created.length;
         } catch (insertError) {
+            // MongoDB error code 11000 is a DuplicateKey error. 
+            // It occurs when you attempt to insert or update a 
+            // document with a value that violates a unique index 
+            // constraint on a collection
+
             if (insertError.code === 11000) {
                 // Partial success is possible with ordered: false
                 insertedCount = insertError.insertedDocs?.length || insertError.result?.nInserted || 0;
@@ -421,7 +428,7 @@ export const getAnalytics = async (req, res) => {
 
         // Top 5 most attempted tests
         const topTests = await TestAttempt.aggregate([
-            { $group: { _id: "$test_id", attempts: { $sum: 1 } } },
+            { $group: { _id: "$testId", attempts: { $sum: 1 } } },
             { $sort: { attempts: -1 } },
             { $limit: 5 },
             {
@@ -438,7 +445,7 @@ export const getAnalytics = async (req, res) => {
                     _id: 1,
                     attempts: 1,
                     title: "$test.title",
-                    exam_type: "$test.exam_type"
+                    examType: "$test.examType"
                 }
             }
         ]);

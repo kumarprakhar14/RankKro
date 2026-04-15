@@ -16,31 +16,31 @@ export const getUserAttempts = async (req, res) => {
         const skip = (parseInt(page) - 1) * parseInt(limit);
 
         const [attempts, total] = await Promise.all([
-            TestAttempt.find({ user_id: req.user._id })
+            TestAttempt.find({ userId: req.user._id })
                 .populate({
-                    path: "test_id",
-                    select: "title exam_type difficulty status duration_minutes"
+                    path: "testId",
+                    select: "title examType difficulty status durationMinutes"
                 })
                 .sort({ createdAt: -1 })
                 .skip(skip)
                 .limit(parseInt(limit)),
-            TestAttempt.countDocuments({ user_id: req.user._id })
+            TestAttempt.countDocuments({ userId: req.user._id })
         ]);
 
         // ============================================
         // 2. CALCULATE AGGREGATE STATS
         // ============================================
         const submittedAttempts = await TestAttempt.find({
-            user_id: req.user._id,
+            userId: req.user._id,
             status: "SUBMITTED"
-        }).select("final_score");
+        }).select("finalScore");
 
         const totalAttempts = submittedAttempts.length;
         let averageScore = 0;
         let bestScore = 0;
 
         if (totalAttempts > 0) {
-            const scores = submittedAttempts.map(a => a.final_score);
+            const scores = submittedAttempts.map(a => a.finalScore);
             averageScore = parseFloat((scores.reduce((sum, s) => sum + s, 0) / totalAttempts).toFixed(2));
             bestScore = Math.max(...scores);
         }

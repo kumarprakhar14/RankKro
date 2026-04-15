@@ -1,0 +1,4 @@
+👉🏻 Design Payments Page for admin panel
+👉🏻 Some database fields use snake case while others use
+camel case. Ensure consistency and update the corresponding
+controllers
