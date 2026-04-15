@@ -152,16 +152,18 @@ export const startTest = async (req, res) => {
         // ============================================
         // 3. FETCH SECTIONS & QUESTIONS (WITHOUT ANSWERS)
         // ============================================
-        const sections = await Section.find({ test_id: test._id })
-            .sort({ display_order: 1 });
+        const sections = await Section.find({ testId: test._id })
+            .sort({ display_order: 1 })
+            .lean();
 
-        const sectionIds = sections.map(s => s._id);
+        const sectionIds = sections.map(s => s._id.toString());
         const sectionQuestions = await SectionQuestion.find({ section_id: { $in: sectionIds } })
             .sort({ question_order: 1 })
             .populate({
                 path: "question_id",
                 select: "-correct_option -explanation"  // NEVER expose answers
-            });
+            })
+            .lean();
 
         // Group questions by section
         const sectionsWithQuestions = sections.map(section => ({
@@ -173,7 +175,7 @@ export const startTest = async (req, res) => {
                 .map(sq => ({
                     _id: sq.question_id._id,
                     question_order: sq.question_order,
-                    ...sq.question_id.toObject()
+                    ...sq.question_id
                 }))
         }));
 
@@ -292,8 +294,8 @@ export const submitTest = async (req, res) => {
         // ============================================
         // 4. FETCH AND VALIDATE QUESTIONS
         // ============================================
-        const sections = await Section.find({ test_id: attempt.test_id });
-        const sectionIds = sections.map(s => s._id);
+        const sections = await Section.find({ testId: attempt.test_id });
+        const sectionIds = sections.map(s => s._id.toString());
         const validSectionQs = await SectionQuestion.find({ section_id: { $in: sectionIds } });
         const validQuestionIds = new Set(validSectionQs.map(sq => sq.question_id.toString()));
 

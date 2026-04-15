@@ -7,7 +7,7 @@ const testAttemptSchema = new mongoose.Schema({
         required: true 
     },
     test_id: { 
-        type: mongoose.Schema.Types.ObjectId, 
+        type: String, 
         ref: "Test", 
         required: true 
     },

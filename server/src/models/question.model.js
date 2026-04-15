@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const questionSchema = new mongoose.Schema({
-    id: { 
+    _id: { 
         type: String, 
         required: true, 
         unique: true 
@@ -46,6 +46,10 @@ const questionSchema = new mongoose.Schema({
         default: 0 
     },
     subject: { 
+        type: String, 
+        required: true 
+    },
+    difficulty: { 
         type: String, 
         required: true 
     }

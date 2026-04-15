@@ -71,16 +71,16 @@ export const createQuestion = async (req, res) => {
     try {
         const {
             id, text, option_a, option_b, option_c, option_d,
-            correct_option, explanation, marks, negative_marks, subject
+            correct_option, explanation, marks, negative_marks, subject, difficulty
         } = req.body;
 
         // Basic validation
-        if (!id || !text || !option_a || !option_b || !option_c || !option_d || correct_option === undefined || !subject) {
+        if (!id || !text || !option_a || !option_b || !option_c || !option_d || correct_option === undefined || !subject || !difficulty) {
             return res.status(400).json({
                 success: false,
                 error: {
                     code: "VALIDATION_ERROR",
-                    message: "Missing required fields: id, text, option_a-d, correct_option, subject"
+                    message: "Missing required fields: id, text, option_a-d, correct_option, subject, difficulty"
                 }
             });
         }
@@ -96,7 +96,7 @@ export const createQuestion = async (req, res) => {
         }
 
         const question = new Question({
-            id,
+            _id: id,
             text,
             option_a,
             option_b,
@@ -106,7 +106,8 @@ export const createQuestion = async (req, res) => {
             explanation: explanation || "",
             marks: marks || 1,
             negative_marks: negative_marks || 0,
-            subject
+            subject,
+            difficulty: difficulty || "Easy"
         });
 
         await question.save();

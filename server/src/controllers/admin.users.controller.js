@@ -1,5 +1,6 @@
 import User from "../models/user.model.js";
 import TestAttempt from "../models/test_attempt.model.js";
+import mongoose from "mongoose";
 
 
 /**
@@ -72,7 +73,8 @@ export const listUsers = async (req, res) => {
  */
 export const getUserDetail = async (req, res) => {
     try {
-        const { userId } = req.params;
+        let { userId } = req.params;
+        userId = new mongoose.Types.ObjectId(userId);
 
         const user = await User.findById(userId)
             .select("-refreshTokens -resetPasswordToken -resetPasswordExpiresAt");

@@ -9,7 +9,7 @@ import Test from "../models/test.model.js";
  */
 export const checkPremium = async (req, res, next) => {
     try {
-        const test = await Test.findById(req.params.id);
+        const test = await Test.findOne({ id: req.params.id });
 
         if (!test) {
             return res.status(404).json({

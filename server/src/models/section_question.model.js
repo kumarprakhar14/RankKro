@@ -2,12 +2,12 @@ import mongoose from "mongoose";
 
 const sectionQuestionSchema = new mongoose.Schema({
     section_id: { 
-        type: mongoose.Schema.Types.ObjectId, 
+        type: String, 
         ref: "Section", 
         required: true 
     },
-    question_id: { 
-        type: mongoose.Schema.Types.ObjectId, 
+    question_id: {
+        type: String, 
         ref: "Question", 
         required: true 
     },
