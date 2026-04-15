@@ -21,6 +21,7 @@ const DEFAULT_TEST_FORM: TestFormData = {
 }
 
 function TestModal({ isOpen, onClose, initialData, onSuccess }: any) {
+    
     const [formData, setFormData] = useState<TestFormData>(DEFAULT_TEST_FORM)
     const [sectionInput, setSectionInput] = useState('')
     const [loading, setLoading] = useState(false)
@@ -31,7 +32,7 @@ function TestModal({ isOpen, onClose, initialData, onSuccess }: any) {
     useEffect(() => {
         if (isOpen) {
             setFormData(initialData ? { ...initialData } : { ...DEFAULT_TEST_FORM })
-            setSectionInput('')
+            setSectionInput(initialData?.sections?.map(s => s.name).join(', ') || '')
             setError(null)
         }
     }, [isOpen, initialData])
@@ -43,12 +44,17 @@ function TestModal({ isOpen, onClose, initialData, onSuccess }: any) {
         setLoading(true)
         setError(null)
 
+        const parsedSections = sectionInput.split(',').map(s => s.trim()).filter(Boolean)
         const payload = {
             ...formData,
+            initial_sections: isEdit ? formData.initial_sections || [] : parsedSections,
             sections: isEdit 
                 ? undefined 
-                : sectionInput.split(',').map(s => s.trim()).filter(Boolean).map(name => ({ name }))
+                : parsedSections.map(name => ({ name }))
         }
+        console.log(sectionInput);
+        
+        console.log(payload)
 
         try {
             if (isEdit) {
@@ -324,7 +330,7 @@ export default function AdminTests() {
                                     <span className="text-[10px] font-medium text-gray-500 uppercase tracking-wider">Sections</span>
                                 </div>
                                 <button 
-                                    onClick={() => loadTestDetail(test._id)}
+                                    onClick={() => loadTestDetail(test.id)}
                                     className="flex items-center justify-center gap-2 bg-blue-50 text-blue-700 font-bold text-sm rounded-lg hover:bg-blue-100 transition-colors"
                                 >
                                     <BookOpen className="w-4 h-4" /> Manage

@@ -126,9 +126,9 @@ export const createTest = async (req, res) => {
         let createdSections = [];
         if (sections && Array.isArray(sections) && sections.length > 0) {
             const sectionDocs = sections.map((s, index) => ({
-                test_id: test._id,
+                testId: test._id,
                 name: s.name,
-                display_order: s.display_order !== undefined ? s.display_order : index + 1
+                section_order: s.display_order !== undefined ? s.display_order : index + 1
             }));
             createdSections = await Section.insertMany(sectionDocs, { session });
         }
@@ -172,20 +172,21 @@ export const createTest = async (req, res) => {
 
 /**
  * @desc    Update test metadata (title, status, PYQ tag, etc.)
- * @route   PUT /api/admin/tests/:testId
+ * @route   PATCH /api/admin/tests/:testId
  * @body    Any test fields to update
  * @access  Admin
  */
 export const updateTest = async (req, res) => {
     try {
-        const { testId } = req.params;
+        let { testId } = req.params;
+        testId = testId.toString();
         const updates = req.body;
 
         // Don't allow changing attempted_count via this endpoint
         delete updates.attempted_count;
 
-        const test = await Test.findByIdAndUpdate(
-            testId,
+        const test = await Test.findOneAndUpdate(
+            {id: testId},
             { $set: updates },
             { new: true, runValidators: true }
         );
@@ -228,9 +229,10 @@ export const updateTest = async (req, res) => {
  */
 export const getTestDetail = async (req, res) => {
     try {
-        const { testId } = req.params;
+        let { testId } = req.params;
+        testId = testId.toString();
 
-        const test = await Test.findById(testId);
+        const test = await Test.findOne({ id: testId });
         if (!test) {
             return res.status(404).json({
                 success: false,
@@ -242,11 +244,11 @@ export const getTestDetail = async (req, res) => {
         }
 
         // Fetch sections with their assigned questions
-        const sections = await Section.find({ test_id: test._id })
+        const sections = await Section.find({ testId: test._id })
             .sort({ display_order: 1 })
             .lean();
 
-        const sectionIds = sections.map(s => s._id);
+        const sectionIds = sections.map(s => s._id.toString());
         const sectionQuestions = await SectionQuestion.find({ section_id: { $in: sectionIds } })
             .sort({ question_order: 1 })
             .populate({
@@ -288,7 +290,7 @@ export const getTestDetail = async (req, res) => {
 /**
  * @desc    Assign questions to a section within a test
  * @route   POST /api/admin/tests/:testId/sections/:sectionId/questions
- * @body    { questions: [{ question_id, question_order }] }
+ * @body    { questions: [{ question_id, question_order }, {...}, {...}, ...] }
  * @access  Admin
  */
 export const assignQuestions = async (req, res) => {
@@ -297,7 +299,7 @@ export const assignQuestions = async (req, res) => {
         const { questions } = req.body;
 
         // Validate test exists
-        const test = await Test.findById(testId);
+        const test = await Test.findOne({ _id: testId });
         if (!test) {
             return res.status(404).json({
                 success: false,
@@ -309,7 +311,7 @@ export const assignQuestions = async (req, res) => {
         }
 
         // Validate section exists and belongs to this test
-        const section = await Section.findOne({ _id: sectionId, test_id: testId });
+        const section = await Section.findOne({ _id: sectionId, testId: test._id });
         if (!section) {
             return res.status(404).json({
                 success: false,
@@ -356,6 +358,11 @@ export const assignQuestions = async (req, res) => {
             const created = await SectionQuestion.insertMany(sectionQuestionDocs, { ordered: false });
             insertedCount = created.length;
         } catch (insertError) {
+            // MongoDB error code 11000 is a DuplicateKey error. 
+            // It occurs when you attempt to insert or update a 
+            // document with a value that violates a unique index 
+            // constraint on a collection
+
             if (insertError.code === 11000) {
                 // Partial success is possible with ordered: false
                 insertedCount = insertError.insertedDocs?.length || insertError.result?.nInserted || 0;

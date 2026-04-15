@@ -89,7 +89,7 @@ export function TestCard({ test }: TestCardProps) {
             {diff.label}
           </span>
           <Link
-            to={`/exam?testId=${test._id}`}
+            to={`/exam?testId=${test.id}`}
             className="px-4 py-2 bg-[#1A5DC8] hover:bg-[#0D3E8E] text-white text-xs font-bold rounded-lg transition-all duration-200 group-hover:shadow-md"
           >
             Attempt Now
