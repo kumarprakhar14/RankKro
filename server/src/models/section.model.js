@@ -10,7 +10,7 @@ const sectionSchema = new mongoose.Schema({
         type: String, 
         required: true 
     }, // e.g., "General Awareness"
-    section_order: { 
+    sectionOrder: { 
         type: Number, 
         required: true 
     }

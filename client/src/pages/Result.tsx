@@ -31,7 +31,7 @@ export default function Result() {
 
                 if (res.data) {
                     setTestTitle(res.data.test.title)
-                    setScore(res.data.attempt.final_score)
+                    setScore(res.data.attempt.finalScore)
                     setSummary(res.data.summary)
                     setAnswers(res.data.answers)
                 }
@@ -146,7 +146,7 @@ export default function Result() {
                                     className="w-full flex items-center justify-between p-5 hover:bg-gray-50 transition text-left"
                                 >
                                     <div className="flex items-center gap-3">
-                                        {answer.selected_option === null ? (
+                                        {answer.selectedOption === null ? (
                                             <MinusCircle className="w-5 h-5 text-gray-400 flex-shrink-0" />
                                         ) : answer.is_correct ? (
                                             <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
@@ -168,8 +168,8 @@ export default function Result() {
                                         {/* Options */}
                                         <div className="space-y-2 mt-4 mb-4">
                                             {[0, 1, 2, 3].map((optIdx) => {
-                                                const isCorrect = optIdx === q.correct_option
-                                                const isSelected = optIdx === answer.selected_option
+                                                const isCorrect = optIdx === q.correctOption
+                                                const isSelected = optIdx === answer.selectedOption
 
                                                 let bg = 'bg-gray-50'
                                                 let border = 'border-gray-200'

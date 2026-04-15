@@ -90,10 +90,10 @@ export const getUserDetail = async (req, res) => {
         }
 
         // Fetch user's attempt history
-        const attempts = await TestAttempt.find({ user_id: userId })
+        const attempts = await TestAttempt.find({ userId: userId })
             .populate({
-                path: "test_id",
-                select: "title exam_type difficulty"
+                path: "testId",
+                select: "title examType difficulty"
             })
             .sort({ createdAt: -1 })
             .limit(50);
@@ -105,7 +105,7 @@ export const getUserDetail = async (req, res) => {
         let bestScore = 0;
 
         if (totalAttempts > 0) {
-            const scores = submittedAttempts.map(a => a.final_score);
+            const scores = submittedAttempts.map(a => a.finalScore);
             averageScore = parseFloat((scores.reduce((sum, s) => sum + s, 0) / totalAttempts).toFixed(2));
             bestScore = Math.max(...scores);
         }

@@ -164,7 +164,7 @@ export default function AdminDashboard() {
                                                 <td className="px-4 py-4 font-medium text-gray-900">{t.title}</td>
                                                 <td className="px-4 py-4">
                                                     <span className="inline-block px-2 py-1 bg-gray-100 text-gray-600 rounded text-xs font-semibold">
-                                                        {t.exam_type}
+                                                        {t.examType}
                                                     </span>
                                                 </td>
                                                 <td className="px-4 py-4 text-right font-bold text-gray-900">{t.attempts}</td>

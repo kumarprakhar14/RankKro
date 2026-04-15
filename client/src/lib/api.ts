@@ -40,12 +40,12 @@ export interface ServerTest {
     _id: string
     id: string             // e.g. "ssc-cgl-01"
     title: string
-    exam_type: string
-    duration_minutes: number
+    examType: string
+    durationMinutes: number
     difficulty: 'EASY' | 'MEDIUM' | 'HARD'
     status: 'FREE' | 'PREMIUM'
-    attempted_count: number
-    is_pyq: boolean
+    attemptedCount: number
+    isPyq: boolean
     createdAt: string
     updatedAt?: string
     __v?: number
@@ -71,9 +71,9 @@ export interface ServerQuestion {
     option_c: string
     option_d: string
     marks: number
-    negative_marks: number
+    negativeMarks: number
     subject: string
-    question_order: number
+    questionOrder: number
 }
 
 export interface ServerSection {
@@ -86,22 +86,22 @@ export interface ServerSection {
 interface StartTestData {
     attempt: {
         _id: string
-        started_at: string
-        expires_at: string
+        startedAt: string
+        expiresAt: string
         status: string
     }
     test: {
         _id: string
         title: string
-        duration_minutes: number
-        exam_type: string
+        durationMinutes: number
+        examType: string
     }
     sections: ServerSection[]
 }
 
 interface SubmitTestData {
     attemptId: string
-    final_score: number
+    finalScore: number
     summary: {
         total: number
         correct: number
@@ -117,16 +117,16 @@ export interface ResultQuestion {
     option_b: string
     option_c: string
     option_d: string
-    correct_option: number
+    correctOption: number
     explanation: string
     marks: number
-    negative_marks: number
+    negativeMarks: number
     subject: string
 }
 
 export interface ResultAnswer {
     _id: string
-    selected_option: number | null
+    selectedOption: number | null
     is_correct: boolean
     question: ResultQuestion
 }
@@ -134,16 +134,16 @@ export interface ResultAnswer {
 interface ResultData {
     attempt: {
         _id: string
-        started_at: string
+        startedAt: string
         submitted_at: string
-        final_score: number
+        finalScore: number
         status: string
     }
     test: {
         _id: string
         title: string
-        exam_type: string
-        duration_minutes: number
+        examType: string
+        durationMinutes: number
     }
     summary: {
         total: number
@@ -160,15 +160,15 @@ interface AttemptsData {
         test_id: {
             _id: string
             title: string
-            exam_type: string
+            examType: string
             difficulty: string
             status: string
-            duration_minutes: number
+            durationMinutes: number
         }
-        started_at: string
+        startedAt: string
         submitted_at: string | null
         status: string
-        final_score: number
+        finalScore: number
     }>
     stats: {
         totalAttempts: number
@@ -329,7 +329,7 @@ export const testAPI = {
         }),
 
     /** Submit all answers */
-    submitTest: (testId: string, body: { attemptId: string; answers: Array<{ question_id: string; selected_option: number | null }> }) =>
+    submitTest: (testId: string, body: { attemptId: string; answers: Array<{ questionId: string; selectedOption: number | null }> }) =>
         apiRequest<SubmitTestData>(`/api/tests/${testId}/submit`, {
             method: 'POST',
             body: JSON.stringify(body),
@@ -357,7 +357,7 @@ export interface AdminAnalyticsData {
     users: { total: number; premium: number; free: number; recentSignups: number }
     content: { totalTests: number; totalQuestions: number }
     attempts: { total: number; submitted: number; inProgress: number }
-    topTests: Array<{ _id: string; attempts: number; title: string; exam_type: string }>
+    topTests: Array<{ _id: string; attempts: number; title: string; examType: string }>
 }
 
 export const adminAPI = {
@@ -394,9 +394,9 @@ export const adminAPI = {
         apiRequest<{ question: ServerQuestion }>(`/api/admin/questions/${questionId}`, { method: 'PATCH', body: JSON.stringify(data) }),
 
     // Tests
-    listTests: (params?: { exam_type?: string; status?: string; page?: number; limit?: number }) => {
+    listTests: (params?: { examType?: string; status?: string; page?: number; limit?: number }) => {
         const urlParams = new URLSearchParams()
-        if (params?.exam_type) urlParams.set('exam_type', params.exam_type)
+        if (params?.examType) urlParams.set('examType', params.examType)
         if (params?.status) urlParams.set('status', params.status)
         if (params?.page) urlParams.set('page', String(params.page))
         if (params?.limit) urlParams.set('limit', String(params.limit))
@@ -409,7 +409,7 @@ export const adminAPI = {
         apiRequest<{ test: ServerTest }>(`/api/admin/tests/${testId}`, { method: 'PATCH', body: JSON.stringify(data) }),
     getTestDetail: (testId: string) =>
         apiRequest<{ test: ServerTest, sections: ServerSection[] }>(`/api/admin/tests/${testId}`),
-    assignQuestions: (testId: string, sectionId: string, questions: Array<{ question_id: string; question_order: number }>) =>
+    assignQuestions: (testId: string, sectionId: string, questions: Array<{ questionId: string; questionOrder: number }>) =>
         apiRequest<{ assigned: number }>(`/api/admin/tests/${testId}/sections/${sectionId}/questions`, {
             method: 'POST',
             body: JSON.stringify({ questions })

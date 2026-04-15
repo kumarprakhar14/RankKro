@@ -31,9 +31,9 @@ export function TestCard({ test }: TestCardProps) {
           <div>
             <div className="flex items-center gap-2 mb-1.5">
               <span className="text-xs font-bold text-[#1A5DC8] bg-blue-50 px-2 py-0.5 rounded-md">
-                {test.exam_type}
+                {test.examType}
               </span>
-              {test.is_pyq && (
+              {test.isPyq && (
                 <span className="text-xs font-bold text-purple-700 bg-purple-50 px-2 py-0.5 rounded-md">
                   PYQ
                 </span>
@@ -66,16 +66,16 @@ export function TestCard({ test }: TestCardProps) {
           <div className="flex flex-col items-center p-2 bg-gray-50 rounded-lg">
             <Clock className="w-3.5 h-3.5 text-gray-400 mb-0.5" />
             <span className="text-xs font-bold text-[#1E293B]">
-              {test.duration_minutes}m
+              {test.durationMinutes}m
             </span>
             <span className="text-[10px] text-gray-400">Duration</span>
           </div>
           <div className="flex flex-col items-center p-2 bg-gray-50 rounded-lg">
             <Users className="w-3.5 h-3.5 text-gray-400 mb-0.5" />
             <span className="text-xs font-bold text-[#1E293B]">
-              {test.attempted_count >= 1000
-                ? `${(test.attempted_count / 1000).toFixed(1)}K`
-                : test.attempted_count}
+              {test.attemptedCount >= 1000
+                ? `${(test.attemptedCount / 1000).toFixed(1)}K`
+                : test.attemptedCount}
             </span>
             <span className="text-[10px] text-gray-400">Attempted</span>
           </div>

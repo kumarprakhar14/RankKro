@@ -83,12 +83,12 @@ function UserDetailModal({ userId, onClose }: { userId: string, onClose: () => v
                                     <div>
                                         <p className="font-semibold text-gray-900">{attempt.test_id?.title || 'Unknown Test'}</p>
                                         <p className="text-xs text-gray-500 mt-0.5">
-                                            {new Date(attempt.started_at).toLocaleString()}
+                                            {new Date(attempt.startedAt).toLocaleString()}
                                         </p>
                                     </div>
                                     <div className="text-right">
                                         {attempt.status === 'SUBMITTED' ? (
-                                            <span className="text-lg font-bold text-[#1A5DC8]">{attempt.final_score} <span className="text-xs text-gray-500 font-normal">marks</span></span>
+                                            <span className="text-lg font-bold text-[#1A5DC8]">{attempt.finalScore} <span className="text-xs text-gray-500 font-normal">marks</span></span>
                                         ) : (
                                             <span className="text-xs font-semibold px-2 py-1 rounded bg-amber-100 text-amber-700">IN PROGRESS</span>
                                         )}

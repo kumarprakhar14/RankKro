@@ -28,10 +28,10 @@ export default function MockTest() {
     }, [])
 
     // Derive unique categories from fetched tests
-    const categories = Array.from(new Set(tests.map((t) => t.exam_type)))
+    const categories = Array.from(new Set(tests.map((t) => t.examType)))
 
     const filteredTests = selectedCategory
-        ? tests.filter((t) => t.exam_type === selectedCategory)
+        ? tests.filter((t) => t.examType === selectedCategory)
         : tests
 
     if (loading) {
