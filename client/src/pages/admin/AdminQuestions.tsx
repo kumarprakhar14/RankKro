@@ -3,7 +3,7 @@ import { adminAPI } from '@/lib/api'
 import type { ServerQuestion } from '@/lib/api'
 import { Search, Plus, Edit2, X, AlertCircle } from 'lucide-react'
 
-type QuestionFormData = Omit<ServerQuestion, '_id' | 'question_order'>
+type QuestionFormData = Omit<ServerQuestion, '_id' | 'questionOrder'>
 
 const DEFAULT_FORM: QuestionFormData = {
     id: '',
@@ -12,10 +12,10 @@ const DEFAULT_FORM: QuestionFormData = {
     option_b: '',
     option_c: '',
     option_d: '',
-    correct_option: 0,
+    correctOption: 0,
     explanation: '',
     marks: 1,
-    negative_marks: 0,
+    negativeMarks: 0,
     subject: ''
 }
 
@@ -135,12 +135,12 @@ function QuestionModal({
                                     <label className="block text-xs font-bold text-gray-700 mb-1 uppercase tracking-wide">
                                         <input
                                             type="radio"
-                                            name="correct_option"
-                                            checked={formData.correct_option === idx}
-                                            onChange={() => setFormData({ ...formData, correct_option: idx })}
+                                            name="correctOption"
+                                            checked={formData.correctOption === idx}
+                                            onChange={() => setFormData({ ...formData, correctOption: idx })}
                                             className="mr-2"
                                         />
-                                        {opt.label} {formData.correct_option === idx && <span className="text-green-600 ml-1">(Correct)</span>}
+                                        {opt.label} {formData.correctOption === idx && <span className="text-green-600 ml-1">(Correct)</span>}
                                     </label>
                                     <input
                                         required
@@ -148,7 +148,7 @@ function QuestionModal({
                                         value={formData[opt.key as keyof QuestionFormData] as string}
                                         onChange={e => setFormData({ ...formData, [opt.key]: e.target.value })}
                                         className={`w-full px-3 py-2 border text-sm rounded-md focus:outline-none transition-colors ${
-                                            formData.correct_option === idx 
+                                            formData.correctOption === idx 
                                                 ? 'border-green-400 bg-green-50 focus:ring-2 focus:ring-green-400/50' 
                                                 : 'border-gray-300 focus:ring-2 focus:ring-[#1A5DC8]/50 focus:border-[#1A5DC8]'
                                         }`}
@@ -188,8 +188,8 @@ function QuestionModal({
                                     type="number"
                                     min="0"
                                     step="0.01"
-                                    value={formData.negative_marks}
-                                    onChange={e => setFormData({ ...formData, negative_marks: Number(e.target.value) })}
+                                    value={formData.negativeMarks}
+                                    onChange={e => setFormData({ ...formData, negativeMarks: Number(e.target.value) })}
                                     className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-red-500/50 focus:border-red-500"
                                 />
                             </div>
@@ -316,13 +316,13 @@ export default function AdminQuestions() {
                                 <div className="flex items-center gap-3 mb-2">
                                     <span className="text-xs font-bold font-mono bg-gray-100 text-gray-600 px-2 py-1 rounded">#{q.id}</span>
                                     <span className="text-xs font-semibold bg-blue-50 text-blue-700 px-2 py-1 rounded">{q.subject}</span>
-                                    <span className="text-xs text-gray-500">+{q.marks} / -{q.negative_marks}</span>
+                                    <span className="text-xs text-gray-500">+{q.marks} / -{q.negativeMarks}</span>
                                 </div>
                                 <h3 className="text-sm font-semibold text-gray-900 mb-3">{q.text}</h3>
                                 
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
                                     {[q.option_a, q.option_b, q.option_c, q.option_d].map((opt, idx) => (
-                                        <div key={idx} className={`flex items-start gap-2 p-2 rounded border ${q.correct_option === idx ? 'bg-green-50 border-green-200 text-green-800 font-medium' : 'bg-gray-50 border-transparent text-gray-600'}`}>
+                                        <div key={idx} className={`flex items-start gap-2 p-2 rounded border ${q.correctOption === idx ? 'bg-green-50 border-green-200 text-green-800 font-medium' : 'bg-gray-50 border-transparent text-gray-600'}`}>
                                             <span className="font-bold mb-1 opacity-50">{['A', 'B', 'C', 'D'][idx]}.</span>
                                             <span className="line-clamp-2" title={opt}>{opt}</span>
                                         </div>

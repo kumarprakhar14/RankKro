@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const questionSchema = new mongoose.Schema({
-    id: { 
+    _id: { 
         type: String, 
         required: true, 
         unique: true 
@@ -26,7 +26,7 @@ const questionSchema = new mongoose.Schema({
         type: String, 
         required: true 
     },
-    correct_option: { 
+    correctOption: { 
         type: Number, 
         required: true, 
         min: 0, 
@@ -40,12 +40,16 @@ const questionSchema = new mongoose.Schema({
         required: true, 
         default: 1 
     },
-    negative_marks: { 
+    negativeMarks: { 
         type: Number, 
         required: true, 
         default: 0 
     },
     subject: { 
+        type: String, 
+        required: true 
+    },
+    difficulty: { 
         type: String, 
         required: true 
     }

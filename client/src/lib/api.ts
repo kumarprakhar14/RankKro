@@ -1,4 +1,4 @@
-export const API_BASE_URL =  import.meta.env.VITE_API_BASE_URL?.replace(/\/$/, "") ?? ""
+export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL?.replace(/\/$/, "") ?? ""
 
 // Server response shape
 interface ApiResponse<T = unknown> {
@@ -40,13 +40,16 @@ export interface ServerTest {
     _id: string
     id: string             // e.g. "ssc-cgl-01"
     title: string
-    exam_type: string
-    duration_minutes: number
+    examType: string
+    durationMinutes: number
     difficulty: 'EASY' | 'MEDIUM' | 'HARD'
     status: 'FREE' | 'PREMIUM'
-    attempted_count: number
-    is_pyq: boolean
+    attemptedCount: number
+    isPyq: boolean
     createdAt: string
+    updatedAt?: string
+    __v?: number
+    section_count?: number
 }
 
 interface TestListData {
@@ -68,9 +71,9 @@ export interface ServerQuestion {
     option_c: string
     option_d: string
     marks: number
-    negative_marks: number
+    negativeMarks: number
     subject: string
-    question_order: number
+    questionOrder: number
 }
 
 export interface ServerSection {
@@ -83,22 +86,22 @@ export interface ServerSection {
 interface StartTestData {
     attempt: {
         _id: string
-        started_at: string
-        expires_at: string
+        startedAt: string
+        expiresAt: string
         status: string
     }
     test: {
         _id: string
         title: string
-        duration_minutes: number
-        exam_type: string
+        durationMinutes: number
+        examType: string
     }
     sections: ServerSection[]
 }
 
 interface SubmitTestData {
     attemptId: string
-    final_score: number
+    finalScore: number
     summary: {
         total: number
         correct: number
@@ -114,16 +117,16 @@ export interface ResultQuestion {
     option_b: string
     option_c: string
     option_d: string
-    correct_option: number
+    correctOption: number
     explanation: string
     marks: number
-    negative_marks: number
+    negativeMarks: number
     subject: string
 }
 
 export interface ResultAnswer {
     _id: string
-    selected_option: number | null
+    selectedOption: number | null
     is_correct: boolean
     question: ResultQuestion
 }
@@ -131,16 +134,16 @@ export interface ResultAnswer {
 interface ResultData {
     attempt: {
         _id: string
-        started_at: string
+        startedAt: string
         submitted_at: string
-        final_score: number
+        finalScore: number
         status: string
     }
     test: {
         _id: string
         title: string
-        exam_type: string
-        duration_minutes: number
+        examType: string
+        durationMinutes: number
     }
     summary: {
         total: number
@@ -157,15 +160,15 @@ interface AttemptsData {
         test_id: {
             _id: string
             title: string
-            exam_type: string
+            examType: string
             difficulty: string
             status: string
-            duration_minutes: number
+            durationMinutes: number
         }
-        started_at: string
+        startedAt: string
         submitted_at: string | null
         status: string
-        final_score: number
+        finalScore: number
     }>
     stats: {
         totalAttempts: number
@@ -210,7 +213,7 @@ async function apiRequest<T>(endpoint: string, options: RequestInit = {}): Promi
                 if (refreshRes.ok) {
                     const refreshData = await refreshRes.json();
                     const newAccessToken = refreshData.data?.accessToken;
-                    
+
                     if (newAccessToken) {
                         // Update storage
                         localStorage.setItem('rankro_access_token', newAccessToken);
@@ -220,7 +223,7 @@ async function apiRequest<T>(endpoint: string, options: RequestInit = {}): Promi
                             ...headers,
                             Authorization: `Bearer ${newAccessToken}`
                         };
-                        
+
                         const retryRes = await fetch(`${API_BASE_URL}${endpoint}`, {
                             ...options,
                             headers: retryHeaders,
@@ -231,7 +234,7 @@ async function apiRequest<T>(endpoint: string, options: RequestInit = {}): Promi
                         if (retryRes.ok) {
                             return retryData;
                         }
-                        
+
                         // If it fails again, throw the new error
                         const retryErr = new Error(retryData.error?.message || retryData.message || 'Request failed') as any;
                         retryErr.code = retryData.error?.code;
@@ -326,7 +329,7 @@ export const testAPI = {
         }),
 
     /** Submit all answers */
-    submitTest: (testId: string, body: { attemptId: string; answers: Array<{ question_id: string; selected_option: number | null }> }) =>
+    submitTest: (testId: string, body: { attemptId: string; answers: Array<{ questionId: string; selectedOption: number | null }> }) =>
         apiRequest<SubmitTestData>(`/api/tests/${testId}/submit`, {
             method: 'POST',
             body: JSON.stringify(body),
@@ -354,7 +357,7 @@ export interface AdminAnalyticsData {
     users: { total: number; premium: number; free: number; recentSignups: number }
     content: { totalTests: number; totalQuestions: number }
     attempts: { total: number; submitted: number; inProgress: number }
-    topTests: Array<{ _id: string; attempts: number; title: string; exam_type: string }>
+    topTests: Array<{ _id: string; attempts: number; title: string; examType: string }>
 }
 
 export const adminAPI = {
@@ -373,7 +376,7 @@ export const adminAPI = {
     },
     getUserDetail: (userId: string) => apiRequest<{ user: any, attempts: any[], stats: any }>(`/api/admin/users/${userId}`),
     updateUserPlan: (userId: string, plan: 'FREE' | 'PREMIUM') =>
-        apiRequest(`/api/admin/users/${userId}/plan`, { method: 'PATCH', body: JSON.stringify({ plan }) }),
+        apiRequest<{ user: any }>(`/api/admin/users/${userId}/plan`, { method: 'PATCH', body: JSON.stringify({ plan }) }),
 
     // Questions
     listQuestions: (params?: { subject?: string; search?: string; page?: number; limit?: number }) => {
@@ -388,26 +391,26 @@ export const adminAPI = {
     createQuestion: (data: any) =>
         apiRequest<{ question: ServerQuestion }>('/api/admin/questions', { method: 'POST', body: JSON.stringify(data) }),
     updateQuestion: (questionId: string, data: any) =>
-        apiRequest<{ question: ServerQuestion }>(`/api/admin/questions/${questionId}`, { method: 'PUT', body: JSON.stringify(data) }),
+        apiRequest<{ question: ServerQuestion }>(`/api/admin/questions/${questionId}`, { method: 'PATCH', body: JSON.stringify(data) }),
 
     // Tests
-    listTests: (params?: { exam_type?: string; status?: string; page?: number; limit?: number }) => {
+    listTests: (params?: { examType?: string; status?: string; page?: number; limit?: number }) => {
         const urlParams = new URLSearchParams()
-        if (params?.exam_type) urlParams.set('exam_type', params.exam_type)
+        if (params?.examType) urlParams.set('examType', params.examType)
         if (params?.status) urlParams.set('status', params.status)
         if (params?.page) urlParams.set('page', String(params.page))
         if (params?.limit) urlParams.set('limit', String(params.limit))
         const qs = urlParams.toString()
-        return apiRequest<{ tests: any[], pagination: any }>(`/api/admin/tests${qs ? `?${qs}` : ''}`)
+        return apiRequest<{ tests: ServerTest[], pagination: any }>(`/api/admin/tests${qs ? `?${qs}` : ''}`)
     },
     createTest: (data: any) =>
-        apiRequest('/api/admin/tests', { method: 'POST', body: JSON.stringify(data) }),
+        apiRequest<{ test: ServerTest, sections: ServerSection[] }>('/api/admin/tests', { method: 'POST', body: JSON.stringify(data) }),
     updateTest: (testId: string, data: any) =>
-        apiRequest(`/api/admin/tests/${testId}`, { method: 'PUT', body: JSON.stringify(data) }),
+        apiRequest<{ test: ServerTest }>(`/api/admin/tests/${testId}`, { method: 'PATCH', body: JSON.stringify(data) }),
     getTestDetail: (testId: string) =>
         apiRequest<{ test: ServerTest, sections: ServerSection[] }>(`/api/admin/tests/${testId}`),
-    assignQuestions: (testId: string, sectionId: string, questions: Array<{ question_id: string; question_order: number }>) =>
-        apiRequest(`/api/admin/tests/${testId}/sections/${sectionId}/questions`, {
+    assignQuestions: (testId: string, sectionId: string, questions: Array<{ questionId: string; questionOrder: number }>) =>
+        apiRequest<{ assigned: number }>(`/api/admin/tests/${testId}/sections/${sectionId}/questions`, {
             method: 'POST',
             body: JSON.stringify({ questions })
         })

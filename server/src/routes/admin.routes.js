@@ -32,7 +32,7 @@ router.patch("/users/:userId/plan", updateUserPlan);
 // ============================================
 router.get("/questions", listQuestions);
 router.post("/questions", createQuestion);
-router.put("/questions/:questionId", updateQuestion);
+router.patch("/questions/:questionId", updateQuestion);
 
 // ============================================
 // TEST MANAGEMENT
@@ -40,7 +40,7 @@ router.put("/questions/:questionId", updateQuestion);
 router.get("/tests", listTests);
 router.post("/tests", createTest);
 router.get("/tests/:testId", getTestDetail);
-router.put("/tests/:testId", updateTest);
+router.patch("/tests/:testId", updateTest);
 router.post("/tests/:testId/sections/:sectionId/questions", assignQuestions);
 
 // ============================================

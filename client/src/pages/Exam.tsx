@@ -26,6 +26,7 @@ export default function Exam() {
     // Refs to avoid stale closures in timer
     const expiresAtRef = useRef<Date | null>(null)
     const submitRef = useRef<() => void>(() => {})
+    const effectRan = useRef(false)
 
     // ============================================
     // 1. START TEST SESSION
@@ -49,8 +50,8 @@ export default function Exam() {
                     const flat = secs.flatMap(s => s.questions)
                     setAllQuestions(flat)
 
-                    // Calculate remaining time from server's expires_at
-                    const expiresAt = new Date(attempt.expires_at)
+                    // Calculate remaining time from server's expiresAt
+                    const expiresAt = new Date(attempt.expiresAt)
                     expiresAtRef.current = expiresAt
                     const remaining = Math.max(0, Math.floor((expiresAt.getTime() - Date.now()) / 1000))
                     setTimeRemaining(remaining)
@@ -67,7 +68,13 @@ export default function Exam() {
             }
         }
 
-        startSession()
+        if (effectRan.current === false) {
+            startSession()
+        }
+
+        return () => {
+            effectRan.current = true
+        }
     }, [testId])
 
     // ============================================
@@ -88,6 +95,43 @@ export default function Exam() {
         }, 1000)
         return () => clearInterval(timer)
     }, [timeRemaining > 0]) // only re-run setup when going from 0→positive
+
+    // ============================================
+    // SUBMIT
+    // ============================================
+    const handleSubmit = async () => {
+        if (!attemptId || submitting) return
+        setSubmitting(true)
+
+        try {
+            // Build answers array — include all questions (answered or skipped)
+            const answers = allQuestions.map(q => ({
+                questionId: q._id,
+                selectedOption: selectedAnswers[q._id] !== undefined ? selectedAnswers[q._id] : null,
+            }))
+
+            const res = await testAPI.submitTest(testId!, { attemptId, answers })
+
+            if (res.data) {
+                navigate(`/result?testId=${testId}&attemptId=${res.data.attemptId}`)
+            }
+        } catch (err: any) {
+            console.error('Submit failed:', err)
+            if (err.code === 'TIME_EXPIRED') {
+                alert('Time expired! Your test session has ended.')
+                navigate('/mocks')
+            } else {
+                alert(err.message || 'Failed to submit test. Please try again.')
+            }
+        } finally {
+            setSubmitting(false)
+        }
+    }
+
+    // Keep submitRef updated with the latest handleSubmit closure
+    useEffect(() => {
+        submitRef.current = handleSubmit
+    })
 
     // ============================================
     // LOADING / ERROR STATES
@@ -180,43 +224,6 @@ export default function Exam() {
     }
 
     // ============================================
-    // SUBMIT
-    // ============================================
-    const handleSubmit = async () => {
-        if (!attemptId || submitting) return
-        setSubmitting(true)
-
-        try {
-            // Build answers array — include all questions (answered or skipped)
-            const answers = allQuestions.map(q => ({
-                question_id: q._id,
-                selected_option: selectedAnswers[q._id] !== undefined ? selectedAnswers[q._id] : null,
-            }))
-
-            const res = await testAPI.submitTest(testId!, { attemptId, answers })
-
-            if (res.data) {
-                navigate(`/result?testId=${testId}&attemptId=${res.data.attemptId}`)
-            }
-        } catch (err: any) {
-            console.error('Submit failed:', err)
-            if (err.code === 'TIME_EXPIRED') {
-                alert('Time expired! Your test session has ended.')
-                navigate('/mocks')
-            } else {
-                alert(err.message || 'Failed to submit test. Please try again.')
-            }
-        } finally {
-            setSubmitting(false)
-        }
-    }
-
-    // Keep submitRef updated with the latest handleSubmit closure
-    useEffect(() => {
-        submitRef.current = handleSubmit
-    })
-
-    // ============================================
     // RENDER
     // ============================================
     return (
@@ -262,7 +269,7 @@ export default function Exam() {
                                     {currentQuestion.text}
                                 </h2>
                                 <p className="text-sm text-gray-600">
-                                    ({currentQuestion.marks} marks{currentQuestion.negative_marks > 0 ? `, -${currentQuestion.negative_marks} negative` : ''})
+                                    ({currentQuestion.marks} marks{currentQuestion.negativeMarks > 0 ? `, -${currentQuestion.negativeMarks} negative` : ''})
                                 </p>
                             </div>
 
