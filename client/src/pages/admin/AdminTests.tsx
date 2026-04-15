@@ -6,17 +6,17 @@ import { Plus, Edit2, Search, BookOpen, Clock, AlertCircle, X, ChevronRight, Che
 // ============================================
 // MODAL: Create/Edit Test
 // ============================================
-type TestFormData = Omit<ServerTest, '_id' | 'createdAt' | 'attempted_count'> & {
+type TestFormData = Omit<ServerTest, '_id' | 'createdAt' | 'attemptedCount'> & {
     initial_sections?: string[] // comma separated section names for creation
 }
 const DEFAULT_TEST_FORM: TestFormData = {
     id: '',
     title: '',
-    exam_type: '',
-    duration_minutes: 60,
+    examType: '',
+    durationMinutes: 60,
     difficulty: 'EASY',
     status: 'FREE',
-    is_pyq: false,
+    isPyq: false,
     initial_sections: []
 }
 
@@ -91,7 +91,7 @@ function TestModal({ isOpen, onClose, initialData, onSuccess }: any) {
                         </div>
                         <div>
                             <label className="block text-sm font-medium text-gray-700 mb-1">Exam Type</label>
-                            <input required type="text" value={formData.exam_type} onChange={e => setFormData({ ...formData, exam_type: e.target.value })} className="w-full px-3 py-2 border border-gray-300 rounded-md" placeholder="e.g. UPSC Prelims" />
+                            <input required type="text" value={formData.examType} onChange={e => setFormData({ ...formData, examType: e.target.value })} className="w-full px-3 py-2 border border-gray-300 rounded-md" placeholder="e.g. UPSC Prelims" />
                         </div>
                     </div>
 
@@ -103,7 +103,7 @@ function TestModal({ isOpen, onClose, initialData, onSuccess }: any) {
                     <div className="grid grid-cols-3 gap-4">
                         <div>
                             <label className="block text-sm font-medium text-gray-700 mb-1">Duration (mins)</label>
-                            <input required type="number" min="1" value={formData.duration_minutes} onChange={e => setFormData({ ...formData, duration_minutes: Number(e.target.value) })} className="w-full px-3 py-2 border border-gray-300 rounded-md" />
+                            <input required type="number" min="1" value={formData.durationMinutes} onChange={e => setFormData({ ...formData, durationMinutes: Number(e.target.value) })} className="w-full px-3 py-2 border border-gray-300 rounded-md" />
                         </div>
                         <div>
                             <label className="block text-sm font-medium text-gray-700 mb-1">Difficulty</label>
@@ -123,8 +123,8 @@ function TestModal({ isOpen, onClose, initialData, onSuccess }: any) {
                     </div>
 
                     <div className="flex items-center gap-2 pt-2">
-                        <input type="checkbox" id="is_pyq" checked={formData.is_pyq} onChange={e => setFormData({ ...formData, is_pyq: e.target.checked })} className="w-4 h-4 text-[#1A5DC8] rounded border-gray-300" />
-                        <label htmlFor="is_pyq" className="text-sm font-medium text-gray-700">Mark as Previous Year Question (PYQ)</label>
+                        <input type="checkbox" id="isPyq" checked={formData.isPyq} onChange={e => setFormData({ ...formData, isPyq: e.target.checked })} className="w-4 h-4 text-[#1A5DC8] rounded border-gray-300" />
+                        <label htmlFor="isPyq" className="text-sm font-medium text-gray-700">Mark as Previous Year Question (PYQ)</label>
                     </div>
 
                     {!isEdit && (
@@ -172,7 +172,7 @@ export default function AdminTests() {
     const fetchTests = async () => {
         try {
             setLoading(true)
-            const res = await adminAPI.listTests({ exam_type: search, status: statusFilter, page, limit: 10 })
+            const res = await adminAPI.listTests({ examType: search, status: statusFilter, page, limit: 10 })
             if (res.data) {
                 setTests(res.data.tests)
                 setTotalPages(res.data.pagination.totalPages)
@@ -231,9 +231,9 @@ export default function AdminTests() {
                                 {testDetail.test.id}
                             </span>
                             <div className="flex items-center gap-4 text-sm text-gray-600">
-                                <span>{testDetail.test.exam_type}</span>
+                                <span>{testDetail.test.examType}</span>
                                 <span>•</span>
-                                <span className="flex items-center gap-1"><Clock className="w-4 h-4" /> {testDetail.test.duration_minutes} mins</span>
+                                <span className="flex items-center gap-1"><Clock className="w-4 h-4" /> {testDetail.test.durationMinutes} mins</span>
                                 <span>•</span>
                                 <span className={testDetail.test.status === 'PREMIUM' ? 'text-amber-600 font-bold' : 'text-green-600 font-bold'}>
                                     {testDetail.test.status}
@@ -246,7 +246,7 @@ export default function AdminTests() {
                         <div className="mb-6 flex justify-between items-end">
                             <h2 className="text-lg font-bold text-gray-900">Sections & Questions</h2>
                             <p className="text-sm text-gray-500">
-                                To assign questions, use Postman for now. The Admin API allows passing an array of <code>{`[{ "question_id": "...", "question_order": 1 }]`}</code> to <code>/api/admin/tests/:testId/sections/:sectionId/questions</code>.
+                                To assign questions, use Postman for now. The Admin API allows passing an array of <code>{`[{ "questionId": "...", "questionOrder": 1 }]`}</code> to <code>/api/admin/tests/:testId/sections/:sectionId/questions</code>.
                             </p>
                         </div>
                         
@@ -321,7 +321,7 @@ export default function AdminTests() {
                             
                             <h3 className="text-lg font-bold text-gray-900 mb-1 leading-tight">{test.title}</h3>
                             <p className="text-sm text-gray-500 flex items-center gap-1 mb-4">
-                                {test.exam_type} • <Clock className="w-3 h-3 ml-1" /> {test.duration_minutes}m
+                                {test.examType} • <Clock className="w-3 h-3 ml-1" /> {test.durationMinutes}m
                             </p>
 
                             <div className="mt-auto pt-4 border-t border-gray-100 grid grid-cols-2 gap-4">

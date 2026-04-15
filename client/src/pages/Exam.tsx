@@ -50,8 +50,8 @@ export default function Exam() {
                     const flat = secs.flatMap(s => s.questions)
                     setAllQuestions(flat)
 
-                    // Calculate remaining time from server's expires_at
-                    const expiresAt = new Date(attempt.expires_at)
+                    // Calculate remaining time from server's expiresAt
+                    const expiresAt = new Date(attempt.expiresAt)
                     expiresAtRef.current = expiresAt
                     const remaining = Math.max(0, Math.floor((expiresAt.getTime() - Date.now()) / 1000))
                     setTimeRemaining(remaining)
@@ -106,8 +106,8 @@ export default function Exam() {
         try {
             // Build answers array — include all questions (answered or skipped)
             const answers = allQuestions.map(q => ({
-                question_id: q._id,
-                selected_option: selectedAnswers[q._id] !== undefined ? selectedAnswers[q._id] : null,
+                questionId: q._id,
+                selectedOption: selectedAnswers[q._id] !== undefined ? selectedAnswers[q._id] : null,
             }))
 
             const res = await testAPI.submitTest(testId!, { attemptId, answers })
@@ -269,7 +269,7 @@ export default function Exam() {
                                     {currentQuestion.text}
                                 </h2>
                                 <p className="text-sm text-gray-600">
-                                    ({currentQuestion.marks} marks{currentQuestion.negative_marks > 0 ? `, -${currentQuestion.negative_marks} negative` : ''})
+                                    ({currentQuestion.marks} marks{currentQuestion.negativeMarks > 0 ? `, -${currentQuestion.negativeMarks} negative` : ''})
                                 </p>
                             </div>
 

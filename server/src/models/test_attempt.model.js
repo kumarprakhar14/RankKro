@@ -1,26 +1,26 @@
 import mongoose from "mongoose";
 
 const testAttemptSchema = new mongoose.Schema({
-    user_id: { 
+    userId: { 
         type: mongoose.Schema.Types.ObjectId, 
         ref: "User", 
         required: true 
     },
-    test_id: { 
+    testId: { 
         type: String, 
         ref: "Test", 
         required: true 
     },
-    started_at: { 
+    startedAt: { 
         type: Date, 
         required: true, 
         default: Date.now 
     },
-    expires_at: { 
+    expiresAt: { 
         type: Date, 
         required: true 
     }, // Evaluated by the backend to securely end sessions
-    submitted_at: { 
+    submittedAt: { 
         type: Date 
     },
     status: { 
@@ -28,7 +28,7 @@ const testAttemptSchema = new mongoose.Schema({
         enum: ["IN_PROGRESS", "SUBMITTED", "EXPIRED"], 
         default: "IN_PROGRESS" 
     },
-    final_score: { 
+    finalScore: { 
         type: Number, 
         default: 0 
     }

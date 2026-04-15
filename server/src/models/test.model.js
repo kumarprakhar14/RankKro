@@ -10,11 +10,11 @@ const testSchema = new mongoose.Schema({
         type: String, 
         required: true 
     },
-    exam_type: { 
+    examType: { 
         type: String, 
         required: true 
     },
-    duration_minutes: { 
+    durationMinutes: { 
         type: Number, 
         required: true 
     },
@@ -27,11 +27,11 @@ const testSchema = new mongoose.Schema({
         enum: ["FREE", "PREMIUM"], 
         default: "FREE" 
     },
-    attempted_count: { 
+    attemptedCount: { 
         type: Number, 
         default: 0 
     },
-    is_pyq: { 
+    isPyq: { 
         type: Boolean, 
         default: false 
     }

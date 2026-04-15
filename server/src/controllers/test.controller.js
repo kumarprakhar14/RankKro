@@ -11,7 +11,7 @@ import { calculateScore } from "../utils/calculateScore.js";
 /**
  * @desc    List all tests with optional filters
  * @route   GET /api/tests
- * @query   category (maps to exam_type), difficulty, status
+ * @query   category (maps to examType), difficulty, status
  * @access  Protected
  */
 export const listTests = async (req, res) => {
@@ -25,7 +25,7 @@ export const listTests = async (req, res) => {
 
         if (category) {
             const escapeRegex = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-            filter.exam_type = { $regex: new RegExp(escapeRegex(category), "i") };  // i -> case insensitive search
+            filter.examType = { $regex: new RegExp(escapeRegex(category), "i") };  // i -> case insensitive search
         }
 
         if (difficulty) {
@@ -105,11 +105,11 @@ export const startTest = async (req, res) => {
         let attempt;
         try {
             const now = new Date();
-            const expiresAt = new Date(now.getTime() + test.duration_minutes * 60 * 1000);
+            const expiresAt = new Date(now.getTime() + test.durationMinutes * 60 * 1000);
 
             // 1. Clean up any expired attempts for this user+test
             await TestAttempt.updateMany(
-                { user_id: req.user._id, test_id: test._id, status: "IN_PROGRESS", expires_at: { $lte: now } },
+                { userId: req.user._id, testId: test._id, status: "IN_PROGRESS", expiresAt: { $lte: now } },
                 { $set: { status: "EXPIRED" } },
                 { session }
             );
@@ -117,28 +117,28 @@ export const startTest = async (req, res) => {
             // 2. Atomic find-or-create active attempt
             attempt = await TestAttempt.findOneAndUpdate(
                 {
-                    user_id: req.user._id,
-                    test_id: test._id,
+                    userId: req.user._id,
+                    testId: test._id,
                     status: "IN_PROGRESS",
-                    expires_at: { $gt: now }
+                    expiresAt: { $gt: now }
                 },
                 {
                     $setOnInsert: {
-                        user_id: req.user._id,
-                        test_id: test._id,
-                        started_at: now,
-                        expires_at: expiresAt,
+                        userId: req.user._id,
+                        testId: test._id,
+                        startedAt: now,
+                        expiresAt: expiresAt,
                         status: "IN_PROGRESS"
                     }
                 },
                 { new: true, upsert: true, session }
             );
 
-            // If started_at exactly matches our `now` object, we just created it.
-            const isNewAttempt = attempt.started_at.getTime() === now.getTime();
+            // If startedAt exactly matches our `now` object, we just created it.
+            const isNewAttempt = attempt.startedAt.getTime() === now.getTime();
 
             if (isNewAttempt) {
-                await Test.findByIdAndUpdate(test._id, { $inc: { attempted_count: 1 } }, { session });
+                await Test.findByIdAndUpdate(test._id, { $inc: { attemptedCount: 1 } }, { session });
             }
 
             await session.commitTransaction();
@@ -157,11 +157,11 @@ export const startTest = async (req, res) => {
             .lean();
 
         const sectionIds = sections.map(s => s._id.toString());
-        const sectionQuestions = await SectionQuestion.find({ section_id: { $in: sectionIds } })
-            .sort({ question_order: 1 })
+        const sectionQuestions = await SectionQuestion.find({ sectionId: { $in: sectionIds } })
+            .sort({ questionOrder: 1 })
             .populate({
-                path: "question_id",
-                select: "-correct_option -explanation"  // NEVER expose answers
+                path: "questionId",
+                select: "-correctOption -explanation"  // NEVER expose answers
             })
             .lean();
 
@@ -171,11 +171,11 @@ export const startTest = async (req, res) => {
             name: section.name,
             display_order: section.display_order,
             questions: sectionQuestions
-                .filter(sq => sq.section_id.toString() === section._id.toString())
+                .filter(sq => sq.sectionId.toString() === section._id.toString())
                 .map(sq => ({
-                    _id: sq.question_id._id,
-                    question_order: sq.question_order,
-                    ...sq.question_id
+                    _id: sq.questionId._id,
+                    questionOrder: sq.questionOrder,
+                    ...sq.questionId
                 }))
         }));
 
@@ -187,15 +187,15 @@ export const startTest = async (req, res) => {
             data: {
                 attempt: {
                     _id: attempt._id,
-                    started_at: attempt.started_at,
-                    expires_at: attempt.expires_at,
+                    startedAt: attempt.startedAt,
+                    expiresAt: attempt.expiresAt,
                     status: attempt.status
                 },
                 test: {
                     _id: test._id,
                     title: test.title,
-                    duration_minutes: test.duration_minutes,
-                    exam_type: test.exam_type
+                    durationMinutes: test.durationMinutes,
+                    examType: test.examType
                 },
                 sections: sectionsWithQuestions
             },
@@ -218,7 +218,7 @@ export const startTest = async (req, res) => {
 /**
  * @desc    Submit all answers — server validates timer and calculates score
  * @route   POST /api/tests/:id/submit
- * @body    { attemptId, answers: [{ question_id, selected_option }] }
+ * @body    { attemptId, answers: [{ questionId, selectedOption }] }
  * @access  Protected
  */
 export const submitTest = async (req, res) => {
@@ -254,7 +254,7 @@ export const submitTest = async (req, res) => {
         }
 
         // Ownership check
-        if (attempt.user_id.toString() !== req.user._id.toString()) {
+        if (attempt.userId.toString() !== req.user._id.toString()) {
             return res.status(403).json({
                 success: false,
                 error: {
@@ -278,7 +278,7 @@ export const submitTest = async (req, res) => {
         // ============================================
         // 3. SERVER-SIDE TIMER VALIDATION
         // ============================================
-        if (new Date() > attempt.expires_at) {
+        if (new Date() > attempt.expiresAt) {
             attempt.status = "EXPIRED";
             await attempt.save();
 
@@ -294,25 +294,25 @@ export const submitTest = async (req, res) => {
         // ============================================
         // 4. FETCH AND VALIDATE QUESTIONS
         // ============================================
-        const sections = await Section.find({ testId: attempt.test_id });
+        const sections = await Section.find({ testId: attempt.testId });
         const sectionIds = sections.map(s => s._id.toString());
-        const validSectionQs = await SectionQuestion.find({ section_id: { $in: sectionIds } });
-        const validQuestionIds = new Set(validSectionQs.map(sq => sq.question_id.toString()));
+        const validSectionQs = await SectionQuestion.find({ sectionId: { $in: sectionIds } });
+        const validQuestionIds = new Set(validSectionQs.map(sq => sq.questionId.toString()));
 
         for (const ans of answers) {
-            if (!validQuestionIds.has(ans.question_id)) {
+            if (!validQuestionIds.has(ans.questionId)) {
                 return res.status(400).json({
                     success: false,
                     error: {
                         code: "INVALID_QUESTIONS",
-                        message: `Submitted question ID ${ans.question_id} does not belong to this test.`
+                        message: `Submitted question ID ${ans.questionId} does not belong to this test.`
                     }
                 });
             }
         }
 
         // Check for duplicate submitted answers for the same question
-        const submittedSet = new Set(answers.map(a => a.question_id));
+        const submittedSet = new Set(answers.map(a => a.questionId));
         if (submittedSet.size !== answers.length) {
             return res.status(400).json({
                 success: false,
@@ -350,8 +350,8 @@ export const submitTest = async (req, res) => {
                 {
                     $set: {
                         status: "SUBMITTED",
-                        submitted_at: new Date(),
-                        final_score: score
+                        submittedAt: new Date(),
+                        finalScore: score
                     }
                 },
                 { session: submitSession, new: true }
@@ -370,10 +370,10 @@ export const submitTest = async (req, res) => {
             }
 
             const answerDocs = answerDetails.map(detail => ({
-                attempt_id: attempt._id,
-                question_id: detail.question_id,
-                selected_option: detail.selected_option,
-                is_correct: detail.is_correct
+                attemptId: attempt._id,
+                questionId: detail.questionId,
+                selectedOption: detail.selectedOption,
+                isCorrect: detail.isCorrect
             }));
 
             await Answer.insertMany(answerDocs, { session: submitSession });
@@ -393,7 +393,7 @@ export const submitTest = async (req, res) => {
             success: true,
             data: {
                 attemptId: attempt._id,
-                final_score: score,
+                finalScore: score,
                 summary: {
                     total: answers.length,
                     correct,
@@ -430,8 +430,8 @@ export const getResult = async (req, res) => {
         // 1. FIND & VALIDATE ATTEMPT
         // ============================================
         const attempt = await TestAttempt.findById(attemptId).populate({
-            path: "test_id",
-            select: "title exam_type duration_minutes"
+            path: "testId",
+            select: "title examType durationMinutes"
         });
 
         if (!attempt) {
@@ -445,7 +445,7 @@ export const getResult = async (req, res) => {
         }
 
         // Ownership check
-        if (attempt.user_id.toString() !== req.user._id.toString()) {
+        if (attempt.userId.toString() !== req.user._id.toString()) {
             return res.status(403).json({
                 success: false,
                 error: {
@@ -469,19 +469,19 @@ export const getResult = async (req, res) => {
         // ============================================
         // 2. FETCH ANSWERS WITH FULL QUESTION DETAILS
         // ============================================
-        const answers = await Answer.find({ attempt_id: attempt._id })
+        const answers = await Answer.find({ attemptId: attempt._id })
             .populate({
-                path: "question_id",
-                select: "text option_a option_b option_c option_d correct_option explanation marks negative_marks subject"
+                path: "questionId",
+                select: "text option_a option_b option_c option_d correctOption explanation marks negativeMarks subject"
             });
 
         // ============================================
         // 3. BUILD RESULT SUMMARY
         // ============================================
         const total = answers.length;
-        const correct = answers.filter(a => a.is_correct).length;
-        const incorrect = answers.filter(a => !a.is_correct && a.selected_option !== null).length;
-        const skipped = answers.filter(a => a.selected_option === null).length;
+        const correct = answers.filter(a => a.isCorrect).length;
+        const incorrect = answers.filter(a => !a.isCorrect && a.selectedOption !== null).length;
+        const skipped = answers.filter(a => a.selectedOption === null).length;
 
         // ============================================
         // 4. RETURN RESPONSE
@@ -491,12 +491,12 @@ export const getResult = async (req, res) => {
             data: {
                 attempt: {
                     _id: attempt._id,
-                    started_at: attempt.started_at,
-                    submitted_at: attempt.submitted_at,
-                    final_score: attempt.final_score,
+                    startedAt: attempt.startedAt,
+                    submittedAt: attempt.submittedAt,
+                    finalScore: attempt.finalScore,
                     status: attempt.status
                 },
-                test: attempt.test_id,
+                test: attempt.testId,
                 summary: {
                     total,
                     correct,
@@ -505,9 +505,9 @@ export const getResult = async (req, res) => {
                 },
                 answers: answers.map(a => ({
                     _id: a._id,
-                    selected_option: a.selected_option,
-                    is_correct: a.is_correct,
-                    question: a.question_id
+                    selectedOption: a.selectedOption,
+                    isCorrect: a.isCorrect,
+                    question: a.questionId
                 }))
             },
             message: "Result retrieved successfully"
