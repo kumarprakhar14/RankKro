@@ -73,7 +73,7 @@ export default function Register() {
     return (
         <AuthCard
             title="Create Account"
-            description="Join ExamEdge to get started"
+            description="Join RankKro to get started"
         >
             <AuthForm<RegisterFormData>
                 form={form}

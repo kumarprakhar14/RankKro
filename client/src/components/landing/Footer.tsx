@@ -43,15 +43,7 @@ export function Footer() {
           {/* Brand */}
           <div className="md:col-span-2">
             <Link to="/" className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-br from-[#1A5DC8] to-[#0D3E8E] rounded-lg flex items-center justify-center">
-                <Zap className="w-4 h-4 text-white fill-white" />
-              </div>
-              <span
-                style={{ fontFamily: "'Sora', sans-serif" }}
-                className="text-xl font-extrabold text-white"
-              >
-                Exam<span className="text-[#FF6B00]">Edge</span>
-              </span>
+              <img src="/RankKro_primary_bg_removed.svg" alt="Logo" className="w-35 h-12" />
             </Link>
             <p className="text-sm text-gray-400 leading-relaxed mb-5 max-w-xs">
               India's most trusted mock test platform for SSC, Railway, and UPSC
@@ -102,8 +94,7 @@ export function Footer() {
         {/* Bottom */}
         <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-gray-500">
-            © {new Date().getFullYear()} ExamEdge Technologies Pvt. Ltd. All
-            rights reserved.
+            © {new Date().getFullYear()} Bharatrise Ventures Pvt. Ltd. All rights reserved.
           </p>
           <div className="flex items-center gap-1.5 text-xs text-gray-500">
             <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />

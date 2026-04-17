@@ -41,15 +41,7 @@ export function Navbar() {
         <div className="flex items-center justify-between h-16 lg:h-18">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 bg-gradient-to-br from-[#1A5DC8] to-[#0D3E8E] rounded-lg flex items-center justify-center shadow-md group-hover:shadow-blue-400/30 transition-all duration-300">
-              <Zap className="w-4 h-4 text-white fill-white" />
-            </div>
-            <span
-              style={{ fontFamily: "'Sora', sans-serif" }}
-              className="text-xl font-800 text-[#1E293B] tracking-tight"
-            >
-              Exam<span className="text-[#FF6B00]">Edge</span>
-            </span>
+            <img src="/RankKro_primary_bg_removed.svg" alt="Logo" className="w-35 h-12" />
           </Link>
 
           {/* Desktop Nav */}

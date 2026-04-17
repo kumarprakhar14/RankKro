@@ -60,10 +60,10 @@ async function processRow(row, index) {
         option_b: row.option_b,
         option_c: row.option_c,
         option_d: row.option_d,
-        correct_option: correctOption,
+        correctOption: correctOption,
         explanation: row.explanation,
         marks: Number(row.marks) || 1,
-        negative_marks: Number(row.negative_marks) || 0,
+        negativeMarks: Number(row.negative_marks) || 0,
         subject: row.subject,
         difficulty: row.difficulty,
       },
@@ -79,7 +79,7 @@ async function processRow(row, index) {
     },
     {
       $set: {
-        section_order: Number(row.section_order) || 1,
+        sectionOrder: Number(row.section_order) || 1,
       },
       $setOnInsert: {
         testId: row.test_id,
@@ -92,16 +92,16 @@ async function processRow(row, index) {
   // 3. Link
   await SectionQuestion.findOneAndUpdate(
     {
-      section_id: section._id,
-      question_id: question._id,
+      sectionId: section._id,
+      questionId: question._id,
     },
     {
       $set: {
-        question_order: Number(row.question_order) || 1,
+        questionOrder: Number(row.question_order) || 1,
       },
       $setOnInsert: {
-        section_id: section._id,
-        question_id: question._id,
+        sectionId: section._id,
+        questionId: question._id,
       },
     },
     { upsert: true }

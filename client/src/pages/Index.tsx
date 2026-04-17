@@ -1,6 +1,6 @@
 import { Navbar } from "../components/landing/Navbar"
 import { Hero } from "../components/landing/Hero"
-import { WhyExamEdge } from "@/components/landing/WhyExamEdge"
+import { WhyRankKro } from "@/components/landing/WhyRankKro"
 import { Testimonials } from "@/components/landing/Testimonials"
 import { Footer } from "@/components/landing/Footer"
 
@@ -9,7 +9,7 @@ const Index = () => {
         <div className="w-full">
             <Navbar />
             <Hero />
-            <WhyExamEdge />
+            <WhyRankKro />
             <Testimonials />
             <Footer />
         </div>

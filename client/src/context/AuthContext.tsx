@@ -80,7 +80,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
             setUserState(null)
             localStorage.removeItem(STORAGE_KEYS.TOKEN)
             localStorage.removeItem(STORAGE_KEYS.USER)
-            window.location.href = '/login'
+            window.location.href = '/sign-up'
         }
 
         window.addEventListener('auth:unauthorized', handleUnauthorized)

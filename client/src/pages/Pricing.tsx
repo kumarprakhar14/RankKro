@@ -43,7 +43,7 @@ export default function Pricing() {
         key: RAZORPAY_KEY_ID,
         amount: order.amount,
         currency: "INR",
-        name: "RanKro Premium",
+        name: "RankKro Premium",
         description: "Unlock all mock tests and analytics",
         order_id: order.id, // The order ID created by Razorpay
 
@@ -116,7 +116,7 @@ export default function Pricing() {
           <div className="inline-flex items-center justify-center p-3 bg-indigo-100 rounded-full mb-4">
             <Sparkles className="h-8 w-8 text-indigo-600" />
           </div>
-          <h2 className="text-2xl font-bold text-gray-900">RanKro Premium</h2>
+          <h2 className="text-2xl font-bold text-gray-900">RankKro Premium</h2>
           <div className="mt-4 flex items-center justify-center">
             <span className="text-5xl font-extrabold text-gray-900">₹1</span>
             <span className="text-xl font-medium text-gray-500 ml-2">/ lifetime</span>
