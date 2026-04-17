@@ -43,7 +43,7 @@ export const listTests = async (req, res) => {
         ]);
 
         // Attach section count to each test
-        const testIds = tests.map(t => t._id);
+        const testIds = tests.map(t => t._id.toString());
         const sectionCounts = await Section.aggregate([
             { $match: { testId: { $in: testIds } } },
             { $group: { _id: "$testId", count: { $sum: 1 } } }
