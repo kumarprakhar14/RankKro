@@ -8,7 +8,7 @@ const testimonials = [
     rank: 'AIR 234',
     prev: 'Rank ~4,500',
     quote:
-      'ExamEdge ka question palette aur section-wise analysis ne mujhe exactly pata chala kahan weak tha. Mock dene ke baad confidence 10x ho gaya.',
+      'RankKro ka question palette aur section-wise analysis ne mujhe exactly pata chala kahan weak tha. Mock dene ke baad confidence 10x ho gaya.',
     avatar: 'RS',
     color: 'from-blue-500 to-blue-700',
     improvement: '+4,266 ranks',
@@ -32,7 +32,7 @@ const testimonials = [
     rank: 'AIR 67',
     prev: 'Rank ~1,800',
     quote:
-      'Leaderboard dekh ke motivation milti thi roz. ExamEdge ne mujhe top 100 mein pahunchaya — yaar main believe nahi kar sakta tha jab result aaya!',
+      'Leaderboard dekh ke motivation milti thi roz. RankKro ne mujhe top 100 mein pahunchaya — yaar main believe nahi kar sakta tha jab result aaya!',
     avatar: 'AS',
     color: 'from-emerald-500 to-emerald-700',
     improvement: '+1,733 ranks',
@@ -74,7 +74,7 @@ export function Testimonials() {
             Real Students. Real Ranks.
           </h2>
           <p className="text-[#64748B] max-w-xl mx-auto">
-            Thousands of aspirants have improved their ranks with ExamEdge mock
+            Thousands of aspirants have improved their ranks with RankKro mock
             tests.
           </p>
         </motion.div>

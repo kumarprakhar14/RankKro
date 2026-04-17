@@ -65,7 +65,7 @@ const features = [
   },
 ]
 
-export function WhyExamEdge() {
+export function WhyRankKro() {
   return (
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -78,7 +78,7 @@ export function WhyExamEdge() {
           className="text-center mb-14"
         >
           <span className="inline-block px-4 py-1.5 bg-orange-100 text-[#FF6B00] text-sm font-bold rounded-full mb-4">
-            Why ExamEdge?
+            Why RankKro?
           </span>
           <h2
             style={{ fontFamily: "'Sora', sans-serif" }}
