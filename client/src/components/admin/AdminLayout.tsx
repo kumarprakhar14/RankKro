@@ -26,7 +26,7 @@ export function AdminLayout() {
             <aside className="w-64 bg-white border-r border-gray-200 flex-shrink-0 flex flex-col pt-6">
                 <div className="px-6 mb-8">
                     <h2 className="text-2xl font-bold bg-gradient-to-r from-[#1A5DC8] to-[#FF6B00] bg-clip-text text-transparent" style={{ fontFamily: "'Sora', sans-serif" }}>
-                        RanKro Admin
+                        RankKro Admin
                     </h2>
                 </div>
 
