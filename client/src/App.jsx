@@ -10,6 +10,7 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import MockTest from './pages/MockTest'
 import Exam from './pages/Exam'
+import ExamEngine from './pages/ExamEngine'
 import Result from './pages/Result'
 import AdminDashboard from './pages/admin/AdminDashboard'
 import AdminUsers from './pages/admin/AdminUsers'
@@ -52,13 +53,11 @@ function App() {
 
           {/* Protected routes */}
           <Route path="/mocks" element={
-            <ProtectedRoute>
               <MockTest />
-            </ProtectedRoute>
           }/>
           <Route path="/exam" element={
             <ProtectedRoute>
-              <Exam />
+              <ExamEngine />
             </ProtectedRoute>
           }/>
           <Route path="/result" element={

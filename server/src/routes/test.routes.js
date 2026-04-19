@@ -5,11 +5,11 @@ import { checkPremium } from "../middlewares/checkPremium.middleware.js";
 
 const router = express.Router();
 
-// All test routes require authentication
-router.use(protect);
-
 // GET /api/tests — List all tests with optional filters
-router.get("/", listTests);
+router.get("/", listTests);  // public route
+
+// All other test routes require authentication
+router.use(protect);
 
 // POST /api/tests/:id/start — Start exam session (premium guard)
 router.post("/:id/start", checkPremium, startTest);
