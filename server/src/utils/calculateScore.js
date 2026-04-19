@@ -3,10 +3,10 @@
  * 
  * For each answer:
  *   - Correct   → +question.marks
- *   - Incorrect → −question.negative_marks
+ *   - Incorrect → −question.negativeMarks
  *   - Skipped   → 0
  * 
- * @param {Array} answers - Array of { question_id, selected_option } from the client
+ * @param {Array} answers - Array of { questionId, selectedOption } from the client
  * @param {Map|Object} questionMap - Map of questionId → question document
  * @returns {{ score: number, correct: number, incorrect: number, skipped: number, answerDetails: Array }}
  */
@@ -18,37 +18,39 @@ export const calculateScore = (answers, questionMap) => {
     const answerDetails = [];
 
     for (const answer of answers) {
-        const question = questionMap.get(answer.question_id.toString());
+        if (!answer.questionId) continue;
+        
+        const question = questionMap.get(answer.questionId.toString());
 
         if (!question) continue; // safety guard
 
-        const selectedOption = answer.selected_option;
+        const selectedOption = answer.selectedOption;
 
         if (selectedOption === null || selectedOption === undefined) {
             // Skipped question
             skipped++;
             answerDetails.push({
-                question_id: question._id,
-                selected_option: null,
-                is_correct: false
+                questionId: question._id,
+                selectedOption: null,
+                isCorrect: false
             });
-        } else if (selectedOption === question.correct_option) {
+        } else if (selectedOption === question.correctOption) {
             // Correct answer
             score += question.marks;
             correct++;
             answerDetails.push({
-                question_id: question._id,
-                selected_option: selectedOption,
-                is_correct: true
+                questionId: question._id,
+                selectedOption: selectedOption,
+                isCorrect: true
             });
         } else {
             // Incorrect answer
-            score -= question.negative_marks;
+            score -= question.negativeMarks;
             incorrect++;
             answerDetails.push({
-                question_id: question._id,
-                selected_option: selectedOption,
-                is_correct: false
+                questionId: question._id,
+                selectedOption: selectedOption,
+                isCorrect: false
             });
         }
     }
