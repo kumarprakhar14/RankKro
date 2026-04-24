@@ -59,9 +59,10 @@ The platform is live at **[rankkro.pages.dev](https://rankkro.pages.dev)** and i
 | 💳 **Razorpay Payments** | PCI-compliant payment integration for upgrading to the Premium plan |
 | 📧 **Transactional Emails** | Inngest-powered async email delivery for signup, password reset, and subscription events |
 | 🛡️ **Admin Dashboard** | Full content management: create tests, manage questions, update user plans, view analytics |
-| 📱 **Responsive Design** | Mobile-first UI built with Tailwind CSS and Framer Motion |
+| 📱 **Responsive Design** | Mobile-first UI built with Tailwind CSS |
 | 🔑 **Password Reset** | Token-based secure forgot/reset password flow with expiring links |
 | 🚀 **PYQ Support** | Flag-able Previous Year Question papers as a distinct content type |
+| ⚙️ **User Self-Service** | Comprehensive settings for profile updates, security, and transaction history |
 
 ---
 
@@ -100,6 +101,7 @@ RankKro/
 │   │   │   ├── MockTest.tsx    # Test listing page
 │   │   │   ├── Pricing.tsx     # Subscription / Razorpay page
 │   │   │   ├── Result.tsx      # Post-exam results and analysis
+│   │   │   ├── Settings.tsx    # User profile, security, and billing settings
 │   │   │   └── ...
 │   │   └── main.tsx
 │   └── index.html
@@ -222,7 +224,7 @@ npm run seed       # Runs src/scripts/seedQuestions.js
 **Auth:** Bearer token in `Authorization` header (`Authorization: Bearer <access_token>`)  
 **Content-Type:** `application/json`
 
-All protected endpoints return `401 Unauthorized` when the token is missing or expired. Use `POST /api/auth/refresh` to obtain a new access token using the HttpOnly refresh-token cookie.
+All protected endpoints (marked with 🔒) return `401 Unauthorized` when the token is missing or expired. Use `POST /api/auth/refresh` to obtain a new access token using the HttpOnly refresh-token cookie.
 
 ---
 
@@ -299,7 +301,7 @@ Authenticate and receive tokens.
 
 Invalidate the session. Clears the refresh token cookie.
 
-**Auth Required:** No
+
 
 **Response `200`:**
 
@@ -313,7 +315,7 @@ Invalidate the session. Clears the refresh token cookie.
 
 Rotate access token using the HttpOnly refresh token cookie.
 
-**Auth Required:** No (cookie is sent automatically by the browser)
+
 
 **Response `200`:**
 
@@ -362,32 +364,68 @@ Resets the password using a valid token.
 
 ### User
 
-#### `GET /api/me`
+#### `GET /api/user/profile`
 
-🔒 Returns the authenticated user's profile.
+🔒 Returns the full profile of the authenticated user.
 
-**Response `200`:**
+---
+
+#### `PATCH /api/user/profile`
+
+🔒 Update non-sensitive profile information.
+
+**Request Body:**
 
 ```json
 {
-  "success": true,
-  "data": {
-    "_id": "...",
-    "name": "Ravi Sharma",
-    "email": "ravi@example.com",
-    "plan": "FREE",
-    "role": "USER",
-    "isActive": true
-  },
-  "message": "User profile retrieved"
+  "name": "Ravi Kumar Sharma",
+  "phone": "+91 9876543210"
 }
 ```
 
 ---
 
+#### `PATCH /api/user/email`
+
+🔒 Change account email address. Requires current password for verification.
+
+**Request Body:**
+
+```json
+{
+  "newEmail": "ravi.new@example.com",
+  "currentPassword": "SecurePass@123"
+}
+```
+
+---
+
+#### `PATCH /api/user/password`
+
+🔒 Change account password. Invalidates all other sessions upon success.
+
+**Request Body:**
+
+```json
+{
+  "currentPassword": "SecurePass@123",
+  "newPassword": "NewSecurePass@456"
+}
+```
+
+---
+
+#### `DELETE /api/user/account`
+
+🔒 Soft-deactivates the user account (GDPR compliant).
+
+---
+
 #### `GET /api/user/attempts`
 
-🔒 Returns the authenticated user's test attempt history and performance stats.
+🔒 Returns paginated attempt history and aggregate performance stats.
+
+**Query Parameters:** `page`, `limit`
 
 **Response `200`:**
 
@@ -398,10 +436,10 @@ Resets the password using a valid token.
     "attempts": [
       {
         "_id": "...",
-        "test_id": "...",
+        "testId": { "title": "SSC CGL Mock 1", "...": "..." },
         "status": "SUBMITTED",
-        "final_score": 148.5,
-        "started_at": "2026-04-15T10:00:00.000Z"
+        "finalScore": 148.5,
+        "startedAt": "2026-04-15T10:00:00.000Z"
       }
     ],
     "stats": {
@@ -412,7 +450,46 @@ Resets the password using a valid token.
   },
   "message": "Attempts retrieved successfully"
 }
+
+---
+
+#### `GET /api/user/attempts/:attemptId`
+
+🔒 Returns detailed overview of a single test attempt.
+
+---
+
+#### `GET /api/user/transactions`
+
+🔒 Returns cursor-paginated transaction history for the user.
+
+**Query Parameters:** `cursor`
+
+**Response `200`:**
+
+```json
+{
+  "success": true,
+  "data": {
+    "transactions": [
+      {
+        "_id": "...",
+        "amount": 499,
+        "status": "SUCCESS",
+        "paymentId": "pay_xxxxx",
+        "createdAt": "..."
+      }
+    ],
+    "pagination": { "nextCursor": "...", "hasMore": true }
+  }
+}
 ```
+
+---
+
+#### `GET /api/user/subscription`
+
+🔒 Returns the current subscription plan and status.
 
 ---
 
@@ -540,7 +617,7 @@ All payment routes are **🔒 protected**.
 
 #### `POST /api/payments/create-order`
 
-Creates a Razorpay order for the Premium plan purchase.
+🔒 Creates a Razorpay order for the Premium plan purchase.
 
 **Request Body:**
 
@@ -565,7 +642,7 @@ Creates a Razorpay order for the Premium plan purchase.
 
 #### `POST /api/payments/verify-payment`
 
-Verifies a Razorpay payment signature server-side and upgrades the user's plan to `PREMIUM` on success.
+🔒 Verifies a Razorpay payment signature server-side and upgrades the user's plan to `PREMIUM` on success.
 
 **Request Body:**
 
@@ -594,7 +671,7 @@ All admin routes require **🔒 JWT auth** + **🛡️ ADMIN role**.
 
 #### `GET /api/admin/users`
 
-Paginated list of all registered users.
+🔒 Paginated list of all registered users.
 
 **Query Parameters:** `page` (default: 1), `limit` (default: 20)
 
@@ -625,7 +702,7 @@ Paginated list of all registered users.
 
 #### `GET /api/admin/users/:userId`
 
-Full detail for a specific user including attempt history and aggregate performance stats.
+🔒 Full detail for a specific user including attempt history and aggregate performance stats.
 
 | Param | Type | Description |
 |---|---|---|
@@ -635,7 +712,7 @@ Full detail for a specific user including attempt history and aggregate performa
 
 #### `PATCH /api/admin/users/:userId/plan`
 
-Update a user's subscription plan.
+🔒 Update a user's subscription plan.
 
 **Request Body:**
 
@@ -653,7 +730,7 @@ Update a user's subscription plan.
 
 #### `GET /api/admin/questions`
 
-Paginated, searchable list of all questions.
+🔒 Paginated, searchable list of all questions.
 
 **Query Parameters:**
 
@@ -668,7 +745,7 @@ Paginated, searchable list of all questions.
 
 #### `POST /api/admin/questions`
 
-Create a new standalone question.
+🔒 Create a new standalone question.
 
 **Request Body:**
 
@@ -705,7 +782,7 @@ Create a new standalone question.
 
 #### `PATCH /api/admin/questions/:questionId`
 
-Partially update an existing question. All fields are optional — send only what needs to change.
+🔒 Partially update an existing question. All fields are optional — send only what needs to change.
 
 | Param | Type | Description |
 |---|---|---|
@@ -723,7 +800,7 @@ Partially update an existing question. All fields are optional — send only wha
 
 #### `GET /api/admin/tests`
 
-Paginated list of all tests.
+🔒 Paginated list of all tests.
 
 **Query Parameters:**
 
@@ -738,7 +815,7 @@ Paginated list of all tests.
 
 #### `POST /api/admin/tests`
 
-Create a new test with its sections in a single request.
+🔒 Create a new test with its sections in a single request.
 
 **Request Body:**
 
@@ -776,7 +853,7 @@ Create a new test with its sections in a single request.
 
 #### `GET /api/admin/tests/:testId`
 
-Full detail for a specific test, including its sections.
+🔒 Full detail for a specific test, including its sections.
 
 | Param | Type | Description |
 |---|---|---|
@@ -786,7 +863,7 @@ Full detail for a specific test, including its sections.
 
 #### `PATCH /api/admin/tests/:testId`
 
-Update test metadata. All fields optional. `attempted_count` is **read-only** and is ignored even if sent.
+🔒 Update test metadata. All fields optional. `attempted_count` is **read-only** and is ignored even if sent.
 
 **Example Request Body:**
 
@@ -798,7 +875,7 @@ Update test metadata. All fields optional. `attempted_count` is **read-only** an
 
 #### `POST /api/admin/tests/:testId/sections/:sectionId/questions`
 
-Bulk-assign questions to a specific section.
+🔒 Bulk-assign questions to a specific section.
 
 | Param | Type | Description |
 |---|---|---|
@@ -823,7 +900,7 @@ Bulk-assign questions to a specific section.
 
 #### `GET /api/admin/analytics`
 
-Platform-wide summary dashboard.
+🔒 Platform-wide summary dashboard.
 
 **Response `200`:**
 
@@ -858,9 +935,9 @@ Platform-wide summary dashboard.
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
-│  Registration / Login                                         │
-│  → Server issues short-lived Access Token (JWT, 15 min)       │
-│  → Server sets long-lived Refresh Token (HttpOnly cookie)     │
+│  Registration / Login                                        │
+│  → Server issues short-lived Access Token (JWT, 15 min)      │
+│  → Server sets long-lived Refresh Token (HttpOnly cookie)    │
 │                                                              │
 │  Client stores access token in localStorage                  │
 │                                                              │
@@ -899,8 +976,8 @@ Payment is processed via Razorpay. On successful verification, the user's `plan`
 
 This repository is currently **closed-source**. For bug reports, partnership enquiries, or content contributions, please contact:
 
-**Bharatrise Ventures Pvt. Ltd.**  
-📧 [support@rankkro.com](mailto:support@rankkro.com)
+**Bharatrise Ventures**  
+📧 [kumarprakharkp143@gmail.com](mailto:kumarprakharkp143@gmail.com)
 
 ---
 
