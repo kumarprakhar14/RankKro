@@ -512,7 +512,7 @@ function BillingTab() {
                                             {new Date(tx.createdAt).toLocaleDateString()}
                                         </td>
                                         <td className="px-4 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                            ₹{(tx.amount / 100).toFixed(2)}
+                                            ₹{(tx.amount)}
                                         </td>
                                         <td className="px-4 py-4 whitespace-nowrap text-sm">
                                             <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
@@ -524,7 +524,7 @@ function BillingTab() {
                                             </span>
                                         </td>
                                         <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 font-mono text-xs">
-                                            {tx.razorpayPaymentId || tx.razorpayOrderId || 'N/A'}
+                                            {tx.paymentId || tx.orderId || 'N/A'}
                                         </td>
                                     </tr>
                                 ))}
