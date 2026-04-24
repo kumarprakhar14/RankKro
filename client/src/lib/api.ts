@@ -193,8 +193,8 @@ export interface TransactionData {
     amount: number
     currency?: string
     status: string
-    razorpayOrderId?: string
-    razorpayPaymentId?: string
+    orderId?: string
+    paymentId?: string
     planGranted?: string
     createdAt: string
 }
@@ -502,4 +502,4 @@ export const userAPI = {
 
     getAttemptById: (attemptId: string) => 
         apiRequest<{ attempt: AttemptsData['attempts'][0] }>(`/api/user/attempts/${attemptId}`),
-}
+}
