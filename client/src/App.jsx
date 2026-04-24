@@ -20,6 +20,7 @@ import ForgotPassword from './pages/ForgotPassword'
 import ResetPassword from './pages/ResetPassword'
 import NotFound from './pages/NotFound'
 import Pricing from './pages/Pricing'
+import Settings from './pages/Settings'
 
 function App() {
   
@@ -68,6 +69,11 @@ function App() {
           <Route path="/pricing" element={
             <ProtectedRoute>
               <Pricing />
+            </ProtectedRoute>
+          }/>
+          <Route path="/settings" element={
+            <ProtectedRoute>
+              <Settings />
             </ProtectedRoute>
           }/>
 

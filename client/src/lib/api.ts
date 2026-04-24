@@ -157,7 +157,7 @@ interface ResultData {
 interface AttemptsData {
     attempts: Array<{
         _id: string
-        test_id: {
+        testId: {
             _id: string
             title: string
             examType: string
@@ -166,7 +166,7 @@ interface AttemptsData {
             durationMinutes: number
         }
         startedAt: string
-        submitted_at: string | null
+        submittedAt: string | null
         status: string
         finalScore: number
     }>
@@ -181,6 +181,37 @@ interface AttemptsData {
         total: number
         totalPages: number
     }
+}
+
+// ============================
+// Transactions API response types
+// ============================
+
+export interface TransactionData {
+    _id: string
+    userId?: string
+    amount: number
+    currency?: string
+    status: string
+    razorpayOrderId?: string
+    razorpayPaymentId?: string
+    planGranted?: string
+    createdAt: string
+}
+
+export interface TransactionsResponse {
+    transactions: TransactionData[]
+    pagination: {
+        nextCursor: string | null
+        hasMore: boolean
+        limit: number
+    }
+}
+
+export interface SubscriptionResponse {
+    plan: 'FREE' | 'PREMIUM'
+    isActive: boolean
+    joinedAt: string
 }
 
 async function apiRequest<T>(endpoint: string, options: RequestInit = {}): Promise<ApiResponse<T>> {
@@ -432,3 +463,43 @@ export const paymentAPI = {
             body: JSON.stringify(data),
         }),
 }
+
+// ============================
+// User Self-Service API
+// ============================
+export const userAPI = {
+    getProfile: () => 
+        apiRequest<AuthData['user']>('/api/user/profile'),
+        
+    updateProfile: (data: { name?: string; phone?: string }) => 
+        apiRequest<AuthData['user']>('/api/user/profile', { 
+            method: 'PATCH', 
+            body: JSON.stringify(data) 
+        }),
+        
+    changeEmail: (data: { newEmail: string; currentPassword: string }) => 
+        apiRequest<AuthData['user']>('/api/user/email', { 
+            method: 'PATCH', 
+            body: JSON.stringify(data) 
+        }),
+        
+    changePassword: (data: { currentPassword: string; newPassword: string }) => 
+        apiRequest<{ message: string }>('/api/user/password', { 
+            method: 'PATCH', 
+            body: JSON.stringify(data) 
+        }),
+        
+    deleteAccount: () => 
+        apiRequest<{ message: string }>('/api/user/account', { 
+            method: 'DELETE' 
+        }),
+        
+    getTransactions: (cursor?: string | null) => 
+        apiRequest<TransactionsResponse>(`/api/user/transactions${cursor ? `?cursor=${cursor}` : ''}`),
+        
+    getSubscription: () => 
+        apiRequest<SubscriptionResponse>('/api/user/subscription'),
+
+    getAttemptById: (attemptId: string) => 
+        apiRequest<{ attempt: AttemptsData['attempts'][0] }>(`/api/user/attempts/${attemptId}`),
+}
