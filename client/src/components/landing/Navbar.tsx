@@ -62,12 +62,12 @@ export function Navbar() {
           <div className="hidden md:flex items-center gap-7">
             {isAuthenticated ? (
               <>
-                <div className="flex items-center gap-2 text-sm font-medium text-[#1E293B]">
-                  <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#1A5DC8] to-[#0D3E8E] flex items-center justify-center">
+                <Link to="/settings" className="flex items-center gap-2 text-sm font-medium text-[#1E293B] hover:text-[#1A5DC8] transition-colors cursor-pointer group">
+                  <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#1A5DC8] to-[#0D3E8E] flex items-center justify-center group-hover:shadow-md transition-shadow">
                     <User className="w-4 h-4 text-white" />
                   </div>
                   <span>{user?.name}</span>
-                </div>
+                </Link>
                 <button
                   onClick={handleLogout}
                   className="flex items-center gap-1.5 px-4 py-2 text-sm font-semibold text-red-600 hover:text-red-700 hover:bg-red-50 rounded-lg transition-all duration-200"
@@ -132,12 +132,16 @@ export function Navbar() {
               <div className="pt-3 pb-1 border-t border-gray-100 flex flex-col gap-2">
                 {isAuthenticated ? (
                   <>
-                    <div className="flex items-center gap-2 px-4 py-3 text-[#1E293B] font-medium">
+                    <Link 
+                      to="/settings"
+                      onClick={() => setMobileOpen(false)}
+                      className="flex items-center gap-2 px-4 py-3 text-[#1E293B] font-medium hover:bg-blue-50 hover:text-[#1A5DC8] rounded-lg transition-colors"
+                    >
                       <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#1A5DC8] to-[#0D3E8E] flex items-center justify-center">
                         <User className="w-4 h-4 text-white" />
                       </div>
                       <span>{user?.name}</span>
-                    </div>
+                    </Link>
                     <button
                       onClick={handleLogout}
                       className="flex items-center justify-center gap-2 px-4 py-3 text-red-600 font-semibold border border-red-200 rounded-lg hover:bg-red-50 transition-colors"
