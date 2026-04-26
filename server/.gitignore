@@ -147,3 +147,4 @@ vite.config.ts.timestamp-*
 dbLeads.json
 dbResponse.json
 *.txt
+EMAIL_WARMUP_NOTES.md
