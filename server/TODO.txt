@@ -2,3 +2,8 @@
 👉🏻 Some database fields use snake case while others use
 camel case. Ensure consistency and update the corresponding
 controllers
+
+NOTES.txt
+
+Login -> profile -> Billing & Subscriptions -> transaction history
+The amount showed in the txn. history is 

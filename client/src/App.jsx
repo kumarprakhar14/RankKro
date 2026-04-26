@@ -10,6 +10,7 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import MockTest from './pages/MockTest'
 import Exam from './pages/Exam'
+import ExamEngine from './pages/ExamEngine'
 import Result from './pages/Result'
 import AdminDashboard from './pages/admin/AdminDashboard'
 import AdminUsers from './pages/admin/AdminUsers'
@@ -19,6 +20,7 @@ import ForgotPassword from './pages/ForgotPassword'
 import ResetPassword from './pages/ResetPassword'
 import NotFound from './pages/NotFound'
 import Pricing from './pages/Pricing'
+import Settings from './pages/Settings'
 
 function App() {
   
@@ -52,13 +54,11 @@ function App() {
 
           {/* Protected routes */}
           <Route path="/mocks" element={
-            <ProtectedRoute>
               <MockTest />
-            </ProtectedRoute>
           }/>
           <Route path="/exam" element={
             <ProtectedRoute>
-              <Exam />
+              <ExamEngine />
             </ProtectedRoute>
           }/>
           <Route path="/result" element={
@@ -69,6 +69,11 @@ function App() {
           <Route path="/pricing" element={
             <ProtectedRoute>
               <Pricing />
+            </ProtectedRoute>
+          }/>
+          <Route path="/settings" element={
+            <ProtectedRoute>
+              <Settings />
             </ProtectedRoute>
           }/>
 
