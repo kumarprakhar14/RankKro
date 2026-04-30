@@ -1,5 +1,5 @@
 import { NavLink, Outlet, useNavigate } from 'react-router-dom'
-import { LayoutDashboard, Users, FileQuestion, BookOpen, LogOut } from 'lucide-react'
+import { LayoutDashboard, Users, FileQuestion, BookOpen, LogOut, CircleDollarSign } from 'lucide-react'
 import { useAuth } from '@/context/AuthContext'
 
 const NAV_ITEMS = [
@@ -7,6 +7,7 @@ const NAV_ITEMS = [
     { label: 'Users', path: '/admin/users', icon: Users },
     { label: 'Questions', path: '/admin/questions', icon: FileQuestion },
     { label: 'Tests', path: '/admin/tests', icon: BookOpen },
+    { label: 'Payments', path: '/admin/payments', icon: CircleDollarSign}
 ]
 
 export function AdminLayout() {

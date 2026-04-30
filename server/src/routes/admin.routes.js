@@ -13,6 +13,7 @@ import {
     listTests, createTest, updateTest, getTestDetail,
     assignQuestions, getAnalytics
 } from "../controllers/admin.tests.controller.js";
+import { getPayments } from "../controllers/admin.payments.controller.js";
 
 const router = express.Router();
 
@@ -42,6 +43,11 @@ router.post("/tests", createTest);
 router.get("/tests/:testId", getTestDetail);
 router.patch("/tests/:testId", updateTest);
 router.post("/tests/:testId/sections/:sectionId/questions", assignQuestions);
+
+// ============================================
+// PAYMENTS
+// ============================================
+router.get("/payments", getPayments);
 
 // ============================================
 // ANALYTICS

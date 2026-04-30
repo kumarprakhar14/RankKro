@@ -16,6 +16,7 @@ import AdminDashboard from './pages/admin/AdminDashboard'
 import AdminUsers from './pages/admin/AdminUsers'
 import AdminQuestions from './pages/admin/AdminQuestions'
 import AdminTests from './pages/admin/AdminTests'
+import AdminPayments from './pages/admin/AdminPayments'
 import ForgotPassword from './pages/ForgotPassword'
 import ResetPassword from './pages/ResetPassword'
 import NotFound from './pages/NotFound'
@@ -87,6 +88,7 @@ function App() {
             <Route path="users" element={<AdminUsers />} />
             <Route path="questions" element={<AdminQuestions />} />
             <Route path="tests" element={<AdminTests />} />
+            <Route path="payments" element={<AdminPayments />} />
           </Route>
 
           {/* Catch all 404 route */}
