@@ -444,7 +444,20 @@ export const adminAPI = {
         apiRequest<{ assigned: number }>(`/api/admin/tests/${testId}/sections/${sectionId}/questions`, {
             method: 'POST',
             body: JSON.stringify({ questions })
-        })
+        }),
+
+    // Payments
+    listPayments: (params?: { page?: number; limit?: number; status?: string; paymentId?: string; orderId?: string; userId?: string }) => {
+        const urlParams = new URLSearchParams()
+        if (params?.page) urlParams.set('page', String(params.page))
+        if (params?.limit) urlParams.set('limit', String(params.limit))
+        if (params?.status) urlParams.set('status', params.status)
+        if (params?.paymentId) urlParams.set('paymentId', params.paymentId)
+        if (params?.orderId) urlParams.set('orderId', params.orderId)
+        if (params?.userId) urlParams.set('userId', params.userId)
+        const qs = urlParams.toString()
+        return apiRequest<{ payments: any[], pagination: any }>(`/api/admin/payments${qs ? `?${qs}` : ''}`)
+    }
 }
 
 // ============================
