@@ -1,3 +1,8 @@
+import dns from "dns";
+
+// Set global DNS servers (Google DNS)
+dns.setServers(['8.8.8.8', '8.8.4.4']);
+
 import mongoose from "mongoose";
 import { config } from "../config/env.js";
 

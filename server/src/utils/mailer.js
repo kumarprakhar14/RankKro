@@ -1,32 +1,28 @@
-import nodemailer from "nodemailer";
-import { MailtrapTransport } from "mailtrap";
+import { Resend } from "resend";
 
-const TOKEN = process.env.SMTP_PASS;
+const resend = new Resend(process.env.RESEND_API_KEY);
 
-// if (!TOKEN) {
-//   throw new Error("SMTP_PASS environment variable is required");
-// }
-
-const transporter = nodemailer.createTransport(
-  MailtrapTransport({
-    token: TOKEN,
-  })
-);
-
-export const sendMail = async (to, subject, message) => {
+export const sendMail = async (to, subject, message, options = {}) => {
   try {
-    const info = await transporter.sendMail({
-      from: 'RanKro <rankro@unique-deals.in>',
+    const { data, error } = await resend.emails.send({
+      from: process.env.EMAIL_FROM || "RanKro <rankro@unique-deals.in>",
       to,
       subject,
       html: message,
-      category: "Transactional",
+      ...(options.idempotencyKey && { idempotencyKey: options.idempotencyKey }),
+      ...(options.tags && { tags: options.tags }),
+      ...(options.attachments && { attachments: options.attachments }),
     });
 
-    console.log("✅ Mail sent:", info.messageId);
-    return info;
+    if (error) {
+      console.error("❌ Resend error:", error.message);
+      throw new Error(`Resend email delivery failed: ${error.message}`);
+    }
+
+    console.log("✅ Mail sent:", data.id);
+    return data;
   } catch (error) {
     console.error("❌ Mail error:", error.message);
     throw error;
   }
-};
+};
