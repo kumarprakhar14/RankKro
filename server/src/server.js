@@ -1,7 +1,7 @@
 import http from "http";
 import { config } from "./config/env.js";
 import { connectDB } from "./db/mongo.js";
-import { app } from "./app.js"
+import app from "./app.js"
 
 // create HTTP server using Expres app
 const server = http.createServer(app);
